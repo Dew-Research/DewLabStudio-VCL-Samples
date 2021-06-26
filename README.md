@@ -2,7 +2,7 @@
 <img align="right" src="https://www.dewresearch.com/templates/yootheme/cache/mtxvex-icon-ef5151c5.png">
 </a>  
 
-# Dew Lab Studio for VCL for RAD Studio, Delphi and C++ Builder samples.
+# Dew Lab Studio VCL for RAD Studio, Delphi and C++ Builder samples.
 ==========================================================================
   
 Sample programs showing how to use Dew Lab Studio VCL for (RAD Studio, Delphi and C++ Builder)
