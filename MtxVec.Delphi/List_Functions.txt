@@ -1,0 +1,587 @@
+(AbstractMtxVec.pas)	TMtxVec object
+Abs	absolute values
+Add	add elements
+ArcCos	inverse cosine
+ArcCosh	inverse hyperbolic cosine
+ArcCot	inverse cotangens
+ArcCoth	inverse hyperbolic cotangens
+ArcCsc	inverse cosecant
+ArcCsch	inverse hyperbolic cosecant
+ArcSec	inverse secant
+ArcSech	inverse hyperbolic secant
+ArcSin	inverse sine
+ArcSinh	inverse hyperbolic sine
+ArcTan	inverse tangens
+ArcTan2	inverse tangens (defined as Tan=Y/X)
+ArcTanh	inverse hyperbolic tangens
+BlockInit	initialize block-processing
+BlockNext	retrieve next subrange in array
+CartToPolar	convert from cartesian coordinates to polar coordinates
+Cbrt	cube root
+Clear	clear some object properties
+CondDisable	disable in-code checks
+CondEnable	enable in-code checks
+Conj	conjugate elements
+Copy	copy elements
+CopyBinaryFromArray	copy from binary to array
+CopyFromArray	copy from array
+CopyToArray	copy to array
+Cos	cosine
+Cosh	hyperbolic cosine
+Cot	cotanges
+Coth	hyperbolic cotangens
+CplxToReal	convert from complex to real
+Create	create new TMtxVec object
+Csc	cosecant
+Csch	hyperbolic cosecant
+DisableSelect	prevent call to Select method
+DisableSubrange	disable subrange
+EnableSelect	allow call to Select method
+EnableSubrange	enable subrange
+Exp	E^
+Exp10	10^
+Exp2	2^
+Expj	complex exponent
+ExtendToComplex	extend from real to complex
+Find	find a match
+First	return first real element in array
+Firstc	return first complex element in array
+Flip	flip real and imaginary parts
+FlipConj	flip real and imaginary parts, then perform conjugate operation
+FloatToInt	convert from float to integers
+Frac	fractional part
+FreeToCache	if the object was created with a call to CreateIt, this routine will call FreeIt
+ImagPart	retrieve imaginary part of array
+IntPower	integer power
+IntToFloat	convert from integers to float
+Inv	inverse (1/x) for each element
+InvCbrt	inverse cube root: x^(-1/3)
+InvSqrt	inverse square root x^(-1/2)
+IsEqual	true if objects are equal
+Kurtosis	Kurtosis
+Last	last real element in array
+Lastc	last complex element in array
+Ln	natural logarithm
+LoadFromFile	load object from file
+LoadFromStream	load object from stream
+Log10	log base 10
+Log2	log base 2
+LogN	log base N
+Mag	magnitude
+Mul	array multiplication
+MulI	array multiplication
+Normalize	normalize array values
+Offset	offset array values
+PCValues1D	returns CValues[i], under .NET this is a pointer to unmanaged memory
+PhaseSpectrum	phase spectrum
+PIValues1D	returns IValues[i], under .NET this is a pointer to unmanaged memory
+PolarToCart	convert from polar to cartesina coordinate system
+Power	power (array)
+PowerSpectrum	power spectrum
+PowerVec	power (array)
+Product	direct product of array elements
+Productc	direct product of array elements
+PValues1D	returns Values[i], under .NET this is a pointer to unmanaged memory
+RandGauss	new Gaussian distribution random number
+RandUniform	new uniform distribution random number
+ReadHeader	read object header
+ReadValues	read object values (array)
+RealPart	retrieve array real values
+RealToCplx	convert from real to complex
+Replace	replace array values
+Reset	reset object
+Resize	resize object (array)
+RMS	root-mean-square
+Round	round values
+SaveToFile	save object to file
+SaveToStream	save object to stream
+Scale	scale values
+Scatter	scatter operation
+Sec	secant
+Sech	hyperbolic secant
+Select	define subarray
+SelectAll	reset defined selection
+SetCplx	copy complex value to array
+SetDouble	copy double value to array
+SetFullRange	reset subrange
+SetInteger	copy integer value to array
+SetIt	copy values to array
+SetSingle	copy single value to array
+SetSubIndex	define sub indices
+SetSubRange	define subrange
+SetVal	copy vlaue to array
+SetZero	init values to zero
+Sgn	signum
+Sign	change sign
+Sin	sine
+SinCos	sine and cosine in single call
+Sinh	hyperbolic sine
+SinhCosh	hyperbolic sine and cosine in single call
+Size	change object size
+SizeToArray	copy values from to array
+Skewness	skewness
+Sqr	square
+Sqrt	square root
+StdDev	standard deviation
+Sum	sum of array elements
+Sumc	sum of complex array elements
+Tan	tangens
+Tanh	hyperbolic tangens
+ThreshBottom	threshold operation on array
+ThreshTop	threshold operaion on array
+Trunc	truncate values
+WriteHeader	write object header
+WriteValues	write object values
+
+(AbstractMtxVec.pas)	TDenseMtxVec object
+all TMtxVec inherited methods PLUS	 
+Add	add to array values
+AddProduct	add and multiply array values with 
+ConjMul	conjugate and multiply array values
+Create	create new instance of TDenseMtxVec
+CumSum	cumulative sum
+DCT	forward discrete cosine transform (DCT)
+Difference	diference 
+Divide	array division
+DivideVec	array division
+DotProd	scalar product (real values)
+DotProdc	scalar product (complex values)
+DownSample	reduce the number of points in array
+FFT	Fast Fourier Transformation
+FFTFromReal	forward Fast Fourier Transformation (FFT) from complex to real
+IDCT	inverse discrete cosine transform (DCT)
+IFFT	inverse backward FFT from complex to complex
+IFFTToReal	orward Fast Fourier Transformation (FFT) from complex to real
+Max	Maximum value
+Maxc	Maximum value (complex)
+MaxMin	Maximum and minimum value
+Mean	Mean value
+Meanc	Mean value (complex)
+Median	Median value
+Min	Minimum value
+Minc	Minimum value (complex)
+Mul	Array multiplication
+NormC	C-norm
+NormL1	L1-norm
+NormL2	L2-norm
+Reset	reset object properties
+Reverse	reverse array values
+Sub	array subtraction
+SubFrom	sutraction
+UpSample	increase number of points in array
+
+(MtxVec.pas)	TMtx object
+all TDenseMtxVec inherited methods PLUS	 
+AddTensorProd	Calculates the tensor product of two vectors and adds the result to calling matrix.
+Adjung	Adjungate matrix.
+Adopt	Adopts a pointer to one dimensional array.
+BandedToDense	Convert banded matrix to dense.
+Cholesky	Test if the matrix is semi positive definite.
+ColExchange	Exchange matrix columns.
+Concat	Concatenate an array of matrices to single matrix.
+ConcatHorz	Concenates an array of matrices horizontally.
+ConcatVert	Concenates an array of matrices vertically.
+Convolve	Performs finite, linear convolution of two two-dimensional signals.
+Copy	Copy matrix values.
+CopyFromArray	Copy matrix values fro array.
+CopyToArray	Copy matrix values to array.
+CopyVec	Copies values from vector to a matrix.
+Create	Create new instance of TMtx object
+CreateFromCache	Obtain a pointer to a matrix from object cache.
+CumSum	Cumulative sum for each of the matrix columns.
+DenseToBanded	Convert dense matrix to banded.
+DetectMtxType	Determines type of the matrix.
+Determinant	Determinant of squared matrix.
+Diag	Sets the matrix diagonal to values from the vector.
+Disown	Disowns a pointer to an array from matrix Values1D.
+Eig	Calculates matrix eigenvalues and eigenvectors.
+EigGen	Performs the reduction of the symmetric-definite generalized eigenvalues/eigenvectors problem to the normal eigenvalue case.
+Equal	Compares two matrices.
+Eye	Constructs an eye matrix.
+FFT1D	1D FFT.
+FFT1DFromReal	1D FFT from real to complex.
+FFT2D	2D FFT.
+FFT2DFromReal	2D FFT from real to complex.
+FlipHor	Flips the matrix elements horizontally.
+FlipVer	Flips the matrix elements vertically Flip calling matrix elements vertically.
+FreeMemory	Free allocated array memory
+Hankel	Construct Hankel matrix.
+IFFT1D	Inverse 1D FFT.
+IFFT1DToReal	Inverse 1D FFT from complex to real.
+IFFT2D	Inverse 2D FFT.
+IFFT2DToReal	Inverse 2D FFT from complex to real.
+Inv	Calculates matrix inverse (Mtx^-1).
+InvElem	The inverse of matrix elements.
+Kron	The Kronecker product between two vectors.
+LowerTriangle	Constructs lower triangular matrix.
+LQR	QR or LQ factorization.
+LQRSolve	Solve overdetermined or underdetermined system of real linear equations.
+LU	General LU, Cholesky or Bunch-Kaufmann factorization.
+LUSolve	Solves system of linear equations by using LU factorization.
+MeanCols	Calculates the mean value of each of the matrix columns.
+MeanRows	Calculates the mean value of each of the matrix rows.
+MtxFunction	Compute matrix function as a function of another matrix.
+MtxIntPower	Calculates the matrix to integer power.
+MtxPower	Calculates the matrix to any power, real or integer.
+MtxSqrt	Calculates the square root of the matrix.
+Mul	Matrix multiplication.
+MulElem	Matrix array multiplication.
+Norm1	Calculates the matrix norm-1.
+NormFro	Calculates the matrix Frobenius norm.
+NormInf	Calculates the matrix infinity norm.
+Pascl	Constructs a Pascal matrix.
+PCValues	Returns a pointer to the complex value stored at Row and Col.
+PixelDownSample	Creates a reduced size dense matrix for screen display (bitmap) to show the matrix pattern.
+PowerMtx	Raises matrix elements to any power.
+PValues	Returns a pointer to the real value stored at Row and Col.
+Resize	Resizes the matrix, while preserving the values in already allocated memory.
+Rotate90	Rotates matrix rows 90 degrees clockwise.
+RowExchange	Exchanges two matrix rows.
+SaveToMatrixMarketFile	Saves matrix data to MatrixMarket ASCII file format.
+SetCol	Copies values from vector to matrix column.
+SetIt	Sets matrix values.
+SetRow	Copies values from vector to matrix row.
+SetVal	Initializes matrix values to Value.
+SetZero	Initializes matrix values to zero.
+Size	Sets the size of matrix.
+SizeFromArray	Use array to define matrix size.
+SizeToArray	use matrix size to define array size.
+SortAscend	Sorts the elements in a matrix row(s) in ascending order.
+SortDescend	Sorts the elements in a matrix row(s) in descending order.
+Split	Splits matrix in blocks.
+StringsToValues	Convert strings to TSample (TCplx) and store them in the Values array.
+SumCols	Calculates the sum of each of the calling matrix columns.
+SumRows	Calculates the sum of each of the calling matrix rows.
+SVD	Singular value decomposition.
+SVDSolve	Calculates the minimum norm solution to a real linear least squares problem.
+Sylvester	Solves the Sylvester equation.
+TensorProd	Calculates the tensor product of two vectors.
+Toeplitz	Constructs a Toeplitz matrix.
+Trace	Matrix trace.
+Transp	Transposes matrix.
+UpperTriangle	Constructs upper triangular matrix.
+ValuesToStrings	Converts the content of the matrix Values array to a list of strings.
+VanderMonde	Construct VanderMonde matrix.
+
+(MtxVec.pas) TVec object	
+all TDenseMtxVec inherited methods PLUS	 
+AutoCorrBiased	Biased auto-correlation.
+AutoCorrNormal	Normal auto-corellation.
+AutoCorrUnBiased	Unbiased auto-correlation.
+Concat	Concatenates an array of TVec objects.
+Convolve	Single-rate finite, linear convolution of two sequences.
+Copy	Copies values from Vec1 and Vec2 (concatenate).
+CopyMtx	Copy values from matrix (DEPRECATED)
+CreateFromCache	Obtains a pointer to a precreated object from cache.
+CrossCorr	The cross-correlation of two vectors.
+DCT	The forward discrete cosine transform (DCT).
+Diag	Copies the k-th diagonal from the TMtx object.
+Difference	The difference between two succesive vector elements.
+DownSample	Downsamples vector values.
+Equal	Compares vector elements and returns true if vectors are equal.
+FFT	Fast Fourier Transformation (FFT) from complex to complex or from real to complex.
+FFTFromReal	The forward Fast Fourier Transformation (FFT) from real to complex.
+FindAndGather	Finds and gathers vector elements.
+FindAndSplit	Finds the masks for a vector and splits it.
+FindIndexes	Fills the calling vector with indexes, where the logical expression is true.
+FindMask	Finds a vector mask.
+FreeToCache	Releases this object back to cache.
+Gather	Gather vector elements.
+GatherSplit	Gather a vector, split to two vectors.
+GetCol	Copies a column from matrix.
+GetRow	Copies a row from matrix.
+Goertz	The Discrete Fourier transformation (DFT) for a given frequency.
+GoertzInit	Initializes the Goertzal algorithm.
+Hilbert	The fast hilbert transform (FFT based).
+IDCT	The inverse discrete cosine transform (DCT).
+IFFT	The inverse backward FFT from complex to complex.
+IFFTToReal	The inverse FFT from complex to real.
+Kron	The Kronecker product between two vectors.
+Norm	The norm of a vector.
+NotMask	Negates the integer mask vector.
+PCValues	Obtains a pointer to the complex value of the vector at Index.
+PIValues	Obtains a pointer to the integer value of the vector at Index.
+PixelDownSample	Downsamples (reduces) the number of vector elements.
+PrimeNumbers	Fills vector with prime numbers, starting from 2 up to the value of n.
+PValues	Obtains a pointer to the real value of the vector at Index.
+Ramp	Fills the calling vector with a series following linear rule.
+Resize	Resizes vector size while preserving values.
+Reverse	Reverse vector elements.
+Rotate	A cyclic shift on vector elements.
+SetCplx	Sets vector values (complex).
+SetDouble	Sets vector values (double).
+SetInteger	Sets vector values (integer).
+SetIt	Sets vector values.
+SetSingle	Sets vector values (single).
+SetSubIndex	Defines a sub-vector.
+SetSubRange	Defines a sub-range.
+Shift	Shift vector elements.
+Size	Sets the size of the vector.
+SizeFromArray	Sets the size of the vector to match an array.
+SliceIt	Slices the memory allocated by the calling vector in to smaller pieces (real version).
+SliceItc	Slices the memory allocated by the calling vector in to smaller pieces (complex version).
+SortAscend	Sorts vector elements in ascending order.
+SortDescend	Sorts vector elements in descending order.
+Split	Splits the calling vector to an array of TVec objects.
+StringsToValues	Convert strings in AList to TSample or TCplx.
+TensorProd	Tensor product between vector and matrix.
+UpSample	Inserts zeroes between consecutive vector values.
+ValuesToStrings	Converts the content of the Values array of the calling vector to a list of strings.
+
+(Sparse.pas) TMtxSparse object	
+all TMtxVec inherited methods PLUS
+Add	Sums two sparse matrices (A+B).
+AddSplit	Construct sparse matrxix by summing lower, upper triangluar part and the diagonal.
+Adjung	Adjungate operation.
+Assign	Assigns sparse matrix properties.
+BandedToSparse	Converts banded matrix to modified compressed column sparse matrix format.
+Clear	Clears sparse matrix properties.
+ConjMul	Conjugate Sparse2 and matrix multiply it with Sparse1.
+DenseToSparse	Convert dense matrix to sparse matrix format.
+Diag	Sets the kk-th diagonal of TSparseMtx from the Vec object.
+DiagonalsCount	Calculates the number of diagonals above and below main diagonal.
+DivideElem	Sparse matrix array division.
+Equal	Compares two sparse matrices.
+Inv	The inverse matrix.
+IsEqualSize	Compares sparse matrix size.
+LoadFromMatrixMarketFile	Loads the matrix stored in a matrix market file format.
+LowerTriangle	Extract lower part of the Mtx.
+Max	Maximum of all non-zero elements.
+Maxc	Maximum of all non-zero complex elements.
+Mean	Average of all non-zero elements.
+Meanc	Average of all non-zero complex elements.
+Min	Minimum of all non-zero elements.
+Minc	Minimum of all non-zero complex elements.
+Mul	Multiply two sparse matrices (matrix multiplication).
+MulLeft	Multiply the sparse matrix from left.
+MulRight	Multiply the sparse matrix from right.
+PixelDownSample	Reduces dense matrix for screen display (bitmap) to show the non-zero pattern.
+RandomSparse	Creates quadratic non-complex non-singular sparse matrix.
+ReadHeader	Read sparse matrix header.
+ResidualNorm	The residual norm of the solution of the system of linear equations A*X=B.
+Resize	Resize sparse matrix.
+RMS	Root mean squared of all non-zero elements.
+SaveToMatrixMarketFile	Saves the matrix in matrix market file format.
+Size	Define the size of sparse matrix.
+Solve	Direct solve.
+SolveIterative	Solve the system A*X = B by using one of the iterative methods.
+SparseToBanded	Convert sparse matrix to banded matrix.
+SparseToDense	Convert sparse matrix to banded matrix.
+SparseToTriplets	Convert sparse matrix to triplets.
+Split	Split sparse matrix into lower triangle, main diagonal and upper triangle.
+StringsToValues	Convert strings to specific matrix format.
+StructurizeSymmetric	Required by Pardiso solver to solve for general matrices.
+Sub	Subract two sparse matrices.
+Transp	Transpose sparse matrix.
+TripletsToSparse	Convert triplets to sparse format.
+TripletsToSparseAndFlush	Construct a sparse matrix by specifying the position of each element in dense matrix.
+UpperTriangle	Extract upper part of the Mtx.
+ValuesToStrings	Convert matrix values to strings.
+WriteHeader	Write sparse matrix header.
+ZeroThresh	 Reduces the number of non-zeros.
+
+Math procedures	
+(Math387.pas) ArcCos	Inverse cosine 
+(Math387.pas) ArcCosh	inverse cosine hyperbolicus
+(Math387.pas) ArcCot	inverse cotangens 
+(Math387.pas) ArcCoth	inverse cotangens hyperbolicus
+(Math387.pas) ArcCsc	inverse cosecans 
+(Math387.pas) ArcCsch	inverse cosecans hyperbolicus
+(Math387.pas) ArcSec	inverse secans
+(Math387.pas) ArcSech	inverse secans hyperbolicus
+(Math387.pas) ArcSin	inverse sine 
+(Math387.pas) ArcSinh	inverse sine hyperbolicus
+(Math387.pas) ArcTan	inverse tangens 
+(Math387.pas) ArcTanh	inverse tangens hyperbolicus
+(Math387.pas) Arg	complex number argument 
+(Math387.pas) Bigger	Compare two complex numbers 
+(Math387.pas) Bigger2	Compare two complex number
+(Math387.pas) CAbs	absolute value 
+(Math387.pas) CartToPolar	transform number from cartesian to polar coordinates
+(Math387.pas) Ceil	calculate ceiling of a number
+(Math387.pas) CFrac	calculate fractional part's of real and imaginary parts
+(Math387.pas) Cos	cosine
+(Math387.pas) Cosh	cosine hyperbolicus 
+(Math387.pas) Cot	cotangens
+(Math387.pas) Coth	cotangens hyperbolicus 
+(Math387.pas) CRound	round a complex number
+(Math387.pas) Csc	cosecans
+(Math387.pas) Csch	cosecans hyperbolicus 
+(Math387.pas) CSqr	square of a complex number
+(Math387.pas) CSqrt	square root of a complex number
+(Math387.pas) CTrunc	truncate complex number
+(Math387.pas) Equ	are two numbers equal ?
+(Math387.pas) Exp	exponent (E^) 
+(Math387.pas) Exp10	exponent (10^) 
+(Math387.pas) Exp2	exponent (2^) 
+(Math387.pas) Expj	Euler's equation 
+(Math387.pas) Fact	calculate the N!
+(Math387.pas) FixAngle	set angle in -Pi,Pi interval
+(Math387.pas) Floor	the highest integer less than or equal to given number
+(Math387.pas) Gamma	calculate the gamma function
+(Math387.pas) Gcd	greatest common divisor
+(Math387.pas) IntPower	raise base to integer power
+(Math387.pas) Lcm	least common multiplier
+(Math387.pas) Ln	natural logarithm 
+(Math387.pas) LnGamma	natural logarithm of gamma function
+(Math387.pas) Log10	log base 10
+(Math387.pas) Log2	log base 2
+(Math387.pas) LogN	log base N
+(Math387.pas) Max	compare two numbers and return maximum number
+(Math387.pas) Min	compare two numbers and return minimum number
+(Math387.pas) Neg	negate complex number
+(Math387.pas) PolarToCart	transform number from polar to polar cartesian coordinates
+(Math387.pas) Power	raise base to any power
+(Math387.pas) Pythag	calculate the sqrt(sqr(x)+sqr(y))
+(Math387.pas) Rem	calculate the remainder
+(Math387.pas) Sec	secant
+(Math387.pas) Sech	secant hyperbolicus 
+(Math387.pas) Sgn	calculate signum of a number
+(Math387.pas) Sin	sine
+(Math387.pas) SinCos	calculate sine and cosine
+(Math387.pas) Sinh	sine hyperbolicus 
+(Math387.pas) SinhCosh	calculate sine hyp. and cosine hyp. 
+(Math387.pas) Smaller	compare two complex numbers
+(Math387.pas) Smaller2	compare two complex numbers
+(Math387.pas) Swap	swap two numbers
+(Math387.pas) Tan	tangens
+(Math387.pas) Tanh	tangens hyperbolicus 
+
+Optimization procedures	
+(Optimization) BFGS	Minimizes the function of several variables by using the Quasi-Newton optimization algorithm.
+(Optimization) ConjGrad	Minimizes the function of several variables by using the Conjugate gradient optimization algorithm.
+(Optimization) CPA	Gomory's Cutting Plane ALgorithm for integer LP problems.
+(Optimization) Marquardt	Minimizes the function of several variables by using the Marquardt optimization algorithm.
+(Optimization) MinBrent	Minimizes single variable function.
+(Optimization) NumericGradDifference	Numerical gradient by numerical differentiation using the forward difference quotient.
+(Optimization) NumericGradHess	Numerical gradient and Hessian matrix.
+(Optimization) NumericGradRichardson	Numerical gradient by high precision numerical differentiation.
+(Optimization) Simplex	Minimizes the function of several variables by using the Nelder-Mead (Simplex) optimization method.
+(Optimization) SimplexDual	Dual Simplex LP algorithm.
+(Optimization) SimplexTwoPhase	Two-Phase Simplex LP algorithm.
+(Optimization) SimplexLP	Simplex LP algorithm.
+(Optimization) TR	Trust-Regiion minimization algorithm with or without lower and upper bounds.
+
+Polynomials	
+(Polynoms.pas) TPiecePoly object	Construct, evaluate piece-wise polynomial
+(Polynoms.pas) Deconv	Polynomial division
+(Polynoms.pas) Conv	Polynimial multiplication
+(Polynoms.pas) Interpolate	Interpolate linear or cubic polynomials
+(Polynoms.pas) Linear1D	Construct linear piece-wise polynomial 
+(Polynoms.pas) PolyCoeff	Evaluate polynomial coefficients
+(Polynoms.pas) PolyEval	Evaluate polynomial
+(Polynoms.pas) PolyFit	Fit polynomial by using LQR method
+(Polynoms.pas) PolyRoots	Find zeros of polynomial
+(Polynoms.pas) Spline1D	Construct cubic splines (cubic piece-wise polynomial)
+
+Special functions	
+(SpecialFunc.pas) Airy	Airy function of the first kind and its derivative
+(SpecialFunc.pas) BessH	Modified Bessel function of the third kind
+(SpecialFunc.pas) BesI	Modified Bessel function of the first kind
+(SpecialFunc.pas) BesJ	Bessel function of the first kind
+(SpecialFunc.pas) BesK	Modified Bessel function of the first kind
+(SpecialFunc.pas) BesY	Bessel Function of the second kind
+(SpecialFunc.pas) BirY	Airy function of the second kind and its derivative
+(SpecialFunc.pas) EllipticComplete	Complete elliptic integrals of the first and second kind
+(SpecialFunc.pas) LegendreP	Associated Legendre polynomial
+(SpecialFunc.pas) EllipJacoby	Jacoby elliptic functions sn, cn and dn
+(Probabilities.pas) Binomial	Binomial coefficients
+(Probabilities.pas) DirichletEta	Dirichlet Eta function for complex plane
+(Probabilities.pas) DirichletBeta	Dirichlet Beta function for complex plane
+(Probabilities.pas) DirichletLambda	Dirichlet Lambda function for complex plane
+(Probabilities.pas) Erf,Erfc,ErfInv	Error functions
+(Probabilities.pas) IGamma,JGamma	Gamma functions
+(Probabilities.pas) Lerch	Lerch transedent function
+(Probabilities.pas) Riemann Zeta	Riemann Zeta function for complex plane
+
+Statistical distributions	
+(Probabilities) BetaPDF	Beta Probability Density Function
+(Probabilities) BetaCDF	Beta Cumulative Distribution Function
+(Probabilities) BetaCDFInv	Beta Inverse Cumulative Distribution Function
+(Probabilities) BernoulliPDF	Bernoulli Probability Density Function
+(Probabilities) BernoulliCDF	Bernoulli Cumulative Distribution Function
+(Probabilities) BernoulliCDFInv	Bernoulli Inverse Cumulative Distribution Function
+(Probabilities) BinomPDF	Binomial Probability Density Function
+(Probabilities) BinomCDF	Binomial Cumulative Distribution Function
+(Probabilities) BinomCDFInv	Binomial Inverse Cumulative Distribution Function
+(Probabilities) BoseEinsteinPDF	Bose-Einstein Probability Density Function
+(Probabilities) CauchyPDF	Cauchy Probability Density Function
+(Probabilities) CauchyCDF	Cauchy Cumulative Distribution Function
+(Probabilities) CauchyCDFInv	Cauchy Inverse Cumulative Distribution Function
+(Probabilities) ChiSquarePDF	Chi Squared Probability Density Function
+(Probabilities) ChiSquareCDF	Chi Squared Cumulative Distribution Function
+(Probabilities) ChiSquareCDFInv	Chi Squared Inverse Cumulative Distribution Function
+(Probabilities) EmpiricalCDF	Empirical Cumulative Distribution Function
+(Probabilities) ErlangPDF	Erlang Probability Density Function
+(Probabilities) ErlangCDF	Erlang Cumulative Distribution Function
+(Probabilities) ErlangCDFInv	Erlang Inverse Cumulative Distribution Function
+(Probabilities) ExpPDF	Exponential Probability Density Function
+(Probabilities) ExpCDF	Exponential Cumulative Distribution Function
+(Probabilities) ExpCDFInv	Exponential Inverse Cumulative Distribution Function
+(Probabilities) FPDF	F (Fisher) Probability Density Function
+(Probabilities) FCDF	F (Fisher) Cumulative Distribution Function
+(Probabilities) FCDFInv	F (Fisher) Inverse Cumulative Distribution Function
+(Probabilities) FermiDiracPDF	Fermi-Dirac Probability Density Function
+(Probabilities) GammaPDF	Gamma Probability Density Function
+(Probabilities) GammaCDF	Gamma Cumulative Distribution Function
+(Probabilities) GammaCDFInv	Gamma Inverse Cumulative Distribution Function
+(Probabilities) GenExtValuePDF	Generalized Extreme Value Probability Density Function
+(Probabilities) GenExtValueCDF	Generalized Extreme Value Cumulative Distribution Function
+(Probabilities) GenExtValueCDFInv	Generalized Extreme Value Inverse Cumulative Distribution Function
+(Probabilities) GenParetoPDF	Generalized Pareto Probability Density Function
+(Probabilities) GenParetoCDF	Generalized Pareto Cumulative Distribution Function
+(Probabilities) GenParetoCDFInv	Generalized Pareto Inverse Cumulative Distribution Function
+(Probabilities) GumbelPDF	Gumbel Probability Density Function
+(Probabilities) GumbelCDF	Gumbel Cumulative Distribution Function
+(Probabilities) GumbelCDFInv	Gumbel Inverse Cumulative Distribution Function
+(Probabilities) GeometricPDF	Geometric Probability Density Function
+(Probabilities) GeometricCDF	Geometric Cumulative Distribution Function
+(Probabilities) GeometricCDFInv	Geometric Inverse Cumulative Distribution Function
+(Probabilities) HypGeometricPDF	Hypergeometric Probability Density Function
+(Probabilities) HypGeometricCDF	Hypergeometric Cumulative Distribution Function
+(Probabilities) HypeGeometricCDFInv	Hypergeometric Inverse Cumulative Distribution Function
+(Probabilities) InvChiSquarePDF	Inverse Chi-Squared Probability Density Function
+(Probabilities) InvChiSquareCDF	Inverse Chi-Squared Cumulative Distribution Function
+(Probabilities) InvChiSquareCDFInv	Inverse Chi-Squared Inverse Cumulative Distribution Function
+(Probabilities) InvGaussianPDF	Inverse Gaussian Probability Density Function
+(Probabilities) InvGaussianCDF	Inverse Gaussian Cumulative Distribution Function
+(Probabilities) InvGaussianCDFInv	Inverse Gaussian Inverse Cumulative Distribution Function
+(Probabilities) LogNormalPDF	LogNormal Probability Density Function
+(Probabilities) LogNormalCDF	LogNormal Cumulative Distribution Function
+(Probabilities) LogNormalCDFInv	LogNormal Inverse Cumulative Distribution Function
+(Probabilities) MaxwellPDF	Maxwell Probability Density Function
+(Probabilities) MaxwellCDF	Maxwell Cumulative Distribution Function
+(Probabilities) MaxwellCDFInv	Maxwell Inverse Cumulative Distribution Function
+(Probabilities) NegBinomPDF	Negative Binomial Probability Density Function
+(Probabilities) NegBinomCDF	Negative Binomial Cumulative Distribution Function
+(Probabilities) NegBinomCDFInv	Negative Binomial Inverse Cumulative Distribution Function
+(Probabilities) NormalPDF	Normal Probability Density Function
+(Probabilities) NormalCDF	Normal Cumulative Distribution Function
+(Probabilities) NormalCDFInv	Normal Inverse Cumulative Distribution Function
+(Probabilities) ParettoPDF	Paretto Probability Density Function
+(Probabilities) ParettoCDF	Paretto Cumulative Distribution Function
+(Probabilities) ParettoCDFInv	Paretto Inverse Cumulative Distribution Function
+(Probabilities) PoissonPDF	Poisson Probability Density Function
+(Probabilities) PoissonCDF	Poisson Cumulative Distribution Function
+(Probabilities) PoissonCDFInv	Poisson Inverse Cumulative Distribution Function
+(Probabilities) RayleighPDF	Rayleigh Probability Density Function
+(Probabilities) RayleighCDF	Rayleigh Cumulative Distribution Function
+(Probabilities) RayleighCDFInv	Rayleigh Inverse Cumulative Distribution Function
+(Probabilities) StudentPDF	Student(t) Probability Density Function
+(Probabilities) StudentCDF	Student(t) Cumulative Distribution Function
+(Probabilities) StudentCDFInv	Student(t) Inverse Cumulative Distribution Function
+(Probabilities) TriangularPDF	Triangular Probability Density Function
+(Probabilities) TriangularCDF	Triangular Cumulative Distribution Function
+(Probabilities) TriangularCDFInv	Triangular Inverse Cumulative Distribution Function
+(Probabilities) UniformPDF	Uniform Probability Density Function
+(Probabilities) UniformCDF	Uniform Cumulative Distribution Function
+(Probabilities) UniformCDFInv	Uniform Inverse Cumulative Distribution Function
+(Probabilities) UniformDPDF	Discrete Uniform Probability Density Function
+(Probabilities) UniformDCDF	Discrete Uniform Cumulative Distribution Function
+(Probabilities) UniformDCDFInv	Discrete Uniform Inverse Cumulative Distribution Function
+(Probabilities) WeibullDPDF	Weibull Probability Density Function
+(Probabilities) WeibullCDF	Weibull Cumulative Distribution Function
+(Probabilities) WeibullCDFInv	Weibull Inverse Cumulative Distribution Function
+(Probabilities) ZipfDPDF	Zipf Probability Density Function
+(Probabilities) ZipfCDF	Zipf Cumulative Distribution Function
+(Probabilities) ZipfCDFInv	Zipf Inverse Cumulative Distribution Function
