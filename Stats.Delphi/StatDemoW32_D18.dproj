@@ -1,0 +1,342 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EB104EAD-5B85-465E-A213-11529532FD2B}</ProjectGuid>
+        <MainSource>StatDemoW32_D18.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <ProjectVersion>14.6</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <Manifest_File>None</Manifest_File>
+        <DCC_Define>TTDOUBLE;$(DCC_Define)</DCC_Define>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;VCLTee;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>false</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MajorVer>4</VerInfo_MajorVer>
+        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=4.1.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Basic_Form.pas">
+            <Form>frmBasic</Form>
+        </DCCReference>
+        <DCCReference Include="Random_Generator.pas">
+            <Form>frmRandomGen</Form>
+        </DCCReference>
+        <DCCReference Include="NLin_Tests.pas">
+            <Form>frmNonLinTest</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_MLReg.pas">
+            <Form>frmShowMLRWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Anova_Tests.pas">
+            <Form>frmANOVATest</Form>
+        </DCCReference>
+        <DCCReference Include="NIST_Introduction.pas">
+            <Form>frmNISTIntro</Form>
+        </DCCReference>
+        <DCCReference Include="NormalProbPlot.pas">
+            <Form>frmNormalProb</Form>
+        </DCCReference>
+        <DCCReference Include="QQPlot.pas">
+            <Form>frmQQPlot</Form>
+        </DCCReference>
+        <DCCReference Include="Hypothesis_Test.pas">
+            <Form>frmHypTest</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_PCA.pas">
+            <Form>frmShowPCAWizard</Form>
+        </DCCReference>
+        <DCCReference Include="MLR_Editor.pas">
+            <Form>frmMLREditor</Form>
+        </DCCReference>
+        <DCCReference Include="ANOVA1_Box.pas">
+            <Form>frmANOVA1Box</Form>
+        </DCCReference>
+        <DCCReference Include="Main.pas">
+            <Form>frmMain</Form>
+        </DCCReference>
+        <DCCReference Include="Basic_QC.pas">
+            <Form>frmBasicQC</Form>
+        </DCCReference>
+        <DCCReference Include="QC_XR.pas">
+            <Form>frmQCXR</Form>
+        </DCCReference>
+        <DCCReference Include="QC_CP.pas">
+            <Form>frmQCCP</Form>
+        </DCCReference>
+        <DCCReference Include="QC_Attr.pas">
+            <Form>frmQCAttr</Form>
+        </DCCReference>
+        <DCCReference Include="List_Func.pas">
+            <Form>frmListFunc</Form>
+        </DCCReference>
+        <DCCReference Include="Quick_Start.pas">
+            <Form>frmQuickStart</Form>
+        </DCCReference>
+        <DCCReference Include="WeibullProbPlot.pas">
+            <Form>frmWeibullProb</Form>
+        </DCCReference>
+        <DCCReference Include="Basic_Chart.pas">
+            <Form>frmBasicChart</Form>
+        </DCCReference>
+        <DCCReference Include="QC_Pareto.pas">
+            <Form>frmParetoChart</Form>
+        </DCCReference>
+        <DCCReference Include="Fit_Model.pas">
+            <Form>frmModels</Form>
+        </DCCReference>
+        <DCCReference Include="LogMemo.pas">
+            <Form>frmLogForm</Form>
+        </DCCReference>
+        <DCCReference Include="EWMA_Demo.pas">
+            <Form>frmEWMA</Form>
+        </DCCReference>
+        <DCCReference Include="LogReg_Demo.pas">
+            <Form>frmLogReg</Form>
+        </DCCReference>
+        <DCCReference Include="GOF_Chi2.pas">
+            <Form>frmGOFChi2</Form>
+        </DCCReference>
+        <DCCReference Include="Basic_REdit.pas">
+            <Form>frmBaseRichEdit</Form>
+        </DCCReference>
+        <DCCReference Include="WhatsNew.pas">
+            <Form>frmWhatsNew</Form>
+        </DCCReference>
+        <DCCReference Include="Welcome_Stat.pas">
+            <Form>frmWelcome</Form>
+        </DCCReference>
+        <DCCReference Include="Oder_Form.pas">
+            <Form>frmOrder</Form>
+        </DCCReference>
+        <DCCReference Include="Changes11.pas">
+            <Form>frmChanges11</Form>
+        </DCCReference>
+        <DCCReference Include="Basic_Wizard.pas">
+            <Form>frmBasicWizard</Form>
+        </DCCReference>
+        <DCCReference Include="MLRegWizard.pas">
+            <Form>frmMulLinRegWiz</Form>
+        </DCCReference>
+        <DCCReference Include="GOF_KS.pas">
+            <Form>frmGOFKS</Form>
+        </DCCReference>
+        <DCCReference Include="Changes21.pas">
+            <Form>frmChanges21</Form>
+        </DCCReference>
+        <DCCReference Include="TS_PACF.pas">
+            <Form>frmTSPACF</Form>
+        </DCCReference>
+        <DCCReference Include="TS_ExpSmooth.pas">
+            <Form>frmExpSmooth</Form>
+        </DCCReference>
+        <DCCReference Include="TS_ARIMASim.pas">
+            <Form>frmARIMASim</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_ARIMA.pas">
+            <Form>frmWizardARIMA</Form>
+        </DCCReference>
+        <DCCReference Include="ARIMAWizard.pas">
+            <Form>frmARIMAWizard</Form>
+        </DCCReference>
+        <DCCReference Include="TS_ARAR.pas">
+            <Form>frmARAR</Form>
+        </DCCReference>
+        <DCCReference Include="DecompWizard.pas">
+            <Form>frmDecompositionWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_Decomp.pas">
+            <Form>frmDecompDemo</Form>
+        </DCCReference>
+        <DCCReference Include="QC_Levey.pas">
+            <Form>frmLevey</Form>
+        </DCCReference>
+        <DCCReference Include="HotellingT2.pas">
+            <Form>frmHotellingWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_Hotelling.pas">
+            <Form>frmShowHotellingWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_MDS.pas">
+            <Form>frmShowMDSWizard</Form>
+        </DCCReference>
+        <DCCReference Include="MDSWizard.pas">
+            <Form>frmMDSWiz</Form>
+        </DCCReference>
+        <DCCReference Include="Item_Analysis.pas">
+            <Form>frmItemAnalysis</Form>
+        </DCCReference>
+        <DCCReference Include="BiPlotDemo.pas">
+            <Form>frmBiPlot</Form>
+        </DCCReference>
+        <DCCReference Include="PCRegWizard.pas">
+            <Form>frmPCRegWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_PCReg.pas">
+            <Form>frmShowPCRegWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Changes30.pas">
+            <Form>frmChanges30</Form>
+        </DCCReference>
+        <DCCReference Include="RidgeRegWizard.pas">
+            <Form>frmRidgeRegWizard</Form>
+        </DCCReference>
+        <DCCReference Include="Wizard_RidgeReg.pas">
+            <Form>frmShowRidgeReg</Form>
+        </DCCReference>
+        <DCCReference Include="PCAWizard.pas">
+            <Form>frmPCAWiz</Form>
+        </DCCReference>
+        <DCCReference Include="MultiStepReg.pas">
+            <Form>MultiStepRegForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="MultiNLin_Tests.pas">
+            <Form>frmMultiNonLinTest</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">StatDemoW32_D18.dpr</Source>
+                </Source>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\StatSeries417.bpl">File C:\WINDOWS\SysWOW64\StatSeries417.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\WINDOWS\SYSTEM32\MtxTee417.bpl">File C:\WINDOWS\SYSTEM32\MtxTee417.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\MtxTee418.bpl">File C:\WINDOWS\SysWOW64\MtxTee418.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\StatSeries418.bpl">File C:\WINDOWS\SysWOW64\StatSeries418.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k180.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp180.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k180.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp180.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Windows\SysWOW64\StatSeries518.bpl">Dew Stats Master v5 TeeChart</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>
