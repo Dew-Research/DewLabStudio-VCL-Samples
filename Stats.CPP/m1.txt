@@ -1,0 +1,65 @@
+Welcome to Stats Master;TfrmWelcome                       
+ What's new;TfrmWhatsNew                                 
+ Function List;TfrmListFunc                               
+Random number generators;TfrmRandomGen;Random_Generator   
+Fitting various models;TfrmModels;Fit_Model               
+Hypothesis testing                                        
+ Hypothesis testing editor;TfrmHypTest;Hypothesis_Test    // <---- StatTools.hpp error
+ Goodnes of Fit - Chi2 test;TfrmGOFChi2;GOF_Chi2          
+ Goodnes of Fit - Kolmogorov-Smirnov test;TFrmGOFKS;GOF_KS
+Multivariante Analysis                                    
+ PCA Wizard;TfrmShowPCAWizard;Wizard_PCA                  
+ANOVA (Analysis of variance)                              
+ Doing one way ANOVA;TfrmANOVA1Box;ANOVA1_Box             
+Regression                                                
+ Regression Wizard;TfrmShowMLRWizard;Wizard_MLReg         
+ Regression editor;TfrmMLREditor;MLR_Editor               
+ Non-linear regression;TfrmNonLinTest;NLin_Tests          
+ Logistic regression;TfrmLogReg;LogReg_Demo               
+NIST Statistical Tests;TfrmNISTIntro                      
+ Non-linear regression tests;TfrmNonLinTest;NLin_Tests    
+ Analysis of variance;TfrmANOVATest;ANOVA_Tests           
+Time series analysis                                      
+ ACF and PACF plots;TfrmTSPACF;TS_PACF                    
+ Exponential smoothing;TfrmExpSmooth;TS_ExpSmooth         
+ Decomposition forecasting;TfrmDecompDemo;Wizard_Decomp   
+ Simulating ARMA/ARIMA models;TfrmARIMASim;TS_ARIMASim    
+ ARMA and ARIMA models;TfrmWizardARIMA;WizardARIMA        
+ Using ARAR model;TfrmARAR;TS_ARAR                        
+Quality Control Charts                                    
+ Variables Control Charts;TfrmQCXR;QC_XR                  
+ Attribute Charts;TfrmQCAttr;QC_Attr                      
+ CP and CPK Charts;TfrmQCCP;QC_CP                         
+ Pareto Chart;TfrmParetoChart;QC_Pareto                   
+ EWMA Chart;TfrmEWMA;EWMA_Chart                           
+Special statistical plots                                 
+ Quantile-Quantile plot;TfrmQQPlot;QQPlot                 
+ Normal plot;TfrmNormalProb;NormalProbPlot                
+ Weibull plot;TfrmWeibullProb;WeibullProbPlot             
+TeeChart tools                                            
+ Box Plot Chart;TfrmANOVA1Box;ANOVA1_Box                  
+ Histogram;TfrmRandomGen;Random_Generator                 
+ Pareto Chart;TfrmParetoChart;QC_Pareto                   
+ Using TColorLineTool;TfrmQCCP;QC_CP                      
+ New custom series                                        
+  TStatSpecialSeries;TfrmQQPlot;QQPlot                    
+  TQCSeries;TfrmQCXR;QC_XR                                
+Statistics v2.x                                           
+ Release 2.1                                              
+  List of changes;TfrmChanges21                           
+  Goodnes of Fit - Kolmogorov-Smirnov test;TFrmGOFKS;GOF_KS
+  Time series analysis                                    
+   ACF and PACF plots;TfrmTSPACF;TS_PACF                  
+   Exponential smoothing;TfrmExpSmooth;TS_ExpSmooth       
+   Simulating ARMA/ARIMA models;TfrmARIMASim;TS_ARIMASim  
+   ARMA and ARIMA models;TfrmWizardARIMA;WizardARIMA      
+   ARAR model;TfrmARAR;TS_ARAR                            
+   Decomposition forecasting;TfrmDecompDemo;Wizard_Decomp 
+Statistics v1.x                                           
+ Release 1.1                                              
+  List of changes;TfrmChanges11                           
+  EWMA Chart;TfrmEWMA;EWMA_Chart                          
+  Logistic regression;TfrmLogReg;LogReg_Demo              
+  Goodnes of Fit - Chi2 test;TfrmGOFChi2;GOF_Chi2         
+How to order;TfrmOrder                                    
+Quick Start;TfrmQuickStart                                
