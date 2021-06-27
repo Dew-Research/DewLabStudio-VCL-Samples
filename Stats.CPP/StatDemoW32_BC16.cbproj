@@ -1,0 +1,451 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{6D9A126A-6DA6-476A-B697-7A881AA76C0C}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>VCL</FrameworkType>
+			<MainSource>StatDemoW32_BC16.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>1</TargetedPlatforms>
+			<AppType>Application</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+			<Cfg_2_Win32>true</Cfg_2_Win32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<Manifest_File>None</Manifest_File>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<ILINK_LibraryPath>C:\CommonObjects\Dew Stats.NET\BCXExamples\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<_TCHARMapping>wchar_t</_TCHARMapping>
+			<Multithreaded>true</Multithreaded>
+			<PackageImports>fmx;IndySystem;DataSnapClient;DataSnapServer;DataSnapCommon;DBXInterBaseDriver;DataSnapProviderClient;DbxCommonDriver;dbxcds;DBXOracleDriver;CustomIPTransport;dsnap;IndyCore;fmxase;inetdbxpress;IPIndyImpl;bindcompfmx;rtl;dbrtl;DbxClientDriver;bindcomp;inetdb;xmlrtl;ibxpress;IndyProtocols;DBXMySQLDriver;soaprtl;bindengine;DBXInformixDriver;DBXFirebirdDriver;inet;fmxobj;DBXSybaseASADriver;fmxdae;dbexpress;DataSnapIndy10ServerTransport;$(PackageImports)</PackageImports>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<AllPackageLibs>rtl.lib;vcl.lib;MtxCore616.lib;TeePro916.lib;TeeUI916.lib;Tee916.lib;vclimg.lib;vclx.lib;MtxTools616.lib;vclactnband.lib;StatSeries616.lib;StatCore616.lib;MtxTee616.lib;StatTools616.lib;xmlrtl.lib</AllPackageLibs>
+			<Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
+			<UsingDelphiRTL>true</UsingDelphiRTL>
+			<IncludePath>C:\CommonObjects\Dew Stats.NET\BCXExamples\;$(IncludePath)</IncludePath>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
+			<FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<PackageImports>JvGlobus;JvMM;JvManagedThreads;SignalTool616;JvDlgs;JvCrypt;TeeUI916;Tee916;vclib;inetdbbde;Rave100VCL;TeePro916;FmxTeeUI916;JvNet;TeeMaker116;JvDotNetCtrls;DBXSybaseASEDriver;FMITeeLanguage916;vclimg;NexusDB310sr160;NexusDB310se160;JvXPCtrls;NexusDB310sq160;vcldb;vcldsnap;StatSeries616;StatCore616;MtxTee616;FMXTeeDB916;NexusDB310lg160;DBXDb2Driver;Intraweb_120_160;JvCore;vclribbon;frxe16;vcl;FMXTeePro916;DBXMSSQLDriver;CloudService;CodeSiteExpressPkg;NexusDB310db160;JvAppFrm;JvDB;JvRuntimeDesign;FMXTee916;webdsnap;TeeDB916;JvDocking;adortl;JvWizards;TeeLanguage916;Classifiers116;JvHMI;TeeImage916;JvBands;vcldbx;StatTools616;frx16;ClassifiersDB116;TeeWorld916;FMITee916;MtxTools616;DBXOdbcDriver;NexusDB310pv160;JvCmp;JvSystem;JvTimeFramework;JvControls;SignalTee616;FMITeeDB916;intrawebdb_120_160;frxDB16;TeeGL916;DCLClassifiersDB116;fs16;vclactnband;JvJans;JvPrintPreview;bindcompvcl;JvStdCtrls;JvCustom;Jcl;vclie;NexusDB310ll160;FMITeePro916;vcltouch;bcbsmp;websnap;VclSmp;NexusDB310sd160;fsDB16;TeeTree2D16Tee9;DataSnapConnectors;MtxCore616;dsnapcon;JclVcl;JvPascalInterpreter;vclx;FmiTeeUI916;SignalCore616;FMXTeeLanguage916;bdertl;bcbie;JvBDE;MtxDb616;$(PackageImports)</PackageImports>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<Defines>_DEBUG;$(Defines)</Defines>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<LinkPackageStatics>rtl.lib;vcl.lib;MtxCore616.lib;TeePro916.lib;TeeUI916.lib;Tee916.lib;vclimg.lib;vclx.lib;MtxTools616.lib;vclactnband.lib;StatSeries616.lib;StatCore616.lib;MtxTee616.lib;StatTools616.lib;xmlrtl.lib</LinkPackageStatics>
+			<IncludePath>C:\CommonObjects\Dew Stats.NET\BCXExamples\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>C:\CommonObjects\Dew Stats.NET\BCXExamples\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<BCC_PCHUsage>None</BCC_PCHUsage>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<IncludePath>C:\CommonObjects\Dew Stats.NET\BCXExamples\;$(IncludePath)</IncludePath>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<ILINK_LibraryPath>C:\CommonObjects\Dew Stats.NET\BCXExamples\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="ANOVA1_Box.cpp">
+				<Form>frmANOVA1Box</Form>
+				<DependentOn>ANOVA1_Box.h</DependentOn>
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Anova_Tests.cpp">
+				<Form>frmANOVATest</Form>
+				<DependentOn>Anova_Tests.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="ARIMAWizard.cpp">
+				<Form>frmARIMAWizard</Form>
+				<DependentOn>ARIMAWizard.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Basic_Chart.cpp">
+				<Form>frmBasicChart</Form>
+				<DependentOn>Basic_Chart.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Basic_Form.cpp">
+				<Form>frmBasic</Form>
+				<DependentOn>Basic_Form.h</DependentOn>
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Basic_QC.cpp">
+				<Form>frmBasicQC</Form>
+				<DependentOn>Basic_QC.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Basic_REdit.cpp">
+				<Form>frmBaseRichEdit</Form>
+				<DependentOn>Basic_REdit.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Basic_Wizard.cpp">
+				<Form>frmBasicWizard</Form>
+				<DependentOn>Basic_Wizard.h</DependentOn>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Changes11.cpp">
+				<Form>frmChanges11</Form>
+				<DependentOn>Changes11.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Changes21.cpp">
+				<Form>frmChanges21</Form>
+				<DependentOn>Changes21.h</DependentOn>
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="DecompWizard.cpp">
+				<Form>frmDecompositionWizard</Form>
+				<DependentOn>DecompWizard.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="EWMA_Demo.cpp">
+				<Form>frmEWMA</Form>
+				<DependentOn>EWMA_Demo.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Fit_Model.cpp">
+				<Form>frmModels</Form>
+				<DependentOn>Fit_Model.h</DependentOn>
+				<BuildOrder>13</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="GOF_Chi2.cpp">
+				<Form>frmGOFChi2</Form>
+				<DependentOn>GOF_Chi2.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="GOF_KS.cpp">
+				<Form>frmGOFKS</Form>
+				<DependentOn>GOF_KS.h</DependentOn>
+				<BuildOrder>15</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Hypothesis_Test.cpp">
+				<Form>frmHypTest</Form>
+				<DependentOn>Hypothesis_Test.h</DependentOn>
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="List_Func.cpp">
+				<Form>frmListFunc</Form>
+				<DependentOn>List_Func.h</DependentOn>
+				<BuildOrder>17</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LogMemo.cpp">
+				<Form>frmLogForm</Form>
+				<DependentOn>LogMemo.h</DependentOn>
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="LogReg_Demo.cpp">
+				<Form>frmLogReg</Form>
+				<DependentOn>LogReg_Demo.h</DependentOn>
+				<BuildOrder>19</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Main.cpp">
+				<Form>frmMain</Form>
+				<DependentOn>Main.h</DependentOn>
+				<BuildOrder>20</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MLRegWizard.cpp">
+				<Form>frmMulLinRegWiz</Form>
+				<DependentOn>MLRegWizard.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="MLR_Editor.cpp">
+				<Form>frmMLREditor</Form>
+				<DependentOn>MLR_Editor.h</DependentOn>
+				<BuildOrder>21</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="NIST_Introduction.cpp">
+				<Form>frmNISTIntro</Form>
+				<DependentOn>NIST_Introduction.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="NLin_Tests.cpp">
+				<Form>frmNonLinTest</Form>
+				<DependentOn>NLin_Tests.h</DependentOn>
+				<BuildOrder>24</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="NormalProbPlot.cpp">
+				<Form>frmNormalProb</Form>
+				<DependentOn>NormalProbPlot.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Order_Form.cpp">
+				<Form>frmOrder</Form>
+				<DependentOn>Order_Form.h</DependentOn>
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="PCAWizard.cpp">
+				<Form>frmPCAWiz</Form>
+				<DependentOn>PCAWizard.h</DependentOn>
+				<BuildOrder>27</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="QC_Attr.cpp">
+				<Form>frmQCAttr</Form>
+				<DependentOn>QC_Attr.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="QC_CP.cpp">
+				<Form>frmQCCP</Form>
+				<DependentOn>QC_CP.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="QC_Pareto.cpp">
+				<Form>frmParetoChart</Form>
+				<DependentOn>QC_Pareto.h</DependentOn>
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="QC_XR.cpp">
+				<Form>frmQCXR</Form>
+				<DependentOn>QC_XR.h</DependentOn>
+				<BuildOrder>31</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="QQPlot.cpp">
+				<Form>frmQQPlot</Form>
+				<DependentOn>QQPlot.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Quick_Start.cpp">
+				<Form>frmQuickStart</Form>
+				<DependentOn>Quick_Start.h</DependentOn>
+				<BuildOrder>33</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Random_Generator.cpp">
+				<Form>frmRandomGen</Form>
+				<DependentOn>Random_Generator.h</DependentOn>
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="StatDemoW32_BC16.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TS_ARAR.cpp">
+				<Form>frmARAR</Form>
+				<DependentOn>TS_ARAR.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TS_ARIMASim.cpp">
+				<Form>frmARIMASim</Form>
+				<DependentOn>TS_ARIMASim.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TS_ExpSmooth.cpp">
+				<Form>frmExpSmooth</Form>
+				<DependentOn>TS_ExpSmooth.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="TS_PACF.cpp">
+				<Form>frmTSPACF</Form>
+				<DependentOn>TS_PACF.h</DependentOn>
+				<BuildOrder>38</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="WeibullProbPlot.cpp">
+				<Form>frmWeibullProb</Form>
+				<DependentOn>WeibullProbPlot.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Welcome_Stat.cpp">
+				<Form>frmWelcome</Form>
+				<DependentOn>Welcome_Stat.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="WhatsNew.cpp">
+				<Form>frmWhatsNew</Form>
+				<DependentOn>WhatsNew.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Wizard_ARIMA.cpp">
+				<Form>frmWizardARIMA</Form>
+				<DependentOn>Wizard_ARIMA.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Wizard_Decomp.cpp">
+				<Form>frmDecompDemo</Form>
+				<DependentOn>Wizard_Decomp.h</DependentOn>
+				<BuildOrder>43</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Wizard_MLReg.cpp">
+				<Form>frmShowMLRWizard</Form>
+				<DependentOn>Wizard_MLReg.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="Wizard_PCA.cpp">
+				<Form>frmShowPCAWizard</Form>
+				<DependentOn>Wizard_PCA.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<FormResources Include="QC_XR.dfm"/>
+			<FormResources Include="QC_Pareto.dfm"/>
+			<FormResources Include="QQPlot.dfm"/>
+			<FormResources Include="Random_Generator.dfm"/>
+			<FormResources Include="Quick_Start.dfm"/>
+			<FormResources Include="QC_CP.dfm"/>
+			<FormResources Include="NormalProbPlot.dfm"/>
+			<FormResources Include="NLin_Tests.dfm"/>
+			<FormResources Include="Order_Form.dfm"/>
+			<FormResources Include="QC_Attr.dfm"/>
+			<FormResources Include="PCAWizard.dfm"/>
+			<FormResources Include="Wizard_ARIMA.dfm"/>
+			<FormResources Include="WhatsNew.dfm"/>
+			<FormResources Include="Wizard_Decomp.dfm"/>
+			<FormResources Include="Wizard_PCA.dfm"/>
+			<FormResources Include="Wizard_MLReg.dfm"/>
+			<FormResources Include="Welcome_Stat.dfm"/>
+			<FormResources Include="TS_ARIMASim.dfm"/>
+			<FormResources Include="TS_ARAR.dfm"/>
+			<FormResources Include="TS_ExpSmooth.dfm"/>
+			<FormResources Include="WeibullProbPlot.dfm"/>
+			<FormResources Include="TS_PACF.dfm"/>
+			<FormResources Include="Basic_Wizard.dfm"/>
+			<FormResources Include="Basic_REdit.dfm"/>
+			<FormResources Include="Changes11.dfm"/>
+			<FormResources Include="DecompWizard.dfm"/>
+			<FormResources Include="Changes21.dfm"/>
+			<FormResources Include="Basic_QC.dfm"/>
+			<FormResources Include="Anova_Tests.dfm"/>
+			<FormResources Include="ANOVA1_Box.dfm"/>
+			<FormResources Include="ARIMAWizard.dfm"/>
+			<FormResources Include="Basic_Form.dfm"/>
+			<FormResources Include="Basic_Chart.dfm"/>
+			<FormResources Include="EWMA_Demo.dfm"/>
+			<FormResources Include="Main.dfm"/>
+			<FormResources Include="LogReg_Demo.dfm"/>
+			<FormResources Include="MLRegWizard.dfm"/>
+			<FormResources Include="NIST_Introduction.dfm"/>
+			<FormResources Include="MLR_Editor.dfm"/>
+			<FormResources Include="LogMemo.dfm"/>
+			<FormResources Include="GOF_Chi2.dfm"/>
+			<FormResources Include="Fit_Model.dfm"/>
+			<FormResources Include="GOF_KS.dfm"/>
+			<FormResources Include="List_Func.dfm"/>
+			<FormResources Include="Hypothesis_Test.dfm"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<Source>
+						<Source Name="MainSource">StatDemoW32_BC16.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>
