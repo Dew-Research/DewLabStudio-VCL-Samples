@@ -1,0 +1,54 @@
+object Introduction: TIntroduction
+  Left = 0
+  Top = 0
+  Caption = 'Introduction'
+  ClientHeight = 291
+  ClientWidth = 426
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 0
+    Top = 0
+    Width = 426
+    Height = 49
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Welcome to DSP Master v6'
+    Color = 14869218
+    Font.Charset = EASTEUROPE_CHARSET
+    Font.Color = clGray
+    Font.Height = -21
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Layout = tlCenter
+    ExplicitLeft = -80
+  end
+  object RichEdit1: TRichEdit
+    Left = 0
+    Top = 49
+    Width = 426
+    Height = 242
+    Align = alClient
+    Color = clWhite
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+    Zoom = 100
+  end
+end
