@@ -1,0 +1,664 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A99182B7-2734-4D32-8EED-1ED2FA1BC8BE}</ProjectGuid>
+        <ProjectVersion>15.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <AppType>Application</AppType>
+        <MainSource>BasicDemoW32_CB20.cpp</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <SanitizedProjectName>BasicDemoW32_CB20</SanitizedProjectName>
+        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
+        <Multithreaded>true</Multithreaded>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <AllPackageLibs>rtl.lib;vcl.lib;Tee920.lib;vclimg.lib;MtxTools620.lib;MtxCore620.lib;vclactnband.lib;vclx.lib;SignalTool620.lib;SignalCore620.lib;SignalTee620.lib;TeePro920.lib;TeeUI920.lib;MtxTee620.lib</AllPackageLibs>
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <DynamicRTL>true</DynamicRTL>
+        <UsePackages>true</UsePackages>
+        <BCC_wpar>false</BCC_wpar>
+        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+        <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+        <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <PackageImports>adortl;bcbie;bcboffice2k;bcbsmp;bdertl;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;Classifiers120;ClassifiersDB120;CloudService;CodeSiteExpressPkg;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;DCLClassifiersDB120;dsnap;dsnapcon;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDataSnapDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACIBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee920;FMXTeeDB920;FMXTeeLanguage920;FMXTeePro920;FmxTeeUI920;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbbde;inetdbxpress;Intraweb;MetropolisUILiveTile;MtxCore620;MtxDb620;MtxTee620;MtxTools620;MtxVisualizer620;RESTComponents;rtl;SignalCore620;SignalTee620;SignalTool620;soaprtl;StatCore620;StatSeries620;StatTools620;svn;Tee920;TeeDB920;TeeGL920;TeeImage920;TeeLanguage920;TeePro920;TeeUI920;TeeWorld920;vcl;vclactnband;vcldb;vcldbx;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <PackageImports>adortl;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;Classifiers120;ClassifiersDB120;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDataSnapDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACIBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;Intraweb;MetropolisUILiveTile;RESTComponents;rtl;soaprtl;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <Defines>_DEBUG;$(Defines)</Defines>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+        <DCC_Define>DEBUG</DCC_Define>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+        <BCC_StackFrames>true</BCC_StackFrames>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <BCC_EnableCPPExceptions>true</BCC_EnableCPPExceptions>
+        <BCC_DisableFramePtrElimOpt>true</BCC_DisableFramePtrElimOpt>
+        <BCC_DisableSpellChecking>true</BCC_DisableSpellChecking>
+        <CLANG_UnwindTables>true</CLANG_UnwindTables>
+        <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <ILINK_LibraryPath>$(BDS)\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <BCC_SmartPCHCache>false</BCC_SmartPCHCache>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;Tee920.bpi;vclimg.bpi;MtxTools620.bpi;MtxCore620.bpi;vclactnband.bpi;vclx.bpi;SignalTool620.bpi;SignalCore620.bpi;SignalTee620.bpi;TeePro920.bpi;TeeUI920.bpi;MtxTee620.bpi</LinkPackageImports>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <BCC_PCHUsage>None</BCC_PCHUsage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <UsePackages>false</UsePackages>
+        <LinkPackageStatics>rtl.lib;vcl.lib;Tee920.lib;vclimg.lib;MtxTools620.lib;MtxCore620.lib;vclactnband.lib;vclx.lib;SignalTool620.lib;SignalCore620.lib;SignalTee620.lib;TeePro920.lib;TeeUI920.lib;MtxTee620.lib</LinkPackageStatics>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Defines>NDEBUG;$(Defines)</Defines>
+        <TASM_Debugging>None</TASM_Debugging>
+    </PropertyGroup>
+    <ItemGroup>
+        <CppCompile Include="AmpltRatios.cpp">
+            <Form>AmpltRatiosForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>AmpltRatios.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="AutoRegressDemo.cpp">
+            <Form>AutoRegressDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>AutoRegressDemo.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Basic1.cpp">
+            <Form>BasicForm1</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Basic1.h</DependentOn>
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Basic2.cpp">
+            <Form>BasicForm2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Basic2.h</DependentOn>
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Basic3.cpp">
+            <Form>BasicForm3</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Basic3.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BasicDemoW32_CB20.cpp">
+            <BuildOrder>0</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BicoherenceTest.cpp">
+            <Form>BicoherenceTestForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BicoherenceTest.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BiSpcAnalyzer.cpp">
+            <Form>BiSpcAnalyzerForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BiSpcAnalyzer.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BispectrumColorGrid.cpp">
+            <Form>BiSpectrumGridForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BispectrumColorGrid.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BispectrumSurface.cpp">
+            <Form>BiSpectrumSurfaceForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BispectrumSurface.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BispectrumTest.cpp">
+            <Form>BiSpectrumTestForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BispectrumTest.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BrowseDemo.cpp">
+            <Form>BrowseDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BrowseDemo.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="BufferUnit.cpp">
+            <Form>BufferForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>BufferUnit.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CepstrumDemo.cpp">
+            <Form>CepstrumDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CepstrumDemo.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CoherenceTest.cpp">
+            <Form>CoherenceTestForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CoherenceTest.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CoherenceTest2.cpp">
+            <Form>CoherenceTest2Form</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CoherenceTest2.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CZTDemo.cpp">
+            <Form>CZTDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CZTDemo.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Demodulator.cpp">
+            <Form>DemodulatorForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Demodulator.h</DependentOn>
+            <BuildOrder>17</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Differentiator.cpp">
+            <Form>DifferentiatorForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Differentiator.h</DependentOn>
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DiscreteSeriesDemo.cpp">
+            <Form>DiscreteSeriesDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DiscreteSeriesDemo.h</DependentOn>
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="EnvelopeDemo.cpp">
+            <Form>EnvelopeDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>EnvelopeDemo.h</DependentOn>
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="FiltersDemo.cpp">
+            <Form>FiltersDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>FiltersDemo.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="FrequencyBands.cpp">
+            <Form>FrequencyBandsForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>FrequencyBands.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="GeneratorDemo.cpp">
+            <Form>GeneratorDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>GeneratorDemo.h</DependentOn>
+            <BuildOrder>23</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IirFiltering.cpp">
+            <Form>IirFilteringForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IirFiltering.h</DependentOn>
+            <BuildOrder>24</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IirGroupDelay.cpp">
+            <Form>IirGroupDelayForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IirGroupDelay.h</DependentOn>
+            <BuildOrder>25</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IirZeros.cpp">
+            <Form>IirZerosForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IirZeros.h</DependentOn>
+            <BuildOrder>26</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="InterpolateDecimate.cpp">
+            <Form>InterpolateDecimateForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>InterpolateDecimate.h</DependentOn>
+            <BuildOrder>27</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Intro.cpp">
+            <Form>Introduction</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Intro.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroApplication.cpp">
+            <Form>IntroApplicationForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroApplication.h</DependentOn>
+            <BuildOrder>29</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroCompList.cpp">
+            <Form>IntroCompListForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroCompList.h</DependentOn>
+            <BuildOrder>30</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroDesign.cpp">
+            <Form>IntroDesignForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroDesign.h</DependentOn>
+            <BuildOrder>31</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroFunctionList.cpp">
+            <Form>IntroFunList</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroFunctionList.h</DependentOn>
+            <BuildOrder>32</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroHigherSpectral.cpp">
+            <Form>IntroHigherSpectralForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroHigherSpectral.h</DependentOn>
+            <BuildOrder>33</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroPeakSpectral.cpp">
+            <Form>IntroPeakSpectralForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroPeakSpectral.h</DependentOn>
+            <BuildOrder>34</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroPerformance.cpp">
+            <Form>IntroPerformanceForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroPerformance.h</DependentOn>
+            <BuildOrder>35</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroPlayback.cpp">
+            <Form>IntroPlaybackForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroPlayback.h</DependentOn>
+            <BuildOrder>36</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroSignal.cpp">
+            <Form>IntroSignalForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroSignal.h</DependentOn>
+            <BuildOrder>37</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroSpectral.cpp">
+            <Form>IntroSpectralForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroSpectral.h</DependentOn>
+            <BuildOrder>38</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="LissajousScope.cpp">
+            <Form>LissajousScopeForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>LissajousScope.h</DependentOn>
+            <BuildOrder>39</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Main.cpp">
+            <Form>frmMain</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Main.h</DependentOn>
+            <BuildOrder>40</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MedianDemo.cpp">
+            <Form>MedianDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MedianDemo.h</DependentOn>
+            <BuildOrder>41</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MonitorDemo.cpp">
+            <Form>MonitorDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MonitorDemo.h</DependentOn>
+            <BuildOrder>42</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="OnLineBicoherence.cpp">
+            <Form>OnLineBicoherenceForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>OnLineBicoherence.h</DependentOn>
+            <BuildOrder>43</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="OnLineCoherence.cpp">
+            <Form>OnLineCoherenceForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>OnLineCoherence.h</DependentOn>
+            <BuildOrder>44</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="OptimalFilters.cpp">
+            <Form>OptimalFiltersForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>OptimalFilters.h</DependentOn>
+            <BuildOrder>45</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PeakFiltering.cpp">
+            <Form>PeakFilteringForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PeakFiltering.h</DependentOn>
+            <BuildOrder>46</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PeakInterpolate.cpp">
+            <Form>PeakInterpolateForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PeakInterpolate.h</DependentOn>
+            <BuildOrder>47</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PeakMarkingBasic.cpp">
+            <Form>PeakMarkingBasicForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PeakMarkingBasic.h</DependentOn>
+            <BuildOrder>48</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PeakMarkingFormating.cpp">
+            <Form>PeakMarkingFormatingForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PeakMarkingFormating.h</DependentOn>
+            <BuildOrder>49</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PeakMarkingOrder.cpp">
+            <Form>PeakMarkingOrderForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PeakMarkingOrder.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PhaseDemo.cpp">
+            <Form>PhaseDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PhaseDemo.h</DependentOn>
+            <BuildOrder>51</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PhaseScope.cpp">
+            <Form>PhaseScopeForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PhaseScope.h</DependentOn>
+            <BuildOrder>52</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PhaseShifter.cpp">
+            <Form>PhaseShifterForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PhaseShifter.h</DependentOn>
+            <BuildOrder>53</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PlaybackDemo.cpp">
+            <Form>PlaybackDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PlaybackDemo.h</DependentOn>
+            <BuildOrder>54</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="RateConvert.cpp">
+            <Form>RateConvertForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>RateConvert.h</DependentOn>
+            <BuildOrder>55</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="RegisterSignal.cpp">
+            <Form>RegisterSignalForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>RegisterSignal.h</DependentOn>
+            <BuildOrder>56</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SavGolayDemo.cpp">
+            <Form>SavGolayDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SavGolayDemo.h</DependentOn>
+            <BuildOrder>57</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SignalAnalysisDemo.cpp">
+            <Form>SignalAnalysisDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SignalAnalysisDemo.h</DependentOn>
+            <BuildOrder>58</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SpcAnalyzer.cpp">
+            <Form>SpcAnalyzerForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SpcAnalyzer.h</DependentOn>
+            <BuildOrder>59</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="TriggerDemo.cpp">
+            <Form>TriggerDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>TriggerDemo.h</DependentOn>
+            <BuildOrder>61</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="WhatIsNew.cpp">
+            <Form>WhatIsNewForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>WhatIsNew.h</DependentOn>
+            <BuildOrder>62</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="WindowFilters.cpp">
+            <Form>WindowFiltersForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>WindowFilters.h</DependentOn>
+            <BuildOrder>63</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="WindowsDemo.cpp">
+            <Form>WindowsDemoForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>WindowsDemo.h</DependentOn>
+            <BuildOrder>64</BuildOrder>
+        </CppCompile>
+        <FormResources Include="MonitorDemo.dfm"/>
+        <FormResources Include="OnLineBicoherence.dfm"/>
+        <FormResources Include="Main.dfm"/>
+        <FormResources Include="MedianDemo.dfm"/>
+        <FormResources Include="PeakFiltering.dfm"/>
+        <FormResources Include="PeakInterpolate.dfm"/>
+        <FormResources Include="OnLineCoherence.dfm"/>
+        <FormResources Include="OptimalFilters.dfm"/>
+        <FormResources Include="IntroPeakSpectral.dfm"/>
+        <FormResources Include="IntroPerformance.dfm"/>
+        <FormResources Include="IntroFunctionList.dfm"/>
+        <FormResources Include="IntroHigherSpectral.dfm"/>
+        <FormResources Include="IntroSpectral.dfm"/>
+        <FormResources Include="LissajousScope.dfm"/>
+        <FormResources Include="IntroPlayback.dfm"/>
+        <FormResources Include="IntroSignal.dfm"/>
+        <FormResources Include="SignalAnalysisDemo.dfm"/>
+        <FormResources Include="SpcAnalyzer.dfm"/>
+        <FormResources Include="RegisterSignal.dfm"/>
+        <FormResources Include="SavGolayDemo.dfm"/>
+        <FormResources Include="WindowFilters.dfm"/>
+        <FormResources Include="WindowsDemo.dfm"/>
+        <FormResources Include="TriggerDemo.dfm"/>
+        <FormResources Include="WhatIsNew.dfm"/>
+        <FormResources Include="PeakMarkingOrder.dfm"/>
+        <FormResources Include="PhaseDemo.dfm"/>
+        <FormResources Include="PeakMarkingBasic.dfm"/>
+        <FormResources Include="PeakMarkingFormating.dfm"/>
+        <FormResources Include="PlaybackDemo.dfm"/>
+        <FormResources Include="RateConvert.dfm"/>
+        <FormResources Include="PhaseScope.dfm"/>
+        <FormResources Include="PhaseShifter.dfm"/>
+        <FormResources Include="BispectrumTest.dfm"/>
+        <FormResources Include="BrowseDemo.dfm"/>
+        <FormResources Include="BispectrumColorGrid.dfm"/>
+        <FormResources Include="BispectrumSurface.dfm"/>
+        <FormResources Include="CoherenceTest.dfm"/>
+        <FormResources Include="CoherenceTest2.dfm"/>
+        <FormResources Include="BufferUnit.dfm"/>
+        <FormResources Include="CepstrumDemo.dfm"/>
+        <FormResources Include="Basic1.dfm"/>
+        <FormResources Include="Basic2.dfm"/>
+        <FormResources Include="AmpltRatios.dfm"/>
+        <FormResources Include="AutoRegressDemo.dfm"/>
+        <FormResources Include="BicoherenceTest.dfm"/>
+        <FormResources Include="BiSpcAnalyzer.dfm"/>
+        <FormResources Include="Basic3.dfm"/>
+        <FormResources Include="IirZeros.dfm"/>
+        <FormResources Include="InterpolateDecimate.dfm"/>
+        <FormResources Include="IirFiltering.dfm"/>
+        <FormResources Include="IirGroupDelay.dfm"/>
+        <FormResources Include="IntroCompList.dfm"/>
+        <FormResources Include="IntroDesign.dfm"/>
+        <FormResources Include="Intro.dfm"/>
+        <FormResources Include="IntroApplication.dfm"/>
+        <FormResources Include="Differentiator.dfm"/>
+        <FormResources Include="DiscreteSeriesDemo.dfm"/>
+        <FormResources Include="CZTDemo.dfm"/>
+        <FormResources Include="Demodulator.dfm"/>
+        <FormResources Include="FrequencyBands.dfm"/>
+        <FormResources Include="GeneratorDemo.dfm"/>
+        <FormResources Include="EnvelopeDemo.dfm"/>
+        <FormResources Include="FiltersDemo.dfm"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                    <VersionInfoKeys Name="CFBundleName"/>
+                    <VersionInfoKeys Name="CFBundleDisplayName"/>
+                    <VersionInfoKeys Name="UIDeviceFamily"/>
+                    <VersionInfoKeys Name="CFBundleIdentifier"/>
+                    <VersionInfoKeys Name="CFBundleVersion"/>
+                    <VersionInfoKeys Name="CFBundlePackageType"/>
+                    <VersionInfoKeys Name="CFBundleSignature"/>
+                    <VersionInfoKeys Name="CFBundleAllowMixedLocalizations"/>
+                    <VersionInfoKeys Name="UISupportedInterfaceOrientations"/>
+                    <VersionInfoKeys Name="CFBundleExecutable"/>
+                    <VersionInfoKeys Name="CFBundleResourceSpecification"/>
+                    <VersionInfoKeys Name="LSRequiresIPhoneOS"/>
+                    <VersionInfoKeys Name="CFBundleInfoDictionaryVersion"/>
+                    <VersionInfoKeys Name="CFBundleDevelopmentRegion"/>
+                    <VersionInfoKeys Name="package"/>
+                    <VersionInfoKeys Name="label"/>
+                    <VersionInfoKeys Name="versionCode"/>
+                    <VersionInfoKeys Name="versionName"/>
+                    <VersionInfoKeys Name="persistent"/>
+                    <VersionInfoKeys Name="restoreAnyVersion"/>
+                    <VersionInfoKeys Name="installLocation"/>
+                    <VersionInfoKeys Name="largeHeap"/>
+                    <VersionInfoKeys Name="theme"/>
+                </VersionInfoKeys>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                    <ProjectProperties Name="IndexFiles">False</ProjectProperties>
+                </ProjectProperties>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\DataExplorerDBXPlugin200.bpl">DBExpress Data Explorer Integration</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k200.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp200.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+                <Source>
+                    <Source Name="MainSource">BasicDemoW32_CB20.cpp</Source>
+                </Source>
+            </CPlusPlusBuilder.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>
