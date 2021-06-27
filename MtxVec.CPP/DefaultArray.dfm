@@ -1,0 +1,173 @@
+inherited DefArray: TDefArray
+  Left = 366
+  Top = 182
+  Caption = 'DefArray'
+  ClientHeight = 470
+  ClientWidth = 678
+  OldCreateOrder = True
+  ExplicitWidth = 694
+  ExplicitHeight = 509
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    Width = 678
+    ExplicitWidth = 678
+    inherited RichEdit1: TRichEdit
+      Width = 676
+      ExplicitWidth = 676
+    end
+  end
+  inherited Panel2: TPanel
+    Top = 412
+    Width = 678
+    ExplicitTop = 412
+    ExplicitWidth = 678
+    object Button1: TBitBtn
+      Left = 16
+      Top = 16
+      Width = 89
+      Height = 25
+      Caption = 'Do comparison'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+  end
+  inherited Panel3: TPanel
+    Width = 157
+    Height = 282
+    Align = alLeft
+    BevelOuter = bvNone
+    ExplicitWidth = 157
+    ExplicitHeight = 282
+    object Label1: TLabel
+      Left = 104
+      Top = 97
+      Width = 41
+      Height = 17
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'Label1'
+    end
+    object Label2: TLabel
+      Left = 24
+      Top = 97
+      Width = 75
+      Height = 13
+      Caption = 'Vector  length : '
+    end
+    object TrackBar1: TTrackBar
+      Left = 16
+      Top = 113
+      Width = 137
+      Height = 17
+      Max = 10000
+      Min = 1
+      Frequency = 500
+      Position = 2500
+      TabOrder = 0
+      TickMarks = tmTopLeft
+      OnChange = TrackBar1Change
+    end
+    object RadioGroup1: TRadioGroup
+      Left = 16
+      Top = 16
+      Width = 137
+      Height = 65
+      Caption = 'Pick your test'
+      ItemIndex = 0
+      Items.Strings = (
+        'test vector'
+        'test matrix')
+      TabOrder = 1
+      OnClick = RadioGroup1Click
+    end
+  end
+  object Chart1: TChart
+    Left = 157
+    Top = 130
+    Width = 521
+    Height = 282
+    BackWall.Brush.Style = bsClear
+    Gradient.Direction = gdRightLeft
+    Gradient.EndColor = 12615680
+    Legend.Alignment = laTop
+    Title.Text.Strings = (
+      'TChart')
+    Title.Visible = False
+    BottomAxis.LogarithmicBase = 10.000000000000000000
+    BottomAxis.EndPosition = 100.000000000000000000
+    BottomAxis.Title.Caption = 'dimension'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
+    LeftAxis.Title.Caption = 'time  [ms]'
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
+    TopAxis.ZPosition = 100.000000000000000000
+    View3D = False
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 14869218
+    TabOrder = 3
+    DefaultCanvas = 'TGDIPlusCanvas'
+    ColorPaletteIndex = 0
+    object Series1: TLineSeries
+      HoverElement = [heCurrent]
+      SeriesColor = clBlue
+      Title = 'Default Array'
+      Brush.BackColor = clDefault
+      Pointer.Brush.Gradient.EndColor = clBlue
+      Pointer.Gradient.EndColor = clBlue
+      Pointer.HorizSize = 2
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.VertSize = 2
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series2: TLineSeries
+      HoverElement = [heCurrent]
+      Title = 'Values Array'
+      Brush.BackColor = clDefault
+      Pointer.Brush.Gradient.EndColor = clRed
+      Pointer.Gradient.EndColor = clRed
+      Pointer.HorizSize = 2
+      Pointer.InflateMargins = True
+      Pointer.Style = psTriangle
+      Pointer.VertSize = 2
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series3: TLineSeries
+      HoverElement = [heCurrent]
+      SeriesColor = 16744703
+      Title = 'Values1D array'
+      Brush.BackColor = clDefault
+      Pointer.Brush.Gradient.EndColor = 16744703
+      Pointer.Gradient.EndColor = 16744703
+      Pointer.HorizSize = 2
+      Pointer.InflateMargins = True
+      Pointer.Style = psDiamond
+      Pointer.VertSize = 2
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+  end
+end
