@@ -1,0 +1,294 @@
+DESCRIPTIVE STATISTICS	
+(Statistics) CorrCoeff	Correlation coefficients (matrix)
+(Statistics) Covariance	Covariance (matrix)
+(MtxVec) Cumsum	Cumulative sum
+(Statistics) CumulativeHist	Cumulative histogram 
+(Statistics) Histogram	Histogram
+(Statistics) Interquartile	Interquartile range
+(MtxVec) Kurtosis	Kurtosis for vector and matrix
+(MtxVec) Max	maximum value
+(MtxVec) Mean	mean for vector and matrix
+(MtxVec) Median	median for vector and matrix
+(MtxVec) Min	minumim value 
+(Statistics) MeanG	Geometric mean
+(Statistics) MeanH	Harmonic mean
+(Statistics) MeanT	Trimmed mean
+(Statistics) Mode	Mode
+(Statistics) Moment	n-th moment
+(Statistics) Ogives	Ogives
+(Statistics) Percentile	percentile (5 different methods supported)
+(Statistics) Range	range (for vector)
+(Statistics) RangeCols	range for each matrix column
+(MtxVec) RMS	Root Mean Squared
+(Statistics) RangeRows	range for each matrix row
+(MtxVec) Skewness	Skewness for vector and matrix
+(MtxVec) StdDev	standard deviation for vector and matrix
+(MtxVec) StdCols	standard deviation each matrix column
+(MtxVec) StdRows	standard deviation for each matrix row
+(MtxVec) Sum	sum
+(Statistics) Unique	Get unique elements and their counts.
+(MtxVec) ZScore	Standardize data
+
+REGRESSION	
+(Regress) ANOVA1	One way Analysis of Variance
+(Regress) ANOVA2	Two way Analysis of Variance
+(Regress) LinRegress	Simple linear regression (weighted/unweighted)
+(Regress) LogisticRegress	Logistic regression
+(Regress) MulLinRegress	Multiple linear regression (weighted/unweighted)
+(Regress) PoissonRegress	Poisson regression
+(Regress) PCRegress	Principal Component Regression
+(Regress) PRESS	Calculate the PRESS value
+(Regress) R2	Calculate R-squared (R2)
+(Regress) RidgeRegress	Ridge regression
+(Regress) NLinRegress	Non-linear regression (weighted/unweighted)
+(Regress) NumericDerive	Numerical approximation for gradient of function of several variables
+(Regress) RegressTest	Regression statistic
+(StatTools) TMtxMulLinReg component	Encapsulates all multiple linear regression routines
+(StatTools) TMtxNonLinReg component	Encapsulates all non-linear regression routines
+(StatTools) TMtxANOVA component	Encapsulates all ANOVA routines
+(StatTools) TRegResult class	Access to regression results (B, YCalc, Residuals, ...)
+(StatTools) TRegStats class	Access to regression statistics (R2, adjusted R2, F, ...)
+(StatTools) TMtxLogReg component	Encapsulates all logistic regression routines
+
+REGRESSION MODELS	
+(RegModels) ExpDeriv	Derivatives of simple exponential function with respect to regression parameters
+(RegModels) LineDeriv	Derivatives of simple linear function with respect to regression parameters
+(RegModels) PowerDeriv	Derivatives of simple power function with respect to regression parameters
+(RegModels) ExpEval	Evaluates simple exponential function
+(RegModels) LineEval	Evaluates simple linear function
+(RegModels) MulLinEval	Evaluates multiple linear function
+(RegModels) PowerEval	Evaluates simple power function
+(RegModels) FracEval	Evaluates rational function
+(RegModels) LogistEval	Evaluates logistic function
+(RegModels) ExpFit	fits equations to data by minimizing the sum of squared residuals
+(RegModels) LineFit	fits equations to data by minimizing the sum of squared residuals
+(RegModels) PowerFit	fits equations to data by minimizing the sum of squared residuals
+(RegModels) MulLinFit	fits equations to data by minimizing the sum of squared residuals
+(RegModels) FracFit	fits equations to data by minimizing the sum of squared residuals
+(RegModels) LogistFit	fits equations to data by minimizing the sum of squared residuals
+
+DISTRIBUTIONS	
+(Probabilities) BetaPDF	Beta Probability Density Function
+(Probabilities) BetaCDF	Beta Cumulative Distribution Function
+(Probabilities) BetaCDFInv	Beta Inverse Cumulative Distribution Function
+(Probabilities) BinomPDF	Binomial Probability Density Function
+(Probabilities) BinomCDF	Binomial Cumulative Distribution Function
+(Probabilities) BinomCDFInv	Binomial Inverse Cumulative Distribution Function
+(Probabilities) BoseEinsteinPDF	Bose-Einstein Probability Density Function
+(Probabilities) CauchyPDF	Cauchy Probability Density Function
+(Probabilities) CauchyCDF	Cauchy Cumulative Distribution Function
+(Probabilities) CauchyCDFInv	Cauchy Inverse Cumulative Distribution Function
+(Probabilities) ChiSquarePDF	Chi Squared Probability Density Function
+(Probabilities) ChiSquareCDF	Chi Squared Cumulative Distribution Function
+(Probabilities) ChiSquareCDFInv	Chi Squared Inverse Cumulative Distribution Function
+(Probabilities) EmpiricalCDF	Empirical Cumulative Distribution Function
+(Probabilities) ErlangPDF	Erlang Probability Density Function
+(Probabilities) ErlangCDF	Erlang Cumulative Distribution Function
+(Probabilities) ErlangCDFInv	Erlang Inverse Cumulative Distribution Function
+(Probabilities) ExpPDF	Exponential Probability Density Function
+(Probabilities) ExpCDF	Exponential Cumulative Distribution Function
+(Probabilities) ExpCDFInv	Exponential Inverse Cumulative Distribution Function
+(Probabilities) FPDF	F (Fisher) Probability Density Function
+(Probabilities) FCDF	F (Fisher) Cumulative Distribution Function
+(Probabilities) FCDFInv	F (Fisher) Inverse Cumulative Distribution Function
+(Probabilities) FermiDiracPDF	Fermi-Dirac Probability Density Function
+(Probabilities) GammaPDF	Gamma Probability Density Function
+(Probabilities) GammaCDF	Gamma Cumulative Distribution Function
+(Probabilities) GammaCDFInv	Gamma Inverse Cumulative Distribution Function
+(Probabilities) GumbelPDF	Gumbel Probability Density Function
+(Probabilities) GumbelCDF	Gumbel Cumulative Distribution Function
+(Probabilities) GumbelCDFInv	Gumbel Inverse Cumulative Distribution Function
+(Probabilities) GeometricPDF	Geometric Probability Density Function
+(Probabilities) GeometricCDF	Geometric Cumulative Distribution Function
+(Probabilities) GeometricCDFInv	Geometric Inverse Cumulative Distribution Function
+(Probabilities) HypGeometricPDF	Hypergeometric Probability Density Function
+(Probabilities) HypGeometricCDF	Hypergeometric Cumulative Distribution Function
+(Probabilities) HypeGeometricCDFInv	Hypergeometric Inverse Cumulative Distribution Function
+(Probabilities) LogNormalPDF	LogNormal Probability Density Function
+(Probabilities) LogNormalCDF	LogNormal Cumulative Distribution Function
+(Probabilities) LogNormalCDFInv	LogNormal Inverse Cumulative Distribution Function
+(Probabilities) MaxwellPDF	Maxwell Probability Density Function
+(Probabilities) MaxwellCDF	Maxwell Cumulative Distribution Function
+(Probabilities) MaxwellCDFInv	Maxwell Inverse Cumulative Distribution Function
+(Probabilities) NegBinomPDF	Negative Binomial Probability Density Function
+(Probabilities) NegBinomCDF	Negative Binomial Cumulative Distribution Function
+(Probabilities) NegBinomCDFInv	Negative Binomial Inverse Cumulative Distribution Function
+(Probabilities) NormalPDF	Normal Probability Density Function
+(Probabilities) NormalCDF	Normal Cumulative Distribution Function
+(Probabilities) NormalCDFInv	Normal Inverse Cumulative Distribution Function
+(Probabilities) ParettoPDF	Paretto Probability Density Function
+(Probabilities) ParettoCDF	Paretto Cumulative Distribution Function
+(Probabilities) ParettoCDFInv	Paretto Inverse Cumulative Distribution Function
+(Probabilities) PoissonPDF	Poisson Probability Density Function
+(Probabilities) PoissonCDF	Poisson Cumulative Distribution Function
+(Probabilities) PoissonCDFInv	Poisson Inverse Cumulative Distribution Function
+(Probabilities) RayleighPDF	Rayleigh Probability Density Function
+(Probabilities) RayleighCDF	Rayleigh Cumulative Distribution Function
+(Probabilities) RayleighCDFInv	Rayleigh Inverse Cumulative Distribution Function
+(Probabilities) StudentPDF	Student(t) Probability Density Function
+(Probabilities) StudentCDF	Student(t) Cumulative Distribution Function
+(Probabilities) StudentCDFInv	Student(t) Inverse Cumulative Distribution Function
+(Probabilities) TriangularPDF	Triangular Probability Density Function
+(Probabilities) TriangularCDF	Triangular Cumulative Distribution Function
+(Probabilities) TriangularCDFInv	Triangular Inverse Cumulative Distribution Function
+(Probabilities) UniformPDF	Uniform Probability Density Function
+(Probabilities) UniformCDF	Uniform Cumulative Distribution Function
+(Probabilities) UniformCDFInv	Uniform Inverse Cumulative Distribution Function
+(Probabilities) UniformDPDF	Discrete Uniform Probability Density Function
+(Probabilities) UniformDCDF	Discrete Uniform Cumulative Distribution Function
+(Probabilities) UniformDCDFInv	Discrete Uniform Inverse Cumulative Distribution Function
+(Probabilities) WeibullDPDF	Weibull Probability Density Function
+(Probabilities) WeibullCDF	Weibull Cumulative Distribution Function
+(Probabilities) WeibullCDFInv	Weibull Inverse Cumulative Distribution Function
+
+RANDOM NUMBER GENERATORS	
+(Statistics) RandomBeta	Beta distribution random number generator
+(Statistics) RandomBinom	Binomial distribution random number generator
+(Statistics) RandomChiSquare	Chi Squared distribution random number generator
+(Statistics) RandomExponent	Exponential distribution random number generator
+(Statistics) RandomF	F (Fisher) distribution random number generator
+(Statistics) RandomGamma	Gamma distribution random number generator
+(Statistics) RandomGeometric	Geometric distribution random number generator
+(Statistics) RandomHypGeometric	Hypergeometric distribution random number generator
+(Statistics) RandomLogNormal	Lognormal distribution random number generator
+(Statistics) RandomNegBinomial	Negative Binomial distribution random number generator
+(Statistics) RandomNormal	Normal distribution random number generator
+(Statistics) RandomPoisson	Poisson distribution random number generator
+(Statistics) RandomRayleigh	Rayleigh distribution random number generator
+(Statistics) RandomStudent	Student (t) distribution random number generator
+(Statistics) RandomUniformD	Discrete uniform distribution random number generator
+(Statistics) RandomUniform	Continuous uniform distribution random number generator
+(Statistics) RandomWeibull	Weibull distribution random number generator
+
+PARAMETER ESTIMATION	
+(Statistics) BetaFit	Estimate Beta distribution parameters (using MLE)
+(Statistics) BinomFit	Estimate Binomial distribution parameters (using MLE)
+(Statistics) ExponentFit	Estimate Exponential distribution parameter (using MLE)
+(Statistics) GammaFit	Estimate Gamma distribution parameters (using MLE)
+(Statistics) GeometricFit	Estimate Geometric distribution parameter (using MLE)
+(Statistics) LogNormalFit	Estimate log-normal distribution parameters (using MLE)
+(Statistics) NormalFit	Estimate Normal distribution parameters (using MLE)
+(Statistics) PoissonFit	Estimate Poisson distribution parameter (using MLE)
+(Statistics) RayleighFit	Estimate Rayleigh distribution parameters (using MLE)
+(Statistics) UniformFit	Estimate Uniform (continuous) distribution parameters (using MLE)
+(Statistics) UniformDFit	Estimate Uniform (discrete) distribution parameters (using MLE)
+(Statistics) WeibullFit	Estimate Weibull distribution parameters (using MLE)
+
+MEAN AND VARIANCE	
+(Statistics) MVBeta	mean and variance for Beta distribution
+(Statistics) MVBinom	mean and variance for Binomial distribution
+(Statistics) MVCauchy	mean and variance for Cauchy distribution
+(Statistics) MVChiSquare	mean and variance for Chi Squared distribution
+(Statistics) MVEErlang	mean and variance for Exrlang distribution
+(Statistics) MVExponent	mean and variance for Exponential distribution
+(Statistics) MVF	mean and variance for F (Fisher) distribution
+(Statistics) MVGamma	mean and variance for Gamma distribution
+(Statistics) MVGumbel	mean and variance for Gumbel distribution
+(Statistics) MVGeometric	mean and variance for Geometric distribution
+(Statistics) MVHypGeometric	mean and variance for Hypergeometric distribution
+(Statistics) MVMaxwell	mean and variance for Maxwell distribution
+(Statistics) MVNegBinom	mean and variance for Negative Binomial distribution
+(Statistics) MVNormal	mean and variance for Normal distribution
+(Statistics) MVParetto	mean and variance for Paretto distribution
+(Statistics) MVPoisson	mean and variance for Poisson distribution
+(Statistics) MVRayleigh	mean and variance for Rayleigh distribution
+(Statistics) MVStudent	mean and variance for Student (t) distribution
+(Statistics) MVTriangluar	mean and variance for triangualr distribution
+(Statistics) MVUniformD	mean and variance for Discrete uniform distribution
+(Statistics) MVUniform	mean and variance for Continuous uniform distribution
+(Statistics) MVWeibull	mean and variance for Weibull distribution
+
+HYPOTHESIS TESTING	
+(Statistics) AndersonDarling	Anderson-Darling test
+(Statistics) ChiSquareTest	Chi-Squared test for variance
+(Statistics) GOFBeraJarqueTest	Bera-Jarque test of composite normality
+(Statistics) GOFChi2Test	Chi-squared goodness of fit test for different distributions
+(Statistics) GOFKolmogorovTest	K-S goodness of fit test for single and double sample(s)
+(Statistics) GrubbsTest	Grubbs test for outlier.
+(Statistics) FTest	F test for comparing variances of two samples
+(Statistics) HotellingT2OneSample	Hotelling T2 one-sample test
+(Statistics) HotellingT2TwoSample	Hotelling T2 two-sample test
+(Statistics) MannWhitney	The Mann-Whitney U test
+(Statistics) MBoxTest	Equal of covariance matrices test
+(Statistics) SignTest	one and two sample (paired) Sign test
+(Statistics) ShapiroFrancia	Shapiro-Francia test for normality
+(Statistics) ShapiroWilks	Shapiro-Wilks test for normality
+(Statistics) WilcoxonTest	one and two sample (paired) Wilcoxon Signed Rank test
+(Statistics) tTest	one and two sample (paired or pooled) t-Test
+(Statistics) zTest	one and two sample (paired) z-Test
+(StatTools) TMtxHypothesis component	Encapsulates all hypothesis testing procedures
+
+MULTIVARIATE ANALYSIS	
+(Statistics) BarlettTest	Barlett test for dimensionality of data
+(Statistics) MDScaleStress	The Stress factor for Multidimensional Scaling
+(Statistics) MDScaleMetric	Classical Multidimensional Scaling
+(Statistics) PCA	Principal Component Analysis
+(Statistics) PairwiseDistance	Pairwise distance between variables
+(Statistics) PCAResiduals	Principal Component Analysis residuals
+(Statistics) OrthogonalRotation	Several orthogonal rotations of matrix
+(StatTools) TMtxMDScaling	Encapsulates Multidimensional Scaling
+(StatTools) TMtxPCA component	Encapsulates all PCA procedurs
+
+DESIGN OF EXPERIMENTS	
+(Statistics) FullFactDesign	Two-Level and Mixed-Level full factorial design
+(Statistics) LatinHyperCubeDesign	Latin Hypercube DOE
+
+TIME SERIES ANALYSIS	
+(StatTimeSerAnalysis) ARBurgFit	Burg AR coefficients estimation
+(StatTimeSerAnalysis) ARIMAForecast	Forecast ARIMA/ARMA time series values
+(StatTimeSerAnalysis) ARIMASimulate	Simulate ARIMA process
+(StatTimeSerAnalysis) ARMAAcf	Theoretical ARMA model autocovariance/autocorrelation function
+(StatTimeSerAnalysis) ARMAForecast	Forecast ARMA time series values
+(StatTimeSerAnalysis) ARMAInnovationsFit	Innovations algorithm MA and ARMA coefficients estimation
+(StatTimeSerAnalysis) ARMALogLike	ARMA -2log likelihood function
+(StatTimeSerAnalysis) ARMAMLE	Estimate ARMA time series phi and theta coefficients
+(StatTimeSerAnalysis) ARMASimulate	Simulate ARMA process
+(StatTimeSerAnalysis) ARYuleWalkerFit	Yule-Walker AR coefficients estimation
+(StatTimeSerAnalysis) BoxCox	Box-Cox time series transformation
+(StatTimeSerAnalysis) DoubleExpForecast	Double exponential forecasting
+(StatTimeSerAnalysis) DoubleExpSmooth	Double exponential smoothing
+(StatTimeSerAnalysis) DurbinLevinson	Durbin-Levinson algorithm for calculating phi coefficients
+(StatTimeSerAnalysis) Innovations	Innovations algorithm for calculating theta coefficients
+(StatTimeSerAnalysis) InvBoxCox	Inverse Box-Cox time series transformation
+(StatTimeSerAnalysis) MovingAverage	Single (centered or not centered) moving average
+(StatTimeSerAnalysis) SingleExpForecast	Single exponential forecasting
+(StatTimeSerAnalysis) SingleExpSmooth	Single exponential smoothing
+(StatTimeSerAnalysis) TripleExpForecast	Triple exponential forecasting
+(StatTimeSerAnalysis) TripleExpSmooth	Triple exponential smoothing
+
+CONTROL CHARTS	
+(StatControlCharts) EWMAChart	Calculate drawing values, CL, LCL and UCL for EWMA Chart
+(StatControlCharts) QCCapIndexes	Calculates CP,CPK indexes for Capability Plot
+(StatControlCharts) QCCChart	Calculate drawing values, CL, LCL and UCL for C Chart
+(StatControlCharts) QCMRChart	Calculate drawing values, CL, LCL and UCL for moving range Chart
+(StatControlCharts) QCNPChart	Calculate drawing values, CL, LCL and UCL for nP Chart
+(StatControlCharts) QCPChart	Calculate drawing values, CL, LCL and UCL for P Chart
+(StatControlCharts) QCRChart	Calculate drawing values, CL, LCL and UCL for R Chart
+(StatControlCharts) QCSChart	Calculate drawing values, CL, LCL and UCL for S Chart
+(StatControlCharts) QCUChart	Calculate drawing values, CL, LCL and UCL for U Chart
+(StatControlCharts) QCXChart	Calculate drawing values, CL, LCL and UCL for <X> Chart
+(StatControlCharts) QCWestgardRules	The Westgard out-of-control rules.
+(StatControlCharts) QCCumSumChart	Calculate drawing values for CumSum Chart
+
+PROBABILITY CHARTS	
+(StatProbPlots) StatExpPlot	Calculate drawing values and slope line parameters for Exponential plot
+(StatProbPlots) StatNormalPlot	Calculate drawing values and slope line parameters for Normal plot
+(StatProbPlots) StatQQPlot	Calculate drawing values and slope line parameters for Quantile-Quantile plot
+(StatProbPlots) StatWeibullPlot	Calculate drawing values and slope line parameters for Weibull plot
+
+TEECHART PRO SERIES	
+(StatSeries) TStatProbSeries class	Basic Probailities Plot charting style
+(StatSeries) TQCSeries class	Basic quality Control Chart charting style (line series + CL,UCL,LCL)
+(StatSeries) TBiPlotSeries class	Bi-plot charting style
+(StatSeries) TDotPlotSeries class	Dot-plot charting style
+	
+MISCELLANEOUS	
+(Probabilities) Beta	Beta function
+(Probabilities) BetaIncomplete	Incomplete Beta function
+(Probabilities) Binomial	Binomial coefficients
+(Probabilities) Erf	Error function
+(Probabilities) ErfC	Complement of Error function
+(Probabilities) Gamma	Gamma function
+(Probabilities) IGamma	Incomplete Gamma function
+(Probabilities) JGamma	Complement of IGamma function
+(StatTools)	TMtxBinaryTest Encapsulates one and two test(s) paired/unpaired binary diagonstic test.
