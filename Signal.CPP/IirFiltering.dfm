@@ -141,6 +141,7 @@ object IirFilteringForm: TIirFilteringForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
+    Zoom = 100
   end
   object SpectrumChart: TSpectrumChart
     Left = 0
@@ -153,9 +154,19 @@ object IirFilteringForm: TIirFilteringForm
     Title.Font.Color = clWhite
     Title.Text.Strings = (
       'Frequency response')
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Caption = 'Frequency [Hz]'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Amplitude [dB]'
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = 12636883
@@ -163,6 +174,7 @@ object IirFilteringForm: TIirFilteringForm
     Spectrums = <
       item
         InputsItemIndex = 0
+        UnitScaleXAxis = 1.000000000000000000
         Input = SpectrumAnalyzer
       end>
     ConfidenceIntervalIndex = 0
@@ -200,6 +212,8 @@ object IirFilteringForm: TIirFilteringForm
     Top = 159
   end
   object SpectrumAnalyzer: TSpectrumAnalyzer
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnParameterUpdate = SpectrumAnalyzerParameterUpdate
     PhaseRange = prPiPi
     SamplingFrequency = 1.000000000000000000
@@ -220,6 +234,7 @@ object IirFilteringForm: TIirFilteringForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     Logarithmic = True

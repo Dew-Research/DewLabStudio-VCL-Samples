@@ -105,6 +105,7 @@ object CoherenceTestForm: TCoherenceTestForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
+    Zoom = 100
   end
   object SpectrumChart: TSpectrumChart
     Left = 0
@@ -117,14 +118,24 @@ object CoherenceTestForm: TCoherenceTestForm
     Title.Text.Strings = (
       'Frequency spectrum')
     BottomAxis.LabelsSeparation = 0
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Caption = 'Frequency [Hz]'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
     LeftAxis.AutomaticMinimum = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 636.000000000000000000
     LeftAxis.Minimum = -26.500000000000000000
     LeftAxis.Title.Caption = 'Amplitude [dB]'
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = 12636883
@@ -134,6 +145,7 @@ object CoherenceTestForm: TCoherenceTestForm
         SeriesName = 'Series1'
         Series = Series1
         InputsItemIndex = 0
+        UnitScaleXAxis = 1.000000000000000000
         Input = CrossAnalyzer
       end>
     ConfidenceIntervalIndex = 0
@@ -141,11 +153,7 @@ object CoherenceTestForm: TCoherenceTestForm
     DefaultCanvas = 'TTeeCanvas3D'
     ColorPaletteIndex = 0
     object Series1: TFastLineSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.ShapeStyle = fosRoundRectangle
-      Marks.Visible = False
+      HoverElement = []
       SeriesColor = 8421631
       LinePen.Color = 8421631
       XValues.Name = 'X'
@@ -154,13 +162,12 @@ object CoherenceTestForm: TCoherenceTestForm
       YValues.Order = loNone
     end
     object Series2: TPointSeries
-      Marks.Arrow.Visible = False
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = False
-      Marks.Callout.Length = 10
-      Marks.ShapeStyle = fosRoundRectangle
+      HoverElement = [heCurrent]
       Marks.Transparent = True
       Marks.Visible = True
+      Marks.Arrow.Visible = False
+      Marks.Callout.Arrow.Visible = False
+      Marks.Callout.Length = 10
       SeriesColor = clGreen
       ClickableLine = False
       Pointer.Brush.Color = clRed
@@ -168,7 +175,6 @@ object CoherenceTestForm: TCoherenceTestForm
       Pointer.Gradient.EndColor = clGreen
       Pointer.InflateMargins = True
       Pointer.Style = psCircle
-      Pointer.Visible = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
@@ -207,6 +213,8 @@ object CoherenceTestForm: TCoherenceTestForm
     Top = 159
   end
   object CrossAnalyzer: TCrossSpectrumAnalyzer
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnParameterUpdate = CrossAnalyzerParameterUpdate
     PhaseMode = pmPhaseDelay
     PhaseRange = prPiPi
@@ -228,6 +236,7 @@ object CoherenceTestForm: TCoherenceTestForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000
@@ -256,17 +265,22 @@ object CoherenceTestForm: TCoherenceTestForm
     MtxDataValues = {}
   end
   object FilteredSignal: TSignal
+    IsDouble = True
+    FloatPrecision = mvDouble
     SamplingFrequency = 1.000000000000000000
     Left = 358
     Top = 144
     MtxDataValues = {}
   end
   object SignalRead1: TSignalRead
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnAfterUpdate = SignalRead1AfterUpdate
     Length = 2048
     SamplingFrequency = 4666.666666666669000000
     FileFormat = ffSfs
     FileName = 'BZ.SFS'
+    SelectionStop = -1
     SelectionStart = 0
     ScaleFactor = 1.000000000000000000
     ForceLength = True

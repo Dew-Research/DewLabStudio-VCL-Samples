@@ -52,7 +52,7 @@ void __fastcall TOptimalFiltersForm::SpectrumAnalyzerParameterUpdate(
 //---------------------------------------------------------------------------
 void __fastcall TOptimalFiltersForm::FillSeries(TSample TransBW,TSample Ripple)
 {
-	RemezImpulse(h,OPENARRAY(double,(0.1,0.1+TransBW,0.22-TransBW,0.22)),Ripple,ftBandPass);
+	RemezImpulse(h,OPENARRAY(double,(0.1,0.1+TransBW,0.22-TransBW,0.22)),Ripple,ftBandpass);
 	FirLengthLabel->Caption = "Fir length = " + IntToStr(h.Length);
 	SpectrumAnalyzer->Process(h);
 }

@@ -38,10 +38,10 @@ void __fastcall TIirZerosForm::FillSeries(int Order, int Att)
 	TSample k;
 	switch ((TIirFilterMethod)FilterBox->ItemIndex)
 	{
-		case fimButter:      ButterFilter(Order,OPENARRAY(double,(0.2)),ftLowPass,false,z,p,k);break;
-		case fimChebyshevI:  ChebyshevIFilter(Order,0.1,OPENARRAY(double,(0.2)),ftLowPass,false,z,p,k);break;
-		case fimChebyshevII: ChebyshevIIFilter(Order,Att,OPENARRAY(double,(0.2)),ftLowPass,false,z,p,k);break;
-		case fimElliptic:    EllipticFilter(Order,0.1,Att,OPENARRAY(double,(0.2)),ftLowPass,false,z,p,k);break;
+		case fimButter:      ButterFilter(Order,OPENARRAY(double,(0.2)),ftLowpass,false,z,p,k);break;
+		case fimChebyshevI:  ChebyshevIFilter(Order,0.1,OPENARRAY(double,(0.2)),ftLowpass,false,z,p,k);break;
+		case fimChebyshevII: ChebyshevIIFilter(Order,Att,OPENARRAY(double,(0.2)),ftLowpass,false,z,p,k);break;
+		case fimElliptic:    EllipticFilter(Order,0.1,Att,OPENARRAY(double,(0.2)),ftLowpass,false,z,p,k);break;
 	}
 	if (!z.Complex) z.ExtendToComplex(true);
 	z.CartToPolar(r,phi);

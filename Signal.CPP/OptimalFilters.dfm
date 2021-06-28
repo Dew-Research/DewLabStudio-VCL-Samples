@@ -130,6 +130,7 @@ object OptimalFiltersForm: TOptimalFiltersForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
+    Zoom = 100
   end
   object SpectrumChart: TSpectrumChart
     Left = 0
@@ -143,14 +144,24 @@ object OptimalFiltersForm: TOptimalFiltersForm
     Title.Text.Strings = (
       'Frequency response of optimal FIR filter')
     BottomAxis.LabelsSeparation = 0
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Caption = 'Frequency [Hz]'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
     LeftAxis.AutomaticMinimum = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 577.000000000000000000
     LeftAxis.Minimum = -23.625000000000000000
     LeftAxis.Title.Caption = 'Amplitude [dB]'
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = 12636883
@@ -158,6 +169,7 @@ object OptimalFiltersForm: TOptimalFiltersForm
     Spectrums = <
       item
         InputsItemIndex = 0
+        UnitScaleXAxis = 1.000000000000000000
         Input = SpectrumAnalyzer
       end>
     ConfidenceIntervalIndex = 0
@@ -165,11 +177,7 @@ object OptimalFiltersForm: TOptimalFiltersForm
     DefaultCanvas = 'TTeeCanvas3D'
     ColorPaletteIndex = 0
     object Series1: TFastLineSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.ShapeStyle = fosRoundRectangle
-      Marks.Visible = False
+      HoverElement = []
       SeriesColor = 10485760
       LinePen.Color = 10485760
       XValues.Name = 'X'
@@ -178,13 +186,12 @@ object OptimalFiltersForm: TOptimalFiltersForm
       YValues.Order = loNone
     end
     object Series2: TPointSeries
-      Marks.Arrow.Visible = False
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = False
-      Marks.Callout.Length = 10
-      Marks.ShapeStyle = fosRoundRectangle
+      HoverElement = [heCurrent]
       Marks.Transparent = True
       Marks.Visible = True
+      Marks.Arrow.Visible = False
+      Marks.Callout.Arrow.Visible = False
+      Marks.Callout.Length = 10
       SeriesColor = clGreen
       ClickableLine = False
       Pointer.Brush.Color = clRed
@@ -192,7 +199,6 @@ object OptimalFiltersForm: TOptimalFiltersForm
       Pointer.Gradient.EndColor = clGreen
       Pointer.InflateMargins = True
       Pointer.Style = psCircle
-      Pointer.Visible = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
@@ -231,6 +237,8 @@ object OptimalFiltersForm: TOptimalFiltersForm
     Top = 159
   end
   object SpectrumAnalyzer: TSpectrumAnalyzer
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnParameterUpdate = SpectrumAnalyzerParameterUpdate
     PhaseRange = prPiPi
     SamplingFrequency = 1.000000000000000000
@@ -250,6 +258,7 @@ object OptimalFiltersForm: TOptimalFiltersForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000

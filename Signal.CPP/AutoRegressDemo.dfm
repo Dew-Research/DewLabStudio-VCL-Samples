@@ -67,6 +67,7 @@ object AutoRegressDemoForm: TAutoRegressDemoForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
+    Zoom = 100
   end
   object SpectrumChart: TSpectrumChart
     Left = 0
@@ -79,9 +80,19 @@ object AutoRegressDemoForm: TAutoRegressDemoForm
     Legend.Visible = False
     Title.Text.Strings = (
       'Spectral estimators')
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Caption = 'Frequency [Hz]'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Amplitude [dB]'
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = 12636883
@@ -89,6 +100,7 @@ object AutoRegressDemoForm: TAutoRegressDemoForm
     Spectrums = <
       item
         InputsItemIndex = 0
+        UnitScaleXAxis = 1.000000000000000000
         Input = SpectrumAnalyzer
       end>
     ConfidenceIntervalIndex = 0
@@ -126,10 +138,13 @@ object AutoRegressDemoForm: TAutoRegressDemoForm
     Top = 159
   end
   object SignalRead1: TSignalRead
+    IsDouble = True
+    FloatPrecision = mvDouble
     Length = 1024
     SamplingFrequency = 4666.666666666667000000
     FileFormat = ffSfs
     FileName = 'D:\CommonObjects\Dew DSP.NET\Examples\BZ.SFS'
+    SelectionStop = -1
     SelectionStart = 0
     ScaleFactor = 1.000000000000000000
     ForceLength = True
@@ -139,6 +154,8 @@ object AutoRegressDemoForm: TAutoRegressDemoForm
     MtxDataValues = {}
   end
   object SpectrumAnalyzer: TSpectrumAnalyzer
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnParameterUpdate = SpectrumAnalyzerParameterUpdate
     PhaseRange = prPiPi
     SamplingFrequency = 1.000000000000000000
@@ -159,6 +176,7 @@ object AutoRegressDemoForm: TAutoRegressDemoForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     Logarithmic = True

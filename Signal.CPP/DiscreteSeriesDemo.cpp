@@ -30,7 +30,7 @@ void __fastcall TDiscreteSeriesDemoForm::StepEditChange(TObject *Sender)
 {
 	Mtxexpr::sVector H;
 	TSample Step = StepEdit->Position;
-	FractionalFirImpulse(30,H,OPENARRAY(double,(0.2,0.25)),0,Step,ftLowPass,1);
+	FractionalFirImpulse(30,H,OPENARRAY(double,(0.2,0.25)),0,Step,ftLowpass,1);
 	SignalChart1->Series[0]->Clear();
 	DrawValues(H,SignalChart1->Series[0],0,Step);
 }

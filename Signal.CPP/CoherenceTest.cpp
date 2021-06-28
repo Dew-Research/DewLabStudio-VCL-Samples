@@ -36,7 +36,7 @@ void __fastcall TCoherenceTestForm::SignalRead1AfterUpdate(TObject *Sender)
 void __fastcall TCoherenceTestForm::FormCreate(TObject *Sender)
 {
 	Mtxexpr::sVector h;
-	KaiserImpulse(h,OPENARRAY(double,(0.2,0.25)),0.001,ftLowPass,1);
+	KaiserImpulse(h,OPENARRAY(double,(0.2,0.25)),0.001,ftLowpass,1);
 	FirInit(h,FirState);
 	SignalRead1->FileName = ExtractFileDir(Application->ExeName) + "\\bz.sfs";
 	FilteredSignal->UsesInputs = false;

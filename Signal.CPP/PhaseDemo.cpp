@@ -32,7 +32,7 @@ void __fastcall TPhaseDemoForm::StepEditChange(TObject *Sender)
 	Mtxexpr::sVector H,Resp,Amplt,Phase;
 
 	H->Length = StepEdit->IntPosition;
-	FirImpulse(H,OPENARRAY(double,(0.25,0.28)),ftLowPass);
+	FirImpulse(H,OPENARRAY(double,(0.25,0.28)),ftLowpass);
 	TSample ActualZeroPadding = FrequencyResponse(H,NULL,Resp,(int) (Exp2(ZeroPaddEdit->IntPosition)));
 	Phase->PhaseSpectrum(Resp);
 	Phase->Scale(180/PI);

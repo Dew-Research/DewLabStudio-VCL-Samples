@@ -55,9 +55,9 @@ void __fastcall TWindowFiltersForm::FillSeries(TSample Freq, TSample Att,int Len
 
 		switch ((TSignalWindowType)i)
 		{
-			case wtBlackman: FirImpulse(h,OPENARRAY(double,(Freq,Freq+0.05)),0.3,ftLowPass, (TSignalWindowType)i,2);break;
-			case wtKaiser: FirImpulse(h,OPENARRAY(double,(Freq,Freq+0.05)),KaiserBetaFir(Math387::Power(10,-Att/20)),ftLowPass, (TSignalWindowType)i,2);break;
-			default: FirImpulse(h,OPENARRAY(double,(Freq,Freq+0.05)),Att,ftLowPass, (TSignalWindowType)i,2);
+			case wtBlackman: FirImpulse(h,OPENARRAY(double,(Freq,Freq+0.05)),0.3,ftLowpass, (TSignalWindowType)i,2);break;
+			case wtKaiser: FirImpulse(h,OPENARRAY(double,(Freq,Freq+0.05)),KaiserBetaFir(Math387::Power(10,-Att/20)),ftLowpass, (TSignalWindowType)i,2);break;
+			default: FirImpulse(h,OPENARRAY(double,(Freq,Freq+0.05)),Att,ftLowpass, (TSignalWindowType)i,2);
 		}
 		SpectrumAnalyzer->Process(h); //no denominator and place result in self
 	}

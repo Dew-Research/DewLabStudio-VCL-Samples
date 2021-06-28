@@ -52,10 +52,10 @@ void __fastcall TIirFilteringForm::FillSeries(int Order, int Att, TSample Freq)
 		SpectrumChart->Series[i]->Title = IirFilterMethodToString((TIirFilterMethod)i);
 		switch ((TIirFilterMethod)i)
 		{
-			case fimButter:      ButterFilter(Order,OPENARRAY(double,(Freq)),ftLowPass,false,num,den);break;
-			case fimChebyshevI:  ChebyshevIFilter(Order,0.1,OPENARRAY(double,(Freq)),ftLowPass,false,num,den);break;
-			case fimChebyshevII: ChebyshevIIFilter(Order,Att,OPENARRAY(double,(Freq)),ftLowPass,false,num,den);break;
-			case fimElliptic:    EllipticFilter(Order,0.1,Att,OPENARRAY(double,(Freq)),ftLowPass,false,num,den);break;
+			case fimButter:      ButterFilter(Order,OPENARRAY(double,(Freq)),ftLowpass,false,num,den);break;
+			case fimChebyshevI:  ChebyshevIFilter(Order,0.1,OPENARRAY(double,(Freq)),ftLowpass,false,num,den);break;
+			case fimChebyshevII: ChebyshevIIFilter(Order,Att,OPENARRAY(double,(Freq)),ftLowpass,false,num,den);break;
+			case fimElliptic:    EllipticFilter(Order,0.1,Att,OPENARRAY(double,(Freq)),ftLowpass,false,num,den);break;
 		}
 /*            Alternative:
 

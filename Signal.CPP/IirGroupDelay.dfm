@@ -108,6 +108,7 @@ object IirGroupDelayForm: TIirGroupDelayForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
+    Zoom = 100
   end
   object SpectrumChart: TSpectrumChart
     Left = 0
@@ -121,9 +122,19 @@ object IirGroupDelayForm: TIirGroupDelayForm
       'Group delay')
     BottomAxis.AxisValuesFormat = '#,##0.00'
     BottomAxis.LabelsSeparation = 20
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Caption = 'Frequency [Hz]'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Group delay [samples]'
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = 12636883
@@ -131,6 +142,7 @@ object IirGroupDelayForm: TIirGroupDelayForm
     Spectrums = <
       item
         InputsItemIndex = 0
+        UnitScaleXAxis = 1.000000000000000000
       end>
     ConfidenceIntervalIndex = 0
     ConfidenceIntervalVisible = False

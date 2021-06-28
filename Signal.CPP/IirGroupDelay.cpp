@@ -35,10 +35,10 @@ void __fastcall TIirGroupDelayForm::FillSeries(int Order, int Att)
 		SpectrumChart->Series[0]->Title = IirFilterMethodToString((TIirFilterMethod)i);
 		switch ((TIirFilterMethod)i)
 		{
-			case fimButter:      ButterFilter(Order,OPENARRAY(double,(0.2)),ftLowPass,false,num,den);break;
-			case fimChebyshevI:  ChebyshevIFilter(Order,0.1,OPENARRAY(double,(0.2)),ftLowPass,false,num,den);break;
-			case fimChebyshevII: ChebyshevIIFilter(Order,Att,OPENARRAY(double,(0.2)),ftLowPass,false,num,den);break;
-			case fimElliptic:    EllipticFilter(Order,0.1,Att,OPENARRAY(double,(0.2)),ftLowPass,false,num,den);break;
+			case fimButter:      ButterFilter(Order,OPENARRAY(double,(0.2)),ftLowpass,false,num,den);break;
+			case fimChebyshevI:  ChebyshevIFilter(Order,0.1,OPENARRAY(double,(0.2)),ftLowpass,false,num,den);break;
+			case fimChebyshevII: ChebyshevIIFilter(Order,Att,OPENARRAY(double,(0.2)),ftLowpass,false,num,den);break;
+			case fimElliptic:    EllipticFilter(Order,0.1,Att,OPENARRAY(double,(0.2)),ftLowpass,false,num,den);break;
 		}
 		GroupDelay(h,num,den,128);
 		h.SetSubRange(0,(int) (0.95*h.Length)); //problems on the right edge

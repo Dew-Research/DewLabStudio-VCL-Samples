@@ -94,7 +94,17 @@ object DiscreteSeriesDemoForm: TDiscreteSeriesDemoForm
       Legend.Visible = False
       Title.Text.Strings = (
         'Time signal')
+      BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Title.Caption = 'Time [s]'
+      DepthAxis.LogarithmicBase = 10.000000000000000000
+      DepthTopAxis.LogarithmicBase = 10.000000000000000000
+      LeftAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.Grid.ZPosition = 100.000000000000000000
+      RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.ZPosition = 100.000000000000000000
+      TopAxis.Grid.ZPosition = 100.000000000000000000
+      TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.ZPosition = 100.000000000000000000
       Zoom.Pen.Color = clBlack
       Align = alClient
       BevelOuter = bvNone
@@ -103,22 +113,18 @@ object DiscreteSeriesDemoForm: TDiscreteSeriesDemoForm
       Signals = <
         item
           InputsItemIndex = 0
+          UnitScaleXAxis = 1.000000000000000000
         end>
       ComplexSignalPart = cspReal
       DefaultCanvas = 'TTeeCanvas3D'
       ColorPaletteIndex = 0
       object Series1: TSignalDiscreteSeries
-        Marks.Arrow.Visible = True
-        Marks.Callout.Brush.Color = clBlack
-        Marks.Callout.Arrow.Visible = True
-        Marks.ShapeStyle = fosRoundRectangle
-        Marks.Visible = False
+        HoverElement = [heCurrent]
         ClickableLine = False
         Pointer.Brush.Gradient.EndColor = clRed
         Pointer.Gradient.EndColor = clRed
         Pointer.InflateMargins = True
         Pointer.Style = psCircle
-        Pointer.Visible = True
         XValues.Name = 'X'
         XValues.Order = loAscending
         YValues.Name = 'Y'
@@ -143,6 +149,7 @@ object DiscreteSeriesDemoForm: TDiscreteSeriesDemoForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 2
+    Zoom = 100
   end
   object ChartEditor: TChartEditor
     Chart = SignalChart1
