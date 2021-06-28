@@ -134,7 +134,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DynamicRTL>false</DynamicRTL>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools627.lib;MtxCore627.lib;vclactnband.lib;vclx.lib;MtxTee627.lib;TeeUI927.lib;Tee927.lib;vclimg.lib;MtxDb627.lib;dbrtl.lib;FmxMtxTools627.lib;FmxMtxCore627.lib;fmx.lib;FmxMtxDb627.lib</LinkPackageStatics>
-        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
