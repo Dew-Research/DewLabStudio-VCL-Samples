@@ -48,14 +48,14 @@ void __fastcall TclFunctionForm::FormCreate(TObject *Sender)
 	CPUFloatPrecisionLabel->Caption = "CPU (MtxVec) float precision: " + IntToStr((int) sizeof(TSample)*8) + "bit";
 //    ReportMemoryLeaksOnShutDown = True;
 
-	for (i = 0; i < clPlatform()->Count(); i++)
+	for (i = 0; i < clPlatform()->Count; i++)
 	{
 		 PlatformListBox->Items->Add(clPlatform()->Platforms[i]->Name);
 	}
 
 	PlatformListBox->ItemIndex = 0;
 
-	for (i = 0; i < clPlatform()->Platforms[0]->Count(); i++)
+	for (i = 0; i < clPlatform()->Platforms[0]->Count; i++)
 	{
 		 DeviceListBox->Items->Add(clPlatform()->Platforms[0]->Device[i]->Name);
 	}
@@ -324,7 +324,7 @@ void __fastcall TclFunctionForm::Button1Click(TObject *Sender)
 	if (ComplexBox->Checked) CacheLength = CacheLength*2;
 	if (FloatPrecisionBox->ItemIndex > 0) CacheLength = CacheLength*2;
 
-	clPlatform()->UnmarkThreads();
+	clPlatform()->UnMarkThreads();
 	selectedDevice = clPlatform()->Platforms[PlatformListBox->ItemIndex]->Device[DeviceListBox->ItemIndex];
 	if ((AnsiCompareStr(selectedDevice->DevicePlatform->Name,INTEL_PLATFORM) == 0)  & (clPlatform()->IgnoreIntel))
 	{
@@ -344,7 +344,7 @@ void __fastcall TclFunctionForm::PlatformListBoxClick(TObject *Sender)
 	int i;
 	StringList DeviceList;
 
-	for (i = 0; i < clPlatform()->Platforms[PlatformListBox->ItemIndex]->Count(); i++)
+	for (i = 0; i < clPlatform()->Platforms[PlatformListBox->ItemIndex]->Count; i++)
 	{
 		 DeviceList.Add(clPlatform()->Platforms[PlatformListBox->ItemIndex]->Device[i]->Name);
     }

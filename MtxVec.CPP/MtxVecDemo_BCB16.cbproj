@@ -59,6 +59,10 @@
 			<BCC_wpar>false</BCC_wpar>
 			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<PostBuildEvent><![CDATA[(copy *.txt $(OUTPUTDIR))
+(copy *.vec $(OUTPUTDIR))
+(copy *.mtx $(OUTPUTDIR))
+$(PostBuildEvent)]]></PostBuildEvent>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
 			<PackageImports>TeeLanguage916;Classifiers116;TeeImage916;SignalTool616;vcldbx;StatTools616;ClassifiersDB116;TeeUI916;Tee916;TeeWorld916;vclib;inetdbbde;DBXOdbcDriver;TeePro916;MtxTools616;svnui;ibxpress;DBXSybaseASEDriver;vclimg;SignalTee616;DCLClassifiersDB116;TeeGL916;vclactnband;vcldb;vcldsnap;bindcompvcl;StatCore616;StatSeries616;MtxTee616;vclie;vcltouch;DBXDb2Driver;websnap;DclTeePro916;vclribbon;VclSmp;vcl;DataSnapConnectors;CloudService;DBXMSSQLDriver;MtxCore616;dsnapcon;vclx;SignalCore616;webdsnap;svn;TeeDB916;bdertl;bcbie;adortl;$(PackageImports)</PackageImports>

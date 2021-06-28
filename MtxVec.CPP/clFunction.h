@@ -43,7 +43,7 @@ private:	// User declarations
 public:		// User declarations
   int TimeCheck, TimeElapsed;
   int VectorLen;
-  TOpenClDevice* selectedDevice;
+  TOpenCLDevice* selectedDevice;
   void __fastcall DoCompute();
   __fastcall TclFunctionForm(TComponent* Owner);
 };
