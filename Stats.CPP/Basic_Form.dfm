@@ -1,0 +1,47 @@
+object frmBasic: TfrmBasic
+  Left = 0
+  Top = 0
+  Caption = 'frmBasic'
+  ClientHeight = 430
+  ClientWidth = 540
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Memo1: TMemo
+    Left = 0
+    Top = 0
+    Width = 540
+    Height = 129
+    Align = alTop
+    BorderStyle = bsNone
+    Color = clWhite
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 0
+    ExplicitLeft = -63
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 129
+    Width = 540
+    Height = 301
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 14869218
+    TabOrder = 1
+    ExplicitLeft = -63
+    ExplicitTop = 10
+  end
+end

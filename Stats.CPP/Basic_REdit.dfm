@@ -1,0 +1,35 @@
+object frmBaseRichEdit: TfrmBaseRichEdit
+  Left = 0
+  Top = 0
+  Caption = 'frmBaseRichEdit'
+  ClientHeight = 390
+  ClientWidth = 533
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RichEdit1: TRichEdit
+    Left = 0
+    Top = 0
+    Width = 533
+    Height = 390
+    Align = alClient
+    Color = clWhite
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    WantReturns = False
+    ExplicitLeft = -262
+    ExplicitTop = -160
+  end
+end
