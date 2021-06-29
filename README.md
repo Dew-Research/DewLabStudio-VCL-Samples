@@ -3,7 +3,7 @@
 </a>  
 
 # Dew Lab Studio VCL for RAD Studio, Delphi and C++ Builder samples.
-==========================================================================
+===================================================================
   
 Sample programs showing how to use Dew Lab Studio VCL for (RAD Studio, Delphi and C++ Builder)
 
