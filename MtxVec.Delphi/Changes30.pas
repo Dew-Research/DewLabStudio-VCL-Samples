@@ -35,6 +35,80 @@ begin
     SelAttributes.Color := RGB(51,104,196);
     SelAttributes.Size := 11;
 
+    Add('List of new features in v6.0.5:');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsUnderline];
+    Add('Core product:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('Enabled support for Delphi Alexandria 11.0.');
+    Add('Bug fixes when allocating objects larger than 2GB.');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsBold];
+    SelAttributes.Color := RGB(51,104,196);
+    SelAttributes.Size := 11;
+
+    Add('List of new features in v6.0.4:');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsUnderline];
+    Add('Core product:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('Added TVec.Hilbert algorithm variant.');
+    Add('Added TMtxVec.CapacityInElements,  TMtxVec.CapacityInBytes. Changed behaviour of TMtxVec.Capacity');
+    Add('Added dll version in to names of high performance libraries. Simplifies different versions to coexist on the same computer.');
+    Add('Added high performance shared libraries for Linux 64bit when using FireMonkey. The deployment is based on Intel OneAPI 2021 (Update 2). Achieves the same performance on Linux as on Windows.');
+    Add('Fixed performance issues related to TStringList and TStrings debugger visualizers. Especially for RAD Studio 10.4 it is recommended, to turn off visualizers provided by Embarcadero, which are currently not in use, to improve the debugging speed.');
+    Add('Fixed a bug in ScatterByMask, when Src data vector had zero length.');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsBold];
+    SelAttributes.Color := RGB(51,104,196);
+    SelAttributes.Size := 11;
+
+    Add('List of new features in v6.0.2:');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsUnderline];
+    Add('Core product:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('Bug fix for TVec/TMtx/TMtxInt/TVecInt BinarySearch.');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsUnderline];
+    Add('Debugger Visualizers.pas:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('Greatly enhanced debugging stability and handling of nil and dangling pointers for Visualizers.');
+    Add('TStringList bug fix for 64bit compilers, which used wrong string length field size. (allows display of milions of strings in real time).');
+    Add('Array visualizers now also show variable storage precision.');
+    Add('Bug fix for TStringGrid in 10.4 used by the TStringList visualizers, which was showing empty grid (CustomDraw passes wrong TRect size).');
+    Add('Greatly enhanced visualizers on iOS64, OSX64 and Android 64. Full support for inline and variable inspection from Delphi for all types, including TStringList.');
+    Add('Updated TCplx visualizers for regional settings, where comma is used as a decimal separator.');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsBold];
+    SelAttributes.Color := RGB(51,104,196);
+    SelAttributes.Size := 11;
+
     Add('List of new features in v6.0.1:');
     Paragraph.FirstIndent := 0;
     Paragraph.Numbering := nsNone;
