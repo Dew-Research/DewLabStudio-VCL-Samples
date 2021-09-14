@@ -18,6 +18,9 @@
 #include "MtxVecTools.hpp"
 #include "StatTools.hpp"
 #include "MtxParseExpr.hpp"
+#include <VCLTee.Chart.hpp>
+#include <VCLTee.TeEngine.hpp>
+#include <VCLTee.TeeProcs.hpp>
 
 //---------------------------------------------------------------------------
 class TfrmMain : public TForm
