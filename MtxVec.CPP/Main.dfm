@@ -10,7 +10,6 @@ object frmMain: TfrmMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
   OnCreate = FormCreate
@@ -1645,6 +1644,23 @@ object frmMain: TfrmMain
     OnChange = PageControl1Change
     object TabForm: TTabSheet
       Caption = 'Example'
+      object MtxFloatEdit1: TMtxFloatEdit
+        Left = 424
+        Top = 336
+        Width = 90
+        Height = 22
+        RegistryPath = '\Software\Dew Research\MtxVec'
+        StoreInRegistry = False
+        IntegerIncrement = False
+        Scientific = False
+        ReFormat = '0.00#;-0.00#'
+        ImFormat = '+0.00#i;-0.00#i'
+        Increment = '0.1'
+        MaxValue = '0'
+        MinValue = '0'
+        TabOrder = 0
+        Value = '0.00'
+      end
     end
     object TabSource: TTabSheet
       Caption = 'Source code'
@@ -1734,5 +1750,13 @@ object frmMain: TfrmMain
     Visible = False
     WordWrap = False
     OnMouseMove = Memo1MouseMove
+  end
+  object MtxOptimization1: TMtxOptimization
+    Tolerance = 0.000000010000000000
+    Lambda0 = 0.000010000000000000
+    GradTolerance = 0.000000010000000000
+    Left = 759
+    Top = 421
+    MtxDataValues = {}
   end
 end
