@@ -37,6 +37,21 @@ begin
     SelAttributes.Size := 11;
     SelAttributes.Color := RGB(51,51,153);
     SelAttributes.Size := 9;
+    Add('   New features in version 6.0.5:');
+    Add('');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('   Updated for Alexandria 11.0 and MtxVec v6.0.5.');
+    Add('   Updated TSignalCoreAudioIn and TSignalCoreAudioOut to support Android v25 and newer.');
+    Add('   Enhanced TSignalCoreAudioIn and TSignalCoreAudioOut with new API for low-latency (uncompressed) streaming over network across all platforms.');
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');
+
+    Font.Style := [];
+    SelAttributes.Size := 11;
+    SelAttributes.Color := RGB(51,51,153);
+    SelAttributes.Size := 9;
     Add('   New features in version 6.0:');
     Add('');
     Paragraph.FirstIndent := 10;
