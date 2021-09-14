@@ -28,6 +28,26 @@ begin
   With RichEdit1, RichEdit1.Lines do
   begin
     Clear;
+
+    SelAttributes.Size := 13;
+    SelAttributes.Color := RGB(72,123,180);
+    SelAttributes.Style := [fsBold];
+    Add('Release 6.0.5 List of changes');
+    Add('');
+    Paragraph.Numbering := nsBullet;
+    Paragraph.FirstIndent := 10;
+    Add('Support for Delphi Alexandria 11.0');
+    Add('Support for combined (either double or single) precision where meaningfull.');
+    Add('Bug fix for Stepwise multiple regression when running with enabled assertions (debug mode).');
+    Add('Fixed a bug when fitting parameters of the Fisher random distribution.');
+    Add('Added vectorized version of the Fisher PDF.');
+    Add('Running on Linux with hardware acceleration via MtxVec v6.0.5 and Intel OneAPI.');
+    Add('Updated for MtxVec v6.0.5');
+
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');
+
     SelAttributes.Size := 13;
     SelAttributes.Color := RGB(72,123,180);
     SelAttributes.Style := [fsBold];
