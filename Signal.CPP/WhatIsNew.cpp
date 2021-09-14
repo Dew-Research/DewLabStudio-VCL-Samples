@@ -20,6 +20,23 @@ __fastcall TWhatIsNewForm::TWhatIsNewForm(TComponent* Owner)
 	: TBasicForm3(Owner)
 {
 		RichEdit1->Lines->Clear();
+
+		RichEdit1->DefAttributes->Size = 11;
+		RichEdit1->DefAttributes->Style = RichEdit1->DefAttributes->Style << TFontStyle::fsBold;
+		RichEdit1->SelAttributes->Color = (TColor) RGB(51,51,153);
+		RichEdit1->SelAttributes->Size = 12;
+		RichEdit1->Lines->Add("New features in version 6.0.5:");
+		RichEdit1->Lines->Add("");
+		RichEdit1->Paragraph->Numbering = nsBullet;
+		RichEdit1->Paragraph->FirstIndent = 10;
+		RichEdit1->Lines->Add("   Support for RAD Studio 11.0 Alexandria");
+		RichEdit1->Lines->Add("   Added support for Android API 25 for TSignalCoreAudioIn/TSignalCoreAudioOut ");
+		RichEdit1->Lines->Add("   Added API required to enable low-latency streaming over network with TSignalCoreAudioIn/TSignalCoreAudioOut.");
+		RichEdit1->Paragraph->Numbering = nsNone;
+		RichEdit1->Paragraph->FirstIndent = 0;
+		RichEdit1->Lines->Add("");
+
+
 		RichEdit1->DefAttributes->Size = 11;
 		RichEdit1->DefAttributes->Style = RichEdit1->DefAttributes->Style << TFontStyle::fsBold;
 		RichEdit1->SelAttributes->Color = (TColor) RGB(51,51,153);
