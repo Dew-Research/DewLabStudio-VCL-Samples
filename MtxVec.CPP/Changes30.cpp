@@ -17,6 +17,25 @@ __fastcall TfrmChanges30::TfrmChanges30(TComponent* Owner): TBasicForm3(Owner)
   RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
   RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);
   RichEdit1->SelAttributes->Size = 11;
+  RichEdit1->Lines->Add("Changes and new features of MtxVec v6.0.5 (September 2021)");
+  RichEdit1->Lines->Add("");
+  RichEdit1->Paragraph->FirstIndent = 10;
+  RichEdit1->Paragraph->Numbering = nsBullet;
+  RichEdit1->Lines->Add("Enabled support for Delphi Alexandria 11.0.");
+  RichEdit1->Lines->Add("Bug fixes when allocating objects larger than 2GB.");
+  RichEdit1->Lines->Add("Added TVec.Hilbert algorithm variant.");
+  RichEdit1->Lines->Add("Added TMtxVec.CapacityInElements, TMtxVec.CapacityInBytes. Changed behaviour of TMtxVec.Capacity.");
+  RichEdit1->Lines->Add("Added dll version in to names of high performance libraries. Simplifies different versions to coexist on the same computer.");
+  RichEdit1->Lines->Add("Added high performance shared libraries for Linux 64bit when using FireMonkey. The deployment is based on Intel OneAPI 2021 (Update 2). Achieves the same performance on Linux as on Windows.");
+  RichEdit1->Lines->Add("Fixed a bug in ScatterByMask, when Src data vector had zero length.");
+  RichEdit1->Lines->Add("Bug fix for TVec/TMtx/TMtxInt/TVecInt BinarySearch.");
+  RichEdit1->Paragraph->FirstIndent = 0;
+  RichEdit1->Paragraph->Numbering = nsNone;
+  RichEdit1->Lines->Add("");
+
+  RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
+  RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);
+  RichEdit1->SelAttributes->Size = 11;
   RichEdit1->Lines->Add("Changes and new features of MtxVec v6.0 (March 2020)");
   RichEdit1->Lines->Add("");
   RichEdit1->Paragraph->FirstIndent = 10;
