@@ -21,6 +21,8 @@
 #include <VCLTee.Chart.hpp>
 #include <VCLTee.TeEngine.hpp>
 #include <VCLTee.TeeProcs.hpp>
+#include "StatSeries.hpp"
+#include <VCLTee.Series.hpp>
 
 //---------------------------------------------------------------------------
 class TfrmMain : public TForm
