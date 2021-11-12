@@ -241,16 +241,11 @@ begin
     begin
       Clear;
       Add('The platform list shows the Open CL drivers  '
-        + 'available on your computer. If you dont have a AMD or Nvidia GPU '
-        + 'you can still install Intel or Open CL drivers which '
-        + 'run on the CPU alone.  '
-        + 'Intel drivers require at least SSE4.x (Core 2) capable hardware. '
-        + 'Presence of Intel drivers also slows down the start of the '
-        + 'application by minutes. That is why clPlatform.IgnoreIntel is set to true by default. ');
+        + 'available on your computer. ');
       Add('Select various functions and see how they perform in compare to '
-        + 'intel IPP (MtxVec) and native Delphi code. Dont forget however '
-        + 'that data also needs to be copied to GPU and back and this is '
-        + 'fairly slow.');
+        + 'intel IPP (MtxVec) and native Delphi code. '
+        + 'the data also needs to be copied to GPU and back and this is '
+        + 'relatively slow.');
       Add('If the same graphics card is used also for display next to its OpenCL purpose '
         + 'the performance degradation of Open CL code can be substantial. This depends largely also '
         + 'on the amount of total memory allocated on the GPU by the Open CL library. ');
@@ -263,8 +258,6 @@ begin
     1: CPUFloatPrecisionLabel.Caption := 'CPU (MtxVec) float precision: ' + IntToStr(sizeof(double)*8) + 'bit';
     end;
 
-{    ReportMemoryLeaksOnShutDown := True; }
-
     for i := 0 to clPlatform.Count - 1 do
          PlatformListBox.Items.Add(clPlatform[i].Name);
 
@@ -274,8 +267,6 @@ begin
          DeviceListBox.Items.Add(clPlatform[0].Device[i].Name);
 
     DeviceListBox.ItemIndex := 0;
-
-    clPlatform.IgnoreIntel := true;
     kernelSum := 0;
     for i := 0 to clPlatform.Count-1 do
     begin
@@ -285,17 +276,12 @@ begin
         end;
     end;
 
-//    clPlatform.SaveDefaultToRC('C:\CommonObjects\Dew MtxVec.NET\');
-//    clPlatform.ClearPrecompiledBinaries;
     if kernelSum = 0 then
     begin         { load default kernels }
         Screen.Cursor := crHourGlass;
         ShowMessage('When loading the first time, the Open CL drivers need to recompile the source code.'
-                  + 'This may take a minute or longer. If you have Intel Open CL drivers installed they '
-                  + 'add 20s delay regardless, if the program is precompiled. Similar for AMD. The NVidia '
-                  + 'compiled code load times are much faster, but GPU has limits (2s) on maximum kernel '
-                  + 'execution time for gaming GPUs.');
-        clPlatform.LoadProgramsForDevices(true, true, true, true, false);
+                  + 'This may take minutes.');
+        clPlatform.LoadProgramsForDevices(false, false, true, false, false);
         Screen.Cursor := crDefault;
     end;
 

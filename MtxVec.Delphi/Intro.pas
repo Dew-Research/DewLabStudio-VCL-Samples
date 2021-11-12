@@ -36,7 +36,7 @@ uses Math387;
 
 procedure TIntroduction.FormCreate(Sender: TObject);
 begin
-  Label1.Caption := 'Welcome to MtxVec v' + FormatSample('0.0',MtxVecVersion/100);
+  Label1.Caption := 'Welcome to MtxVec v' + FormatSample('0.00',MtxVecVersion/100);
   With RichEdit1.Lines, RichEdit1 do
   begin
     Clear;

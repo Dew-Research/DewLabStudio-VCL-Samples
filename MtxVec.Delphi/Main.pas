@@ -169,11 +169,11 @@ begin
 //  {$ENDIF}
 
   {$IFDEF CPUX86}
-  Application.Title := 'Dew Lab Studio for Delphi - MtxVec v' + FormatSample('0.0',MtxVecVersion/100) + ' W32 demo';
+  Application.Title := 'Dew Lab Studio for Delphi - MtxVec v' + FormatSample('0.00',MtxVecVersion/100) + ' W32 demo';
   {$ENDIF}
 
   {$IFDEF CPUX64}
-  Application.Title := 'Dew Lab Studio for Delphi - MtxVec v' + FormatSample('0.0',MtxVecVersion/100) + ' W64 demo';
+  Application.Title := 'Dew Lab Studio for Delphi - MtxVec v' + FormatSample('0.00',MtxVecVersion/100) + ' W64 demo';
   {$ENDIF}
 
   Caption := Forms.Application.Title;

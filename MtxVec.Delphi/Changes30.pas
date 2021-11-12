@@ -35,6 +35,29 @@ begin
     SelAttributes.Color := RGB(51,104,196);
     SelAttributes.Size := 11;
 
+    Add('List of new features in v6.0.6:');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsUnderline];
+    Add('Core product:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('Added support for Open CL 3.0.');
+    Add('New options for reporting build errors of Open CL kernels.');
+    Add('Added ability to read/write VectorInt/MatrixInt to/from GPU.');
+    Add('Added possibility to declare arbitrary size of clVector and clMatrix with GPU memory not from object cache.');
+    Add('Updated with latest Intel OneAPI IPP and MKL (2021 Update 4) libs!');
+    Add('Fixed a bug affecting single precision 64bit apps resulting in invalid_instruction exception!');
+    Paragraph.FirstIndent := 0;
+    Paragraph.Numbering := nsNone;
+    Add('');
+
+    SelAttributes.Style := [fsBold];
+    SelAttributes.Color := RGB(51,104,196);
+    SelAttributes.Size := 11;
+
     Add('List of new features in v6.0.5:');
     Paragraph.FirstIndent := 0;
     Paragraph.Numbering := nsNone;

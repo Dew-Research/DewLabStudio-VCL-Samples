@@ -124,13 +124,8 @@ begin
     begin
       Clear;
       Add('The platform list shows the Open CL drivers  '
-        + 'available on your computer. If you dont have a AMD or Nvidia GPU '
-        + 'you can still install Intel or Open CL drivers which '
-        + 'run on the CPU alone. Note that GPU device speed is sensitive '
-        + 'to vector lengths which are not divisable by 4. '
-        + 'Intel drivers require at least SSE4.x (Core 2) capable hardware. '
-        + 'Presence of Intel drivers also slows down the start of the '
-        + 'application by 20seconds. ');
+        + 'available on your computer. Note that GPU device speed is sensitive '
+        + 'to vector lengths which are not divisable by 4. ');
       Add('Press run to execute the custom function on the selected platform.');
     end;
 
@@ -143,8 +138,6 @@ begin
          DeviceListBox.Items.Add(clPlatform[0].Device[i].Name);
 
     DeviceListBox.ItemIndex := 0;
-
-    clPlatform.IgnoreIntel := True;
 
     kernelSum := 0;
     for i := 0 to clPlatform.Count-1 do
@@ -159,11 +152,8 @@ begin
     begin         { load default kernels }
         Screen.Cursor := crHourGlass;
         ShowMessage('When loading the first time, the Open CL drivers need to recompile the source code.'
-                  + 'This may take a minute or longer. If you have Intel Open CL drivers installed they '
-                  + 'add 20s delay regardless, if the program is precompiled. Similar for AMD. The NVidia '
-                  + 'compiled code load times are much faster, but GPU has limits on maximum kernel '
-                  + 'execution time for gaming GPUs.');
-        clPlatform.LoadProgramsForDevices(true, true, true, true, false);
+                  + 'This may take minutes.');
+        clPlatform.LoadProgramsForDevices(false, false, true, false, false);
         Screen.Cursor := crDefault;
     end;
 

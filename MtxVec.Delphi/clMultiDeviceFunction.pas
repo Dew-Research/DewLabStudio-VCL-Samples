@@ -90,10 +90,6 @@ begin
 
     MaximumJobCountEdit.Text := '2';
 
-//     clPlatform.SaveDefaultToRes('C:\CommonObjects\Dew MtxVec.NET\');
-//    clPlatform.ClearPrecompiledBinaries;
-
-    clPlatform.IgnoreIntel := true;
     kernelSum := 0;
     for i := 0 to clPlatform.Count-1 do
     begin
@@ -103,17 +99,12 @@ begin
         end;
     end;
 
-//    clPlatform.SaveDefaultToRC('C:\CommonObjects\Dew MtxVec.NET\');
-//    clPlatform.ClearPrecompiledBinaries;
     if kernelSum = 0 then
     begin         { load default kernels }
         Screen.Cursor := crHourGlass;
         ShowMessage('When loading the first time, the Open CL drivers need to recompile the source code.'
-                  + 'This may take a minute or longer. If you have Intel Open CL drivers installed they '
-                  + 'add 20s delay regardless, if the program is precompiled. Similar for AMD. The NVidia '
-                  + 'compiled code load times are much faster, but GPU has limits (2s) on maximum kernel '
-                  + 'execution time for gaming GPUs.');
-        clPlatform.LoadProgramsForDevices(true, true, true, true, false);
+                  + 'This may take minutes.');
+        clPlatform.LoadProgramsForDevices(false, false, true, false, false);
         Screen.Cursor := crDefault;
     end;
 

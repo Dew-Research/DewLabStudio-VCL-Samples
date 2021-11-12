@@ -10,7 +10,6 @@ object clMultiDeviceFunctionForm: TclMultiDeviceFunctionForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
