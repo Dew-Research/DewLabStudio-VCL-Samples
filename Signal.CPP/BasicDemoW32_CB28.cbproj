@@ -7,8 +7,8 @@
         <MainSource>BasicDemoW32_CB28.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>1</TargetedPlatforms>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -34,6 +34,12 @@
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
@@ -45,9 +51,14 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-        <UsePackages>true</UsePackages>
         <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
         <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
         <BCC_wpar>false</BCC_wpar>
@@ -67,9 +78,20 @@
         <BCC_SmartPCHCache>false</BCC_SmartPCHCache>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <IncludePath>C:\CommonObjects\GIT-DewLabStudio-VCL-Samples\Signal.CPP\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>C:\CommonObjects\GIT-DewLabStudio-VCL-Samples\Signal.CPP\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <PostBuildEvent><![CDATA[copy *.sfs "$(OUTPUTDIR)"
+copy *.rtf "$(OUTPUTDIR)"
+$(PostBuildEvent)]]></PostBuildEvent>
         <SanitizedProjectName>BasicDemoW32_CB28</SanitizedProjectName>
+        <BCC_RequireMathFuncErrorNumber>false</BCC_RequireMathFuncErrorNumber>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+        <ILINK_LinkwithSQL>false</ILINK_LinkwithSQL>
+        <ILINK_LinkwithIndy>false</ILINK_LinkwithIndy>
+        <ILINK_LinkwithIntebaseTogo>false</ILINK_LinkwithIntebaseTogo>
+        <ILINK_LinkwithMidas>false</ILINK_LinkwithMidas>
+        <ILINK_LinkwithPThread>false</ILINK_LinkwithPThread>
+        <ILINK_LinkwithRegEx>false</ILINK_LinkwithRegEx>
+        <ILINK_LinkwithSQLite>false</ILINK_LinkwithSQLite>
+        <ILINK_LinkwithZLib>false</ILINK_LinkwithZLib>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;DCLClassifiersDB128;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore628;MtxDb628;MtxTee628;MtxTools628;RESTBackendComponents;RESTComponents;rtl;SignalCore628;SignalTee628;SignalTool628;soapmidas;soaprtl;soapserver;StatCore628;StatSeries628;StatTools628;Tee928;TeeDB928;TeeGL928;TeeImage928;TeeImport928;TeeLanguage928;TeePro928;TeeUI928;TeeWorld928;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -83,6 +105,10 @@
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore628;MtxDb628;MtxTee628;MtxTools628;RESTBackendComponents;RESTComponents;rtl;SignalCore628;SignalTee628;SignalTool628;soapmidas;soaprtl;soapserver;StatCore628;StatSeries628;StatTools628;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
@@ -105,6 +131,7 @@
         <CLANG_UnwindTables>true</CLANG_UnwindTables>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+        <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -112,7 +139,13 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;TeePro928.lib;TeeUI928.lib;Tee928.lib;vclimg.lib;xmlrtl.lib;MtxTools628.lib;MtxCore628.lib;SignalTool628.lib;SignalCore628.lib;SignalTee628.lib;MtxTee628.lib</LinkPackageStatics>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <BCC_RequireMathFuncErrorNumber>false</BCC_RequireMathFuncErrorNumber>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <LinkPackageStatics>rtl.lib;vcl.lib;vclactnband.lib;vclx.lib;TeePro928.lib;TeeUI928.lib;Tee928.lib;vclimg.lib;xmlrtl.lib;MtxTools628.lib;MtxCore628.lib;SignalTool628.lib;SignalCore628.lib;SignalTee628.lib;MtxTee628.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -122,6 +155,12 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="AmpltRatios.cpp">
@@ -505,69 +544,69 @@
             <DependentOn>WindowsDemo.h</DependentOn>
             <BuildOrder>63</BuildOrder>
         </CppCompile>
-        <FormResources Include="Basic1.dfm"/>
-        <FormResources Include="Basic2.dfm"/>
-        <FormResources Include="Basic3.dfm"/>
-        <FormResources Include="AmpltRatios.dfm"/>
-        <FormResources Include="AutoRegressDemo.dfm"/>
-        <FormResources Include="BicoherenceTest.dfm"/>
-        <FormResources Include="BiSpcAnalyzer.dfm"/>
-        <FormResources Include="BispectrumColorGrid.dfm"/>
-        <FormResources Include="BispectrumSurface.dfm"/>
-        <FormResources Include="BispectrumTest.dfm"/>
-        <FormResources Include="BrowseDemo.dfm"/>
-        <FormResources Include="BufferUnit.dfm"/>
-        <FormResources Include="CepstrumDemo.dfm"/>
-        <FormResources Include="CoherenceTest.dfm"/>
-        <FormResources Include="CoherenceTest2.dfm"/>
-        <FormResources Include="CZTDemo.dfm"/>
-        <FormResources Include="Demodulator.dfm"/>
-        <FormResources Include="Differentiator.dfm"/>
-        <FormResources Include="DiscreteSeriesDemo.dfm"/>
-        <FormResources Include="EnvelopeDemo.dfm"/>
-        <FormResources Include="FiltersDemo.dfm"/>
-        <FormResources Include="FrequencyBands.dfm"/>
-        <FormResources Include="GeneratorDemo.dfm"/>
-        <FormResources Include="IirFiltering.dfm"/>
-        <FormResources Include="IirGroupDelay.dfm"/>
-        <FormResources Include="IirZeros.dfm"/>
-        <FormResources Include="InterpolateDecimate.dfm"/>
-        <FormResources Include="Intro.dfm"/>
-        <FormResources Include="IntroApplication.dfm"/>
-        <FormResources Include="IntroCompList.dfm"/>
-        <FormResources Include="IntroDesign.dfm"/>
-        <FormResources Include="IntroFunctionList.dfm"/>
-        <FormResources Include="IntroHigherSpectral.dfm"/>
-        <FormResources Include="IntroPeakSpectral.dfm"/>
-        <FormResources Include="IntroPerformance.dfm"/>
-        <FormResources Include="IntroPlayback.dfm"/>
-        <FormResources Include="IntroSignal.dfm"/>
-        <FormResources Include="IntroSpectral.dfm"/>
-        <FormResources Include="LissajousScope.dfm"/>
-        <FormResources Include="Main.dfm"/>
-        <FormResources Include="MedianDemo.dfm"/>
-        <FormResources Include="MonitorDemo.dfm"/>
         <FormResources Include="OnLineBicoherence.dfm"/>
-        <FormResources Include="OnLineCoherence.dfm"/>
-        <FormResources Include="OptimalFilters.dfm"/>
-        <FormResources Include="PeakFiltering.dfm"/>
+        <FormResources Include="MonitorDemo.dfm"/>
+        <FormResources Include="MedianDemo.dfm"/>
+        <FormResources Include="Main.dfm"/>
         <FormResources Include="PeakInterpolate.dfm"/>
-        <FormResources Include="PeakMarkingBasic.dfm"/>
-        <FormResources Include="PeakMarkingFormating.dfm"/>
-        <FormResources Include="PeakMarkingOrder.dfm"/>
-        <FormResources Include="PhaseDemo.dfm"/>
-        <FormResources Include="PhaseScope.dfm"/>
-        <FormResources Include="PhaseShifter.dfm"/>
-        <FormResources Include="PlaybackDemo.dfm"/>
-        <FormResources Include="RateConvert.dfm"/>
-        <FormResources Include="RegisterSignal.dfm"/>
-        <FormResources Include="SavGolayDemo.dfm"/>
-        <FormResources Include="SignalAnalysisDemo.dfm"/>
+        <FormResources Include="PeakFiltering.dfm"/>
+        <FormResources Include="OptimalFilters.dfm"/>
+        <FormResources Include="OnLineCoherence.dfm"/>
+        <FormResources Include="IntroPerformance.dfm"/>
+        <FormResources Include="IntroPeakSpectral.dfm"/>
+        <FormResources Include="IntroHigherSpectral.dfm"/>
+        <FormResources Include="IntroFunctionList.dfm"/>
+        <FormResources Include="LissajousScope.dfm"/>
+        <FormResources Include="IntroSpectral.dfm"/>
+        <FormResources Include="IntroSignal.dfm"/>
+        <FormResources Include="IntroPlayback.dfm"/>
         <FormResources Include="SpcAnalyzer.dfm"/>
-        <FormResources Include="TriggerDemo.dfm"/>
-        <FormResources Include="WhatIsNew.dfm"/>
-        <FormResources Include="WindowFilters.dfm"/>
+        <FormResources Include="SignalAnalysisDemo.dfm"/>
+        <FormResources Include="SavGolayDemo.dfm"/>
+        <FormResources Include="RegisterSignal.dfm"/>
         <FormResources Include="WindowsDemo.dfm"/>
+        <FormResources Include="WindowFilters.dfm"/>
+        <FormResources Include="WhatIsNew.dfm"/>
+        <FormResources Include="TriggerDemo.dfm"/>
+        <FormResources Include="PhaseDemo.dfm"/>
+        <FormResources Include="PeakMarkingOrder.dfm"/>
+        <FormResources Include="PeakMarkingFormating.dfm"/>
+        <FormResources Include="PeakMarkingBasic.dfm"/>
+        <FormResources Include="RateConvert.dfm"/>
+        <FormResources Include="PlaybackDemo.dfm"/>
+        <FormResources Include="PhaseShifter.dfm"/>
+        <FormResources Include="PhaseScope.dfm"/>
+        <FormResources Include="BrowseDemo.dfm"/>
+        <FormResources Include="BispectrumTest.dfm"/>
+        <FormResources Include="BispectrumSurface.dfm"/>
+        <FormResources Include="BispectrumColorGrid.dfm"/>
+        <FormResources Include="CoherenceTest2.dfm"/>
+        <FormResources Include="CoherenceTest.dfm"/>
+        <FormResources Include="CepstrumDemo.dfm"/>
+        <FormResources Include="BufferUnit.dfm"/>
+        <FormResources Include="Basic2.dfm"/>
+        <FormResources Include="Basic1.dfm"/>
+        <FormResources Include="AutoRegressDemo.dfm"/>
+        <FormResources Include="AmpltRatios.dfm"/>
+        <FormResources Include="BiSpcAnalyzer.dfm"/>
+        <FormResources Include="BicoherenceTest.dfm"/>
+        <FormResources Include="Basic3.dfm"/>
+        <FormResources Include="InterpolateDecimate.dfm"/>
+        <FormResources Include="IirZeros.dfm"/>
+        <FormResources Include="IirGroupDelay.dfm"/>
+        <FormResources Include="IirFiltering.dfm"/>
+        <FormResources Include="IntroDesign.dfm"/>
+        <FormResources Include="IntroCompList.dfm"/>
+        <FormResources Include="IntroApplication.dfm"/>
+        <FormResources Include="Intro.dfm"/>
+        <FormResources Include="DiscreteSeriesDemo.dfm"/>
+        <FormResources Include="Differentiator.dfm"/>
+        <FormResources Include="Demodulator.dfm"/>
+        <FormResources Include="CZTDemo.dfm"/>
+        <FormResources Include="GeneratorDemo.dfm"/>
+        <FormResources Include="FrequencyBands.dfm"/>
+        <FormResources Include="FiltersDemo.dfm"/>
+        <FormResources Include="EnvelopeDemo.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -596,6 +635,8 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\DclStatCore628.bpl">Dew Stats Master v6</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Windows\SysWOW64\StatSeries628.bpl">Dew Stats Master v6 TeeChart</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
                     <Source Name="MainSource">BasicDemoW32_CB28.cpp</Source>
@@ -632,9 +673,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\BasicDemoW32_CB28.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32280.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <RemoteName>BasicDemoW32_CB28.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -644,8 +684,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32280.dll" Class="DependencyModule">
+                <DeployFile LocalName=".\Win32\Debug\BasicDemoW32_CB28.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
+                        <RemoteName>BasicDemoW32_CB28.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1465,10 +1506,10 @@
                 </DeployClass>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
@@ -1477,7 +1518,7 @@
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
+                <Platform value="Win64">True</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
@@ -1485,4 +1526,36 @@
     <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
 </Project>
