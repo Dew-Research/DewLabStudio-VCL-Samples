@@ -37,8 +37,6 @@ __published:	// IDE-managed Components
   TSpeedButton *btnNext;
         TTreeView *TreeView1;
         TMemo *Memo1;
-	TMtxFloatEdit *MtxFloatEdit1;
-	TMtxOptimization *MtxOptimization1;
   void __fastcall FormCreate(TObject *Sender);
   void __fastcall btnPreviousClick(TObject *Sender);
   void __fastcall btnNextClick(TObject *Sender);
