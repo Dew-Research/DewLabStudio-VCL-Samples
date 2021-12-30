@@ -14,7 +14,7 @@ uses
   ,System.ComponentModel, ExtCtrls, TeeJPEG, jpeg, TeEngine, TeeProcs, Chart,
   SignalToolsTee
   {$ELSE}
-  ,jpeg, ExtCtrls, XPMan
+  ,ExtCtrls, jpeg
   {$ENDIF}
   ;
 

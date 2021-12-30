@@ -10,7 +10,6 @@ object frmMain: TfrmMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
   OnCreate = FormCreate
@@ -16063,10 +16062,6 @@ object frmMain: TfrmMain
     object TabSource: TTabSheet
       Caption = 'Source code'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object btnConfig: TButton
         Left = 8
         Top = 16
