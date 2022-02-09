@@ -4,7 +4,7 @@
 
 # Dew Lab Studio VCL for RAD Studio, Delphi and C++ Builder samples.
   
-Sample programs showing how to use Dew Lab Studio VCL for (RAD Studio, Delphi and C++ Builder). TeeChart Pro VCL trial or registered version is required (!) to rebuild the demos. The MtxVec Demo will build also with TeeChart version included with distribution of Deplhi.
+Sample programs showing how to use Dew Lab Studio VCL for (RAD Studio, Delphi and C++ Builder). TeeChart Pro VCL trial or registered version is required (!) to rebuild the demos. The MtxVec Demo will build also with TeeChart version included with distribution of Delphi.
 
 Dew Lab Studio contains four products. For each product there is a separate "main" demo project, which contains multiple examples. Each of the demos is available for Delphi and for C++Builder separately. The FireMonkey samples are in a separate repository. 
 
