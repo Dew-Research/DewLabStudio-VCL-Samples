@@ -10,4 +10,6 @@ Dew Lab Studio contains four products. For each product there is a separate "mai
 
 You'll need Dew Lab Studio for Delphi VCL evaluation or registered version to run the examples on this repository. Fully functional evaluation version can be obtained at https://www.dewresearch.com/downloads-site/delphi-cbuilder-download
 
-IMPORTANT: To correctly checkout/pull a CRLF must be enabled for your GIT!! Although not used by the source files, some sample data files could be affected.
+IMPORTANT: 
+
+To correctly checkout/pull a CRLF must be enabled for your GIT!! Although not used by the source files, some sample data files could be affected.
