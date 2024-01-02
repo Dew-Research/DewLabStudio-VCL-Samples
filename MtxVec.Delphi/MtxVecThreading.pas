@@ -606,6 +606,13 @@ begin
   // Create the global threads
   if not Assigned(GlobalThreads) then     //created only once
     GlobalThreads := TMtxForLoop.Create;
+
+  //Required (!!) to achieve good results with TParallel.For
+
+  {$IFDEF D21} //TThreadPool was introduced with XE7
+  TThreadPool.Default.SetMaxWorkerThreads(GlobalThreads.ThreadCount);
+  TThreadPool.Default.SetMinWorkerThreads(GlobalThreads.ThreadCount);
+  {$ENDIF}
 end;
 
 

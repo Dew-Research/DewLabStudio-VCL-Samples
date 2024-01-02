@@ -93,6 +93,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
@@ -103,7 +104,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
         <DCC_Optimize>true</DCC_Optimize>
         <DCC_GenerateStackFrames>false</DCC_GenerateStackFrames>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -378,11 +378,12 @@
                     <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\CommonObjects\TeeSource1\TeeChart 2019\Source\..\Compiled\Delphi17.win32\Bin\DclFMXTeePro917.bpl">File C:\CommonObjects\TeeSource1\TeeChart 2019\Source\..\Compiled\Delphi17.win32\Bin\DclFMXTeePro917.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\StatSeries617.bpl">File C:\WINDOWS\SysWOW64\StatSeries617.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k170.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp170.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k170.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp170.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\CommonObjects\TeeSource1\TeeChart 2021.September.VCL\Source\..\Compiled\Delphi17.win32\Bin\DclFMXTeePro917.bpl">TeeChart Pro 2021 for FireMonkey Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

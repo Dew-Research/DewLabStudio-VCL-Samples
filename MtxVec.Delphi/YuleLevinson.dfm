@@ -64,7 +64,9 @@ inherited YuleLev: TYuleLev
     ExplicitWidth = 539
     ExplicitHeight = 310
     object Series1: TFastLineSeries
+      Marks.Arrow.Visible = True
       Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
       Marks.Visible = False
       SeriesColor = 12222282
       Title = 'Yule Walker AR'
@@ -75,7 +77,9 @@ inherited YuleLev: TYuleLev
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
+      Marks.Arrow.Visible = True
       Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
       Marks.Visible = False
       Title = 'FFT'
       LinePen.Color = clRed

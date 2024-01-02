@@ -60,8 +60,8 @@ type
     ResetWorkspaceButton: TButton;
     Bevel2: TBevel;
     Label2: TLabel;
-    Series1: TMtxFastLineSeries;
-    Series2: TMtxFastLineSeries;
+    Series1: TFastLineSeries;
+    Series2: TFastLineSeries;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ListBoxDblClick(Sender: TObject);

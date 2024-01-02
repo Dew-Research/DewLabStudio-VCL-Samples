@@ -33,7 +33,6 @@ object ForLoopExampleForm: TForLoopExampleForm
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = 345
     DesignSize = (
       625
       54)
@@ -91,32 +90,10 @@ object ForLoopExampleForm: TForLoopExampleForm
       
         'length and memory manager with multi-core processing of Student ' +
         'CDF function')
-    BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.Maximum = 24.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Vector length'
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMinimum = False
-    LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 1272.500000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Time [ms]'
-    RightAxis.Grid.ZPosition = 100.000000000000000000
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Pen.Color = clBlack
@@ -125,10 +102,12 @@ object ForLoopExampleForm: TForLoopExampleForm
     BevelOuter = bvNone
     Color = clWhite
     TabOrder = 1
-    DefaultCanvas = ''
     ColorPaletteIndex = 13
     object Series1: TFastLineSeries
-      HoverElement = []
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 10485760
       Title = 'Standard MM'
       LinePen.Color = 10485760
@@ -138,7 +117,10 @@ object ForLoopExampleForm: TForLoopExampleForm
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
-      HoverElement = []
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 33023
       Title = 'Super conductive MM'
       LinePen.Color = 33023
@@ -160,31 +142,8 @@ object ForLoopExampleForm: TForLoopExampleForm
         'Super conductive memory allocation makes the code run faster on ' +
         'multi-core CPU'#39's for short arrays (vectors) '
       'Gains grow with core count.')
-    BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.Maximum = 24.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Vector length'
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
-    LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 535.000000000000000000
-    LeftAxis.Minimum = 157.500000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Factor'
-    RightAxis.Grid.ZPosition = 100.000000000000000000
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Pen.Color = clBlack
@@ -193,11 +152,12 @@ object ForLoopExampleForm: TForLoopExampleForm
     BevelOuter = bvNone
     Color = clWhite
     TabOrder = 2
-    ExplicitHeight = 160
-    DefaultCanvas = ''
     ColorPaletteIndex = 13
     object FastLineSeries1: TFastLineSeries
-      HoverElement = []
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 10485760
       Title = 'Scalability'
       LinePen.Color = 10485760

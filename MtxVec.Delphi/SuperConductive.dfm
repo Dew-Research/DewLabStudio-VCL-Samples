@@ -21,7 +21,6 @@ object SuperConductiveForm: TSuperConductiveForm
     Height = 116
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 444
     DesignSize = (
       957
       116)
@@ -199,36 +198,13 @@ object SuperConductiveForm: TSuperConductiveForm
       
         'Cost of allocation of TVec and Vector remain relatively fixed wi' +
         'th super-conductive approach.')
-    BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
-    LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Time [ms]'
-    RightAxis.Grid.ZPosition = 100.000000000000000000
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = clWhite
     TabOrder = 1
-    ExplicitWidth = 795
-    ExplicitHeight = 449
-    DefaultCanvas = ''
     ColorPaletteIndex = 13
   end
   object Thread1: TMtxProgressDialog

@@ -9026,17 +9026,21 @@ object frmProbCalc: TfrmProbCalc
     Align = alLeft
     TabOrder = 0
     TabStop = True
+    ExplicitTop = 50
     ExplicitWidth = 416
-    ExplicitHeight = 303
+    ExplicitHeight = 478
     inherited Panel1: TPanel
       Width = 295
       Height = 478
+      ExplicitWidth = 295
+      ExplicitHeight = 478
       inherited LabelDec: TLabel
         Width = 63
         ExplicitWidth = 63
       end
       inherited ListViewParams: TListView
         Width = 293
+        ExplicitWidth = 293
       end
       inherited GroupBoxRange: TGroupBox
         inherited Label1: TLabel
@@ -9047,11 +9051,14 @@ object frmProbCalc: TfrmProbCalc
     end
     inherited Panel2: TPanel
       Height = 478
+      ExplicitHeight = 478
       inherited ListBoxDist: TListBox
         Height = 455
+        ExplicitHeight = 455
       end
       inherited Panel3: TPanel
         Top = 456
+        ExplicitTop = 456
       end
     end
   end
@@ -9069,15 +9076,12 @@ object frmProbCalc: TfrmProbCalc
     MultiLine = True
     TabOrder = 1
     TabStop = False
-    ExplicitLeft = 0
-    ExplicitWidth = 928
     object TabSheetResults: TTabSheet
       Margins.Left = 2
       Margins.Top = 2
       Margins.Right = 2
       Margins.Bottom = 2
       Caption = 'Text results'
-      ExplicitWidth = 920
       object MemoResults: TMemo
         Left = 0
         Top = 0
@@ -9098,7 +9102,6 @@ object frmProbCalc: TfrmProbCalc
         ReadOnly = True
         ScrollBars = ssBoth
         TabOrder = 0
-        ExplicitWidth = 920
       end
       object Panel2: TPanel
         Left = 0
@@ -9112,7 +9115,6 @@ object frmProbCalc: TfrmProbCalc
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitWidth = 920
         object CheckBox4: TCheckBox
           Left = 8
           Top = 16
@@ -9137,7 +9139,10 @@ object frmProbCalc: TfrmProbCalc
       Margins.Bottom = 2
       Caption = 'Chart'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
       ExplicitWidth = 920
+      ExplicitHeight = 0
       object Chart1: TChart
         Left = 0
         Top = 0
@@ -9147,6 +9152,7 @@ object frmProbCalc: TfrmProbCalc
         Margins.Top = 2
         Margins.Right = 2
         Margins.Bottom = 2
+        BackWall.Brush.Color = clWhite
         BackWall.Brush.Style = bsClear
         Foot.Visible = False
         Gradient.EndColor = 12615808
@@ -9162,40 +9168,16 @@ object frmProbCalc: TfrmProbCalc
         MarginLeft = 0
         MarginRight = 0
         MarginTop = 0
-        Title.AutoSize = False
+        Title.AdjustFrame = False
         Title.Font.Color = clBlack
         Title.Font.Style = [fsBold]
         Title.Text.Strings = (
           '')
-        Title.AdjustFrame = False
         BottomAxis.Grid.Visible = False
-        BottomAxis.LogarithmicBase = 10.000000000000000000
-        BottomAxis.Maximum = 24.000000000000000000
-        BottomAxis.EndPosition = 100.000000000000000000
-        DepthAxis.LogarithmicBase = 10.000000000000000000
-        DepthAxis.Maximum = 0.500000000000000000
-        DepthAxis.Minimum = -0.500000000000000000
-        DepthAxis.EndPosition = 100.000000000000000000
-        DepthTopAxis.LogarithmicBase = 10.000000000000000000
-        DepthTopAxis.Maximum = 0.500000000000000000
-        DepthTopAxis.Minimum = -0.500000000000000000
-        DepthTopAxis.EndPosition = 100.000000000000000000
         LeftAxis.Grid.Visible = False
-        LeftAxis.LogarithmicBase = 10.000000000000000000
-        LeftAxis.Maximum = 480.000000000000000000
-        LeftAxis.Minimum = 80.000000000000000000
-        LeftAxis.EndPosition = 100.000000000000000000
         LeftAxis.Title.Caption = 'PDF'
         RightAxis.Grid.Visible = False
-        RightAxis.Grid.ZPosition = 100.000000000000000000
-        RightAxis.LogarithmicBase = 10.000000000000000000
-        RightAxis.EndPosition = 100.000000000000000000
         RightAxis.Title.Caption = 'CDF'
-        RightAxis.ZPosition = 100.000000000000000000
-        TopAxis.Grid.ZPosition = 100.000000000000000000
-        TopAxis.LogarithmicBase = 10.000000000000000000
-        TopAxis.EndPosition = 100.000000000000000000
-        TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         View3DWalls = False
         OnAfterDraw = Chart1AfterDraw
@@ -9206,10 +9188,12 @@ object frmProbCalc: TfrmProbCalc
         ShowHint = False
         TabOrder = 0
         ExplicitWidth = 920
-        DefaultCanvas = ''
         ColorPaletteIndex = 13
         object Series1: TLineSeries
-          HoverElement = [heCurrent]
+          Marks.Arrow.Visible = True
+          Marks.Callout.Brush.Color = clBlack
+          Marks.Callout.Arrow.Visible = True
+          Marks.Visible = False
           SeriesColor = 10485760
           Title = 'PDF'
           Brush.BackColor = clDefault
@@ -9267,14 +9251,12 @@ object frmProbCalc: TfrmProbCalc
     Margins.Bottom = 2
     ActionManager = ActionManager1
     Caption = 'ActionToolBar1'
-    Color = clMenuBar
-    ColorMap.DisabledFontColor = 7171437
     ColorMap.HighlightColor = clWhite
-    ColorMap.BtnSelectedFont = clBlack
+    ColorMap.BtnSelectedColor = clBtnFace
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -9294,14 +9276,12 @@ object frmProbCalc: TfrmProbCalc
     Margins.Bottom = 2
     ActionManager = ActionManager1
     Caption = 'ActionToolBar2'
-    Color = clMenuBar
-    ColorMap.DisabledFontColor = 7171437
     ColorMap.HighlightColor = clWhite
-    ColorMap.BtnSelectedFont = clBlack
+    ColorMap.BtnSelectedColor = clBtnFace
     ColorMap.UnusedColor = clWhite
     EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []

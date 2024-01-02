@@ -57,7 +57,7 @@ var
 
 implementation
 
-Uses    {$IFNDEF TEESTD}
+Uses    {$IFNDEF TEESTD} //Install the free TeeChart from the Embarcadero Installer and define TEESTD in the compiler options, if you dont have TeeChart Pro
         EditChar, TeeEdit,
         {$ENDIF}
         MtxGridSerEdit; { <--- add grid series editor to uses clause }

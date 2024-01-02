@@ -133,6 +133,7 @@ inherited Mult1: TMult1
     Top = 105
     Width = 384
     Height = 328
+    BackWall.Brush.Color = clWhite
     BackWall.Brush.Style = bsClear
     Gradient.EndColor = clWhite
     Gradient.StartColor = 12615680
@@ -144,35 +145,20 @@ inherited Mult1: TMult1
     Title.Text.Strings = (
       'TChart')
     Title.Visible = False
-    BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.Maximum = 24.000000000000000000
     BottomAxis.Title.Caption = 'Dim'
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 782.212500000000000000
-    LeftAxis.Minimum = 382.500000000000000000
     LeftAxis.Title.Caption = 'time [ms]'
-    RightAxis.Grid.ZPosition = 100.000000000000000000
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Pen.Mode = pmNotXor
     Align = alClient
     BevelOuter = bvNone
     Color = 14869218
     TabOrder = 3
-    DefaultCanvas = ''
     ColorPaletteIndex = 13
     object Series1: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 33023
       Title = 'Delphi'
       Brush.BackColor = clDefault
@@ -190,7 +176,10 @@ inherited Mult1: TMult1
       YValues.Order = loNone
     end
     object Series2: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 12615680
       Title = 'MtxVec'
       Brush.BackColor = clDefault

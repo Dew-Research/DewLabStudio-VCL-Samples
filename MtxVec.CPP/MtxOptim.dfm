@@ -2,19 +2,20 @@ inherited frmMtxOptim: TfrmMtxOptim
   Caption = 'frmMtxOptim'
   ClientHeight = 522
   ClientWidth = 651
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 667
   ExplicitHeight = 561
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 651
     Height = 98
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 651
     ExplicitHeight = 98
     inherited RichEdit1: TRichEdit
       Width = 649
       Height = 96
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 649
       ExplicitHeight = 96
     end
@@ -22,6 +23,7 @@ inherited frmMtxOptim: TfrmMtxOptim
   inherited Panel2: TPanel
     Top = 464
     Width = 651
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 464
     ExplicitWidth = 651
     object Button1: TBitBtn
@@ -47,6 +49,7 @@ inherited frmMtxOptim: TfrmMtxOptim
     Top = 98
     Width = 651
     Height = 366
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 98
     ExplicitWidth = 651
     ExplicitHeight = 366

@@ -97,40 +97,19 @@ inherited BenchmarkXForm: TBenchmarkXForm
       Title.Text.Strings = (
         'Comparison')
       BottomAxis.AxisValuesFormat = '#,##0.###ms'
-      BottomAxis.LogarithmicBase = 10.000000000000000000
-      BottomAxis.Maximum = 166.950000000000000000
-      BottomAxis.EndPosition = 100.000000000000000000
-      DepthAxis.LogarithmicBase = 10.000000000000000000
-      DepthAxis.Maximum = 0.500000000000000000
-      DepthAxis.Minimum = -0.500000000000000000
-      DepthAxis.EndPosition = 100.000000000000000000
-      DepthTopAxis.LogarithmicBase = 10.000000000000000000
-      DepthTopAxis.Maximum = 0.500000000000000000
-      DepthTopAxis.Minimum = -0.500000000000000000
-      DepthTopAxis.EndPosition = 100.000000000000000000
-      LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.Maximum = 5.000000000000000000
       LeftAxis.MaximumOffset = 24
       LeftAxis.MinimumOffset = 24
-      LeftAxis.EndPosition = 100.000000000000000000
-      RightAxis.Grid.ZPosition = 100.000000000000000000
-      RightAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.EndPosition = 100.000000000000000000
-      RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
-      TopAxis.LogarithmicBase = 10.000000000000000000
-      TopAxis.EndPosition = 100.000000000000000000
-      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       Align = alClient
       Color = 14869218
       PopupMenu = ChartMenu
       TabOrder = 0
-      DefaultCanvas = ''
       ColorPaletteIndex = 13
       object Series4: THorizBarSeries
-        HoverElement = []
         BarBrush.Gradient.Direction = gdLeftRight
+        Marks.Arrow.Visible = True
+        Marks.Callout.Brush.Color = clBlack
+        Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         SeriesColor = 16756912
         Title = 'Complex Math387'
@@ -141,8 +120,10 @@ inherited BenchmarkXForm: TBenchmarkXForm
         YValues.Order = loNone
       end
       object Series3: THorizBarSeries
-        HoverElement = []
         BarBrush.Gradient.Direction = gdLeftRight
+        Marks.Arrow.Visible = True
+        Marks.Callout.Brush.Color = clBlack
+        Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         SeriesColor = clBlue
         Title = 'Sample Math387'
@@ -153,8 +134,10 @@ inherited BenchmarkXForm: TBenchmarkXForm
         YValues.Order = loNone
       end
       object Series2: THorizBarSeries
-        HoverElement = []
         BarBrush.Gradient.Direction = gdLeftRight
+        Marks.Arrow.Visible = True
+        Marks.Callout.Brush.Color = clBlack
+        Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         SeriesColor = 11579647
         Title = 'Complex MtxVec'
@@ -165,8 +148,10 @@ inherited BenchmarkXForm: TBenchmarkXForm
         YValues.Order = loNone
       end
       object Series1: THorizBarSeries
-        HoverElement = []
         BarBrush.Gradient.Direction = gdLeftRight
+        Marks.Arrow.Visible = True
+        Marks.Callout.Brush.Color = clBlack
+        Marks.Callout.Arrow.Visible = True
         Marks.Visible = False
         Title = 'Sample MtxVec'
         Gradient.Direction = gdLeftRight

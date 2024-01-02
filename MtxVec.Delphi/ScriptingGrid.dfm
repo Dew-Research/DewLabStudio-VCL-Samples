@@ -2470,10 +2470,6 @@ object ScriptingGridForm: TScriptingGridForm
       object Sheet2: TTabSheet
         Caption = 'Grid 2'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Grid2: TStringGrid
           Left = 0
           Top = 0
@@ -2500,10 +2496,6 @@ object ScriptingGridForm: TScriptingGridForm
       object Chart: TTabSheet
         Caption = 'Chart'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Splitter5: TSplitter
           Left = 0
           Top = 346
@@ -2536,46 +2528,38 @@ object ScriptingGridForm: TScriptingGridForm
             'Chart 1')
           BottomAxis.Axis.Color = 4210752
           BottomAxis.Grid.Color = 11119017
-          BottomAxis.LogarithmicBase = 10.000000000000000000
           BottomAxis.TicksInner.Color = 11119017
           BottomAxis.Title.Font.Name = 'Verdana'
           DepthAxis.Axis.Color = 4210752
           DepthAxis.Grid.Color = 11119017
-          DepthAxis.LogarithmicBase = 10.000000000000000000
           DepthAxis.TicksInner.Color = 11119017
           DepthAxis.Title.Font.Name = 'Verdana'
           DepthTopAxis.Axis.Color = 4210752
           DepthTopAxis.Grid.Color = 11119017
-          DepthTopAxis.LogarithmicBase = 10.000000000000000000
           DepthTopAxis.TicksInner.Color = 11119017
           DepthTopAxis.Title.Font.Name = 'Verdana'
           LeftAxis.Axis.Color = 4210752
           LeftAxis.Grid.Color = 11119017
-          LeftAxis.LogarithmicBase = 10.000000000000000000
           LeftAxis.TicksInner.Color = 11119017
           LeftAxis.Title.Font.Name = 'Verdana'
           RightAxis.Axis.Color = 4210752
           RightAxis.Grid.Color = 11119017
-          RightAxis.Grid.ZPosition = 100.000000000000000000
-          RightAxis.LogarithmicBase = 10.000000000000000000
           RightAxis.TicksInner.Color = 11119017
           RightAxis.Title.Font.Name = 'Verdana'
-          RightAxis.ZPosition = 100.000000000000000000
           TopAxis.Axis.Color = 4210752
           TopAxis.Grid.Color = 11119017
-          TopAxis.Grid.ZPosition = 100.000000000000000000
-          TopAxis.LogarithmicBase = 10.000000000000000000
           TopAxis.TicksInner.Color = 11119017
           TopAxis.Title.Font.Name = 'Verdana'
-          TopAxis.ZPosition = 100.000000000000000000
           View3D = False
           Align = alTop
           BevelOuter = bvNone
           TabOrder = 0
-          DefaultCanvas = ''
           ColorPaletteIndex = 13
-          object Series1: TMtxFastLineSeries
-            HoverElement = []
+          object Series1: TFastLineSeries
+            Marks.Arrow.Visible = True
+            Marks.Callout.Brush.Color = clBlack
+            Marks.Callout.Arrow.Visible = True
+            Marks.Visible = False
             LinePen.Color = 10708548
             XValues.Name = 'X'
             XValues.Order = loAscending
@@ -2605,46 +2589,38 @@ object ScriptingGridForm: TScriptingGridForm
             'Chart 2')
           BottomAxis.Axis.Color = 4210752
           BottomAxis.Grid.Color = 11119017
-          BottomAxis.LogarithmicBase = 10.000000000000000000
           BottomAxis.TicksInner.Color = 11119017
           BottomAxis.Title.Font.Name = 'Verdana'
           DepthAxis.Axis.Color = 4210752
           DepthAxis.Grid.Color = 11119017
-          DepthAxis.LogarithmicBase = 10.000000000000000000
           DepthAxis.TicksInner.Color = 11119017
           DepthAxis.Title.Font.Name = 'Verdana'
           DepthTopAxis.Axis.Color = 4210752
           DepthTopAxis.Grid.Color = 11119017
-          DepthTopAxis.LogarithmicBase = 10.000000000000000000
           DepthTopAxis.TicksInner.Color = 11119017
           DepthTopAxis.Title.Font.Name = 'Verdana'
           LeftAxis.Axis.Color = 4210752
           LeftAxis.Grid.Color = 11119017
-          LeftAxis.LogarithmicBase = 10.000000000000000000
           LeftAxis.TicksInner.Color = 11119017
           LeftAxis.Title.Font.Name = 'Verdana'
           RightAxis.Axis.Color = 4210752
           RightAxis.Grid.Color = 11119017
-          RightAxis.Grid.ZPosition = 100.000000000000000000
-          RightAxis.LogarithmicBase = 10.000000000000000000
           RightAxis.TicksInner.Color = 11119017
           RightAxis.Title.Font.Name = 'Verdana'
-          RightAxis.ZPosition = 100.000000000000000000
           TopAxis.Axis.Color = 4210752
           TopAxis.Grid.Color = 11119017
-          TopAxis.Grid.ZPosition = 100.000000000000000000
-          TopAxis.LogarithmicBase = 10.000000000000000000
           TopAxis.TicksInner.Color = 11119017
           TopAxis.Title.Font.Name = 'Verdana'
-          TopAxis.ZPosition = 100.000000000000000000
           View3D = False
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 1
-          DefaultCanvas = ''
           ColorPaletteIndex = 13
-          object Series2: TMtxFastLineSeries
-            HoverElement = []
+          object Series2: TFastLineSeries
+            Marks.Arrow.Visible = True
+            Marks.Callout.Brush.Color = clBlack
+            Marks.Callout.Arrow.Visible = True
+            Marks.Visible = False
             LinePen.Color = 10708548
             XValues.Name = 'X'
             XValues.Order = loAscending

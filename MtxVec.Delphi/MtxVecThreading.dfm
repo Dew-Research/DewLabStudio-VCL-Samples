@@ -24,7 +24,6 @@ object MtxVecThreadingForm: TMtxVecThreadingForm
     Height = 234
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 228
     DesignSize = (
       652
       234)
@@ -52,7 +51,6 @@ object MtxVecThreadingForm: TMtxVecThreadingForm
       Anchors = [akLeft, akTop, akRight, akBottom]
       ReadOnly = True
       TabOrder = 0
-      ExplicitHeight = 178
     end
     object btnBenchmark: TButton
       Left = 13

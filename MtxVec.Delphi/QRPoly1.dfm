@@ -5,7 +5,6 @@ inherited LQRPoly: TLQRPoly
   ClientHeight = 453
   OldCreateOrder = True
   OnCreate = FormCreate
-  ExplicitWidth = 320
   ExplicitHeight = 492
   PixelsPerInch = 96
   TextHeight = 13
@@ -133,7 +132,10 @@ inherited LQRPoly: TLQRPoly
     ExplicitTop = 111
     ExplicitHeight = 225
     object Series1: TPointSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       Title = 'Original data'
       ClickableLine = False
       Pointer.Brush.Gradient.EndColor = clRed
@@ -143,44 +145,57 @@ inherited LQRPoly: TLQRPoly
       Pointer.Pen.Visible = False
       Pointer.Style = psDownTriangle
       Pointer.VertSize = 2
+      Pointer.Visible = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
       YValues.Order = loNone
     end
     object Series2: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 12222282
       Title = 'Fitted polynomial'
       Brush.BackColor = clDefault
       Pointer.InflateMargins = True
       Pointer.Style = psRectangle
+      Pointer.Visible = False
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
       YValues.Order = loNone
     end
     object Series3: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = clBlack
       Title = 'YCalc + Delta'
       Brush.BackColor = clDefault
       LinePen.Style = psDot
       Pointer.InflateMargins = True
       Pointer.Style = psRectangle
+      Pointer.Visible = False
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
       YValues.Order = loNone
     end
     object Series4: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = clBlack
       Title = 'YCalc - Delta'
       Brush.BackColor = clDefault
       LinePen.Style = psDot
       Pointer.InflateMargins = True
       Pointer.Style = psRectangle
+      Pointer.Visible = False
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'

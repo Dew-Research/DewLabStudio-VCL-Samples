@@ -88,6 +88,7 @@ inherited DefArray: TDefArray
     Top = 130
     Width = 456
     Height = 281
+    BackWall.Brush.Color = clWhite
     BackWall.Brush.Style = bsClear
     Gradient.Direction = gdRightLeft
     Gradient.EndColor = 12615680
@@ -95,34 +96,20 @@ inherited DefArray: TDefArray
     Title.Text.Strings = (
       'TChart')
     Title.Visible = False
-    BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'dimension'
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
-    LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'time  [ms]'
-    RightAxis.Grid.ZPosition = 100.000000000000000000
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Pen.Mode = pmNotXor
     Align = alClient
     BevelOuter = bvNone
     Color = 14869218
     TabOrder = 3
-    DefaultCanvas = ''
     ColorPaletteIndex = 0
     object Series1: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = clBlue
       Title = 'Default Array'
       Brush.BackColor = clDefault
@@ -139,7 +126,10 @@ inherited DefArray: TDefArray
       YValues.Order = loNone
     end
     object Series2: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       Title = 'Values Array'
       Brush.BackColor = clDefault
       Pointer.Brush.Gradient.EndColor = clRed
@@ -155,7 +145,10 @@ inherited DefArray: TDefArray
       YValues.Order = loNone
     end
     object Series3: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 16744703
       Title = 'Values1D array'
       Brush.BackColor = clDefault

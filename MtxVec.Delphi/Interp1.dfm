@@ -136,7 +136,10 @@ inherited Interpolating1: TInterpolating1
     BevelOuter = bvLowered
     ExplicitHeight = 266
     object Series1: TPointSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       Title = 'Original data'
       ClickableLine = False
       Pointer.Brush.Gradient.EndColor = clRed
@@ -145,13 +148,17 @@ inherited Interpolating1: TInterpolating1
       Pointer.InflateMargins = True
       Pointer.Style = psDiagCross
       Pointer.VertSize = 2
+      Pointer.Visible = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
-      HoverElement = []
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       SeriesColor = 12222282
       Title = 'Fitted values'
       LinePen.Color = 12222282

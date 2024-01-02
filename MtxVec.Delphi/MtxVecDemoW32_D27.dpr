@@ -1,7 +1,5 @@
 program MtxVecDemoW32_D27;
 
-
-
 uses
   Vcl.Forms,
   Basic1 in 'Basic1.pas' {BasicForm1},

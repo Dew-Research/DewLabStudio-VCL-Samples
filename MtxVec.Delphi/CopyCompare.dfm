@@ -74,32 +74,18 @@ inherited CopyComp: TCopyComp
     Top = 130
     Width = 492
     Height = 280
+    BackWall.Brush.Color = clWhite
     BackWall.Brush.Style = bsClear
     Gradient.EndColor = clWhite
     Gradient.StartColor = 12615680
+    LeftWall.Brush.Color = clWhite
     LeftWall.Brush.Style = bsClear
     Legend.Alignment = laTop
     Title.Text.Strings = (
       'TChart')
     Title.Visible = False
-    BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
     Chart3DPercent = 1
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.AxisValuesFormat = '#,##0.0##'
-    LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
-    RightAxis.Grid.ZPosition = 100.000000000000000000
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     View3DOptions.Elevation = 360
     View3DOptions.OrthoAngle = 75
@@ -109,7 +95,6 @@ inherited CopyComp: TCopyComp
     Align = alClient
     Color = 14869218
     TabOrder = 3
-    DefaultCanvas = ''
     PrintMargins = (
       15
       22
@@ -117,8 +102,11 @@ inherited CopyComp: TCopyComp
       22)
     ColorPaletteIndex = 0
     object Series1: TBarSeries
-      HoverElement = []
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
       Marks.Style = smsValue
+      Marks.Visible = True
       SeriesColor = 33023
       Title = 'Delphi'
       XValues.Name = 'X'
@@ -127,8 +115,11 @@ inherited CopyComp: TCopyComp
       YValues.Order = loNone
     end
     object Series2: TBarSeries
-      HoverElement = []
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
       Marks.Style = smsValue
+      Marks.Visible = True
       SeriesColor = 16711808
       Title = 'MtxVec'
       XValues.Name = 'X'

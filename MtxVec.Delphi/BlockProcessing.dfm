@@ -66,7 +66,10 @@ inherited frmBlockProc: TfrmBlockProc
     ExplicitWidth = 596
     ExplicitHeight = 258
     object Series1: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       Title = 'Plain function'
       Brush.BackColor = clDefault
       LinePen.Color = clRed
@@ -83,7 +86,10 @@ inherited frmBlockProc: TfrmBlockProc
       YValues.Order = loNone
     end
     object Series2: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       Title = 'Vectorized'
       Brush.BackColor = clDefault
       LinePen.Color = clGreen
@@ -100,7 +106,10 @@ inherited frmBlockProc: TfrmBlockProc
       YValues.Order = loNone
     end
     object Series3: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
+      Marks.Visible = False
       Title = 'Block vectorized'
       Brush.BackColor = clDefault
       LinePen.Color = clYellow
@@ -115,9 +124,12 @@ inherited frmBlockProc: TfrmBlockProc
       YValues.Order = loNone
     end
     object Series4: TLineSeries
-      HoverElement = [heCurrent]
+      Marks.Arrow.Visible = True
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Callout.Arrow.Visible = True
       Marks.BackColor = clHotLight
       Marks.Color = clHotLight
+      Marks.Visible = False
       Title = 'Vectorized expression'
       Brush.BackColor = clDefault
       LinePen.Color = clBlue

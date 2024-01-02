@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 #include <vcl.h>
 #pragma hdrstop
 
@@ -13,6 +13,76 @@ __fastcall TfrmChanges30::TfrmChanges30(TComponent* Owner): TBasicForm3(Owner)
 {
   AnsiString str;
   RichEdit1->Lines->Clear();
+
+  RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
+  RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);
+  RichEdit1->SelAttributes->Size = 11;
+  RichEdit1->Lines->Add("List of new features in v6.2.0");
+  RichEdit1->Lines->Add("");
+  RichEdit1->Paragraph->FirstIndent = 10;
+  RichEdit1->Paragraph->Numbering = nsBullet;
+  RichEdit1->Lines->Add("Added support for RAD Studio Athens 12.0 release");
+  RichEdit1->Lines->Add("Updated Intel MKL and Intel IPP to OneAPI v2023.2");
+  RichEdit1->Lines->Add("Added TVecInt.Concat.");
+  RichEdit1->Lines->Add("Added MinRows, MinCols, MaxMinRows, MaxMinCols to VectorInt/MatrixInt, Vector/Matrix");
+  RichEdit1->Lines->Add("Added MinEvery, MaxEvery to both VectorInt/MatrixInt, Vector/Matrix");
+  RichEdit1->Lines->Add("Added TMtx.ScaleRows, TMtx.ScaleCols.");
+  RichEdit1->Lines->Add("Added Math387.TFifoCriticalSection. A fair critical section implemention. All threads enter in Fifo order.");
+  RichEdit1->Lines->Add("Added Math387.TFairSemaphoreSection. A fair critical section that allows at most N concurrent threads.");
+  RichEdit1->Lines->Add("Much faster implementation of TMtx.TensortProd(const Vec1, Vec2: TVec).");
+  RichEdit1->Lines->Add("Much faster TVec.Sqrt. Complex vectorized Sqrt speeded up by roughly 10x in compare to Intel VML.");
+  RichEdit1->Lines->Add("Upgraded FMX variant of TMtxGridSeries to match implementation of the VCL version.");
+  RichEdit1->Lines->Add("Fixed bug. IntPower function");
+  RichEdit1->Lines->Add("Fixed bug. TMtx.BandedToDense function.");
+  RichEdit1->Lines->Add("Fixed bug. Move function Len parameter not typecasted to Int64. Product wide fix.");
+
+  RichEdit1->Paragraph->FirstIndent = 0;
+  RichEdit1->Paragraph->Numbering = nsNone;
+  RichEdit1->Lines->Add("");
+
+  RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
+  RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);
+  RichEdit1->SelAttributes->Size = 11;
+  RichEdit1->Lines->Add("List of new features in v6.1.1");
+  RichEdit1->Lines->Add("");
+  RichEdit1->Paragraph->FirstIndent = 10;
+  RichEdit1->Paragraph->Numbering = nsBullet;
+  RichEdit1->Lines->Add("Introduces first use of a fair critical section for MtxVec object cache and FFT descriptor cache");
+  RichEdit1->Lines->Add("First release to be compiled with latest Intel OneAPI DPC++ and Fortran compilers");
+  RichEdit1->Lines->Add("Updated to latest Intel MKL and IPP libraries.Important: Only 64bit libraries are expected to receive performance improvements in the future!");
+  RichEdit1->Lines->Add("Updated FFT descriptors and FFT storage format for the new Intel MKL API. Only CCS storage is now available. The layout of 2D FFT from/to 'real' results has changed");
+  RichEdit1->Lines->Add("Bug fix. Object cache was missing critical section, when not using super-conductive code path.");
+  RichEdit1->Lines->Add("Bug fix. Polynoms.IIRFilter fix for missing init of DelayLine, when not provided by user. Parameter was introduced with recent ARIMA updates.");
+  RichEdit1->Lines->Add("Bug fix. Polynoms.DeConv fixed because of dependancy upon Polynoms.IIRFilter");
+  RichEdit1->Lines->Add("Bug fix. TMtxVec.NormL2 fixed for complex, single precision and 'core' variant.");
+  RichEdit1->Lines->Add("Bug fix for single threaded overload of MtxForLoop.ClusteredKNN.");
+
+  RichEdit1->Paragraph->FirstIndent = 0;
+  RichEdit1->Paragraph->Numbering = nsNone;
+  RichEdit1->Lines->Add("");
+
+  RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
+  RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);
+  RichEdit1->SelAttributes->Size = 11;
+  RichEdit1->Lines->Add("List of new features in v6.1.0");
+  RichEdit1->Lines->Add("");
+  RichEdit1->Paragraph->FirstIndent = 10;
+  RichEdit1->Paragraph->Numbering = nsBullet;
+  RichEdit1->Lines->Add("Updated for Embarcadero Alexandria 11.1 release (C++)");
+  RichEdit1->Lines->Add("Updated Intel MKL and Intel IPP to OneAPI v2022.2");
+  RichEdit1->Lines->Add("Implemented Lockless (never enters sleep(..)) TMtxVecController.MarkThread and TMtxVecController.UnMarkThread. The peformance gain grows with thread count. This speeds up the threading library when calling DoForLoop method.");
+  RichEdit1->Lines->Add("Object cache is now using TLS region (Thread Local Storage), to store its memory pool index. This progressively speeds up object allocation, when using more than 16 threads with the TMtxForLoop threading library");
+  RichEdit1->Lines->Add("Added BlockGranularity addressing threading with high turbo clock frequencies and Intel Alder Lake with P+E cores. (asymetric multi-processing).");
+  RichEdit1->Lines->Add("Optimized critical-sections used for thread synchronisation for high thread count.");
+  RichEdit1->Lines->Add("Android 11 tagged pointer support.");
+  RichEdit1->Lines->Add("Brute-force exact K-NN algorithm on CPU with euclidian norm distance. Faster than KD-Tree, because it scales linearly with core count. Leads GPUs in price/performace by 4x especially in double precision. Can use AI accelerators used for NNs. Due to its performance a possible alternative to deep NNs. Located in MtxForLoop.ClusteredKNN. Up to 2000x faster than naive implementations for large problems.");
+  RichEdit1->Lines->Add("Fixed bug. When setting TMtxForLoop.ThreadCount, an Access Violation could be raised (thread race condition).");
+  RichEdit1->Lines->Add("Fixed bug. When launching TMtxForLoop thread execution, the call could deadlock (thread race condition).");
+  RichEdit1->Lines->Add("The memory cache of TVecInt and TMtxInt was not active and this caused performance degradation in the case of threading.");
+
+  RichEdit1->Paragraph->FirstIndent = 0;
+  RichEdit1->Paragraph->Numbering = nsNone;
+  RichEdit1->Lines->Add("");
 
   RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
   RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);

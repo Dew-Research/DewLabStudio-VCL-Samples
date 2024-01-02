@@ -19,7 +19,7 @@ inherited frmSparseTest: TfrmSparseTest
       Width = 769
       Height = 116
       ExplicitWidth = 769
-      ExplicitHeight = 71
+      ExplicitHeight = 116
     end
   end
   inherited Panel2: TPanel
@@ -34,9 +34,9 @@ inherited frmSparseTest: TfrmSparseTest
     Top = 118
     Width = 771
     Height = 395
-    ExplicitTop = 72
+    ExplicitTop = 118
     ExplicitWidth = 771
-    ExplicitHeight = 441
+    ExplicitHeight = 395
     object Splitter1: TSplitter
       Left = 247
       Top = 1
@@ -53,7 +53,6 @@ inherited frmSparseTest: TfrmSparseTest
       Align = alLeft
       Color = 14869218
       TabOrder = 0
-      ExplicitHeight = 439
       DesignSize = (
         246
         393)
@@ -97,7 +96,6 @@ inherited frmSparseTest: TfrmSparseTest
         Anchors = [akLeft, akTop, akRight, akBottom]
         ScrollBars = ssBoth
         TabOrder = 2
-        ExplicitHeight = 274
       end
     end
     object Chart1: TChart
@@ -106,46 +104,26 @@ inherited frmSparseTest: TfrmSparseTest
       Width = 520
       Height = 393
       AllowPanning = pmNone
+      BackWall.Brush.Color = clWhite
       BackWall.Brush.Style = bsClear
       LeftWall.Color = clGray
       Legend.Visible = False
       Title.Text.Strings = (
         'TChart')
       Title.Visible = False
-      BottomAxis.LogarithmicBase = 10.000000000000000000
-      BottomAxis.Maximum = 5.000000000000000000
-      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Operation'
       BottomAxis.Visible = False
-      DepthAxis.LogarithmicBase = 10.000000000000000000
-      DepthAxis.Maximum = 0.500000000000000000
-      DepthAxis.Minimum = -0.500000000000000000
-      DepthAxis.EndPosition = 100.000000000000000000
-      DepthTopAxis.LogarithmicBase = 10.000000000000000000
-      DepthTopAxis.Maximum = 0.500000000000000000
-      DepthTopAxis.Minimum = -0.500000000000000000
-      DepthTopAxis.EndPosition = 100.000000000000000000
-      LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.Maximum = 832.500000000000000000
-      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'Time for 100 evaluations [ms]'
-      RightAxis.Grid.ZPosition = 100.000000000000000000
-      RightAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.EndPosition = 100.000000000000000000
-      RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
-      TopAxis.LogarithmicBase = 10.000000000000000000
-      TopAxis.EndPosition = 100.000000000000000000
-      TopAxis.ZPosition = 100.000000000000000000
       Zoom.Pen.Mode = pmNotXor
       Align = alClient
       Color = 14869218
       TabOrder = 1
-      ExplicitHeight = 439
-      DefaultCanvas = ''
       ColorPaletteIndex = 13
       object Series1: TBarSeries
-        HoverElement = []
+        Marks.Arrow.Visible = True
+        Marks.Callout.Brush.Color = clBlack
+        Marks.Callout.Arrow.Visible = True
+        Marks.Visible = True
         SeriesColor = 12222282
         XValues.Name = 'X'
         XValues.Order = loAscending

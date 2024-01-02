@@ -223,7 +223,7 @@ begin
     clPlatform.UnmarkThreads;
     selectedDevice := clPlatform[PlatformListBox.ItemIndex].Device[DeviceListBox.ItemIndex];
 
-    if (selectedDevice.DevicePlatform.Name = INTEL_PLATFORM) and clPlatform.IgnoreIntel then
+    if (selectedDevice.DevicePlatform.Name.Contains('Intel') and clPlatform.IgnoreIntel) then
     begin
         ShowMessage('clPlatform.IgnoreIntel = True. If you want to run benchmark for Intel platform set this flag to false first!');
     end else
@@ -275,6 +275,8 @@ begin
             kernelSum := kernelSum + clPlatform[i].Device[k].Kernels.Count;
         end;
     end;
+
+    clPlatform.IgnoreIntel := True;
 
     if kernelSum = 0 then
     begin         { load default kernels }

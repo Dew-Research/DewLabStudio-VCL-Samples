@@ -109,27 +109,20 @@ inherited frmInt1D: TfrmInt1D
       Legend.Visible = False
       Title.Text.Strings = (
         'f(x)')
-      BottomAxis.LogarithmicBase = 10.000000000000000000
-      DepthAxis.LogarithmicBase = 10.000000000000000000
-      DepthTopAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.Grid.ZPosition = 100.000000000000000000
-      RightAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
-      TopAxis.LogarithmicBase = 10.000000000000000000
-      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       Color = 14869218
       TabOrder = 3
       Anchors = [akLeft, akTop, akRight, akBottom]
-      DefaultCanvas = ''
       ColorPaletteIndex = 0
       object Series1: TLineSeries
-        HoverElement = [heCurrent]
+        Marks.Arrow.Visible = True
+        Marks.Callout.Brush.Color = clBlack
+        Marks.Callout.Arrow.Visible = True
+        Marks.Visible = False
         Brush.BackColor = clDefault
         Pointer.InflateMargins = True
         Pointer.Style = psRectangle
+        Pointer.Visible = False
         XValues.Name = 'X'
         XValues.Order = loAscending
         YValues.Name = 'Y'

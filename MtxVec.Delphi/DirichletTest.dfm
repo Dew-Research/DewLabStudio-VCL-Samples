@@ -31,6 +31,7 @@ inherited frmDirichlet: TfrmDirichlet
       Top = 1
       Width = 403
       Height = 352
+      BackWall.Brush.Color = clWhite
       BackWall.Brush.Style = bsClear
       Legend.Visible = False
       Title.Text.Strings = (
@@ -43,7 +44,6 @@ inherited frmDirichlet: TfrmDirichlet
       BevelOuter = bvNone
       Color = 14869218
       TabOrder = 0
-      DefaultCanvas = ''
       ColorPaletteIndex = 0
     end
     object Panel4: TPanel

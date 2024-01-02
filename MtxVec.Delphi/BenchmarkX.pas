@@ -66,7 +66,7 @@ var
 
 implementation
 
-uses MtxVecInt;
+uses MtxVecInt, MtxVec;
 
 {$IFDEF CLR}
 {$R *.NFM}
@@ -77,7 +77,7 @@ uses MtxVecInt;
 procedure TBenchmarkXForm.FormCreate(Sender: TObject);
 begin
   inherited;
-  fFirstActivation:= TRUE;   
+  fFirstActivation:= TRUE;
   fBenchmarkFramework:= TBenchmarkFramework.Create;
   fBenchmarkResults:= TBenchmarkResults.Create;
   LoadFuncListbox;

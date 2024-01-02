@@ -42,13 +42,25 @@ double __fastcall Banana(
 	 const System::TObject* * ObjConst,
 	 #endif
 
-	 const int ObjConst_Size)
+	 #if  (__BORLANDC__ >= 0x0760)
+     const System::NativeInt ObjConst_High
+	 #else
+	 const int ObjConst_Size
+	 #endif
+	 )
 {
 	 Mtxvec::TVec* aPars = const_cast<Mtxvec::TVec*> (Parameters);
 
 	 double tmp = 100.0*IntPower((*aPars)[1]-IntPower((*aPars)[0],2),2)+IntPower(1.0-(*aPars)[0],2);
 	 return tmp;
 }
+//typedef void __fastcall (*TGrad)(Mtxvec::TRealFunction Fun,
+//                                 Mtxvec::TVec* const Pars,
+//                                 Mtxvec::TVec* const Consts,
+//                                 System::TObject* const *PConsts,
+//                                 const System::NativeInt PConsts_High,
+//                                 Mtxvec::TVec* const Grad);
+
 //---------------------------------------------------------------------------
 /* the exact calculation of gradient  for "banana" function
   this procedure is used by BFGS method to evaluate grad */
@@ -66,12 +78,16 @@ void __fastcall GradBanana(TRealFunction Fun,
 	 #endif
 
 	 #if  (__BORLANDC__ >= 0x0580)
-	 System::TObject* const * ObjConst,
+	 System::TObject* const * PConsts,
 	 #else
 	 const System::TObject* * PConsts,
 	 #endif
 
+	 #if  (__BORLANDC__ >= 0x0770)
+	 const System::NativeInt PConsts_High,
+	 #else
 	 const int PConsts_Size,
+	 #endif
 
 	 #if  (__BORLANDC__ >= 0x0650)
 	 Mtxvec::TVec* const Grad
@@ -96,6 +112,14 @@ void __fastcall GradBanana(TRealFunction Fun,
   }
 
 }
+
+//typedef void __fastcall (*TGradHess)(Mtxvec::TRealFunction Fun,
+//									   Mtxvec::TVec* const Pars,
+//                                     Mtxvec::TVec* const Consts,
+//                                     System::TObject* const *ObjConst,
+//                                     const System::NativeInt ObjConst_High,
+//                                     Mtxvec::TVec* const Grad, Mtxvec::TMtx* const Hess);
+
 /* the exact calculation of gradient and Hessian matrix for "banana" function
   this procedure is used by Marquardt method to evaluate grad and Hessian matrix */
 void __fastcall GradHessBanana(TRealFunction Fun,
@@ -117,7 +141,12 @@ void __fastcall GradHessBanana(TRealFunction Fun,
 	 #else
 	 const System::TObject* * PConsts,
 	 #endif
+
+	 #if  (__BORLANDC__ >= 0x0770)
+	 const System::NativeInt ObjConst_High,
+	 #else
 	 const int ObjConst_Size,
+	 #endif
 
 	 #if  (__BORLANDC__ >= 0x0650)
 	 Mtxvec::TVec* const Grad, Mtxvec::TMtx* const Hess)

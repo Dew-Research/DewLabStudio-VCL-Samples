@@ -1,5 +1,7 @@
 unit IfThenUnit;
 
+{$I bdsppdefs.inc}
+
 interface
 
 uses
@@ -22,6 +24,8 @@ type
     MaskBlockBox: TCheckBox;
     DataLenBox: TComboBox;
     Label1: TLabel;
+    GranBox: TComboBox;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure MaskThreadButtonClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -29,6 +33,19 @@ type
     { Private declarations }
   public
     { Public declarations }
+  end;
+
+  TThreadStats = record
+    TotalTime: double;
+    PoolIndex: integer;
+    aCI: integer;
+    bCI: integer;
+    agCI: integer;
+    bgCI: integer;
+    aiCI: integer;
+    cCI: integer;
+    TotalLength: integer;
+    BlockLength: integer;
   end;
 
 var
@@ -41,19 +58,34 @@ uses MtxVecBase, AbstractMtxVec;
 const DPOS_FRAC: double =0.5;
 const SPOS_FRAC: single =0.5;
 
+var stats: array of TThreadStats;
+
 {$R *.dfm}
+
+procedure DoAssign(var Dst: integer; const Src: integer);
+begin
+    if Dst = -2 then Dst := Src else
+    begin
+//        if Dst <> Src then ERaise('Problem');
+    end;
+end;
 
 procedure ForLoopR(IdxMin, IdxMax: integer; const Context: TObjectArray; ThreadIndex: integer);
 var ag,bg: Vector;
     a,b: Vector;
     ai: VectorInt;
     c: Vector;
+    aTimer: Int64;
 begin
+    StartTimer(aTimer);
+
     ag.SetSubRange(TVec(Context[0]), IdxMin, IdxMax - idxMin + 1);
     bg.SetSubRange(TVec(Context[1]), IdxMin, IdxMax - idxMin + 1);
 
     a.BlockInit(ag);
     b.BlockInit(bg);
+
+    stats[ThreadIndex].BlockLength := TVec(a).Length;
 
     while not a.BlockEnd do
     begin
@@ -68,7 +100,28 @@ begin
         a.BlockNext;
         b.BlockNext;
     end;
+
+    DoAssign(stats[ThreadIndex].PoolIndex, TVec(ag).PoolIndex);
+    DoAssign(stats[ThreadIndex].TotalLength, TVec(ag).Length);
+    DoAssign(stats[ThreadIndex].aCI, TVec(a).CacheIndex);
+    DoAssign(stats[ThreadIndex].bCI, TVec(b).CacheIndex);
+    DoAssign(stats[ThreadIndex].cCI, TVec(c).CacheIndex);
+    DoAssign(stats[ThreadIndex].agCI, TVec(ag).CacheIndex);
+    DoAssign(stats[ThreadIndex].bgCI, TVec(bg).CacheIndex);
+    DoAssign(stats[ThreadIndex].aiCI, TVecInt(ai).CacheIndex);
+
+    // not needed, because it is cleaned up by the compiler at the end of the function,
+    // but included here to include this in to the timing
+    ag.Adopt(nil);
+    bg.Adopt(nil);
+    a.Adopt(nil);
+    b.Adopt(nil);
+    c.Adopt(nil);
+    ai.Adopt(nil);
+
+    stats[ThreadIndex].TotalTime := StopTimer(aTimer);
 end;
+
 
 procedure ForLoopRI(IdxMin, IdxMax: integer; const Context: TObjectArray; ThreadIndex: integer);
 var ag,bg: Vector;
@@ -102,6 +155,21 @@ var a,b1,b2,c: Vector;
     ar: TDoubleArray;
     i, DataLen: integer;
 begin
+    SetLength(stats, GlobalThreads.ThreadCount);
+    for i := 0 to Length(Stats)-1 do
+    begin
+        Stats[i].TotalTime := -2;
+        Stats[i].PoolIndex := -2;
+        Stats[i].TotalLength := -2;
+        Stats[i].BlockLength := -2;
+        Stats[i].aCI := -2;
+        Stats[i].bCI := -2;
+        Stats[i].cCI := -2;
+        Stats[i].agCI := -2;
+        Stats[i].bgCI := -2;
+        Stats[i].aiCI := -2;
+    end;
+
     BarSeries.Clear;
     SetLength(ar, 6);
 
@@ -141,7 +209,7 @@ begin
         ar[1] := StopTimer*1000;
         BarSeries.Add(ar[1], TeeLineSeparator + 'Vectorized');
 
-        if not b1.IsEqual(b2, 0.001) then memo1.Lines.Add('Not equal');
+        if not b1.IsEqual(b2, 0.001) then ERaise('Not equal');
         b2.SetVal(1); // reset
     end;
 
@@ -170,7 +238,7 @@ begin
         BarSeries.Add(ar[2], 'Vectorized with bp (FindIndexes)');
 
 
-        if not b1.IsEqual(b2, 0.001) then memo1.Lines.Add('Not equal');
+        if not b1.IsEqual(b2, 0.001) then ERaise('Not equal');
         b2.SetVal(1); // reset
     end;
 
@@ -198,39 +266,65 @@ begin
         ar[3] := StopTimer*1000;
         BarSeries.Add(ar[3], TeeLineSeparator +  'Vectorized with bp (FindMask)');
 
-        if not b1.IsEqual(b2, 0.001) then memo1.Lines.Add('Not equal');
+        if not b1.IsEqual(b2, 0.001) then ERaise('Not equal');
         b2.SetVal(1); // reset
     end;
+
+    if not Assigned(GlobalThreads) then GlobalThreads := TMtxForLoop.Create;
+
+    GlobalThreads.BlockGranularity := System.Round(Exp2(GranBox.ItemIndex));
 
     if MaskBlockThreadBox.Checked then //5
     begin
         StartTimer;
-        DoForLoop(0, a.Length-1, ForLoopR, GlobalThreads, [TVec(a),TVec(b2)]);
+        DoForLoop(0, a.Length-1, ForLoopR, GlobalThreads, [TVec(a),TVec(b2) ]);
         ar[4] := StopTimer*1000;
         BarSeries.Add(ar[4], 'Vectorized, bp and threaded');
 
-        if not b1.IsEqual(b2, 0.001) then memo1.Lines.Add('Not equal');
+        if not b1.IsEqual(b2, 0.001) then ERaise('Not equal');
         b2.SetVal(1); // reset
     end;
 
     if PlainThreadBox.Checked then //6
     begin
         StartTimer;
-        DoForLoop(0, a.Length-1, ForLoopRI, GlobalThreads, [TVec(a),TVec(b2)]);
+        DoForLoop(0, a.Length-1, ForLoopRI, GlobalThreads, [TVec(a),TVec(b2) ]);
         ar[5] := StopTimer*1000;
         BarSeries.Add(ar[5], TeeLineSeparator + 'Plain and threaded');
 
-        if not b1.IsEqual(b2, 0.001) then memo1.Lines.Add('Not equal');
+        if not b1.IsEqual(b2, 0.001) then ERaise('Not equal');
+    end;
+
+    Memo1.Clear;
+    Memo1.Lines.Add('ThrdIdx' + chr(9) + 'Time' + Chr(9) + 'Pool'  + Chr(9) + 'Length' + Chr(9) + Chr(9) + 'bLength' +
+                                    Chr(9) + 'a_cIdx' +
+                                    Chr(9) + 'b_cIdx' +
+                                    Chr(9) + 'c_cIdx' +
+                                    Chr(9) + 'ag_cIdx' +
+                                    Chr(9) + 'bg_cIdx' +
+                                    Chr(9) + 'ai_cIdx');
+    for i := 0 to Length(stats)-1 do
+    begin
+
+        Memo1.Lines.Add(IntToStr(i) + chr(9) + FormatSample('0.00ms',stats[i].TotalTime*1000) +
+                                      Chr(9) + IntToStr(stats[i].PoolIndex) +
+                                      Chr(9) + IntToStr(stats[i].TotalLength) + Chr(9) +
+                                      Chr(9) + IntToStr(stats[i].BlockLength) +
+                                      Chr(9) + IntToStr(stats[i].agCI) +
+                                      Chr(9) + IntToStr(stats[i].bgCI) +
+                                      Chr(9) + IntToStr(stats[i].aCI) +
+                                      Chr(9) + IntToStr(stats[i].bCI) +
+                                      Chr(9) + IntToStr(stats[i].cCI) +
+                                      Chr(9) + IntToStr(stats[i].aiCI));
     end;
 end;
+
 
 procedure TIfThenForm.FormCreate(Sender: TObject);
 begin
     if not Assigned(GlobalThreads) then  GlobalThreads := TMtxForLoop.Create;
-    GlobalThreads.ThreadCount := 4;
-    GlobalThreads.ThreadAffinityMode := tamSplit4;
-//    GlobalThreads.ResponseTime := 0;
-//    GlobalThreads.ThreadWaitBeforeSleep := 500;
+    GlobalThreads.ThreadCount := 16;
+    Controller.ThreadDimension := GlobalThreads.ThreadCount + 1;
 
     Memo1.Lines.Clear;
 
