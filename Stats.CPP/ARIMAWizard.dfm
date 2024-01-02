@@ -2,9 +2,9 @@ inherited frmARIMAWizard: TfrmARIMAWizard
   Caption = 'frmARIMAWizard'
   ClientHeight = 471
   ClientWidth = 666
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 682
   ExplicitHeight = 510
-  PixelsPerInch = 96
   TextHeight = 13
   inherited PageControl: TPageControl
     Width = 666
@@ -211,26 +211,6 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         Legend.Visible = False
         Title.Text.Strings = (
           'Time series')
-        BottomAxis.LogarithmicBase = 10.000000000000000000
-        BottomAxis.EndPosition = 100.000000000000000000
-        DepthAxis.LogarithmicBase = 10.000000000000000000
-        DepthAxis.Maximum = 0.500000000000000000
-        DepthAxis.Minimum = -0.500000000000000000
-        DepthAxis.EndPosition = 100.000000000000000000
-        DepthTopAxis.LogarithmicBase = 10.000000000000000000
-        DepthTopAxis.Maximum = 0.500000000000000000
-        DepthTopAxis.Minimum = -0.500000000000000000
-        DepthTopAxis.EndPosition = 100.000000000000000000
-        LeftAxis.LogarithmicBase = 10.000000000000000000
-        LeftAxis.EndPosition = 100.000000000000000000
-        RightAxis.Grid.ZPosition = 100.000000000000000000
-        RightAxis.LogarithmicBase = 10.000000000000000000
-        RightAxis.EndPosition = 100.000000000000000000
-        RightAxis.ZPosition = 100.000000000000000000
-        TopAxis.Grid.ZPosition = 100.000000000000000000
-        TopAxis.LogarithmicBase = 10.000000000000000000
-        TopAxis.EndPosition = 100.000000000000000000
-        TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         Zoom.Allow = False
         Zoom.Pen.Mode = pmNotXor
@@ -511,7 +491,6 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 0
-        Zoom = 100
       end
     end
     object tsChart: TTabSheet
@@ -525,22 +504,6 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         Height = 396
         Title.Text.Strings = (
           '')
-        BottomAxis.LogarithmicBase = 10.000000000000000000
-        BottomAxis.EndPosition = 100.000000000000000000
-        DepthAxis.LogarithmicBase = 10.000000000000000000
-        DepthAxis.EndPosition = 100.000000000000000000
-        DepthTopAxis.LogarithmicBase = 10.000000000000000000
-        DepthTopAxis.EndPosition = 100.000000000000000000
-        LeftAxis.LogarithmicBase = 10.000000000000000000
-        LeftAxis.EndPosition = 100.000000000000000000
-        RightAxis.Grid.ZPosition = 100.000000000000000000
-        RightAxis.LogarithmicBase = 10.000000000000000000
-        RightAxis.EndPosition = 100.000000000000000000
-        RightAxis.ZPosition = 100.000000000000000000
-        TopAxis.Grid.ZPosition = 100.000000000000000000
-        TopAxis.LogarithmicBase = 10.000000000000000000
-        TopAxis.EndPosition = 100.000000000000000000
-        TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         Zoom.Pen.Mode = pmNotXor
         Align = alClient
@@ -554,6 +517,7 @@ inherited frmARIMAWizard: TfrmARIMAWizard
   inherited Panel1: TPanel
     Top = 439
     Width = 666
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 439
     ExplicitWidth = 666
     inherited btnCancel: TButton
@@ -563,7 +527,11 @@ inherited frmARIMAWizard: TfrmARIMAWizard
   end
   inherited Panel2: TPanel
     Width = 666
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 666
+    inherited lblHeader: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
   end
   object OpenDialog: TOpenDialog
     Filter = 'vector (*.vec)|*.vec|text file (*.txt)|*.txt'

@@ -37,6 +37,22 @@ begin
     SelAttributes.Size := 11;
     SelAttributes.Color := RGB(51,51,153);
     SelAttributes.Size := 9;
+    Add('   New features in version 6.2.0:');
+    Add('');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('   Updated for Rad Studio Athens 12.0 and MtxVec v6.2.0.');
+    Add('   Enhanced click/pop protection for the TSignalCoreAudioOut.Paused functionality. ');
+    Add('   Bug fix for TSignalCoreAudioOut.Paused.');
+    Add('   Android 11 tagged pointer support.');
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');
+
+    Font.Style := [];
+    SelAttributes.Size := 11;
+    SelAttributes.Color := RGB(51,51,153);
+    SelAttributes.Size := 9;
     Add('   New features in version 6.0.5:');
     Add('');
     Paragraph.FirstIndent := 10;

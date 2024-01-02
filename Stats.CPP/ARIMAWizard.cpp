@@ -356,7 +356,7 @@ void __fastcall TfrmARIMAWizard::editAlphaChange(TObject *Sender)
 void __fastcall TfrmARIMAWizard::MLEReport()
 {
 	TSample mle;
-	int iters = ARMAMLE(Data,phi,theta,Residuals,mle);
+	int iters = ARMAMLE(Data,phi,theta,Residuals,mle, dMean);
 	RichEdit->SelAttributes->Style = RichEdit->SelAttributes->Style << TFontStyle::fsBold;
 	RichEdit->SelAttributes->Style = RichEdit->SelAttributes->Style << TFontStyle::fsUnderline;
 	RichEdit->Lines->Add("Finding optimal coefficients (MLE)");
@@ -384,7 +384,7 @@ void __fastcall TfrmARIMAWizard::ForecastReport()
 	try
 	{
 		int endperiod;
-		ARMAForecast(Data,phi,theta,ForecastPer,Forecasts,FStdDev);
+		ARMAForecast(Data,phi,theta,Residuals,ForecastPer,dMean,Forecasts,FStdDev);
 		// add mean, if required 
 		if (chkBoxRemoveMean->Checked && chkAddMean->Checked) Forecasts->Add(dMean);
 

@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Basic_Form, StdCtrls, ExtCtrls, ComCtrls, Statistics, MtxVec, MtxExpr, MtxExprInt,
-  TeeProcs, TeEngine, Chart, Buttons, Series, TeeGDIPlus;
+  AbstractMtxVec, TeeProcs, TeEngine, Chart, Buttons, Series, TeeGDIPlus;
 
 type
   TfrmRandomGen = class(TfrmBasic)

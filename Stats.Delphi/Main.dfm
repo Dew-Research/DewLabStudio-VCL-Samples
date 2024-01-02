@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 126
   Top = 126
   Caption = 'Stats Master 6.0 demo'
-  ClientHeight = 566
-  ClientWidth = 823
+  ClientHeight = 592
+  ClientWidth = 906
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -799,26 +799,25 @@ object frmMain: TfrmMain
     000000000000000000000000000000000000000000000000000000000000FFFF
     0000001F0000001F00000007000000070000800300008003000080010000C001
     0000800100008000000080000000E0000000F0000000F8070000FFFF0000}
-  OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 225
     Top = 81
     Width = 2
-    Height = 431
+    Height = 457
     ExplicitLeft = 177
+    ExplicitHeight = 431
   end
   object TreeView1: TTreeView
     Left = 0
     Top = 81
     Width = 225
-    Height = 431
+    Height = 457
     Align = alLeft
     Color = clWhite
     HideSelection = False
@@ -827,19 +826,21 @@ object frmMain: TfrmMain
     ReadOnly = True
     TabOrder = 0
     OnChange = TreeView1Change
+    ExplicitHeight = 431
   end
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 823
+    Width = 906
     Height = 81
     Align = alTop
     Color = 10518960
     TabOrder = 1
+    ExplicitWidth = 823
     object Image1: TImage
       Left = 1
       Top = 1
-      Width = 821
+      Width = 904
       Height = 79
       Align = alClient
       Picture.Data = {
@@ -1603,6 +1604,7 @@ object frmMain: TfrmMain
         293BAEE3A79B0DD60B3293BAEE3A79B0DD60B3293BAEE3A79B0DD60B3293BAEE
         3A79B0DD60B3297FFFD9}
       Transparent = True
+      ExplicitWidth = 821
     end
     object Image2: TImage
       Left = 728
@@ -1899,16 +1901,18 @@ object frmMain: TfrmMain
   end
   object Panel1: TPanel
     Left = 0
-    Top = 512
-    Width = 823
+    Top = 538
+    Width = 906
     Height = 36
     Align = alBottom
     Color = 8410994
     TabOrder = 2
+    ExplicitTop = 512
+    ExplicitWidth = 823
     object Image3: TImage
       Left = 1
       Top = 1
-      Width = 821
+      Width = 904
       Height = 34
       Align = alClient
       Picture.Data = {
@@ -2345,6 +2349,7 @@ object frmMain: TfrmMain
         542F22E4C9B58EA85E45C9936B1D50BC8B9326D63AA17917264DAC7542F22E4C
         9B58EA85E45C9936B1D50BC8B97FFFD9}
       Stretch = True
+      ExplicitWidth = 821
     end
     object btnClose: TSpeedButton
       Left = 88
@@ -2409,32 +2414,32 @@ object frmMain: TfrmMain
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 548
-    Width = 823
+    Top = 574
+    Width = 906
     Height = 18
     Panels = <>
     SimplePanel = True
+    ExplicitTop = 548
+    ExplicitWidth = 823
   end
   object PageControl1: TPageControl
     Left = 227
     Top = 81
-    Width = 596
-    Height = 431
+    Width = 679
+    Height = 457
     ActivePage = TabForm
     Align = alClient
     TabOrder = 4
     TabPosition = tpBottom
     OnChange = PageControl1Change
+    ExplicitWidth = 596
+    ExplicitHeight = 431
     object TabForm: TTabSheet
       Caption = 'Example'
     end
     object TabSource: TTabSheet
       Caption = 'Source code'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 636
-      ExplicitHeight = 0
       object btnConfig: TButton
         Left = 8
         Top = 16

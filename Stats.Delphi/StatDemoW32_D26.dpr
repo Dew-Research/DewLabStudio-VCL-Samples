@@ -60,13 +60,14 @@ uses
   Wizard_RidgeReg in 'Wizard_RidgeReg.pas' {frmShowRidgeReg},
   PCAWizard in 'PCAWizard.pas' {frmPCAWiz},
   MultiStepReg in 'MultiStepReg.pas' {MultiStepRegForm},
-  MultiNLin_Tests in 'MultiNLin_Tests.pas' {frmMultiNonLinTest};
+  MultiNLin_Tests in 'MultiNLin_Tests.pas' {frmMultiNonLinTest},
+  ARMATrend in 'ARMATrend.pas' {ARMATrendForm};
 
 {$R *.RES}
 
 begin
   Application.Initialize;
-  Application.Title := 'Dew Research - Stats Master 6.0 W32  Demo';
+  Application.Title := 'Dew Research - Stats Master 6.1 W32  Demo';
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.

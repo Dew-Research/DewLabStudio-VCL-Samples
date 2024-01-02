@@ -71,7 +71,7 @@ var
 
 implementation
 
-Uses Registry, FileCtrl;
+Uses Registry, FileCtrl, Math387;
 {$IFDEF CLR}
 {$R *.NFM}
 {$ELSE}
@@ -113,8 +113,13 @@ var i,
     tmp      : {$IFDEF CLR}TStream{$ELSE}TStringStream{$ENDIF};
     ExampleForm : TFormExampleInfo;
 begin
-  InitTreeItems;
-  Caption  :=  Application.Title;
+   InitTreeItems;
+   {$IFDEF WIN32}
+   Application.Title := 'Dew Research - Stats Master ' + FormatSample('0.00', MtxVecVersion/100) + ' W32 Demo';
+   {$ELSE}
+   Application.Title :=  'Dew Research - Stats Master ' + FormatSample('0.00', MtxVecVersion/100) + ' W64 Demo';
+   {$ENDIF}
+   Caption  :=  Application.Title;
 
   {$IFDEF CLR}  // Workaround for Classes.pas TStringStream bug...
   tmp:=TMemoryStream.Create;
@@ -408,6 +413,7 @@ begin
     Add(' Decomposition forecasting;TfrmDecompDemo;Wizard_Decomp');
     Add(' Simulating ARMA/ARIMA models;TfrmARIMASim;TS_ARIMASim');
     Add(' ARMA and ARIMA models;TfrmWizardARIMA;WizardARIMA');
+    Add(' ARMA decomposition with Trend;TArmaTrendForm;ARMATrend');
     Add(' Using ARAR model;TfrmARAR;TS_ARAR');
     Add('Quality Control Charts');
     Add(' Variables Control Charts;TfrmQCXR;QC_XR');

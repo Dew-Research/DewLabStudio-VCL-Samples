@@ -32,6 +32,23 @@ begin
     SelAttributes.Size := 13;
     SelAttributes.Color := RGB(72,123,180);
     SelAttributes.Style := [fsBold];
+    Add('Release 6.2.0 List of changes');
+    Add('');
+    Paragraph.Numbering := nsBullet;
+    Paragraph.FirstIndent := 10;
+    Add('Support for Delphi Athens 12.0');
+    Add('Added ARIMA Trend decomposition example');
+    Add('Bug fix for MannWhitneyTest');
+    Add('Updated for MtxVec v6.2.0');
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');
+
+
+
+    SelAttributes.Size := 13;
+    SelAttributes.Color := RGB(72,123,180);
+    SelAttributes.Style := [fsBold];
     Add('Release 6.0.5 List of changes');
     Add('');
     Paragraph.Numbering := nsBullet;

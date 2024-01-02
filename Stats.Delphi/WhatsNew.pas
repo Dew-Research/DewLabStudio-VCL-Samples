@@ -30,6 +30,37 @@ begin
   begin
     Clear;
 
+
+    SelAttributes.Size := 13;
+    SelAttributes.Color := RGB(72,123,180);
+    SelAttributes.Style := [fsBold];
+    Add('Release 6.2.0 List of changes');
+    Add('');
+    Paragraph.Numbering := nsBullet;
+    Paragraph.FirstIndent := 10;
+    Add('Support for Delphi Athens 12.0');
+    Add('Added ARIMA Trend decomposition example');
+    Add('Bug fix for MannWhitneyTest');
+    Add('Updated for MtxVec v6.2.0');
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');
+
+    SelAttributes.Size := 13;
+    SelAttributes.Color := RGB(72,123,180);
+    SelAttributes.Style := [fsBold];
+    Add('Release 6.1.0 List of changes');
+    Add('');
+    Paragraph.Numbering := nsBullet;
+    Paragraph.FirstIndent := 10;
+    Add('Rewritten the ARMA MLE fitting and the forecasting function used by ARIMA.');
+    Add('Added an example for ARIMA fitting with trend decomposition.');
+    Add('Updated for MtxVec v6.1 and Alexandria 11.1');
+
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');
+
     SelAttributes.Size := 13;
     SelAttributes.Color := RGB(72,123,180);
     SelAttributes.Style := [fsBold];
@@ -61,7 +92,6 @@ begin
     Paragraph.Numbering := nsNone;
     Paragraph.FirstIndent := 0;
     Add('');
-
 
     SelAttributes.Size := 13;
     SelAttributes.Color := RGB(72,123,180);

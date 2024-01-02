@@ -60,7 +60,8 @@ uses
   Wizard_RidgeReg in 'Wizard_RidgeReg.pas' {frmShowRidgeReg},
   PCAWizard in 'PCAWizard.pas' {frmPCAWiz},
   MultiStepReg in 'MultiStepReg.pas' {MultiStepRegForm},
-  MultiNLin_Tests in 'MultiNLin_Tests.pas' {frmMultiNonLinTest};
+  MultiNLin_Tests in 'MultiNLin_Tests.pas' {frmMultiNonLinTest},
+  ARMATrend in 'ARMATrend.pas' {ARMATrendForm};
 
 {$R *.RES}
 

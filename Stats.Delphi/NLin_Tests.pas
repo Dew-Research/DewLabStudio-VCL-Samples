@@ -627,7 +627,10 @@ begin
 end;
 
 procedure TfrmNonLinTest.FormDestroy(Sender: TObject);
-begin
+begin //reset any changes to global vars
+  GradStepSize := GradStepSizeDefault;
+  GradStepSizeSingle := GradStepSizeSingleDefault;
+
   MtxNonLinReg.Destroy;
   frmLogForm.Free;
   inherited;

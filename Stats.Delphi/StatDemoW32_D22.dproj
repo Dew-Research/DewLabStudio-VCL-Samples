@@ -29,12 +29,6 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
-        <Cfg_1_Win32>true</Cfg_1_Win32>
-        <CfgParent>Cfg_1</CfgParent>
-        <Cfg_1>true</Cfg_1>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
         <Cfg_1_Win64>true</Cfg_1_Win64>
         <CfgParent>Cfg_1</CfgParent>
@@ -85,9 +79,6 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <DCC_Namespace>VCLTee;$(DCC_Namespace)</DCC_Namespace>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
@@ -102,7 +93,9 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <DCC_Namespace>VCLTee;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+        <DCC_Optimize>true</DCC_Optimize>
+        <DCC_GenerateStackFrames>false</DCC_GenerateStackFrames>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <DCC_GenerateStackFrames>false</DCC_GenerateStackFrames>
@@ -110,7 +103,6 @@
         <DCC_RangeChecking>true</DCC_RangeChecking>
         <DCC_Optimize>true</DCC_Optimize>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_Namespace>VCLTee;$(DCC_Namespace)</DCC_Namespace>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -295,6 +287,10 @@
             <Form>frmMultiNonLinTest</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="ARMATrend.pas">
+            <Form>ARMATrendForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -347,12 +343,6 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp220.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k220.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp220.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DclMtxCore522.bpl">Dew MtxVec v5</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DclMtxDB522.bpl">Dew MtxVec v5 DB</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DclStatCore522.bpl">Dew Stats Master v5</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Windows\SysWOW64\StatSeries522.bpl">Dew Stats Master v5 TeeChart</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DclClassifiers122.bpl">Dew Data Miner</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DclClassifiersDB122.bpl">Dew Data Miner DB</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
@@ -362,6 +352,12 @@
             <Deployment Version="2">
                 <DeployFile LocalName="StatDemoW32_D22.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
+                        <RemoteName>StatDemoW32_D22.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="StatDemoW32_D22.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
                         <RemoteName>StatDemoW32_D22.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -748,13 +744,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

@@ -129,43 +129,46 @@ implementation
 
 {$R *.dfm}
 
-Uses Statistics,MtxVecEdit, MtxVecTee, Probabilities, AbstractMtxVec, MtxVecBase;
+Uses Statistics,MtxVecEdit, MtxVecTee, Probabilities, AbstractMtxVec, MtxVecBase, StringVar;
 
 const
   firstchartindex = 4;
   lastchartindex = 4;
 
 procedure TfrmARIMAWizard.FormCreate(Sender: TObject);
+//var StrList: StringList;
 begin
-  inherited;
-  TimeSeries := TVec.Create;
-  chartData.AddSeries(TLineSeries.Create(chartData));
-  { initial values for different parameters }
-  MaxLag := -1;
-  ForecastPer := 40;
-  ACFLag := -1;
-  p := 0;
-  q := 0;
-  d := 0;
-  InitM := cfInitFixed;
-  Alpha := 0.05;
+    inherited;
+    TimeSeries := TVec.Create;
+    chartData.AddSeries(TLineSeries.Create(chartData));
+    { initial values for different parameters }
+    MaxLag := -1;
+    ForecastPer := 40;
+    ACFLag := -1;
+    p := 0;
+    q := 0;
+    d := 0;
+    InitM := TCfInitMethod(rgArmaInit.ItemIndex);
+    Alpha := 0.05;
 
-  { update visual controls }
-  EditInnoLag.Text := IntToStr(MaxLag);
-  editForecastNo.Text := IntToStr(ForecastPer);
-  EditAlpha.Text := FormatSample(FormatString,Alpha);
-  chartindex := firstchartindex;
+    { update visual controls }
+    EditInnoLag.Text := IntToStr(MaxLag);
+    editForecastNo.Text := IntToStr(ForecastPer);
+    EditAlpha.Text := FormatSample(FormatString,Alpha);
+    chartindex := firstchartindex;
 
-  if FileExists('C:\CommonObjects\Dew Stats.NET\Examples\dowjones.vec') then
-  begin
-      TimeSeries.LoadFromFile('C:\CommonObjects\Dew Stats.NET\Examples\dowjones.vec');
-      TimeSeries.Caption := 'dowjones.vec';
-  end;
+//    if FileExists('C:\CommonObjects\Dew Stats.NET\Examples\dowjones.vec') then
+//    begin
+        TimeSeries.LoadFromFile('C:\CommonObjects\Dew Stats.NET\Examples\dowjones.vec');
+//        TimeSeries.Caption := 'dowjones.vec';
+////        TimeSeries.ValuesToStrings(StrList, ftaNone, '', '');
+////        StrList.SaveToFile('C:\CommonObjects\Dew Stats.NET\Examples\dowjones.txt');
+//    end;
 end;
 
 procedure TfrmARIMAWizard.FormDestroy(Sender: TObject);
 begin
-  TimeSeries.Destroy;
+  TimeSeries.Free;
   inherited;
 end;
 
@@ -228,6 +231,7 @@ begin
   { draw transformed time series }
   RefreshChart;
 end;
+
 procedure TfrmARIMAWizard.editAROrderChange(Sender: TObject);
 begin
   p := StrToInt(editAROrder.Text);
@@ -281,21 +285,13 @@ end;
 
 procedure TfrmARIMAWizard.rgARInitClick(Sender: TObject);
 begin
-  case rgARInit.ItemIndex of
-    0: InitM := cfInitYW;
-    1: InitM := cfInitBurg;
-    2: InitM := cfInitFixed;
-  end;
+  InitM := TCfInitMethod(rgArInit.ItemIndex);
   UpdateModelInfo;
 end;
 
 procedure TfrmARIMAWizard.rgARMAInitClick(Sender: TObject);
 begin
-  case rgARMAInit.ItemIndex of
-    0: InitM := cfInitInno;
-    1: InitM := cfInitHannah;
-    2: InitM := cfInitFixed;
-  end;
+  InitM := TCfInitMethod(rgArmaInit.ItemIndex);
   UpdateModelInfo;
 end;
 
@@ -332,6 +328,13 @@ begin
   begin
     phi.Copy(phiinit);
     theta.Copy(thetainit);
+  end else
+  begin
+    phi.Size(p);
+    phi.SetZero;
+
+    theta.Size(q);
+    theta.SetZero;
   end;
 
   RichEdit.Enabled := false;
@@ -417,10 +420,21 @@ end;
 
 procedure TfrmARIMAWizard.CausalReport;
 begin
-  if p>0 then
-    if CheckARMACoeffs(Phi,True) then RichEdit.Lines.Add('Model causal') else RichEdit.Lines.Add('Model not causal');
-  if q>0 then
-    if CheckARMACoeffs(Theta,False) then RichEdit.Lines.Add('Model invertible') else RichEdit.Lines.Add('Model not invertible');
+  if p > 0 then  //if all ar roots are outside of uing circyle
+  begin
+      if CheckARMACoeffs(Phi, True) then RichEdit.Lines.Add('Model causal') else RichEdit.Lines.Add('Model not causal');
+      if CheckARMACoeffs(Phi, False) then RichEdit.Lines.Add('Model stationary') else RichEdit.Lines.Add('Model not stationary');
+  end;
+  if q > 0 then
+  begin
+      if CheckARMACoeffs(Theta,False) then
+      begin
+          RichEdit.Lines.Add('Model invertible')
+      end else
+      begin
+          RichEdit.Lines.Add('Model not invertible');
+      end;
+  end;
 end;
 
 procedure TfrmARIMAWizard.editAlphaChange(Sender: TObject);
@@ -443,8 +457,16 @@ procedure TfrmARIMAWizard.MLEReport;
 var MLE: double;
   iters: Integer;
 begin
-  try
-    iters := ARMAMLE(Data,phi,theta,Residuals,mle);
+    iters := ARMAMLE(Data,phi,theta,Residuals,mle, dMean);
+//    phi.SetIt([1.99628279, -0.99999987]);
+//    theta.SetIt([-0.793195,   -0.206805]);
+//
+//    dMean := 115.46607815;
+//
+//    Residuals[Residuals.Length - 2] :=  0.25985948;
+//    Residuals[Residuals.Length - 1] := -0.51535064;
+//    theta.SetIt([-0.99998]);
+
     RichEdit.SelAttributes.Style := [fsBold,fsUnderline];
     RichEdit.Lines.Add('Finding optimal coefficients (MLE)');
     RichEdit.Lines.Add('Number of iterations needed : '+IntToStr(iters));
@@ -460,8 +482,6 @@ begin
     RichEdit.Lines.Add('name'+#9+'estimate');
     if (p>0) then RichEdit.Lines.Add(CoeffReport(phi,'AR'));
     if (q>0) then RichEdit.Lines.Add(CoeffReport(theta,'MA'));
-  finally
-  end;
 end;
 
 procedure TfrmARIMAWizard.ForecastReport;
@@ -473,10 +493,11 @@ begin
   RichEdit.Lines.Add('Forecasting '+IntToStr(ForecastPer)+' points');
   Screen.Cursor := crHourGlass;
   try
-    ARMAForecast(Data,phi,theta,ForecastPer,Forecasts,FStdDev);
-
     { add mean, if required }
-    if (chkBoxRemoveMean.Checked) and (chkAddMean.Checked) then Forecasts.Add(dMean);
+//    if (chkBoxRemoveMean.Checked) and (chkAddMean.Checked) then
+     ARMAForecast(Data, phi, theta, residuals, ForecastPer, dMean, Forecasts, FStdDev);
+//    else
+//        ARMAForecast2(Data,phi,theta,residuals, ForecastPer, 0, Forecasts);
 
     { integrate, if required }
     if (d>0) and (chkIntegrate.Checked) then
@@ -532,7 +553,7 @@ begin
       Chart[3].ShowInLegend := False;
       v1.Copy(data);
       { add mean, if required }
-      if (chkBoxRemoveMean.Checked) and (chkAddMean.Checked) then v1.Add(dMean);
+//      if (chkBoxRemoveMean.Checked) and (chkAddMean.Checked) then v1.Add(dMean);
       { integrate }
       if (d>0) and (chkIntegrate.Checked) then
       begin
@@ -575,8 +596,9 @@ begin
   { differenciate, if needed }
   if d>0 then for i := 1 to d do Data.Difference;
   dMean := Data.Mean;
+
   { remove mean, if needed }
-  if chkBoxRemoveMean.Checked then Data.Add(-dMean);
+//  if chkBoxRemoveMean.Checked then Data.Add(-dMean);
 end;
 
 procedure TfrmARIMAWizard.RefreshChart;

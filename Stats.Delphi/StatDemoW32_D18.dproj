@@ -271,6 +271,10 @@
             <Form>frmMultiNonLinTest</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="ARMATrend.pas">
+            <Form>ARMATrendForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -319,15 +323,14 @@
                     <VersionInfoKeys Name="Comments"/>
                 </VersionInfoKeys>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\StatSeries417.bpl">File C:\WINDOWS\SysWOW64\StatSeries417.bpl not found</Excluded_Packages>
-                    <Excluded_Packages Name="C:\WINDOWS\SYSTEM32\MtxTee417.bpl">File C:\WINDOWS\SYSTEM32\MtxTee417.bpl not found</Excluded_Packages>
-                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\MtxTee418.bpl">File C:\WINDOWS\SysWOW64\MtxTee418.bpl not found</Excluded_Packages>
-                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\StatSeries418.bpl">File C:\WINDOWS\SysWOW64\StatSeries418.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\11.0\Bpl\DclSignalTool618.bpl">Dew DSP Master v6</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\11.0\Bpl\DclSignalTee618.bpl">Dew DSP Master v6 TeeChart</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k180.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp180.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k180.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp180.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Windows\SysWOW64\StatSeries518.bpl">Dew Stats Master v5 TeeChart</Excluded_Packages>
+                    <Excluded_Packages Name="C:\CommonObjects\TeeSource1\TeeChart 2021.September.VCL\Source\..\Compiled\Delphi18.win32\Bin\DclFMXTeePro918.bpl">TeeChart Pro 2021 for FireMonkey Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\CommonObjects\TeeSource1\TeeChart 2021.September.VCL\Source\..\TeeTree\Compiled\Delphi18.win32\Bin\DclFMXTree18.bpl">TeeTree for FireMonkey</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

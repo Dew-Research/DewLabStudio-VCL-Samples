@@ -1,6 +1,9 @@
 inherited frmWhatsNew: TfrmWhatsNew
   Caption = 'frmWhatsNew'
+  StyleElements = [seFont, seClient, seBorder]
   OnDestroy = FormDestroy
-  PixelsPerInch = 96
   TextHeight = 13
+  inherited RichEdit1: TRichEdit
+    StyleElements = [seFont, seClient, seBorder]
+  end
 end

@@ -203,17 +203,25 @@ inherited frmMultiNonLinTest: TfrmMultiNonLinTest
         Title.Visible = False
         BottomAxis.LogarithmicBase = 10.000000000000000000
         BottomAxis.Maximum = 24.000000000000000000
+        BottomAxis.EndPosition = 100.000000000000000000
         DepthAxis.LogarithmicBase = 10.000000000000000000
         DepthAxis.Maximum = 0.500000000000000000
         DepthAxis.Minimum = -0.500000000000000000
+        DepthAxis.EndPosition = 100.000000000000000000
         DepthTopAxis.LogarithmicBase = 10.000000000000000000
         DepthTopAxis.Maximum = 0.500000000000000000
         DepthTopAxis.Minimum = -0.500000000000000000
+        DepthTopAxis.EndPosition = 100.000000000000000000
         LeftAxis.LogarithmicBase = 10.000000000000000000
         LeftAxis.Maximum = 538.931250000000000000
+        LeftAxis.EndPosition = 100.000000000000000000
+        RightAxis.Grid.ZPosition = 100.000000000000000000
         RightAxis.LogarithmicBase = 10.000000000000000000
+        RightAxis.EndPosition = 100.000000000000000000
         RightAxis.ZPosition = 100.000000000000000000
+        TopAxis.Grid.ZPosition = 100.000000000000000000
         TopAxis.LogarithmicBase = 10.000000000000000000
+        TopAxis.EndPosition = 100.000000000000000000
         TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         Zoom.Brush.Style = bsFDiagonal
@@ -227,6 +235,7 @@ inherited frmMultiNonLinTest: TfrmMultiNonLinTest
         DefaultCanvas = 'TGDIPlusCanvas'
         ColorPaletteIndex = 0
         object Series1: TPointSeries
+          HoverElement = [heCurrent]
           SeriesColor = clYellow
           Title = 'Data'
           ClickableLine = False
@@ -242,6 +251,7 @@ inherited frmMultiNonLinTest: TfrmMultiNonLinTest
           YValues.Order = loNone
         end
         object Series2: TLineSeries
+          HoverElement = [heCurrent]
           SeriesColor = 8421631
           Title = 'Fitted values'
           Brush.BackColor = clDefault
