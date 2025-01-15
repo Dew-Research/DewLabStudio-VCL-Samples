@@ -8,7 +8,7 @@
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>16.1</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -302,6 +302,10 @@
         </DCCReference>
         <DCCReference Include="ScriptingGrid.pas">
             <Form>ScriptingGridForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CompoundExpressions.pas">
+            <Form>CompoundExpressionsForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Debug">

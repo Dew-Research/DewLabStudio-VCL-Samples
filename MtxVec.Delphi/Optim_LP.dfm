@@ -9,23 +9,23 @@ inherited frmLP: TfrmLP
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 741
-    ExplicitWidth = 678
+    ExplicitWidth = 741
     inherited RichEdit1: TRichEdit
       Width = 739
-      ExplicitWidth = 676
+      ExplicitWidth = 739
     end
   end
   inherited Panel2: TPanel
     Top = 463
     Width = 741
-    ExplicitTop = 368
-    ExplicitWidth = 678
+    ExplicitTop = 463
+    ExplicitWidth = 741
   end
   inherited Panel3: TPanel
     Width = 741
     Height = 333
-    ExplicitWidth = 678
-    ExplicitHeight = 238
+    ExplicitWidth = 741
+    ExplicitHeight = 333
     object Panel4: TPanel
       Left = 1
       Top = 1
@@ -33,7 +33,6 @@ inherited frmLP: TfrmLP
       Height = 331
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 236
       object Label1: TLabel
         Left = 8
         Top = 16
@@ -107,6 +106,7 @@ inherited frmLP: TfrmLP
         ItemIndex = 1
         TabOrder = 1
         Text = 'Two Phase Simplex'
+        OnChange = ComboBox1Change
         Items.Strings = (
           'Dual Simplex'
           'Two Phase Simplex'
@@ -152,8 +152,6 @@ inherited frmLP: TfrmLP
       Height = 331
       Align = alClient
       TabOrder = 1
-      ExplicitWidth = 484
-      ExplicitHeight = 236
       object Splitter1: TSplitter
         Left = 1
         Top = 169
@@ -292,24 +290,21 @@ inherited frmLP: TfrmLP
         ReadOnly = True
         ScrollBars = ssBoth
         TabOrder = 1
-        ExplicitTop = 164
-        ExplicitWidth = 482
-        ExplicitHeight = 71
       end
     end
   end
   object MtxLP1: TMtxLP
     c.DataValues = {
-      0000000000000000000000000000803F00000000000007440000004100000000
+      0000000000000000000000000000803F0000000000001B440000004100000000
       00137A47000000000000000000000000}
     A.LeadingCols = 0
     A.DataValues = {
       000000000000000000000000000000000000000000000000000040400000803F
       0000000000000000000000000000803F00000000000000000000000000000041
-      000007440000000000137A470000000000000000000000000000000000000000
+      00001B440000000000137A470000000000000000000000000000000000000000
       000000000000000000000000}
     b.DataValues = {
-      0000000000000000000000000000803F00000000000007440000004100000000
+      0000000000000000000000000000803F0000000000001B440000004100000000
       00137A47000000000000000000000000}
     Algorithm = LPAlgoTwoPhaseSimplex
     Left = 128

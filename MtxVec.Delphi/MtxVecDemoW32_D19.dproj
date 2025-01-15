@@ -398,6 +398,10 @@
             <Form>ScriptingGridForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="CompoundExpressions.pas">
+            <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -469,10 +473,16 @@
                     <Source Name="MainSource">MtxVecDemoW32_D19.dpr</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="D:\Program Files (x86)\FastReports\LibD19\dclfrx19.bpl">File D:\Program Files (x86)\FastReports\LibD19\dclfrx19.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="D:\Program Files (x86)\FastReports\LibD19\dclfrxDB19.bpl">File D:\Program Files (x86)\FastReports\LibD19\dclfrxDB19.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="D:\Program Files (x86)\FastReports\LibD19\dclfrxe19.bpl">File D:\Program Files (x86)\FastReports\LibD19\dclfrxe19.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\12.0\Bpl\DewCustom_D19.bpl">Dew Custom Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k190.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp190.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\CommonObjects\TeeSource1\TeeChart 2023.November.VCL\Source\..\Compiled\Delphi19.win32\Bin\DclFMXTeePro919.bpl">TeeChart Pro 2023 for FireMonkey Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\CommonObjects\TeeSource1\TeeChart 2023.November.VCL\Source\..\TeeTree\Compiled\Delphi19.win32\Bin\DclFMXTree19.bpl">TeeTree for FireMonkey</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment>

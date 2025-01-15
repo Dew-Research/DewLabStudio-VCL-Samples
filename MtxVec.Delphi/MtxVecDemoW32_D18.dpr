@@ -73,7 +73,8 @@ uses
   MtxVecThreading in 'MtxVecThreading.pas' {MtxVecThreadingForm},
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
-  ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm};
+  ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm};
 
 {$R *.res}
 
@@ -91,8 +92,5 @@ begin
   Application.Title := 'Dew Research MtxVec 4.3 W32 demo';
   {$ENDIF}
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TIfThenForm, IfThenForm);
-  Application.CreateForm(TNumaForm, NumaForm);
-  Application.CreateForm(TScriptingGridForm, ScriptingGridForm);
   Application.Run;
 end.

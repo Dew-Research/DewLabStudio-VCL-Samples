@@ -70,14 +70,15 @@ uses
   Save_Precision in 'Save_Precision.pas' {frmSavePrec},
   Scripting in 'Scripting.pas' {ScriptingForm},
   SparseTest in 'SparseTest.pas' {frmSparseTest},
-  SuperConductive in 'SuperConductive.pas' {SuperConductiveForm},
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm},
   SysLinear1 in 'SysLinear1.pas' {LinearSystem1},
   YuleLevinson in 'YuleLevinson.pas' {YuleLev},
   MtxVecGridDemo in 'MtxVecGridDemo.pas' {frmGridDemo},
   MtxVecThreading in 'MtxVecThreading.pas' {MtxVecThreadingForm},
   ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
-  IfThenUnit in 'IfThenUnit.pas' {IfThenForm};
+  IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
+  SuperConductive in 'SuperConductive.pas' {SuperConductiveForm};
 
 {$R *.res}
 
@@ -86,5 +87,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Dew Lab Studio for Delphi - MtxVec demo';
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TSuperConductiveForm, SuperConductiveForm);
   Application.Run;
 end.

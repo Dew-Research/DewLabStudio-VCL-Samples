@@ -13,6 +13,8 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure List0;
+    procedure List1;
   end;
 
 var
@@ -26,38 +28,261 @@ implementation
   {$R *.DFM}
 {$ENDIF}
 
-procedure TfrmChanges30.FormCreate(Sender: TObject);
+procedure TfrmChanges30.List0;
 begin
-  inherited;
+    With RichEdit1.Lines, RichEdit1 do
+    begin
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
+        Add('List of new features in v6.3.1 (January 2025):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('New set of "compound" expression functions added to TVec/TMtx/Vector/Matrix to speed up computation of basic +/-* math.' +
+            'A total of 162 new overloads have been added to Vector and the same amount to the Matrix type.' );
+        Add('Added extended CPU info (thread, core and instruction support) used by MtxVec.Controller that works across Intel and AMD CPUs. ' +
+             'Check the Intro page of this demo for an example how to access and display this information.');
+        Add('Fixed MtxVec.Controller.CPUCores to work correctly also for AMD CPUs.');
+        Add('Added a dedicated set of performance dlls targeting AMD Zen architecture for AVX2 and AVX512 instruction set. ' +
+            'Although not comprehensive they do improve some algorithms considerably and are a first step towards more comprehensive support also for AMD. ' +
+            'These libraries are a separate download for registered customers.');
+
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Sparse matrices:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Added TSparseMtx.SvdSymLargest, find user specified number of largest SVD values of sparse symmetric matrices');
+        Add('Added TSparseMtx.SvdSymSmallest, find user specified number of smallest SVD values of sparse symmetric matrices');
+        Add('Added TSparseMtx.EigSymLargest, TSparseMtx.EigSymGenLargest for user specified number of largest (generalized) eigen-values of sparse symmetric matrices');
+        Add('Added TSparseMtx.EigSymSmallest, TSparseMtx.EigSymGenSmallest for user specified number of largest (generalized) eigen-values of sparse symmetric matrices');
+        Add('Optionally, TSparseMtx.TripletsToSparse can either use or drop zeros on the main diagonal.');
+
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
+        Add('List of new features in v6.3.0 (December 2024):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Updated for Intel OneAPI v2025.0. Since the end of 2023 only the 64bit libraries continue receiving updates from Intel.' +
+            'New version of libiomp5md.dll is required. There will be an error about missing procedure entry point __kmpc_masked, if not provided. Make sure that the new version dll overwrites the old one. ');
+        Add('Added SqrAbs combined function to Math387 for complex number TCplx and TSCplx types.');
+        Add('Added Exp2Int to Math387 for integer based exponentials (up to 32bit range)');
+        Add('Added Exp2Int64 to Math387 for integer based exponentials (up to 64bit range)');
+        Add('Added Log2Int to Math387 for integer based exponentials (up to 32bit range)');
+        Add('Added Log2Int64 to Math387 for integer based exponentials (up to 64bit range)');
+        Add('Bug fix for TMtxGridSeries (VCL), where the Src parameter is single precision.');
+        Add('Both Lapack and FFT Threading are now disabled globally and becomes enabled only on users request. There were too many cases of performance degradation, when threading was enabled too soon for too short data.');
+        Add('Added Implicit conversions to PDouble, PSingle, PCplx, PSCplx to Vector and Matrix.');
+        Add('Added Implicit conversions to PInteger, PSmallInt and PByte for VectorInt and MatrixInt.');
+
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Debugger Visualizer v2:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Bug fix for IDE''s Run->View Value and Run->Draw Values. The shortcut was working, but menu command not.');
+        Add('Changed IDE menu command shortcut for View Values to CTRL+SHIFT+F6 form CTRL+F6.');
+        Add('Added ability to add both "View Values..." and "Draw Values..." commands to IDE Toolbar.');
+        Add('Added Visualizer optimization preventing evaluation of vars, when no visualizer windows are open');
+        Add('Visualizer docking window bug fixed.');
+        Add('Visualizer bug fix for single precision, byte and shortInt vectors and matrices');
+        Add('Visualizer dead-lock fix, if an exception happened in background evaluation.');
+        Add('Bug fix for Inline Visualizer improving stability.');
+        Add('Bug fix for Single precision Form visualizer when charting with xAxis parameter.');
+        Add('Upgraded FMX variant of TMtxGridSeries to match implementation of the VCL version.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+        Add('Technical note for MtxVec v6.2.5 affecting Debugger Visualizer (September 2024):');
+        Add('');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('MtxVec packages may not be installed with range-checking enabled. The build tool will respect this. An immediate crash is possible otherwise.');
+        Add('The use of “IDE Fix pack” packages is not recommended. An immediate crash is possible.');
+        Add('Your own project needs to be compiled with “use debug dcu’s” option checked for the compiler to support all features.');
+
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+        Add('Changes for MtxVec v6.2.5. (August 2024):');
+        Add('');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Bug fix TMtxGrid object, which had performance problems for column heavy matrices');
+        Add('Bug fix for TVec.ValuesToStrings, which had a bug for its sub-vector indexed overload.');
+        Add('Bug fix for assigning TStringList objects within script');
+        Add('Bug fix for debugger visualizer, which had its command line print output disabled (due to performance issues).');
+        Add('Important: When passing TStrings descendands to MtxVec routines like ValuesToStrings or to the Optimization routines ' +
+            'acception "Verbose" parameter, it should be avoided to pass TRichEdit.Lines or TMemo.Lines directly. Use an intermediate object like TStringList instead. There is a substantial performance penalty otherwise.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+        Add('Changes for MtxVec v6.2.4. (July 2024):');
+        Add('');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('First release of Dew Debugger Visualizer v2.0. This is the first major overhall of the debugger visualizer since its first release in 2009. Stay tuned for a series of video clips to learn about the new features.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Scripting::');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Added TStringList type support to TMtxExpression script. You can now call: list(i), list(2:3), or assign with list(i) = "2" or concatenate lists with [list(2:3); list(14:15)]');
+        Add('Added support to define externally owned TValueRec object as a variable in TMtxExpression script.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+        Add('Changes for MtxVec v6.2.3. (May 2024):');
+        Add('');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('New release of shared libs (*.so) for Linux based on latest Intel OneAPI 2024.1 and targeting GLIBC v2.27 or newer. This covers also RHEL v8.X and v9.X.');
+        Add('Added support for .csv and .txt file formats to TVec/TMtx/TVecInt/TMtxInt types LoadFromFile and SaveToFile methods. If the extension are not .csv or .txt, all other extensions result in binary storage.');
+        Add('Fixed bug for Spline1D interpolation.');
+        Add('A number of performance improvements for spline based interpolation and equidistant interpolation.');
+        Add('Substantially Improved parity of TMtxGridSeries for FireMonkey with its VCL variant.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+        Add('New features for .NET and .NET Core release v6.2.2 (May 2024):');
+        Add('');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsNone;
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Updated for Intel MKL and Intel IPP to OneAPI v2023.2');
+        Add('Added TVecInt.Concat.');
+        Add('MinRows, MinCols, MaxMinRows, MaxMinCols to VectorInt / MatrixInt, Vector / Matrix');
+        Add('MinEvery, MaxEvery to both VectorInt / MatrixInt, Vector / Matrix.');
+        Add('TMtx.ScaleRows, TMtx.ScaleCols.');
+        Add('Math387.TFifoCriticalSection.A fair critical section implemention.All threads enter in Fifo order.');
+        Add('Math387.TFairSemaphoreSection.A fair critical section that allows at most N concurrent threads.');
+        Add('Updated online and offline documentation.');
+        Paragraph.Numbering := nsNone;
+        Add('');
+        SelAttributes.Style := [fsUnderline];
+        Add('Speed:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Much faster implementation of TMtx.TensorProd(const Vec1, Vec2: TVec).');
+        Add('Much faster TVec.Sqrt. Complex vectorized Sqrt speeded up by roughly 10x in compare to Intel VML.');
+        Add('Introduces first use of a fair critical section for MtxVec object cache and FFT descriptor cache.');
+        Add('First release to be compiled with latest Intel OneAPI DPC++ and Fortran compilers.');
+        Add('Updated FFT descriptors and FFT storage format for the new Intel MKL API.Only CCS storage is now available. The layout of 2D FFT from / to "real" results has changed.');
+        Add('Important: Only 64bit libraries are expected to receive performance improvements in the future!');
+        Paragraph.Numbering := nsNone;
+        Add('');
+        SelAttributes.Style := [fsUnderline];
+        Add('Bugs fixed:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Vectorized IntPower function');
+        Add('TMtx.BandedToDense function.');
+        Add('Object cache was missing critical section, when not using super-conductive code path.');
+        Add('Polynoms.IIRFilter fix for missing init of DelayLine, when not provided by user.Parameter was introduced with recent ARIMA updates.');
+        Add('Polynoms.DeConv fixed because of dependancy upon Polynoms.IIRFilter.');
+        Add('TMtxVec.NormL2 fixed for complex, single precision and "core" variant.');
+        Add('Implemented Lockless(never enters sleep(..)) TMtxVecController.MarkThread and TMtxVecController.UnMarkThread.The peformance gain grows with thread count.This speeds up the threading library when calling DoForLoop method.');
+        Add('Object cache is now using TLS region (Thread Local Storage), to store its memory pool index.This progressively speeds up object allocation, when using more than 16 threads with the TMtxForLoop threading library.');
+        Add('Added BlockGranularity addressing threading with high turbo clock frequencies and Intel Alder Lake with P + E cores. (asymetric multi - processing)');
+        Add('Optimized critical-sections used for thread synchronisation for high thread count.');
+        Add('The memory cache of TVecInt and TMtxInt was not active and this caused performance degradation in the case of threading.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+    end;
+end;
+
+procedure TfrmChanges30.List1;
+begin
   With RichEdit1.Lines, RichEdit1 do
   begin
     SelAttributes.Style := [fsBold];
     SelAttributes.Color := RGB(51,104,196);
     SelAttributes.Size := 11;
-
-    Add('List of new features in v6.2.0:');
-    Paragraph.FirstIndent := 0;
-    Paragraph.Numbering := nsNone;
+    Add('List of new features in v6.2.0 (November 2023):');
     Add('');
-
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsNone;
     SelAttributes.Style := [fsUnderline];
     Add('Core product:');
-    Paragraph.FirstIndent := 10;
     Paragraph.Numbering := nsBullet;
+    Add('Updated Intel MKL and Intel IPP to OneAPI v2023.2');
+    Add('Added support for RAD Studio Athens 12.0 release');
     Add('Added TVecInt.Concat.');
     Add('Added MinRows, MinCols, MaxMinRows, MaxMinCols to VectorInt/MatrixInt, Vector/Matrix');
     Add('Added MinEvery, MaxEvery to both VectorInt/MatrixInt, Vector/Matrix');
     Add('Added TMtx.ScaleRows, TMtx.ScaleCols.');
     Add('Added Math387.TFifoCriticalSection. A fair critical section implemention. All threads enter in Fifo order.');
     Add('Added Math387.TFairSemaphoreSection. A fair critical section that allows at most N concurrent threads.');
+    Add('Upgraded FMX variant of TMtxGridSeries to match implementation of the VCL version.');
+    Paragraph.Numbering := nsNone;
+    SelAttributes.Style := [fsUnderline];
+    Add('');
+    Add('Speed:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
     Add('Much faster implementation of TMtx.TensortProd(const Vec1, Vec2: TVec).');
     Add('Much faster TVec.Sqrt. Complex vectorized Sqrt speeded up by roughly 10x in compare to Intel VML.');
-    Add('Upgraded FMX variant of TMtxGridSeries to match implementation of the VCL version.');
-    Add('Updated Intel MKL and Intel IPP to OneAPI v2023.2');
-    Add('Added support for RAD Studio Athens 12.0 release');
-    Add('Fixed bug. IntPower function ');
-    Add('Fixed bug. TMtx.BandedToDense function.');
-    Add('Fixed bug. Move function Len parameter not typecasted to Int64. Product wide fix.');
+    Paragraph.Numbering := nsNone;
+    SelAttributes.Style := [fsUnderline];
+    Add('');
+    Add('Bugs fixed:');
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('Fixed bug for IntPower function ');
+    Add('Fixed bug for TMtx.BandedToDense function.');
+    Add('Fixed bug for Move function Len parameter not typecasted to Int64. Product wide fix.');
     Paragraph.FirstIndent := 0;
     Paragraph.Numbering := nsNone;
     Add('');
@@ -434,7 +659,7 @@ begin
     SelAttributes.Size := 11;
 
     Add('List of new features in v5.1:');
-    Paragraph.FirstIndent := 0;           
+    Paragraph.FirstIndent := 0;
     Paragraph.Numbering := nsNone;
     Add('');
 
@@ -888,7 +1113,7 @@ begin
     Add('Assign operator supports colon operator: m(2:3) = 4.');
     Add('Colon operator supports step <> 1 and allows: m(10:-1:3) = 4');
     Add('Vectors and matrices can return elements from conditions: a = m(m > 4)');
-    Add('Functions accept strings as parameters and can return string as result.');    
+    Add('Functions accept strings as parameters and can return string as result.');
     Paragraph.FirstIndent := 0;
     Paragraph.Numbering := nsNone;
     Add('');
@@ -1066,9 +1291,14 @@ begin
     Paragraph.FirstIndent := 0;
     Paragraph.Numbering := nsNone;
     Add('');
-
   end;
+end;
 
+procedure TfrmChanges30.FormCreate(Sender: TObject);
+begin
+  inherited;
+  List0;
+  List1;
 end;
 
 initialization

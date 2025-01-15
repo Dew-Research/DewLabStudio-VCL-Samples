@@ -3,12 +3,11 @@ inherited Interpolating1: TInterpolating1
   Top = 144
   Caption = 'Interpolating points'
   ClientHeight = 515
-  OldCreateOrder = True
   OnCreate = FormCreate
   ExplicitHeight = 554
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
+    ExplicitWidth = 566
     inherited RichEdit1: TRichEdit
       Font.Color = 7105644
     end
@@ -16,7 +15,7 @@ inherited Interpolating1: TInterpolating1
   inherited Panel2: TPanel
     Top = 396
     Height = 119
-    ExplicitTop = 396
+    ExplicitTop = 395
     ExplicitHeight = 119
     object Label1: TLabel [0]
       Left = 297
@@ -78,7 +77,7 @@ inherited Interpolating1: TInterpolating1
       Min = 60
       ParentShowHint = False
       Frequency = 5000
-      Position = 5000
+      Position = 60
       ShowHint = False
       TabOrder = 1
       TickMarks = tmTopLeft
@@ -133,13 +132,16 @@ inherited Interpolating1: TInterpolating1
     Height = 266
     Legend.Alignment = laTop
     Title.Visible = False
+    BottomAxis.Maximum = 24.000000000000000000
+    DepthAxis.Maximum = 0.500000000000000000
+    DepthAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.Maximum = 0.500000000000000000
+    DepthTopAxis.Minimum = -0.500000000000000000
+    LeftAxis.Maximum = 905.000000000000000000
+    LeftAxis.Minimum = 360.199999999999900000
     BevelOuter = bvLowered
-    ExplicitHeight = 266
+    ExplicitHeight = 265
     object Series1: TPointSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.Visible = False
       Title = 'Original data'
       ClickableLine = False
       Pointer.Brush.Gradient.EndColor = clRed
@@ -148,17 +150,12 @@ inherited Interpolating1: TInterpolating1
       Pointer.InflateMargins = True
       Pointer.Style = psDiagCross
       Pointer.VertSize = 2
-      Pointer.Visible = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Y'
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.Visible = False
       SeriesColor = 12222282
       Title = 'Fitted values'
       LinePen.Color = 12222282

@@ -125,7 +125,7 @@ begin
     DrawValues(Y,Series1,0,1,DownSize);
     { calculate piecewise poly for the range of points }
     TimeCheck:=GetTickCount;
-    PX.Size(NumPoints*Factor);
+    PX.Size((NumPoints-1)*Factor + 1);
     PX.Ramp(0,1.0/Factor);
     Interpolate(Y,PX,PY,intMethod,true); { !! Check what happens if you have only Y }
     TimeElapsed := GetTickCount - TimeCheck;

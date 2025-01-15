@@ -3,12 +3,12 @@
         <ProjectGuid>{571A7E67-04ED-484F-BC27-5D727AB839A0}</ProjectGuid>
         <MainSource>MtxVecDemoW32_D27.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>19.2</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -373,6 +373,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DCCReference Include="NumaUnit.pas">
             <Form>NumaForm</Form>
         </DCCReference>
+        <DCCReference Include="CompoundExpressions.pas">
+            <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -394,6 +398,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     <Source Name="MainSource">MtxVecDemoW32_D27.dpr</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\StatSeries627.bpl">Dew Stats Master v6 TeeChart</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k270.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp270.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>

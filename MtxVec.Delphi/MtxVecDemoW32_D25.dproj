@@ -8,7 +8,7 @@
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>18.4</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -393,6 +393,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <Form>NumaForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="CompoundExpressions.pas">
+            <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -414,11 +418,17 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     <Source Name="MainSource">MtxVecDemoW32_D25.dpr</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD25\dclfrx25.bpl">File C:\Program Files (x86)\FastReports\LibD25\dclfrx25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD25\dclfrxDB25.bpl">File C:\Program Files (x86)\FastReports\LibD25\dclfrxDB25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD25\dclfrxe25.bpl">File C:\Program Files (x86)\FastReports\LibD25\dclfrxe25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfrx25.bpl">File C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfrx25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfrxDB25.bpl">File C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfrxDB25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfs25.bpl">File C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfs25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfsDB25.bpl">File C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD25\dclFMXfsDB25.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k250.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\WINDOWS\SysWOW64\StatSeries625.bpl">File C:\WINDOWS\SysWOW64\StatSeries625.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="C:\CommonObjects\FastReport FMX 2 Professional\LibD25\dclFMXfrxe25.bpl">FastReport FMX 2.0 Exports</Excluded_Packages>
                     <Excluded_Packages Name="C:\CommonObjects\FastReport FMX 2 Professional\LibD25\dclFMXfrxTee25.bpl">FastReport FMX 2.0 Tee Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\CommonObjects\FastReport FMX 2 Professional\LibD25\dclFMXfsTee25.bpl">FastScript 1.9 FMX Tee Components</Excluded_Packages>

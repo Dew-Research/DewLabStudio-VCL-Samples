@@ -530,6 +530,7 @@ begin
     Add(' Threaded for-loop;TForLoopForm;ForLoopUnit');
     Add(' Efficient multithreading;TMtxVecThreadingForm;MtxVecThreading');
     Add(' Vectorizing if-then;TIfThenForm;IfThenUnit');
+    Add(' Compound expressions;TCompoundExpressionsForm;CompoundExpressions');
     Add('Exporting/Importing;TIntroExpImp');
     Add(' Saving/Loading;TFileH1;FileHandling1');
     Add(' MSOffice;TMSOffice;ClipboardMSOffice');

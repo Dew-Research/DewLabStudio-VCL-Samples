@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  OldCreateOrder = True
   Position = poScreenCenter
   WindowState = wsMaximized
   OnClose = FormClose
@@ -1646,10 +1647,18 @@ object frmMain: TfrmMain
     OnChange = PageControl1Change
     object TabForm: TTabSheet
       Caption = 'Example'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object TabSource: TTabSheet
       Caption = 'Source code'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object btnConfig: TButton
         Left = 8
         Top = 16

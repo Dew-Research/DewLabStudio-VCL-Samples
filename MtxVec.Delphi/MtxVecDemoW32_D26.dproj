@@ -8,7 +8,7 @@
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>18.8</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -393,6 +393,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <Form>NumaForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="CompoundExpressions.pas">
+            <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -414,9 +418,16 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     <Source Name="MainSource">MtxVecDemoW32_D26.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k260.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp260.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\DataExplorerDBXPluginEnt260.bpl">DBExpress Enterprise Data Explorer Integration</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FmxMtxTee626.bpl">Dew MtxVec v6 TeeChart FireMonkey</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FmxDclMtxDB626.bpl">Dew MtxVec v6 DB FireMonkey</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FmxDclMtxTools626.bpl">Dew MtxVec v6 FireMonkey</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FmxDclSignalTool626.bpl">Dew DSP Master v6 FireMonkey</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FmxDclSignalTee626.bpl">Dew DSP Master v6 TeeChart FireMonkey</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\FmxMtxVisualizer626.bpl">Dew MtxVec v6 Debugger Visualizer FireMonkey</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k260.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\DewCustom_D26.bpl">Dew Custom Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp260.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
@@ -1330,12 +1341,28 @@ $(PostBuildEvent)]]></PostBuildEvent>
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='iOSDevice32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='iOSDevice64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
         <PreBuildEvent/>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
@@ -1343,7 +1370,23 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='iOSDevice32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='iOSDevice64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
@@ -1351,7 +1394,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
@@ -1359,7 +1402,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
 </Project>

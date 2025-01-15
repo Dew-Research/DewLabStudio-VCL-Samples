@@ -323,7 +323,7 @@ end;
 procedure TIfThenForm.FormCreate(Sender: TObject);
 begin
     if not Assigned(GlobalThreads) then  GlobalThreads := TMtxForLoop.Create;
-    GlobalThreads.ThreadCount := 16;
+    GlobalThreads.ThreadCount := Controller.CpuCores;
     Controller.ThreadDimension := GlobalThreads.ThreadCount + 1;
 
     Memo1.Lines.Clear;
