@@ -30,23 +30,29 @@ object PhaseShifterForm: TPhaseShifterForm
     BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Maximum = 24.000000000000000000
     BottomAxis.MinorTicks.Visible = False
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Frequency [Hz]'
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.AxisValuesFormat = '#,##0.00###'
     LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 1116.010093750000000000
     LeftAxis.Minimum = 565.000000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Amplitude'
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
@@ -63,7 +69,6 @@ object PhaseShifterForm: TPhaseShifterForm
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 0
     object Series1: TFastLineSeries
-      HoverElement = []
       SeriesColor = 10485760
       Title = 'Response'
       LinePen.Color = 10485760
@@ -73,7 +78,6 @@ object PhaseShifterForm: TPhaseShifterForm
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
-      HoverElement = []
       Title = 'Error'
       LinePen.Color = clRed
       XValues.Name = 'X'
@@ -82,7 +86,6 @@ object PhaseShifterForm: TPhaseShifterForm
       YValues.Order = loNone
     end
     object Series3: TPointSeries
-      HoverElement = [heCurrent]
       Legend.Visible = False
       Marks.Visible = True
       Marks.Arrow.Visible = False
@@ -256,6 +259,7 @@ object PhaseShifterForm: TPhaseShifterForm
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
     Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000

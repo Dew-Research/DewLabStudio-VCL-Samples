@@ -30,23 +30,29 @@ object DifferentiatorForm: TDifferentiatorForm
     BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Maximum = 24.000000000000000000
     BottomAxis.MinorTicks.Visible = False
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Frequency [Hz]'
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.AxisValuesFormat = '#,##0.00###'
     LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 712.500000000000000000
     LeftAxis.Minimum = 155.000000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Amplitude'
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000
     Zoom.Pen.Color = clBlack
     Zoom.Pen.Mode = pmNotXor
@@ -64,7 +70,6 @@ object DifferentiatorForm: TDifferentiatorForm
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object Series1: TFastLineSeries
-      HoverElement = []
       SeriesColor = 10485760
       Title = 'Response'
       LinePen.Color = 10485760
@@ -74,7 +79,6 @@ object DifferentiatorForm: TDifferentiatorForm
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
-      HoverElement = []
       Title = 'Error'
       LinePen.Color = clRed
       XValues.Name = 'X'
@@ -253,6 +257,7 @@ object DifferentiatorForm: TDifferentiatorForm
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
     Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000

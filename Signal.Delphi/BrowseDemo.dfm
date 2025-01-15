@@ -149,21 +149,27 @@ object BrowseDemoForm: TBrowseDemoForm
       OnZoom = SignalChart1Zoom
       BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Maximum = 24.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Time [s]'
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.Maximum = 824.000000000000000000
-      LeftAxis.Minimum = 329.000000000000000000
+      LeftAxis.Maximum = 373.000000000000000000
+      LeftAxis.Minimum = -92.000000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
       TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       Zoom.Brush.Gradient.Direction = gdFromTopLeft
       Zoom.Brush.Gradient.EndColor = clSilver
@@ -183,7 +189,6 @@ object BrowseDemoForm: TBrowseDemoForm
       DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 13
       object Series1: TSignalHighLowSeries
-        HoverElement = []
         HighValues.Name = 'Y'
         HighValues.Order = loNone
         LowValues.Name = 'Low'

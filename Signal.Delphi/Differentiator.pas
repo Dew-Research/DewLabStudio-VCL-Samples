@@ -55,7 +55,7 @@ implementation
 {$R *.dfm}
 {$ENDIF}
 
-uses OptimalFir, SignalUtils, MTxVecTee, SignalProcessing, AbstractMtxVec;
+uses OptimalFir, SignalUtils, MTxVecTee, SignalProcessing, AbstractMtxVec, MtxVecBase;
 
 procedure TDifferentiatorForm.SpectrumEditButtonClick(Sender: TObject);
 begin

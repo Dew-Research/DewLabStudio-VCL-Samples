@@ -56,7 +56,7 @@ end;
 procedure TBiSpectrumGridForm.FormCreate(Sender: TObject);
 begin
     SignalRead1.IsDouble := DefaultIsDouble; //select processing precision
-    SignalRead1.FileName := ExtractFileDir(Application.ExeName) + '\bz.sfs';
+    SignalRead1.FileName := ExtractFilePath(ParamStr(0)) + 'bz.sfs';
     BispectrumAnalyzer.Amplt.SetZero;
 
     With RichEdit1.Lines, RichEdit1 do

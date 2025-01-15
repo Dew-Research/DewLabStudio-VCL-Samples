@@ -44,7 +44,7 @@ var
 
 implementation
 
-uses AbstractMtxVec;
+uses AbstractMtxVec, MtxVecBase;
 
 {$R *.dfm}
 

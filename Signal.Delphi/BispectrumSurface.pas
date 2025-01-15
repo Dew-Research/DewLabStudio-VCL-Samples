@@ -45,7 +45,7 @@ implementation
 {$R *.dfm}
 {$ENDIF}
 
-uses MtxVecEdit, MtxVecTee, SignalUtils, Math387, AbstractMtxVec;
+uses MtxVecEdit, MtxVecTee, SignalUtils, Math387, AbstractMtxVec, MtxVecBase;
 
 procedure TBiSpectrumSurfaceForm.ChartEditButtonClick(Sender: TObject);
 begin

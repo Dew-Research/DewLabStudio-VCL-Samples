@@ -56,31 +56,47 @@ object BasicKalmanForm: TBasicKalmanForm
     BottomAxis.Axis.Color = 4210752
     BottomAxis.Grid.Color = 11119017
     BottomAxis.Grid.Visible = False
+    BottomAxis.LogarithmicBase = 10.000000000000000000
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.TicksInner.Color = 11119017
     BottomAxis.Title.Caption = 'Iteration'
     BottomAxis.Title.Font.Name = 'Verdana'
     DepthAxis.Axis.Color = 4210752
     DepthAxis.Grid.Color = 11119017
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthAxis.TicksInner.Color = 11119017
     DepthAxis.Title.Font.Name = 'Verdana'
     DepthTopAxis.Axis.Color = 4210752
     DepthTopAxis.Grid.Color = 11119017
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.TicksInner.Color = 11119017
     DepthTopAxis.Title.Font.Name = 'Verdana'
     LeftAxis.Axis.Color = 4210752
     LeftAxis.Grid.Color = 11119017
     LeftAxis.Grid.Visible = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.TicksInner.Color = 11119017
     LeftAxis.Title.Caption = 'Voltage [V]'
     LeftAxis.Title.Font.Name = 'Verdana'
     RightAxis.Axis.Color = 4210752
     RightAxis.Grid.Color = 11119017
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.TicksInner.Color = 11119017
     RightAxis.Title.Font.Name = 'Verdana'
+    RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Axis.Color = 4210752
     TopAxis.Grid.Color = 11119017
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.TicksInner.Color = 11119017
     TopAxis.Title.Font.Name = 'Verdana'
+    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Brush.Gradient.Direction = gdFromTopLeft
     Zoom.Brush.Gradient.EndColor = clSilver
@@ -98,7 +114,6 @@ object BasicKalmanForm: TBasicKalmanForm
       33)
     ColorPaletteIndex = 13
     object EstimatedSeries: TFastLineSeries
-      HoverElement = []
       Title = 'Estimated'
       LinePen.Color = 10708548
       XValues.Name = 'X'
@@ -108,7 +123,6 @@ object BasicKalmanForm: TBasicKalmanForm
       Left = 168
     end
     object MeasuredSeries: TFastLineSeries
-      HoverElement = []
       SeriesColor = 4259584
       LinePen.Color = 4259584
       XValues.Name = 'X'
@@ -119,7 +133,6 @@ object BasicKalmanForm: TBasicKalmanForm
       Top = 65533
     end
     object DesiredSeries: TFastLineSeries
-      HoverElement = []
       Title = 'Desired'
       LinePen.Color = 3513587
       XValues.Name = 'X'
@@ -163,15 +176,21 @@ object BasicKalmanForm: TBasicKalmanForm
     BottomAxis.Axis.Color = 4210752
     BottomAxis.Grid.Color = 11119017
     BottomAxis.Grid.Visible = False
+    BottomAxis.LogarithmicBase = 10.000000000000000000
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.TicksInner.Color = 11119017
     BottomAxis.Title.Caption = 'Iteration'
     BottomAxis.Title.Font.Name = 'Verdana'
     DepthAxis.Axis.Color = 4210752
     DepthAxis.Grid.Color = 11119017
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthAxis.TicksInner.Color = 11119017
     DepthAxis.Title.Font.Name = 'Verdana'
     DepthTopAxis.Axis.Color = 4210752
     DepthTopAxis.Grid.Color = 11119017
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.TicksInner.Color = 11119017
     DepthTopAxis.Title.Font.Name = 'Verdana'
     LeftAxis.Automatic = False
@@ -180,17 +199,27 @@ object BasicKalmanForm: TBasicKalmanForm
     LeftAxis.AxisValuesFormat = '#,##0.####'
     LeftAxis.Grid.Color = 11119017
     LeftAxis.Grid.Visible = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.TicksInner.Color = 11119017
     LeftAxis.Title.Caption = 'Voltage [V^2]'
     LeftAxis.Title.Font.Name = 'Verdana'
     RightAxis.Axis.Color = 4210752
     RightAxis.Grid.Color = 11119017
+    RightAxis.Grid.ZPosition = 100.000000000000000000
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.TicksInner.Color = 11119017
     RightAxis.Title.Font.Name = 'Verdana'
+    RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Axis.Color = 4210752
     TopAxis.Grid.Color = 11119017
+    TopAxis.Grid.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.TicksInner.Color = 11119017
     TopAxis.Title.Font.Name = 'Verdana'
+    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Brush.Gradient.Direction = gdFromTopLeft
     Zoom.Brush.Gradient.EndColor = clSilver
@@ -203,7 +232,6 @@ object BasicKalmanForm: TBasicKalmanForm
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object ErrorSeries: TFastLineSeries
-      HoverElement = []
       LinePen.Color = 10708548
       XValues.Name = 'X'
       XValues.Order = loAscending

@@ -34,15 +34,18 @@ object IirZerosForm: TIirZerosForm
     BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Maximum = 1.000000000000000000
     BottomAxis.MinorTicks.Visible = False
+    BottomAxis.EndPosition = 100.000000000000000000
     ClipPoints = False
     DepthAxis.AxisValuesFormat = '#,##0.0'
     DepthAxis.LabelsOnAxis = False
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
     LeftAxis.AutomaticMinimum = False
@@ -52,6 +55,7 @@ object IirZerosForm: TIirZerosForm
     LeftAxis.LabelsSeparation = 100
     LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 1.000000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     RightAxis.Automatic = False
     RightAxis.AutomaticMaximum = False
     RightAxis.AutomaticMinimum = False
@@ -63,6 +67,7 @@ object IirZerosForm: TIirZerosForm
     RightAxis.LabelsSeparation = 100
     RightAxis.LogarithmicBase = 10.000000000000000000
     RightAxis.Maximum = 1.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Automatic = False
     TopAxis.AutomaticMaximum = False
@@ -75,6 +80,7 @@ object IirZerosForm: TIirZerosForm
     TopAxis.LabelsSeparation = 50
     TopAxis.LogarithmicBase = 10.000000000000000000
     TopAxis.Maximum = 1.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000
     View3DOptions.Elevation = 315
     View3DOptions.Orthogonal = False
@@ -99,7 +105,6 @@ object IirZerosForm: TIirZerosForm
     DefaultCanvas = ''
     ColorPaletteIndex = 0
     object Series1: TPolarSeries
-      HoverElement = []
       Title = 'Zeros'
       XValues.Name = 'Angle'
       XValues.Order = loNone
@@ -136,7 +141,6 @@ object IirZerosForm: TIirZerosForm
       RadiusIncrement = 0.200000000000000000
     end
     object Series2: TPolarSeries
-      HoverElement = []
       SeriesColor = clYellow
       Title = 'Poles'
       XValues.Name = 'Angle'

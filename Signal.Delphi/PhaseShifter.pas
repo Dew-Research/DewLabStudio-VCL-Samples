@@ -54,7 +54,7 @@ implementation
 {$R *.dfm}
 {$ENDIF}
 
-uses OptimalFir, SignalUtils, MTxVecTee, AbstractMtxVec;
+uses OptimalFir, SignalUtils, MTxVecTee, AbstractMtxVec, MtxVecBase;
 
 procedure TPhaseShifterForm.SpectrumEditButtonClick(Sender: TObject);
 begin

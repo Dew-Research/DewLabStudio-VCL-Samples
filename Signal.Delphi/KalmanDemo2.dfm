@@ -59,6 +59,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     BottomAxis.Grid.Visible = False
     BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Maximum = 24.000000000000000000
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.TicksInner.Color = 11119017
     BottomAxis.Title.Caption = 'Iteration'
     BottomAxis.Title.Font.Name = 'Verdana'
@@ -67,6 +68,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthAxis.TicksInner.Color = 11119017
     DepthAxis.Title.Font.Name = 'Verdana'
     DepthTopAxis.Axis.Color = 4210752
@@ -74,6 +76,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.TicksInner.Color = 11119017
     DepthTopAxis.Title.Font.Name = 'Verdana'
     LeftAxis.Axis.Color = 4210752
@@ -82,6 +85,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 652.500000000000000000
     LeftAxis.Minimum = 49.831250000000030000
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.TicksInner.Color = 11119017
     LeftAxis.Title.Caption = 'Voltage [V]'
     LeftAxis.Title.Font.Name = 'Verdana'
@@ -89,6 +93,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     RightAxis.Grid.Color = 11119017
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.TicksInner.Color = 11119017
     RightAxis.Title.Font.Name = 'Verdana'
     RightAxis.ZPosition = 100.000000000000000000
@@ -96,6 +101,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     TopAxis.Grid.Color = 11119017
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.TicksInner.Color = 11119017
     TopAxis.Title.Font.Name = 'Verdana'
     TopAxis.ZPosition = 100.000000000000000000
@@ -116,7 +122,6 @@ object KalmanFilterForm2: TKalmanFilterForm2
       33)
     ColorPaletteIndex = 13
     object EstimatedSeries: TFastLineSeries
-      HoverElement = []
       Title = 'Estimated'
       LinePen.Color = 10708548
       XValues.Name = 'X'
@@ -125,7 +130,6 @@ object KalmanFilterForm2: TKalmanFilterForm2
       YValues.Order = loNone
     end
     object MeasuredSeries: TFastLineSeries
-      HoverElement = []
       SeriesColor = 4259584
       LinePen.Color = 4259584
       XValues.Name = 'X'
@@ -134,7 +138,6 @@ object KalmanFilterForm2: TKalmanFilterForm2
       YValues.Order = loNone
     end
     object DesiredSeries: TFastLineSeries
-      HoverElement = []
       Title = 'Desired'
       LinePen.Color = 3513587
       XValues.Name = 'X'
@@ -178,6 +181,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     BottomAxis.Grid.Visible = False
     BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Maximum = 24.000000000000000000
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.TicksInner.Color = 11119017
     BottomAxis.Title.Caption = 'Iteration'
     BottomAxis.Title.Font.Name = 'Verdana'
@@ -186,6 +190,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthAxis.TicksInner.Color = 11119017
     DepthAxis.Title.Font.Name = 'Verdana'
     DepthTopAxis.Axis.Color = 4210752
@@ -193,6 +198,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.TicksInner.Color = 11119017
     DepthTopAxis.Title.Font.Name = 'Verdana'
     LeftAxis.Automatic = False
@@ -203,6 +209,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     LeftAxis.Grid.Visible = False
     LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Maximum = 777.500000000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.TicksInner.Color = 11119017
     LeftAxis.Title.Caption = 'Voltage [V^2]'
     LeftAxis.Title.Font.Name = 'Verdana'
@@ -210,6 +217,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     RightAxis.Grid.Color = 11119017
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.TicksInner.Color = 11119017
     RightAxis.Title.Font.Name = 'Verdana'
     RightAxis.ZPosition = 100.000000000000000000
@@ -217,6 +225,7 @@ object KalmanFilterForm2: TKalmanFilterForm2
     TopAxis.Grid.Color = 11119017
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.TicksInner.Color = 11119017
     TopAxis.Title.Font.Name = 'Verdana'
     TopAxis.ZPosition = 100.000000000000000000
@@ -232,7 +241,6 @@ object KalmanFilterForm2: TKalmanFilterForm2
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object ErrorSeries: TFastLineSeries
-      HoverElement = []
       LinePen.Color = 10708548
       XValues.Name = 'X'
       XValues.Order = loAscending

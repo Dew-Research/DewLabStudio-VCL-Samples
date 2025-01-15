@@ -104,23 +104,29 @@ object BiSpectrumGridForm: TBiSpectrumGridForm
       Title.Text.Strings = (
         'Bicoherence')
       BottomAxis.LogarithmicBase = 10.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Frequency [Hz]'
       Chart3DPercent = 80
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthAxis.Title.Caption = 'Frequency [Hz]'
       DepthAxis.Visible = True
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.LogarithmicBase = 10.000000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'Frequency [Hz]'
       RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
       TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       View3DOptions.OrthoAngle = 60
@@ -132,7 +138,6 @@ object BiSpectrumGridForm: TBiSpectrumGridForm
       DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 0
       object Series1: TMtxGridSeries
-        HoverElement = []
         XStep = 1.000000000000000000
         YStep = 1.000000000000000000
         PixelResample = False
@@ -145,7 +150,6 @@ object BiSpectrumGridForm: TBiSpectrumGridForm
         ColorPalette.SharpContrast = False
         ColorPalette.TopClipOffColor = clNone
         ColorPalette.BottomClipOffColor = clNone
-        ColorPalette.UseMidColor = False
       end
     end
   end
@@ -196,6 +200,7 @@ object BiSpectrumGridForm: TBiSpectrumGridForm
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
     Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000
@@ -214,7 +219,7 @@ object BiSpectrumGridForm: TBiSpectrumGridForm
     BiAnalyzer.Recursive = False
     BiAnalyzer.Transform = hoBicoherence
     BiAnalyzer.Lines.DataValues = {
-      0000000000000000000000000000803F0000000000C016440000004100000000
+      0000000000000000000000000000803F0000000000801C440000004100000000
       00137A47000000000000000000000000}
     Left = 421
     Top = 129

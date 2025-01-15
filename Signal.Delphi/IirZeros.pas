@@ -48,7 +48,7 @@ implementation
 {$R *.dfm}
 {$ENDIF}
 
-uses SignalUtils, MtxVec, IIRFilters, MtxVecTee, Math387, AbstractMtxVec;
+uses SignalUtils, MtxVec, IIRFilters, MtxVecTee, Math387, AbstractMtxVec, MtxVecBase;
 
 procedure TIirZerosForm.ChartEditButtonClick(Sender: TObject);
 begin

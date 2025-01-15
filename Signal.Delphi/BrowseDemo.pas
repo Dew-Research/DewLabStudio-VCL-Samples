@@ -20,7 +20,7 @@ type
     SignalChart1: TSignalChart;
     Series1: TSignalHighLowSeries;
     SignalBrowse1: TSignalBrowse;
-    OpenDialog1: TOpenDialog;                       
+    OpenDialog1: TOpenDialog;
     OpenFileButton: TToolButton;
     ChartEditor: TChartEditor;
     Label1: TLabel;
@@ -64,6 +64,7 @@ procedure TBrowseDemoForm.FormCreate(Sender: TObject);
 begin
      ChannelBox.ItemIndex := 0;
      SignalBrowse1.IsDouble := DefaultIsDouble; //select processing precision
+     SignalBrowse1.OverviewRepositoryPath := ExtractFilePath(ParamStr(0)) + 'Data';
 
      SignalBrowse1.ProgressThread.UpdateInterval := 50; //20x times per second updates progress bar
      With RichEdit1.Lines, RichEdit1 do

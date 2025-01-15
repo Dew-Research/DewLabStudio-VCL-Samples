@@ -68,7 +68,7 @@ end;
 procedure TPeakMarkingFormatingForm.FormCreate(Sender: TObject);
 begin
      Signalread1.IsDouble := DefaultIsDouble;
-     SignalRead1.FileName := ExtractFileDir(Application.ExeName) + '\bz.sfs';
+     SignalRead1.FileName := ExtractFilePath(ParamStr(0)) + 'bz.sfs';;
      SignalRead1.OpenFile;
      SpectrumAnalyzer.Pull;
      With RichEdit1.Lines, RichEdit1 do

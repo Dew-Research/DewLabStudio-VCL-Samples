@@ -167,13 +167,16 @@ object FractionalFilteringForm: TFractionalFilteringForm
       BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Maximum = 24.000000000000000000
       BottomAxis.MinorTicks.Visible = False
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Frequency [Hz]'
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.Automatic = False
       LeftAxis.AutomaticMaximum = False
       LeftAxis.AutomaticMinimum = False
@@ -181,12 +184,15 @@ object FractionalFilteringForm: TFractionalFilteringForm
       LeftAxis.LogarithmicBase = 10.000000000000000000
       LeftAxis.Maximum = 1183.500000000000000000
       LeftAxis.Minimum = -18.000000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'Amplitude'
       RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
       TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       Zoom.Pen.Mode = pmNotXor
       Align = alClient
@@ -205,7 +211,6 @@ object FractionalFilteringForm: TFractionalFilteringForm
       DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 13
       object FastLineSeries1: TFastLineSeries
-        HoverElement = []
         SeriesColor = clWhite
         LinePen.Color = clWhite
         XValues.Name = 'X'
@@ -214,7 +219,6 @@ object FractionalFilteringForm: TFractionalFilteringForm
         YValues.Order = loNone
       end
       object SignalDiscreteSeries1: TSignalDiscreteSeries
-        HoverElement = [heCurrent]
         Marks.Transparent = True
         Marks.Visible = True
         Marks.Arrow.Visible = False
@@ -268,24 +272,30 @@ object FractionalFilteringForm: TFractionalFilteringForm
       BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Maximum = 24.000000000000000000
       BottomAxis.MinorTicks.Visible = False
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Frequency [Hz]'
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.Automatic = False
       LeftAxis.AutomaticMinimum = False
       LeftAxis.LogarithmicBase = 10.000000000000000000
       LeftAxis.Maximum = 310.562500000000000000
       LeftAxis.Minimum = -15.028125000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'Delay [Samples]'
       RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
       TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       Zoom.Pen.Mode = pmNotXor
       Align = alBottom
@@ -303,7 +313,6 @@ object FractionalFilteringForm: TFractionalFilteringForm
       DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 13
       object FastLineSeries2: TFastLineSeries
-        HoverElement = []
         SeriesColor = clWhite
         LinePen.Color = clWhite
         XValues.Name = 'X'
@@ -312,7 +321,6 @@ object FractionalFilteringForm: TFractionalFilteringForm
         YValues.Order = loNone
       end
       object SignalDiscreteSeries2: TSignalDiscreteSeries
-        HoverElement = [heCurrent]
         Marks.Transparent = True
         Marks.Visible = True
         Marks.Arrow.Visible = False
@@ -387,6 +395,7 @@ object FractionalFilteringForm: TFractionalFilteringForm
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
     Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000

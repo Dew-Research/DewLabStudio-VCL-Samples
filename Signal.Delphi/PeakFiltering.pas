@@ -75,7 +75,7 @@ procedure TPeakFilteringForm.FormCreate(Sender: TObject);
 begin
      Signal1.IsDouble := DefaultIsDouble;
      SignalRead1.IsDouble := DefaultIsDouble;
-     SignalRead1.FileName := ExtractFileDir(Application.ExeName) + '\bz.sfs';
+     SignalRead1.FileName := ExtractFilePath(ParamStr(0)) + 'bz.sfs';
      SignalRead1.OpenFile;
      ComboBox1.ItemIndex := 0;
      SpectrumAnalyzer.Pull;

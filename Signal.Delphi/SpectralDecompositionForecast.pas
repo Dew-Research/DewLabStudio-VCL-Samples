@@ -73,6 +73,7 @@ end;
 
 procedure TSpectralDecomposition.FilePositionEditChange(Sender: TObject);
 begin
+    SignalRead1.FileName := ExtractFilePath(ParamStr(0)) + 'bz.sfs';
     SignalRead1.RecordPosition := FilePositionEdit.IntPosition;
     SpectrumAnalyzer1.Pull;
     SpectrumChart1AfterMarkPeak(Sender);

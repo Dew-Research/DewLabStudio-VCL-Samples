@@ -46,7 +46,7 @@ var
 
 implementation
 
-uses AbstractMtxVec;
+uses AbstractMtxVec, MtxVecBase;
 
 {$IFDEF CLR}
 {$R *.nfm}

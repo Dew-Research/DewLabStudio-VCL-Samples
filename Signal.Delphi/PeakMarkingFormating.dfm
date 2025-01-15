@@ -29,24 +29,30 @@ object PeakMarkingFormatingForm: TPeakMarkingFormatingForm
     BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Maximum = 24.000000000000000000
     BottomAxis.MinorTicks.Visible = False
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Frequency [Hz]'
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
     LeftAxis.AutomaticMinimum = False
     LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 721.000000000000000000
-    LeftAxis.Minimum = -25.875000000000000000
+    LeftAxis.Maximum = 1293.685000000000000000
+    LeftAxis.Minimum = -28.421250000000000000
+    LeftAxis.EndPosition = 100.000000000000000000
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000
     Zoom.Brush.Gradient.Direction = gdFromTopLeft
     Zoom.Brush.Gradient.EndColor = clSilver
@@ -68,7 +74,6 @@ object PeakMarkingFormatingForm: TPeakMarkingFormatingForm
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 0
     object Series1: TFastLineSeries
-      HoverElement = []
       SeriesColor = 10485760
       LinePen.Color = 10485760
       XValues.Name = 'X'
@@ -77,7 +82,6 @@ object PeakMarkingFormatingForm: TPeakMarkingFormatingForm
       YValues.Order = loNone
     end
     object Series2: TPointSeries
-      HoverElement = [heCurrent]
       Marks.Brush.Gradient.Direction = gdTopBottom
       Marks.Brush.Gradient.EndColor = clYellow
       Marks.Brush.Gradient.StartColor = clRed
@@ -211,6 +215,7 @@ object PeakMarkingFormatingForm: TPeakMarkingFormatingForm
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
     Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000

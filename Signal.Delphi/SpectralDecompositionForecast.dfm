@@ -37,27 +37,33 @@ object SpectralDecomposition: TSpectralDecomposition
     BottomAxis.Maximum = 24.000000000000000000
     BottomAxis.MaximumOffset = 1
     BottomAxis.MinimumOffset = 1
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Frequency [Hz]'
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
     LeftAxis.AutomaticMinimum = False
     LeftAxis.Grid.Visible = False
     LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 750.000000000000000000
+    LeftAxis.Maximum = 729.000000000000000000
     LeftAxis.MaximumOffset = 1
-    LeftAxis.Minimum = -31.250000000000000000
+    LeftAxis.Minimum = -30.375000000000000000
     LeftAxis.MinimumOffset = 1
+    LeftAxis.EndPosition = 100.000000000000000000
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000
     Zoom.Animated = True
     Zoom.Brush.Gradient.Direction = gdFromTopLeft
@@ -83,7 +89,6 @@ object SpectralDecomposition: TSpectralDecomposition
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object Series1: TMtxFastLineSeries
-      HoverElement = []
       Depth = 0
       LinePen.Color = 10708548
       XValues.Name = 'X'
@@ -92,7 +97,6 @@ object SpectralDecomposition: TSpectralDecomposition
       YValues.Order = loNone
     end
     object Series3: TPointSeries
-      HoverElement = [heCurrent]
       Marks.Transparent = True
       Marks.Arrow.Visible = False
       Marks.Callout.Arrow.Visible = False
@@ -147,27 +151,33 @@ object SpectralDecomposition: TSpectralDecomposition
     BottomAxis.Maximum = 24.000000000000000000
     BottomAxis.MaximumOffset = 1
     BottomAxis.MinimumOffset = 1
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Time [s]'
     DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.Maximum = 0.500000000000000000
     DepthAxis.Minimum = -0.500000000000000000
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.Maximum = 0.500000000000000000
     DepthTopAxis.Minimum = -0.500000000000000000
+    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
     LeftAxis.AutomaticMinimum = False
     LeftAxis.Grid.Visible = False
     LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 857.500000000000000000
+    LeftAxis.Maximum = 242.500000000000000000
     LeftAxis.MaximumOffset = 1
-    LeftAxis.Minimum = 296.050000000000000000
+    LeftAxis.Minimum = 0.499999999999985100
     LeftAxis.MinimumOffset = 1
+    LeftAxis.EndPosition = 100.000000000000000000
     RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
     TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000
     Zoom.Brush.Gradient.Direction = gdFromTopLeft
     Zoom.Brush.Gradient.EndColor = clSilver
@@ -190,7 +200,6 @@ object SpectralDecomposition: TSpectralDecomposition
     DefaultCanvas = ''
     ColorPaletteIndex = 13
     object Series2: TFastLineSeries
-      HoverElement = []
       SeriesColor = 8404992
       Title = 'Original'
       LinePen.Color = 8404992
@@ -200,7 +209,6 @@ object SpectralDecomposition: TSpectralDecomposition
       YValues.Order = loNone
     end
     object Series4: TMtxFastLineSeries
-      HoverElement = []
       Depth = 0
       SeriesColor = clRed
       Title = 'Forecasted'
@@ -211,7 +219,6 @@ object SpectralDecomposition: TSpectralDecomposition
       YValues.Order = loNone
     end
     object UpperLimit: TLineSeries
-      HoverElement = [heCurrent]
       SeriesColor = clGreen
       Title = '95% UpperLimit'
       Brush.BackColor = clDefault
@@ -228,7 +235,6 @@ object SpectralDecomposition: TSpectralDecomposition
       YValues.Order = loNone
     end
     object LowerLimit: TLineSeries
-      HoverElement = [heCurrent]
       SeriesColor = clGreen
       Title = '95% LowerLimit'
       Brush.BackColor = clDefault
@@ -336,6 +342,7 @@ object SpectralDecomposition: TSpectralDecomposition
     Peaks.Interpolation.RecursiveHarmonics = rhNone
     Peaks.TraceMethod = ptCurrent
     Peaks.TraceInterval = 5.000000000000000000
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     OnPeaksUpdate = SpectrumAnalyzer1PeaksUpdate

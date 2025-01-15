@@ -32,6 +32,51 @@ begin
   With RichEdit1.Lines, RichEdit1 do
   begin
     Clear;
+	
+    Font.Style := [];
+    SelAttributes.Size := 11;
+    SelAttributes.Color := RGB(51,51,153);
+    SelAttributes.Size := 9;
+    Add('   New features in version 6.3.0:');
+    Add('');
+	Add('General:');	
+	Add('');			
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+    Add('   Updated for Rad Studio Athens 12.2 and MtxVec v6.3.0.');
+	Add('   SignalUtils.CZT performance has been improved by a factor of 7x. ');		
+    Add('   Added SignalUtils.CZT overload with support for State variable, which gives additional 2.5x speed up allowing for a total of 17.5x faster execution.');
+	Add('   Added SignalUtils.MusicalNotePitch and its vectorized variant SignalUtils.MusicalNotePitchInit for pitch (note) detection.');	
+	Add('   Enabled block vectorization for SignalUtils.GoertzN algorithm, which leads to additional 5-10x faster execution for large frequency spectrums. When multi-threaded it is expected to achieve linear scaling with thread-count.');
+	Add('   New implementation of SignalUtils.GoertzN algorithm, which is 3x, if at least 10 and 10x faster, if at least 100 frequencies are evaluated concurrently.');	
+	Add('   Improved accuracy of Bonzanigo Phase correction, especially for large frequency spectrums. Bonzanigo is used by the Goertzal algorithm.');
+	Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;	
+    Add('');	
+	Add('TSpectrumAnalyzer improvements:');
+    Add('');		
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;
+	Add('   Enabled the TSpectrumAnalyzer to use the new faster CZT algorithm. ');		
+	Add('   Enabled the TSpectrumAnalyzer numerical peak interpolation to work also while CZT is the selected spectral Method.');    	
+	Add('   Vectorized all peak searching and peak processing. Multiple overloads were added that work with vectors. Performance improvements are noticable when working with multiple peaks.');
+    Add('   Numerical Peak interpolation is now 16x faster for signals which are zero padded 16x. It is now invariant to zero padding factor.');
+	Add('   Numerical Peak interpolation algorithm has been vectorized delivering at least a 6x speed up. The implementation is our first optimization algorithm that runs multiple jobs in parallel using only vectorization on one CPU core. (Without threading).');
+	Add('   Numerical Peak interpolation algorithm can in given conditions execute also 96x faster: 6x from interpolation improvements and 16x from zero padding.');		
+	Add('   TSpectrumAnalyzer.Peaks.FindLargestPeaks is typcally more than 100x faster when using numerical peak interpolation, which helps all methods that depend on it.');	
+	Add('   Added TSpectrumAnalyzer.Peaks.FindFirstHarmonic. Although generic, it can be used to detect pitch frequency of the sound (music).');
+	Add('   Added TSpectrumAnalyzer.Peaks.FindFundamentals. Will find all harmonic series in the frequency spectrum and store their fundamentals. The result is sorted in ascending order according to frequency.');
+	Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;	
+    Add('');	
+	Add('TSignalCore Audio improvements:');
+    Add('');		
+    Paragraph.FirstIndent := 10;
+    Paragraph.Numbering := nsBullet;	
+	Add('Expanded TSignalCoreAudio.ChannelMapping capability allowing arbitrary mix of channels for recording and playback. Each TSignalCoreAudio[i] item now has a Channels: TIntegersList property, which complenents the existng Channel: integer property. ');
+    Paragraph.Numbering := nsNone;
+    Paragraph.FirstIndent := 0;
+    Add('');	
 
     Font.Style := [];
     SelAttributes.Size := 11;
