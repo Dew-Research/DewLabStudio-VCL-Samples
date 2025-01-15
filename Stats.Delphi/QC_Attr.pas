@@ -9,7 +9,6 @@ uses
 
 type
   TfrmQCAttr = class(TfrmBasicQC)
-    Label2: TLabel;
     RadioGroup1: TRadioGroup;
     Label3: TLabel;
     Edit2: TEdit;

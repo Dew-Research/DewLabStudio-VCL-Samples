@@ -2,39 +2,33 @@ inherited frmMulLinRegWiz: TfrmMulLinRegWiz
   Caption = 'frmRegressWizard'
   ClientHeight = 337
   ClientWidth = 540
-  OldCreateOrder = True
   OnDestroy = FormDestroy
-  ExplicitWidth = 556
-  ExplicitHeight = 376
-  PixelsPerInch = 96
+  ExplicitWidth = 552
+  ExplicitHeight = 375
   TextHeight = 13
   inherited Panel1: TPanel
     Top = 305
     Width = 540
-    ExplicitTop = 305
-    ExplicitWidth = 540
+    ExplicitTop = 304
+    ExplicitWidth = 536
     inherited btnCancel: TButton
       Left = 444
-      ExplicitLeft = 444
+      ExplicitLeft = 440
     end
   end
   inherited Panel2: TPanel
     Width = 540
-    ExplicitWidth = 540
+    ExplicitWidth = 536
   end
   inherited PageControl: TPageControl
     Width = 540
     Height = 272
     ActivePage = tsInputData
-    ExplicitWidth = 540
-    ExplicitHeight = 272
+    ExplicitWidth = 536
+    ExplicitHeight = 271
     object tsInputData: TTabSheet
       Caption = 'Step 1: System of equations'
       TabVisible = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 8
         Top = 8
@@ -201,10 +195,6 @@ inherited frmMulLinRegWiz: TfrmMulLinRegWiz
       Caption = 'Step 2: Configure reports'
       ImageIndex = 1
       TabVisible = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox3: TGroupBox
         Left = 8
         Top = 8
@@ -288,10 +278,6 @@ inherited frmMulLinRegWiz: TfrmMulLinRegWiz
       Caption = 'MLR: Text reports'
       ImageIndex = 3
       TabVisible = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object RichEdit: TRichEdit
         Left = 0
         Top = 0
@@ -315,10 +301,6 @@ inherited frmMulLinRegWiz: TfrmMulLinRegWiz
       Caption = 'MLR: Charts'
       ImageIndex = 2
       TabVisible = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object TeeCommander1: TTeeCommander
         Left = 0
         Top = 0
@@ -338,14 +320,24 @@ inherited frmMulLinRegWiz: TfrmMulLinRegWiz
         Title.Text.Strings = (
           'TChart')
         BottomAxis.LogarithmicBase = 10.000000000000000000
+        BottomAxis.EndPosition = 100.000000000000000000
         DepthAxis.LogarithmicBase = 10.000000000000000000
+        DepthAxis.Maximum = 0.500000000000000000
+        DepthAxis.Minimum = -0.500000000000000000
+        DepthAxis.EndPosition = 100.000000000000000000
         DepthTopAxis.LogarithmicBase = 10.000000000000000000
+        DepthTopAxis.Maximum = 0.500000000000000000
+        DepthTopAxis.Minimum = -0.500000000000000000
+        DepthTopAxis.EndPosition = 100.000000000000000000
         LeftAxis.LogarithmicBase = 10.000000000000000000
+        LeftAxis.EndPosition = 100.000000000000000000
         RightAxis.Grid.ZPosition = 100.000000000000000000
         RightAxis.LogarithmicBase = 10.000000000000000000
+        RightAxis.EndPosition = 100.000000000000000000
         RightAxis.ZPosition = 100.000000000000000000
         TopAxis.Grid.ZPosition = 100.000000000000000000
         TopAxis.LogarithmicBase = 10.000000000000000000
+        TopAxis.EndPosition = 100.000000000000000000
         TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         Zoom.Brush.Color = clSilver

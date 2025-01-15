@@ -8,26 +8,28 @@ inherited frmARIMAWizard: TfrmARIMAWizard
   OnDestroy = FormDestroy
   ExplicitWidth = 893
   ExplicitHeight = 697
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Top = 626
     Width = 877
-    ExplicitTop = 626
-    ExplicitWidth = 877
+    ExplicitTop = 625
+    ExplicitWidth = 873
+    DesignSize = (
+      877
+      32)
     inherited btnCancel: TButton
-      Left = 795
-      ExplicitLeft = 795
+      Left = 787
+      ExplicitLeft = 783
     end
   end
   inherited Panel2: TPanel
     Width = 877
-    ExplicitWidth = 877
+    ExplicitWidth = 873
   end
   inherited PageControl: TPageControl
     Width = 877
     Height = 593
-    ActivePage = tsInputData
+    ActivePage = tsDefineModel
     ExplicitWidth = 877
     ExplicitHeight = 593
     object tsInputData: TTabSheet
@@ -41,6 +43,7 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         Align = alLeft
         BevelOuter = bvNone
         TabOrder = 0
+        ExplicitHeight = 582
         object GroupBox1: TGroupBox
           Left = 15
           Top = 19
@@ -229,6 +232,26 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         Legend.Visible = False
         Title.Text.Strings = (
           'Time series')
+        BottomAxis.LogarithmicBase = 10.000000000000000000
+        BottomAxis.EndPosition = 100.000000000000000000
+        DepthAxis.LogarithmicBase = 10.000000000000000000
+        DepthAxis.Maximum = 0.500000000000000000
+        DepthAxis.Minimum = -0.500000000000000000
+        DepthAxis.EndPosition = 100.000000000000000000
+        DepthTopAxis.LogarithmicBase = 10.000000000000000000
+        DepthTopAxis.Maximum = 0.500000000000000000
+        DepthTopAxis.Minimum = -0.500000000000000000
+        DepthTopAxis.EndPosition = 100.000000000000000000
+        LeftAxis.LogarithmicBase = 10.000000000000000000
+        LeftAxis.EndPosition = 100.000000000000000000
+        RightAxis.Grid.ZPosition = 100.000000000000000000
+        RightAxis.LogarithmicBase = 10.000000000000000000
+        RightAxis.EndPosition = 100.000000000000000000
+        RightAxis.ZPosition = 100.000000000000000000
+        TopAxis.Grid.ZPosition = 100.000000000000000000
+        TopAxis.LogarithmicBase = 10.000000000000000000
+        TopAxis.EndPosition = 100.000000000000000000
+        TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         Zoom.Allow = False
         Zoom.Brush.Gradient.Direction = gdFromTopLeft
@@ -242,6 +265,8 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         BevelOuter = bvNone
         Color = clWhite
         TabOrder = 1
+        ExplicitWidth = 408
+        ExplicitHeight = 582
         DefaultCanvas = 'TGDIPlusCanvas'
         ColorPaletteIndex = 0
       end
@@ -519,7 +544,6 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         ReadOnly = True
         ScrollBars = ssVertical
         TabOrder = 0
-        Zoom = 100
       end
     end
     object tsChart: TTabSheet
@@ -533,6 +557,26 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         Height = 583
         Title.Text.Strings = (
           '')
+        BottomAxis.LogarithmicBase = 10.000000000000000000
+        BottomAxis.EndPosition = 100.000000000000000000
+        DepthAxis.LogarithmicBase = 10.000000000000000000
+        DepthAxis.Maximum = 0.500000000000000000
+        DepthAxis.Minimum = -0.500000000000000000
+        DepthAxis.EndPosition = 100.000000000000000000
+        DepthTopAxis.LogarithmicBase = 10.000000000000000000
+        DepthTopAxis.Maximum = 0.500000000000000000
+        DepthTopAxis.Minimum = -0.500000000000000000
+        DepthTopAxis.EndPosition = 100.000000000000000000
+        LeftAxis.LogarithmicBase = 10.000000000000000000
+        LeftAxis.EndPosition = 100.000000000000000000
+        RightAxis.Grid.ZPosition = 100.000000000000000000
+        RightAxis.LogarithmicBase = 10.000000000000000000
+        RightAxis.EndPosition = 100.000000000000000000
+        RightAxis.ZPosition = 100.000000000000000000
+        TopAxis.Grid.ZPosition = 100.000000000000000000
+        TopAxis.LogarithmicBase = 10.000000000000000000
+        TopAxis.EndPosition = 100.000000000000000000
+        TopAxis.ZPosition = 100.000000000000000000
         View3D = False
         Zoom.Brush.Gradient.Direction = gdFromTopLeft
         Zoom.Brush.Gradient.EndColor = clSilver

@@ -235,10 +235,13 @@ end;
 procedure TfrmARIMAWizard.editAROrderChange(Sender: TObject);
 begin
   p := StrToInt(editAROrder.Text);
+
   phi.Size(p);
   phi.SetZero;
+
   phiinit.Size(phi);
   phiinit.SetZero;
+
   UpdateModelInfo;
   RefreshWizardControls;
 end;
@@ -324,6 +327,7 @@ procedure TfrmARIMAWizard.TextReport;
 begin
   { this is the actual ts used in calculations }
   TransformTimeSeries;
+
   if InitM = cfInitFixed then
   begin
     phi.Copy(phiinit);
@@ -366,7 +370,9 @@ begin
   RichEdit.SelAttributes.Style := [fsBold,fsUnderline];
   RichEdit.Lines.Add('Preliminary estimates for '+ModelText+ ' process coefficients');
   if MaxLag<0 then innolag := Ceil(10*Log10(Data.Length)) else innolag := MaxLag;
+
   estVar := 1.0;
+
   if (p>0) then
   begin
     d1.Size(p);
@@ -393,7 +399,8 @@ begin
     cfInitInno:
       begin
         if (p=0) then ARMAInnovationsFit(Data,theta,estVar,d2,innolag)
-        else ARMAInnovationsFit(Data,phi,theta,estVar,d1,d2,innolag);
+                 else ARMAInnovationsFit(Data,phi,theta,estVar,d1,d2,innolag);
+
         RichEdit.Lines.Add('Method used: Innovations');
       end;
     cfInitHannah:
@@ -489,38 +496,36 @@ var i: Integer;
     v0: Vector;
     endperiod: Integer;
 begin
-  RichEdit.SelAttributes.Style := [fsBold,fsUnderline];
-  RichEdit.Lines.Add('Forecasting '+IntToStr(ForecastPer)+' points');
-  Screen.Cursor := crHourGlass;
-  try
-    { add mean, if required }
-//    if (chkBoxRemoveMean.Checked) and (chkAddMean.Checked) then
-     ARMAForecast(Data, phi, theta, residuals, ForecastPer, dMean, Forecasts, FStdDev);
-//    else
-//        ARMAForecast2(Data,phi,theta,residuals, ForecastPer, 0, Forecasts);
+    RichEdit.SelAttributes.Style := [fsBold,fsUnderline];
+    RichEdit.Lines.Add('Forecasting ' + IntToStr(ForecastPer) + ' points');
+    Screen.Cursor := crHourGlass;
+    try
+        { add mean, if required }
 
-    { integrate, if required }
-    if (d>0) and (chkIntegrate.Checked) then
-    begin
-      { setup initial values for integration }
-      TimeSeriesIntInit(TimeSeries,v0,d);
-      { integrate d times }
-      Forecasts.Integrate(v0);
-      endperiod := Data.Length + d-1;
-    end else endperiod := Data.Length-1;
+         ARMAForecast(Data, phi, theta, residuals, ForecastPer, dMean, Forecasts, FStdDev);
 
-    RichEdit.Paragraph.TabCount := 3;
-    SetupTabs(RichEdit.Paragraph.TabCount, RichEdit);
-    RichEdit.SelAttributes.Color := clBlue;
-    RichEdit.Lines.Add('Period'+chr(9)+'Forecast'+chr(9)+'Forecast std.dev.');
-    for i := 1 to ForecastPer do
-      RichEdit.Lines.Add(IntToStr(i+endperiod)+chr(9)+FormatSample(FormatString,Forecasts[i-1])+chr(9)
-                        +FormatSample(FormatString,FStdDev[i-1]));
+        { integrate, if required }
+        if (d>0) and (chkIntegrate.Checked) then
+        begin
+          { setup initial values for integration }
+          TimeSeriesIntInit(TimeSeries,v0,d);
+          { integrate d times }
+          Forecasts.Integrate(v0);
+          endperiod := Data.Length + d-1;
+        end else endperiod := Data.Length-1;
 
-    RichEdit.Lines.Add('');
-  finally
-    Screen.Cursor := crDefault;
-  end;
+        RichEdit.Paragraph.TabCount := 3;
+        SetupTabs(RichEdit.Paragraph.TabCount, RichEdit);
+        RichEdit.SelAttributes.Color := clBlue;
+        RichEdit.Lines.Add('Period'+chr(9)+'Forecast'+chr(9)+'Forecast std.dev.');
+        for i := 1 to ForecastPer do
+          RichEdit.Lines.Add(IntToStr(i+endperiod)+chr(9)+FormatSample(FormatString,Forecasts[i-1])+chr(9)
+                            +FormatSample(FormatString,FStdDev[i-1]));
+
+        RichEdit.Lines.Add('');
+    finally
+        Screen.Cursor := crDefault;
+    end;
 end;
 
 procedure TfrmARIMAWizard.ChartReport(Ind: Integer);
