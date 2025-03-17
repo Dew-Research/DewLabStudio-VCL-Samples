@@ -97,6 +97,7 @@ inherited DefArray: TDefArray
       'TChart')
     Title.Visible = False
     BottomAxis.Title.Caption = 'dimension'
+    LeftAxis.AxisValuesFormat = '#,##0.#####'
     LeftAxis.Title.Caption = 'time  [ms]'
     View3D = False
     Zoom.Pen.Mode = pmNotXor

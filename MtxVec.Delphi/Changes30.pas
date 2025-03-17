@@ -36,6 +36,33 @@ begin
         SelAttributes.Color := RGB(51,104,196);
         SelAttributes.Size := 11;
 
+        Add('List of new features in v6.3.3 (February 2025):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Added TMtx.MulSmallInit and TMtx.MulSmall methods to surface the jitted small-matrix multiply.');
+        Add('Small-matrix multiply features are implemented in MtxVec.TSmallMatrixMultiply class. Performance improvement ranges from 100x at matrix size 2x2 and is still 1.3x at matrix size 50x50.');
+        Add('Added several matrix-multiply kernels with unrolled for-loops written in pascal in MtxVecBase unit: sgemm2, dgemm2, cgemm2, zgemm2 for matrices 2x2 and variants up to size 4x4.');
+        Add('Added two additional compound expression functions to TVec/TMtx/Vector/Matrix: SqrAddScaled, AddScaledSqr');
+        Add('Inlined the implicit conversions of Vector and Matrix types to TMtx, TVec, etc... for Rad Studio 12 and newer. This Positively affects performance of Vector and Matrix types in general.');
+        Add('Added support for "Modern" C++ Compiler platform target in C++Builder for Rad Studio v12.2.');
+        Add('Added MtxVec.Controller.BlasThreadCount and adjusted the mapping of thread count for individual library sub-systems. ');
+		Add('Fixed TCplx and TSCplx inline visualizers for Delphi Win64 debugger, when displaying NAN and INF values. Occurrence of NAN triggered an exception in the IDE, because Win64 debugger does not correctly display NAN and INF values since XE2.');
+		Add('Fix for complex Math387.ArcSin, when the argument was 0. This affected (complex number) Math387.ArcCos, Math387.ArcSinh, Math387.ArcCosh, Math387.ArcCsc and Math387.ArcCsch, Math387.ArcSec and Math387.ArcSech, which all call this function.'); 		
+	
+		Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');	
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
         Add('List of new features in v6.3.1 (January 2025):');
         Paragraph.FirstIndent := 0;
         Paragraph.Numbering := nsNone;

@@ -39,7 +39,7 @@ var
 
 implementation
 
-Uses MtxVecEdit, lapack_umfpack, Math387, StringVar;
+Uses MtxVecEdit, lapack_umfpack, Math387, StringVar, AbstractMtxVec;
 
 {$IFDEF CLR}
 {$R *.NFM}

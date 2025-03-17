@@ -377,6 +377,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <Form>CompoundExpressionsForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="SmallMatrixMul.pas">
+            <Form>frmSmallMatrix</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -429,7 +433,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="\MtxVecDemoW32_D27.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win64\Debug\MtxVecDemoW32_D27.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>MtxVecDemoW32_D27.exe</RemoteName>
                         <Overwrite>true</Overwrite>

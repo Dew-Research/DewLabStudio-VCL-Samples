@@ -44,7 +44,9 @@ uses Math387, MtxVec, ippsplTypes
 {$ENDIF}
 
 procedure TIntroduction.FormCreate(Sender: TObject);
+{$IFDEF IPPDLL_ANY}
 var aMask, bMask: Int64;
+{$ENDIF}
 begin
   Label1.Caption := 'Welcome to MtxVec v' + FormatSample('0.00',MtxVecVersion/100);
   With RichEdit1.Lines, RichEdit1 do
@@ -107,6 +109,7 @@ begin
     Paragraph.FirstIndent := 10;
     Add('CPU/Thread Count = ' + IntToStr(Controller.CPUCores));
     Add('Thread Dimension = ' + IntToStr(Controller.ThreadDimension));
+    Add('Blas internal threads = ' + IntToStr(Controller.BlasThreadCount));
     Add('Lapack internal threads = ' + IntToStr(Controller.LapackThreadCount));
     Add('FFT internal threads = ' + IntToStr(Controller.FFTThreadCount));
     Add('VML internal threads = ' + IntToStr(Controller.VMLThreadCount));

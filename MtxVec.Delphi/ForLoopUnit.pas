@@ -34,7 +34,7 @@ var
 
 implementation
 
-uses MtxVecTee, MtxExpr, MtxForLoop, Math387, Types;
+uses MtxVecTee, MtxExpr, MtxForLoop, Math387, Types, AbstractMtxVec;
 
 {$IFDEF CLR}
 {$R *.NFM}

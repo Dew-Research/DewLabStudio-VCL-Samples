@@ -78,7 +78,8 @@ uses
   ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
-  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm};
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm},
+  SmallMatrixMul in 'SmallMatrixMul.pas' {frmSmallMatrix};
 
 {$R *.res}
 

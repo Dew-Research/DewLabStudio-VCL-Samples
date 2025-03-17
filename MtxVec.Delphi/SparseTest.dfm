@@ -3,7 +3,6 @@ inherited frmSparseTest: TfrmSparseTest
   Caption = 'frmSparseTest'
   ClientHeight = 545
   ClientWidth = 771
-  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   ExplicitWidth = 787

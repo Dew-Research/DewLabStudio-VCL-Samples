@@ -78,7 +78,8 @@ uses
   ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
-  SuperConductive in 'SuperConductive.pas' {SuperConductiveForm};
+  SuperConductive in 'SuperConductive.pas' {SuperConductiveForm},
+  SmallMatrixMul in 'SmallMatrixMul.pas' {frmSmallMatrix};
 
 {$R *.res}
 
@@ -87,6 +88,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Dew Lab Studio for Delphi - MtxVec demo';
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TSuperConductiveForm, SuperConductiveForm);
   Application.Run;
 end.

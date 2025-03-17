@@ -3,25 +3,15 @@
         <ProjectGuid>{571A7E67-04ED-484F-BC27-5D727AB839A0}</ProjectGuid>
         <MainSource>MtxVecDemoW32_D29.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">MtxVecDemoW32_D29</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
-        <Base_iOSDevice64>true</Base_iOSDevice64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Base)'=='true') or '$(Base_iOSSimARM64)'!=''">
-        <Base_iOSSimARM64>true</Base_iOSSimARM64>
-        <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
@@ -54,18 +44,6 @@
     <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
-        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSSimARM64)'!=''">
-        <Cfg_2_iOSSimARM64>true</Cfg_2_iOSSimARM64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
@@ -101,20 +79,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_Define>TTDOUBLE;$(DCC_Define)</DCC_Define>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
-        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;CFBundleResourceSpecification=ResourceRules.plist;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;FMLocalNotificationPermission=false</VerInfo_Keys>
-        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
-        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_iOSSimARM64)'!=''">
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;CFBundleResourceSpecification=ResourceRules.plist;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;FMLocalNotificationPermission=false</VerInfo_Keys>
-        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -152,13 +116,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
-        <DCC_RemoteDebug>true</DCC_RemoteDebug>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
-        <DCC_RemoteDebug>true</DCC_RemoteDebug>
-        <Cfg_2>true</Cfg_2>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
@@ -405,6 +362,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <Form>CompoundExpressionsForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="SmallMatrixMul.pas">
+            <Form>frmSmallMatrix</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -433,8 +394,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
-                <Platform value="iOSDevice64">False</Platform>
-                <Platform value="iOSSimARM64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
@@ -446,6 +405,12 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win64\Debug\MtxVecDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win64\Release\MtxVecDemoW32_D29.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>MtxVecDemoW32_D29.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="\MtxVecDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="\MtxVecDemoW32_D29.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
@@ -559,6 +524,16 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -1396,22 +1371,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
-    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='iOSDevice64'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='iOSSimARM64'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
         <PreBuildEvent/>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
@@ -1421,22 +1380,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='iOSDevice64'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='iOSSimARM64'">
         <PreBuildEvent/>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>

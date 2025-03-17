@@ -513,6 +513,7 @@ begin
     Add('How to use the demo;TfrmDemoHowTo');
     Add('Matrix operations;TIntroMtx');
     Add(' Multiplying large matrices;TMult1;Multiply1');
+    Add(' Multiplying small matrices;TfrmSmallMatrix;SmallMatrixMul');
     Add(' Copy and  transpose operation;TCopyComp;CopyCompare');
     Add(' Calculating the inverse of squared matrix;TInvMtx;InverseMtx');
     Add(' Calculating squared root of matrix;TfrmSqrtMtx;CalcSqrtMtx');

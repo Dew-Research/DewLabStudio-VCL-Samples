@@ -76,7 +76,9 @@ uses
   MtxVecThreading in 'MtxVecThreading.pas' {MtxVecThreadingForm},
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
-  ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm};
+  ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm},
+  SmallMatrixMul in 'SmallMatrixMul.pas' {frmSmallMatrix};
 
 {$R *.res}
 

@@ -284,14 +284,13 @@ end;
 // Threaded code using TMtxForLoop
 
 procedure TMtxVecThreadingForm.MyLoop(LoopIndex: Integer; const Context: TObjectArray; ThreadingIndex: integer);
-var
-  i: Integer;
-  Res: MtxExpr.Vector;
+var i: Integer;
+    Res: MtxExpr.Vector;
 begin
-  i := LoopIndex;
+    i := LoopIndex;
 
-  Res := Expj(TWOPI * (h[i]*vx + k[i]*vy + l[i]*vz));
-  F[i] := Res.Sumc;
+	Res := Expj(TWOPI * (h[i]*vx + k[i]*vy + l[i]*vz));
+	F[i] := Res.Sumc;
 end;
 
 procedure TMtxVecThreadingForm.Fmvt;

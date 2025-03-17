@@ -74,7 +74,8 @@ uses
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
   ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
-  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm};
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm},
+  SmallMatrixMul in 'SmallMatrixMul.pas' {frmSmallMatrix};
 
 {$R *.res}
 
@@ -86,11 +87,6 @@ const IMAGE_FILE_LARGE_ADDRESS_AWARE = $0020;
 
 begin
   Application.Initialize;
-  {$IFDEF CLR}
-  Application.Title := 'Dew Research MtxVec 4.3 .NET VCL demo';
-  {$ELSE}
-  Application.Title := 'Dew Research MtxVec 4.3 W32 demo';
-  {$ENDIF}
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.

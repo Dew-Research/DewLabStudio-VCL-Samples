@@ -177,7 +177,7 @@ begin
       regular intervals to advance progress indicators.
    4. Calls MtxThread OnProgressUpdate event with peCleanUp to
       continue with the further processing of the processed data,
-      once the the thread has finished.
+      once the thread has finished.
   }
 end;
 

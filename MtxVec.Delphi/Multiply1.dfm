@@ -3,7 +3,6 @@ inherited Mult1: TMult1
   Top = 89
   Caption = 'Mult1'
   ClientHeight = 477
-  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   ExplicitHeight = 516
@@ -55,7 +54,6 @@ inherited Mult1: TMult1
       Width = 68
       Height = 13
       Caption = 'Thread count:'
-      Visible = False
     end
     object CPUCacheSizeLabel: TLabel
       Left = 17
@@ -124,7 +122,6 @@ inherited Mult1: TMult1
       MinValue = '1'
       TabOrder = 3
       Value = '1'
-      Visible = False
       OnChange = ThreadCountEditChange
     end
   end
@@ -146,6 +143,7 @@ inherited Mult1: TMult1
       'TChart')
     Title.Visible = False
     BottomAxis.Title.Caption = 'Dim'
+    LeftAxis.AxisValuesFormat = '#,##0.####'
     LeftAxis.Title.Caption = 'time [ms]'
     View3D = False
     Zoom.Pen.Mode = pmNotXor

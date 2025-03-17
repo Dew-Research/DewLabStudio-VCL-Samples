@@ -10,7 +10,7 @@ uses
   BenchmarkFramework in 'BenchmarkFramework.pas',
   BenchmarkResults in 'BenchmarkResults.pas',
   BenchmarkX in 'BenchmarkX.pas' {BenchmarkXForm},
-  BlockProcessing in 'BlockProcessing.pas' {frmBlockProc},
+  SmallMatrixMul in 'SmallMatrixMul.pas' {frmSmallMatrix},
   CalcSqrtMtx in 'CalcSqrtMtx.pas' {frmSqrtMtx},
   Changes15 in 'Changes15.pas' {frmChanges15},
   Changes30 in 'Changes30.pas' {frmChanges30},
@@ -79,7 +79,8 @@ uses
   ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
-  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm};
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm},
+  BlockProcessing in 'BlockProcessing.pas' {frmBlockProc};
 
 {$R *.res}
 

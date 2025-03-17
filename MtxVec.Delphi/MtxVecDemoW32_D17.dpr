@@ -74,7 +74,8 @@ uses
   IfThenUnit in 'IfThenUnit.pas' {IfThenForm},
   NumaUnit in 'NumaUnit.pas' {NumaForm},
   ScriptingGrid in 'ScriptingGrid.pas' {ScriptingGridForm},
-  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm};
+  CompoundExpressions in 'CompoundExpressions.pas' {CompoundExpressionsForm},
+  SmallMatrixMul in 'SmallMatrixMul.pas' {frmSmallMatrix};
 
 {$R *.res}
 
@@ -88,6 +89,5 @@ begin
   Application.Initialize;
   Application.Title := 'Dew Research MtxVec 6.0 W32 demo';
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TCompoundExpressionsForm, CompoundExpressionsForm);
   Application.Run;
 end.

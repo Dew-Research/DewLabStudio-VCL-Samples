@@ -21,7 +21,7 @@ var
 
 implementation
 
-uses MtxExpr, MtxVec, MtxVecInt, Math387;
+uses MtxExpr, MtxVec, MtxVecInt, Math387, AbstractMtxVec;
 
 {$IFDEF CLR}
 {$R *.NFM}

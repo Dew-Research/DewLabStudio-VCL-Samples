@@ -8,7 +8,7 @@
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>19.5</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -168,7 +168,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_GenerateStackFrames>false</DCC_GenerateStackFrames>
         <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
@@ -195,8 +194,8 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DCCReference Include="BenchmarkX.pas">
             <Form>BenchmarkXForm</Form>
         </DCCReference>
-        <DCCReference Include="BlockProcessing.pas">
-            <Form>frmBlockProc</Form>
+        <DCCReference Include="SmallMatrixMul.pas">
+            <Form>frmSmallMatrix</Form>
         </DCCReference>
         <DCCReference Include="CalcSqrtMtx.pas">
             <Form>frmSqrtMtx</Form>
@@ -404,6 +403,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <Form>CompoundExpressionsForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="BlockProcessing.pas">
+            <Form>frmBlockProc</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -441,6 +444,12 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 <DeployFile LocalName="MtxVecDemoW32_D28.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win32\Debug\MtxVecDemoW32_D28.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
+                        <RemoteName>MtxVecDemoW32_D28.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\MtxVecDemoW32_D28.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
                         <RemoteName>MtxVecDemoW32_D28.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

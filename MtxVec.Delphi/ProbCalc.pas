@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Basic2, StdCtrls, ComCtrls, ExtCtrls,Probabilities, Math387, MtxVec, TeEngine, MtxVecInt, MtxExprInt,
-  Series, TeeProcs, Chart, MtxVecEdit, Buttons, MtxExpr, VclTee.TeeGDIPlus;
+  Series, TeeProcs, Chart, MtxVecEdit, Buttons, MtxExpr, AbstractMtxVec, VclTee.TeeGDIPlus;
 
 type
   TProb1 = class(TBasicForm2)

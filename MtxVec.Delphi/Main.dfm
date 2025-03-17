@@ -10,14 +10,12 @@ object frmMain: TfrmMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = True
   Position = poScreenCenter
   WindowState = wsMaximized
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 0
@@ -33,6 +31,7 @@ object frmMain: TfrmMain
     Align = alTop
     Color = 12428416
     TabOrder = 0
+    ExplicitWidth = 943
     object Image1: TImage
       Left = 1
       Top = 1
@@ -1144,6 +1143,8 @@ object frmMain: TfrmMain
     Color = 9929574
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 553
+    ExplicitWidth = 943
     object Image3: TImage
       Left = 1
       Top = 1
@@ -1634,6 +1635,8 @@ object frmMain: TfrmMain
     Color = 14869218
     Panels = <>
     SimplePanel = True
+    ExplicitTop = 584
+    ExplicitWidth = 943
   end
   object PageControl1: TPageControl
     Left = 179
@@ -1645,20 +1648,14 @@ object frmMain: TfrmMain
     TabOrder = 3
     TabPosition = tpBottom
     OnChange = PageControl1Change
+    ExplicitWidth = 764
+    ExplicitHeight = 472
     object TabForm: TTabSheet
       Caption = 'Example'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object TabSource: TTabSheet
       Caption = 'Source code'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object btnConfig: TButton
         Left = 8
         Top = 16
@@ -1690,5 +1687,6 @@ object frmMain: TfrmMain
     TabOrder = 4
     Visible = False
     OnChange = TreeView1Change
+    ExplicitHeight = 472
   end
 end

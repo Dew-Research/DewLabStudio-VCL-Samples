@@ -4,22 +4,23 @@ inherited Prob1: TProb1
   Caption = 'Prob1'
   ClientHeight = 624
   ClientWidth = 709
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   ExplicitWidth = 725
   ExplicitHeight = 663
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 709
     Height = 73
-    ExplicitWidth = 656
+    StyleElements = [seFont, seClient, seBorder]
+    ExplicitWidth = 709
     ExplicitHeight = 73
     inherited RichEdit1: TRichEdit
       Width = 707
       Height = 71
       Font.Color = 7105644
-      ExplicitWidth = 654
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitWidth = 707
       ExplicitHeight = 71
     end
   end
@@ -27,6 +28,7 @@ inherited Prob1: TProb1
     Top = 582
     Width = 709
     Height = 42
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 554
     ExplicitWidth = 656
     ExplicitHeight = 42
@@ -61,6 +63,7 @@ inherited Prob1: TProb1
     Height = 509
     Constraints.MinHeight = 350
     Constraints.MinWidth = 615
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 73
     ExplicitWidth = 656
     ExplicitHeight = 481
@@ -77,13 +80,29 @@ inherited Prob1: TProb1
       Title.Text.Strings = (
         'TChart')
       Title.Visible = False
+      BottomAxis.LogarithmicBase = 10.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
+      DepthAxis.LogarithmicBase = 10.000000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
+      DepthTopAxis.LogarithmicBase = 10.000000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
+      LeftAxis.LogarithmicBase = 10.000000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       RightAxis.Automatic = False
       RightAxis.AutomaticMaximum = False
       RightAxis.AutomaticMinimum = False
       RightAxis.ExactDateTime = False
       RightAxis.Grid.Visible = False
+      RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.Increment = 0.100000000000000000
+      RightAxis.LogarithmicBase = 10.000000000000000000
       RightAxis.Maximum = 1.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
+      RightAxis.ZPosition = 100.000000000000000000
+      TopAxis.Grid.ZPosition = 100.000000000000000000
+      TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
+      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       Align = alClient
       BevelInner = bvLowered

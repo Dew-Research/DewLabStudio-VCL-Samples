@@ -402,6 +402,10 @@
             <Form>CompoundExpressionsForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="SmallMatrixMul.pas">
+            <Form>frmSmallMatrix</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -473,6 +477,9 @@
                     <Source Name="MainSource">MtxVecDemoW32_D19.dpr</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\12.0\Bpl\DclMtxCore619.bpl">Dew MtxVec v6</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\12.0\Bpl\DclMtxDB619.bpl">Dew MtxVec v6 DB</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\12.0\Bpl\MtxVisualizer619.bpl">Dew MtxVec v6 Debugger Visualizer</Excluded_Packages>
                     <Excluded_Packages Name="D:\Program Files (x86)\FastReports\LibD19\dclfrx19.bpl">File D:\Program Files (x86)\FastReports\LibD19\dclfrx19.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="D:\Program Files (x86)\FastReports\LibD19\dclfrxDB19.bpl">File D:\Program Files (x86)\FastReports\LibD19\dclfrxDB19.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="D:\Program Files (x86)\FastReports\LibD19\dclfrxe19.bpl">File D:\Program Files (x86)\FastReports\LibD19\dclfrxe19.bpl not found</Excluded_Packages>

@@ -112,14 +112,14 @@ begin
   Factor := 1;
   CPUCoreCountLabel.Caption := 'CPU core count = ' + IntToStr(Controller.CpuCores);
   CPUCacheSizeLabel.Caption := 'CPU cache size = ' + FormatSample('0.0 [MB]',(Controller.CpuCacheSizeInBytes/sqr(1024)));
-  ThreadCountEdit.MaxValue := IntToStr(Controller.CpuCores);
-{  ThreadCountEdit.IntPosition := Controller.ThreadCount; }
+  ThreadCountEdit.MaxValue := IntToStr(Controller.CpuCoresLogical);
+  ThreadCountEdit.IntPosition := Controller.BlasThreadCount;
   TrackBar1Change(TrackBar1);
 end;
 
 procedure TMult1.ThreadCountEditChange(Sender: TObject);
 begin
-{  Controller.ThreadCount := ThreadCountEdit.IntPosition; }
+  Controller.BlasThreadCount := ThreadCountEdit.IntPosition;
 end;
 
 procedure TMult1.TrackBar1Change(Sender: TObject);
@@ -175,6 +175,8 @@ end;
 
 procedure TMult1.FormDestroy(Sender: TObject);
 begin
+  Controller.BlasThreadCount := 1;  //disable
+
   A.Free;
   B.Free;
   C.Free;

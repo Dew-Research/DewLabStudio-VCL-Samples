@@ -88,6 +88,7 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_DebugInfoInExe>false</DCC_DebugInfoInExe>
         <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
         <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
         <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
@@ -403,6 +404,14 @@
         </DCCReference>
         <DCCReference Include="ScriptingGrid.pas">
             <Form>ScriptingGridForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CompoundExpressions.pas">
+            <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SmallMatrixMul.pas">
+            <Form>frmSmallMatrix</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

@@ -8,7 +8,7 @@
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>14.6</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -327,6 +327,10 @@
         </DCCReference>
         <DCCReference Include="CompoundExpressions.pas">
             <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SmallMatrixMul.pas">
+            <Form>frmSmallMatrix</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Debug">
