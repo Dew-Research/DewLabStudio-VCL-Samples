@@ -83,18 +83,18 @@ void __fastcall TInterpolating1::Button1Click(TObject *Sender)
   X.Size(NumPoints,false);
   Y.Size(NumPoints,false);
   Screen->Cursor = crHourGlass;
-  randomize();
+  Randomize();
   X.Ramp();
 
   if (Y.IsDouble) {
 
 	  Y[0] = 1000;
-	  for (int i=1; i < X.Length; i++) Y[i] = Y[i-1] + 250 - random(500);
+	  for (int i=1; i < X.Length; i++) Y[i] = Y[i-1] + 250 - Random(500);
 
   } else {
 
 	  Y.SValues(0) = 1000;
-	  for (int i=1; i < X.Length; i++) Y.SValues(i) = Y.SValues(i-1) + 250 - random(500);
+	  for (int i=1; i < X.Length; i++) Y.SValues(i) = Y.SValues(i-1) + 250 - Random(500);
   }
 
   DrawValues(Y,Series1,0,1.0,DownSize);

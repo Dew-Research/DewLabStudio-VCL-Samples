@@ -172,7 +172,7 @@ void __fastcall TLQRDemo::Button3Click(TObject *Sender)
 			tmpM1.SetZero();
 			tmpM1.Diag(S,0);
 			// Multiply S by V'=Q'
-			tmpM2 = Mul(tmpM1,Q);
+			tmpM2 = Mul(tmpM1,Q,opNone,opTran);
 			// Multiply from left by U=L
 			tmpM3 = Mul(L,tmpM2);
 			ViewValues(tmpM3,"U*S*V'= A ?",true,false,false);

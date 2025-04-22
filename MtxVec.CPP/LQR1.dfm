@@ -2,21 +2,25 @@ inherited LQRDemo: TLQRDemo
   Caption = 'LQRDemo'
   ClientHeight = 510
   ClientWidth = 570
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   OnDestroy = FormDestroy
-  PixelsPerInch = 96
+  ExplicitWidth = 586
+  ExplicitHeight = 549
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 570
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 570
     inherited RichEdit1: TRichEdit
       Width = 568
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 568
     end
   end
   inherited Panel2: TPanel
     Top = 452
     Width = 570
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 452
     ExplicitWidth = 570
     object Button1: TBitBtn
@@ -52,6 +56,7 @@ inherited LQRDemo: TLQRDemo
     Height = 322
     Constraints.MinHeight = 275
     Constraints.MinWidth = 570
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 570
     ExplicitHeight = 322
     object Label1: TLabel

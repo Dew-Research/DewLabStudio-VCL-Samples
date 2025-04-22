@@ -44,22 +44,22 @@ __fastcall TLQRPoly::TLQRPoly(TComponent* Owner)
 
   X.Size(1000,false);
   Y.Size(X);
-  randomize();
-  double tmp = random(1000);
+  Randomize();
+  double tmp = Random(1000);
   X.Ramp();
 
   if (Y.IsDouble) {
 
 	for (int i=0; i < Y.Length; i++)
 	 {
-		tmp = tmp + random(1000) - 500;
+		tmp = tmp + Random(1000) - 500;
 		Y[i] = tmp;
 	 }
   } else {
 
 	 for (int i=0; i < Y.Length; i++)
 	 {
-		tmp = tmp + random(1000) - 500;
+		tmp = tmp + Random(1000) - 500;
 		Y.SValues(i) = tmp;
 	 }
   }

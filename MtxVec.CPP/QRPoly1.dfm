@@ -1,13 +1,19 @@
 inherited LQRPoly: TLQRPoly
   Caption = 'LQRPoly'
   ClientHeight = 382
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitHeight = 421
-  PixelsPerInch = 96
   TextHeight = 13
+  inherited Panel1: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited RichEdit1: TRichEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+  end
   inherited Panel2: TPanel
     Top = 265
     Height = 117
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 265
     ExplicitHeight = 117
     object Label1: TLabel [0]
