@@ -1,5 +1,5 @@
 <a href="https://www.dewresearch.com/products/mtxvec/mtxvec-for-delphi-c-builder">
-<img align="right" src="https://www.dewresearch.com/templates/yootheme/cache/mtxvex-icon-ef5151c5.png">
+<img align="right" src="https://www.dewresearch.com/templates/yootheme/cache/ae/mtxvex-icon-ae9e9725.webp">
 </a>  
 
 # Dew Lab Studio VCL for RAD Studio, Delphi and C++ Builder samples.
