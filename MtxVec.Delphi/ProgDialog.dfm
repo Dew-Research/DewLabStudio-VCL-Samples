@@ -2,40 +2,43 @@ inherited frmProgDialog: TfrmProgDialog
   Caption = 'frmProgDialog'
   ClientHeight = 479
   ClientWidth = 489
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   ExplicitWidth = 505
   ExplicitHeight = 518
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 489
     Height = 85
-    ExplicitWidth = 489
+    StyleElements = [seFont, seClient, seBorder]
+    ExplicitWidth = 487
     ExplicitHeight = 85
     inherited RichEdit1: TRichEdit
       Width = 487
       Height = 83
       DragMode = dmAutomatic
       Font.Color = 7105644
-      ExplicitWidth = 487
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitWidth = 485
       ExplicitHeight = 83
     end
   end
   inherited Panel2: TPanel
     Top = 421
     Width = 489
-    ExplicitTop = 421
-    ExplicitWidth = 489
+    StyleElements = [seFont, seClient, seBorder]
+    ExplicitTop = 413
+    ExplicitWidth = 487
   end
   inherited Panel3: TPanel
     Top = 85
     Width = 489
     Height = 336
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 85
-    ExplicitWidth = 489
-    ExplicitHeight = 336
+    ExplicitWidth = 487
+    ExplicitHeight = 328
     object Label1: TLabel
       Left = 13
       Top = 144
@@ -58,8 +61,8 @@ inherited frmProgDialog: TfrmProgDialog
       Caption = 'Progress indicators update interval:'
     end
     object Label3: TLabel
-      Left = 251
-      Top = 180
+      Left = 275
+      Top = 175
       Width = 21
       Height = 13
       Caption = '[ms]'
@@ -134,9 +137,9 @@ inherited frmProgDialog: TfrmProgDialog
       TabOrder = 5
     end
     object UpdateIntervalEdit: TMtxFloatEdit
-      Left = 195
+      Left = 198
       Top = 172
-      Width = 49
+      Width = 59
       Height = 22
       RegistryPath = '\Software\DewResearch\MtxVec'
       StoreInRegistry = False
@@ -148,7 +151,7 @@ inherited frmProgDialog: TfrmProgDialog
       MaxValue = '0'
       MinValue = '0'
       TabOrder = 6
-      Value = '200'
+      Value = '100'
       OnChange = UpdateIntervalEditChange
     end
     object GroupBox1: TGroupBox
@@ -218,7 +221,6 @@ inherited frmProgDialog: TfrmProgDialog
     end
   end
   object MtxThread: TMtxProgressDialog
-    FreeOnTerminate = False
     ThreadBypass = False
     OnCompute = MtxThreadCompute
     OnProgressUpdate = MtxThreadProgressUpdate

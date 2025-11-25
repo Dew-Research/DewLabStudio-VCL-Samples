@@ -1,30 +1,25 @@
 inherited ForLoopForm: TForLoopForm
   Caption = 'ForLoopForm'
   ClientHeight = 372
-  StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   ExplicitHeight = 411
   TextHeight = 13
   inherited Panel1: TPanel
     Height = 106
-    StyleElements = [seFont, seClient, seBorder]
     ExplicitHeight = 106
     inherited RichEdit1: TRichEdit
       Height = 104
-      StyleElements = [seFont, seClient, seBorder]
       ExplicitHeight = 104
     end
   end
   inherited Panel2: TPanel
     Top = 314
-    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 299
   end
   inherited Panel3: TPanel
     Top = 106
     Height = 208
-    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 106
     ExplicitHeight = 193
     object Label1: TLabel

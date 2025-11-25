@@ -71,78 +71,73 @@ begin
 end;
 
 procedure ForLoopR(IdxMin, IdxMax: integer; const Context: TObjectArray; ThreadIndex: integer);
-var ag,bg: Vector;
-    a,b: Vector;
-    ai: VectorInt;
-    c: Vector;
+var ag,bg: TVec;
+    a,b: TVec;
+    ai: TVecInt;
+    c,c2: TVec;
     aTimer: Int64;
 begin
     StartTimer(aTimer);
 
-    ag.SetSubRange(TVec(Context[0]), IdxMin, IdxMax - idxMin + 1);
-    bg.SetSubRange(TVec(Context[1]), IdxMin, IdxMax - idxMin + 1);
+    CreateIt(a,b,ag,bg);
+    CreateIt(c, c2);
+    CreateIt(ai);
+    try
+        ag.SetSubRange(TVec(Context[0]), IdxMin, IdxMax - idxMin + 1);
+        bg.SetSubRange(TVec(Context[1]), IdxMin, IdxMax - idxMin + 1);
 
-    a.BlockInit(ag);
-    b.BlockInit(bg);
+        a.BlockInit(ag);
+        b.BlockInit(bg);
 
-    stats[ThreadIndex].BlockLength := TVec(a).Length;
+        stats[ThreadIndex].BlockLength := TVec(a).Length;
 
-    while not a.BlockEnd do
-    begin
-        ai.FindMask(a, '>=', dpos_frac);
-        c.GatherByMask(b, ai);
+        while not a.BlockEnd do
+        begin
+            ai.FindMask(a, '>=', dpos_frac);
+            c2.GatherByMask(b, ai);
+            c.AddAndMul(c2,1,2);
+            b.ScatterByMask(c, ai);
 
-//        d.Normalize(c,-1,0.5);
-        c.Add(1);
-        c.Mul(2);
-        b.ScatterByMask(c, ai);
+            a.BlockNext;
+            b.BlockNext;
+        end;
 
-        a.BlockNext;
-        b.BlockNext;
+        //collect statistics
+        DoAssign(stats[ThreadIndex].PoolIndex, TVec(ag).PoolIndex);
+        DoAssign(stats[ThreadIndex].TotalLength, TVec(ag).Length);
+        DoAssign(stats[ThreadIndex].aCI, TVec(a).CacheIndex);
+        DoAssign(stats[ThreadIndex].bCI, TVec(b).CacheIndex);
+        DoAssign(stats[ThreadIndex].cCI, TVec(c).CacheIndex);
+        DoAssign(stats[ThreadIndex].agCI, TVec(ag).CacheIndex);
+        DoAssign(stats[ThreadIndex].bgCI, TVec(bg).CacheIndex);
+        DoAssign(stats[ThreadIndex].aiCI, TVecInt(ai).CacheIndex);
+    finally
+        FreeIt(a,b,ag,bg);
+        FreeIt(c, c2);
+        FreeIt(ai);
     end;
 
-    DoAssign(stats[ThreadIndex].PoolIndex, TVec(ag).PoolIndex);
-    DoAssign(stats[ThreadIndex].TotalLength, TVec(ag).Length);
-    DoAssign(stats[ThreadIndex].aCI, TVec(a).CacheIndex);
-    DoAssign(stats[ThreadIndex].bCI, TVec(b).CacheIndex);
-    DoAssign(stats[ThreadIndex].cCI, TVec(c).CacheIndex);
-    DoAssign(stats[ThreadIndex].agCI, TVec(ag).CacheIndex);
-    DoAssign(stats[ThreadIndex].bgCI, TVec(bg).CacheIndex);
-    DoAssign(stats[ThreadIndex].aiCI, TVecInt(ai).CacheIndex);
-
-    // not needed, because it is cleaned up by the compiler at the end of the function,
-    // but included here to include this in to the timing
-    ag.Adopt(nil);
-    bg.Adopt(nil);
-    a.Adopt(nil);
-    b.Adopt(nil);
-    c.Adopt(nil);
-    ai.Adopt(nil);
 
     stats[ThreadIndex].TotalTime := StopTimer(aTimer);
 end;
 
 
 procedure ForLoopRI(IdxMin, IdxMax: integer; const Context: TObjectArray; ThreadIndex: integer);
-var ag,bg: Vector;
-    i: integer;
+var i: integer;
     a, b: TVec;
 begin
-    ag.SetSubRange(TVec(Context[0]), IdxMin, IdxMax - idxMin + 1);
-    bg.SetSubRange(TVec(Context[1]), IdxMin, IdxMax - idxMin + 1);
-
-    a := ag;
-    b := bg;
+    a := TVec(Context[0]);
+    b := TVec(Context[1]);
 
     if a.IsDouble then
     begin
-        for i := 0 to a.Length-1 do
+        for i := idxMin to idxMax do
         begin
             if a.Values[i] >= DPOS_FRAC then b.Values[i] := (b.Values[i] + 1.0)*2.0;
         end;
     end else
     begin
-        for i := 0 to a.Length-1 do
+        for i := idxMin to idxMax do
         begin
             if a.SValues[i] >= SPOS_FRAC then b.SValues[i] := (b.SValues[i] + 1)*2;
         end;
@@ -150,12 +145,12 @@ begin
 end;
 
 procedure TIfThenForm.MaskThreadButtonClick(Sender: TObject);
-var a,b1,b2,c: Vector;
+var a,b1,b2,c,c2: Vector;
     ai: VectorInt;
     ar: TDoubleArray;
     i, DataLen: integer;
 begin
-    SetLength(stats, GlobalThreads.ThreadCount);
+    SetLength(stats, mtxThreadPool.ThreadCount);
     for i := 0 to Length(Stats)-1 do
     begin
         Stats[i].TotalTime := -2;
@@ -185,7 +180,7 @@ begin
 
     for i := 0 to a.Length-1 do  //always need b1 for reference
     begin
-        if a[i] >= dpos_frac then b1[i] := (b1[i]+1)*2;
+        if a[i] >= dpos_frac then b1[i] := (b1[i] + 1)*2;
     end;
 
     ar[0] := Round(StopTimer*1000);
@@ -200,10 +195,10 @@ begin
         StartTimer;
 
         ai.FindMask(a, '>=', dpos_frac);
-        c.GatherByMask(b2, ai);
-
-        c.Add(1);
-        c.Mul(2);
+        c2.GatherByMask(b2, ai);
+        c.AddAndMul(c2, 1,2);
+//        c.Add(1);
+//        c.Mul(2);
         b2.ScatterByMask(c, ai);
 
         ar[1] := StopTimer*1000;
@@ -222,10 +217,10 @@ begin
         while not a.BlockEnd do
         begin
             ai.FindIndexes(a, '>=', dpos_frac);
-            c.GatherByIndex(b2, ai);
-
-            c.Add(1);
-            c.Mul(2);
+            c2.GatherByIndex(b2, ai);
+            c.AddAndMul(c2, 1,2);
+//            c.Add(1);
+//            c.Mul(2);
             b2.ScatterByIndexes(c, ai);
 
             a.BlockNext;
@@ -252,10 +247,10 @@ begin
         while not a.BlockEnd do
         begin
             ai.FindMask(a, '>=', dpos_frac);
-            c.GatherByMask(b2, ai);
-
-            c.Add(1);
-            c.Mul(2);
+            c2.GatherByMask(b2, ai);
+            c.AddAndMul(c2, 1, 2);
+//            c.Add(1);
+//            c.Mul(2);
             b2.ScatterByMask(c, ai);
 
             a.BlockNext;
@@ -270,14 +265,14 @@ begin
         b2.SetVal(1); // reset
     end;
 
-    if not Assigned(GlobalThreads) then GlobalThreads := TMtxForLoop.Create;
+    if not Assigned(mtxThreadPool) then mtxThreadPool := TMtxForLoop.Create;
 
-    GlobalThreads.BlockGranularity := System.Round(Exp2(GranBox.ItemIndex));
+    mtxThreadPool.BlockGranularity := System.Round(Exp2(GranBox.ItemIndex));
 
     if MaskBlockThreadBox.Checked then //5
     begin
         StartTimer;
-        DoForLoop(0, a.Length-1, ForLoopR, GlobalThreads, [TVec(a),TVec(b2) ]);
+        DoForLoop(0, a.Length-1, ForLoopR, mtxThreadPool, [TVec(a),TVec(b2) ]);
         ar[4] := StopTimer*1000;
         BarSeries.Add(ar[4], 'Vectorized, bp and threaded');
 
@@ -288,7 +283,7 @@ begin
     if PlainThreadBox.Checked then //6
     begin
         StartTimer;
-        DoForLoop(0, a.Length-1, ForLoopRI, GlobalThreads, [TVec(a),TVec(b2) ]);
+        DoForLoop(0, a.Length-1, ForLoopRI, mtxThreadPool, [TVec(a),TVec(b2) ]);
         ar[5] := StopTimer*1000;
         BarSeries.Add(ar[5], TeeLineSeparator + 'Plain and threaded');
 
@@ -322,9 +317,9 @@ end;
 
 procedure TIfThenForm.FormCreate(Sender: TObject);
 begin
-    if not Assigned(GlobalThreads) then  GlobalThreads := TMtxForLoop.Create;
-    GlobalThreads.ThreadCount := Controller.CpuCores;
-    Controller.ThreadDimension := GlobalThreads.ThreadCount + 1;
+    if not Assigned(mtxThreadPool) then  mtxThreadPool := TMtxForLoop.Create;
+    mtxThreadPool.ThreadCount := Controller.CpuCores;
+    Controller.ThreadDimension := mtxThreadPool.ThreadCount + 1;
 
     Memo1.Lines.Clear;
 
@@ -342,10 +337,10 @@ end;
 
 procedure TIfThenForm.FormDestroy(Sender: TObject);
 begin
-    if Assigned(GlobalThreads) then
+    if Assigned(mtxThreadPool) then
     begin
-        GlobalThreads.Free;
-        GlobalThreads := nil;
+        mtxThreadPool.Free;
+        mtxThreadPool := nil;
     end;
 end;
 

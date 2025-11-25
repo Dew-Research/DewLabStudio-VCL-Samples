@@ -36,6 +36,154 @@ begin
         SelAttributes.Color := RGB(51,104,196);
         SelAttributes.Size := 11;
 
+        Add('List of new features in v6.3.7 (August 2025):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Separated threading library (MtxForLoop.pas) from dependancy upon MtxVec. Moved MtxVec dependant functions to MtxVec unit. This allows the use of the threading library also in units which do not depend upon MtxVec (MtxVec Core, Lapack, Blas, etc...). ');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Debugger visualizer:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Debugger Tooltip visualizer launch button sometimes caused a lock-up, because it triggered multiple button press events.');
+        Add('Improved the automatic naming of debugger mapped variables for cases, where chars like [,] and dot were in the expression.');
+        Add('Significantly improved automatic column sizing for TMtxVecGrid, which is also used by the debugger visualizer.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Sparse matrices:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Moved the function to obtain OS Temp folder in to the initialization section of the sparse.pas unit and cached the result. ');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
+        Add('List of new features in v6.3.6 (June 2025):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Added ColumnWidth parameter to TVec/TMtx/TVecInt/TMtxInt method ValuesToStrings. Usefull for fixed font width text table formating.');
+        Add('Matching API for the .NET Core release due to be released soon.');
+        Add('Renamed TMtx.Mul overload for arrays of TMtx type to TMtx.MulArray to avoid a compiler bug.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Special functions:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Bug fix for Bessel J function from SpecialFuncs.pas unit. Introduced due to upgraded compiler.');
+        Add('Expanded Bessel functions with computations on array with integer step between consecutive elements. ');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Polynoms:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Bug fix for Spline1D, which did not work correctly for X other than 0,1,2,3..');
+        Add('Bug fix for TPiecePoly.Evaluate(X, Y), which did not work for scalar overload, if vectorized overload was not called before.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
+        Add('List of new features in v6.3.5 (April 2025):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Updated installers to install packages and search paths also for the Modern C++ Compiler and for the 64bit IDE preview.');
+        Add('Bug fix for MtxExpr.h which resulted in the calling of ud2 instruction for Modern C++ compiler of the C++Builder');
+        Add('Bug Fix for TMtx.MulElem(a: TMtxVec), which was calling the wrong overload.');
+        Add('Bug fix for FmxMtxVecTee.pas, for TeeChart standard (undefined variable DoubleResolution).');
+        Add('Catastrophic cancellation mitigation for numerical GradHess routine for cases, where gradient is near zero. The routine is used by the Optimization methods.');
+        Add('Ability to assign array of strings to StringList: a := [''Item1'', ''Item2'', ''Item3''], rather than calling Add method for each.');
+        Add('Added TVec.Mask overload');
+        Add('Added Implicit conversion from array of TCplx to Vector and Matrix: aVector := [Cplx(1,2), Cplx(2,3)];');
+        Add('Added support for saving and loading the header row to the TVec/TMtx Caption property when saving/loading .csv files with LoadFromFile/SaveToFile method.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Probabilities:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Added three new NormalPDF, NormalCDF, NormalCDFTwoTail vectorized overloads to probabilities. pas');
+        Add('Faster vectorized TriangularCDF, TriangularCDFInv, TriangularPDF');
+        Add('Faster vectorized InverseGaussianPDF and InverseGaussianCDF');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
+        Add('List of new features in v6.3.4 (March 2025):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Core product:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Support for RAD Studio 12.3');
+        Add('Added compound expressions for saturated integer math for Integer (32bit), SmallInt (16bit) and byte precision (8bit). This feature adds over 160 new overloads to TVecInt and TMtxInt (VectorInt and MatrixInt)');
+        Add('Added compound expressions for complex number math.');
+        Add('Added Exponential Integral functions E1, Ei and ExpEi to the SpecialFuncs.pas unit. By passing Log(x) as argument, this will also compute Logarithmic integrals.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+        SelAttributes.Style := [fsUnderline];
+        Add('Added some behaviour typically expected to exist by AI large language models:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Added ToString and Parse methods to TVec/TVecInt/TMtx/TMtxInt/Vector/VectorInt/Matrix/MatrixInt.');
+        Add('Added implicit conversions from TCplxArray to Vector and Matrix: aVec := [Cplx(1), Cplx(2)];');
+        Add('Added implicit conversions of Vector/VectorInt/Matrix/MatrixInt to TObject. The types dereference their internal data object, which is of type TVec/TVecInt/TMtx/TMtxInt.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
         Add('List of new features in v6.3.3 (February 2025):');
         Paragraph.FirstIndent := 0;
         Paragraph.Numbering := nsNone;
@@ -52,10 +200,10 @@ begin
         Add('Inlined the implicit conversions of Vector and Matrix types to TMtx, TVec, etc... for Rad Studio 12 and newer. This Positively affects performance of Vector and Matrix types in general.');
         Add('Added support for "Modern" C++ Compiler platform target in C++Builder for Rad Studio v12.2.');
         Add('Added MtxVec.Controller.BlasThreadCount and adjusted the mapping of thread count for individual library sub-systems. ');
-		Add('Fixed TCplx and TSCplx inline visualizers for Delphi Win64 debugger, when displaying NAN and INF values. Occurrence of NAN triggered an exception in the IDE, because Win64 debugger does not correctly display NAN and INF values since XE2.');
-		Add('Fix for complex Math387.ArcSin, when the argument was 0. This affected (complex number) Math387.ArcCos, Math387.ArcSinh, Math387.ArcCosh, Math387.ArcCsc and Math387.ArcCsch, Math387.ArcSec and Math387.ArcSech, which all call this function.'); 		
+        Add('Fixed TCplx and TSCplx inline visualizers for Delphi Win64 debugger, when displaying NAN and INF values. Occurrence of NAN triggered an exception in the IDE, because Win64 debugger does not correctly display NAN and INF values since XE2.');
+        Add('Fix for complex Math387.ArcSin, when the argument was 0. This affected (complex number) Math387.ArcCos, Math387.ArcSinh, Math387.ArcCosh, Math387.ArcCsc and Math387.ArcCsch, Math387.ArcSec and Math387.ArcSech, which all call this function.');
 	
-		Paragraph.FirstIndent := 0;
+        Paragraph.FirstIndent := 0;
         Paragraph.Numbering := nsNone;
         Add('');	
 

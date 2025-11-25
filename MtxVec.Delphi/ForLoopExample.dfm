@@ -10,11 +10,9 @@ object ForLoopExampleForm: TForLoopExampleForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnResize = FormResize
-  PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 0
@@ -90,10 +88,16 @@ object ForLoopExampleForm: TForLoopExampleForm
       
         'length and memory manager with multi-core processing of Student ' +
         'CDF function')
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Title.Caption = 'Vector length'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMinimum = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Time [ms]'
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Pen.Color = clBlack
@@ -102,12 +106,9 @@ object ForLoopExampleForm: TForLoopExampleForm
     BevelOuter = bvNone
     Color = clWhite
     TabOrder = 1
+    DefaultCanvas = ''
     ColorPaletteIndex = 13
     object Series1: TFastLineSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.Visible = False
       SeriesColor = 10485760
       Title = 'Standard MM'
       LinePen.Color = 10485760
@@ -117,10 +118,6 @@ object ForLoopExampleForm: TForLoopExampleForm
       YValues.Order = loNone
     end
     object Series2: TFastLineSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.Visible = False
       SeriesColor = 33023
       Title = 'Super conductive MM'
       LinePen.Color = 33023
@@ -142,8 +139,14 @@ object ForLoopExampleForm: TForLoopExampleForm
         'Super conductive memory allocation makes the code run faster on ' +
         'multi-core CPU'#39's for short arrays (vectors) '
       'Gains grow with core count.')
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Title.Caption = 'Vector length'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Factor'
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Pen.Color = clBlack
@@ -152,12 +155,9 @@ object ForLoopExampleForm: TForLoopExampleForm
     BevelOuter = bvNone
     Color = clWhite
     TabOrder = 2
+    DefaultCanvas = ''
     ColorPaletteIndex = 13
     object FastLineSeries1: TFastLineSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
-      Marks.Visible = False
       SeriesColor = 10485760
       Title = 'Scalability'
       LinePen.Color = 10485760

@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{571A7E67-04ED-484F-BC27-5D727AB839A0}</ProjectGuid>
-        <MainSource>MtxVecDemoW32_D29.dpr</MainSource>
+        <MainSource>MtxVecDemoW32_D37.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
@@ -9,7 +9,7 @@
         <FrameworkType>VCL</FrameworkType>
         <ProjectVersion>20.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">MtxVecDemoW32_D29</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">MtxVecDemoW32_D37</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -65,7 +65,7 @@
         <DCC_ImageBase>00400000</DCC_ImageBase>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;VCLTee;System.Win;$(DCC_Namespace)</DCC_Namespace>
         <DCC_K>false</DCC_K>
-        <SanitizedProjectName>MtxVecDemoW32_D29</SanitizedProjectName>
+        <SanitizedProjectName>MtxVecDemoW32_D37</SanitizedProjectName>
         <DCC_S>false</DCC_S>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_N>false</DCC_N>
@@ -383,7 +383,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">MtxVecDemoW32_D29.dpr</Source>
+                    <Source Name="MainSource">MtxVecDemoW32_D37.dpr</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
@@ -397,9 +397,15 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <Deployment Version="5">
-                <DeployFile LocalName="Win32\Debug\MtxVecDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\MtxVecDemoW32_D37.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\MtxVecDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="Win64\Release\MtxVecDemoW32_D29.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win64\Debug\MtxVecDemoW32_D37.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>MtxVecDemoW32_D37.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Release\MtxVecDemoW32_D37.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="\MtxVecDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="\MtxVecDemoW32_D29.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">

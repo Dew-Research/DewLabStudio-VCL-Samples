@@ -45,7 +45,7 @@ uses Math387, MtxVec, ippsplTypes
 
 procedure TIntroduction.FormCreate(Sender: TObject);
 {$IFDEF IPPDLL_ANY}
-var aMask, bMask: Int64;
+var aMask, bMask: UInt64;
 {$ENDIF}
 begin
   Label1.Caption := 'Welcome to MtxVec v' + FormatSample('0.00',MtxVecVersion/100);
@@ -125,7 +125,6 @@ begin
     Paragraph.Numbering := nsNone;
     Paragraph.FirstIndent := 0;
 
-    {$IFDEF IPPDLL_ANY}
     Add('');
     SelAttributes.Style := [fsBold];
     SelAttributes.Color := RGB(51,104,196);
@@ -135,27 +134,19 @@ begin
     Paragraph.Numbering := nsBullet;
     Paragraph.FirstIndent := 10;
 
-    aMask := ippGetEnabledCpuFeatures;
-    if (aMask and ippsplTypes.ippCPUID_MMX) <> 0 then Add('MMX');
-    if (aMask and ippsplTypes.ippCPUID_SSE) <> 0 then Add('SSE');
-    if (aMask and ippsplTypes.ippCPUID_SSE2) <> 0 then Add('SSE2');
-    if (aMask and ippsplTypes.ippCPUID_SSSE3) <> 0 then Add('SSSE3');
-    if (aMask and ippsplTypes.ippCPUID_SSE42) <> 0 then Add('SSE42');
-    if (aMask and ippsplTypes.ippCPUID_AVX) <> 0 then Add('AVX');
-    if (aMask and ippsplTypes.ippCPUID_AVX2) <> 0 then Add('AVX2');
-    if (aMask and ippsplTypes.ippCPUID_AVX512F) <> 0 then Add('AVX512F');
-    if (aMask and ippsplTypes.ippCPUID_AVX512CD) <> 0 then Add('AVX512CD');
-    if (aMask and ippsplTypes.ippCPUID_AVX512BW) <> 0 then Add('AVX512BW');
-    if (aMask and ippsplTypes.ippCPUID_AVX512DQ) <> 0 then Add('AVX512DQ');
+    if Controller.CpuSSSE3 then Add('SSSE3');
+    if Controller.CpuSSE42 then Add('SSE42');
+    if Controller.CpuAVX then Add('AVX');
+    if Controller.CpuAVX2 then Add('AVX2');
+    if Controller.CpuAVX512F then Add('AVX512F');
+    if Controller.CpuAVX512CD then Add('AVX512CD');
+    if Controller.CpuAVX512BW then Add('AVX512BW');
+    if Controller.CpuAVX512DQ then Add('AVX512DQ');
 //    if (aMask and ippsplTypes.ippCPUID_AVX512PF) <> 0 then Add('AVX512PF');
 //    if (aMask and ippsplTypes.ippCPUID_AVX512ER) <> 0 then Add('AVX512ER');
 //    if (aMask and ippsplTypes.ippCPUID_AVX512VL) <> 0 then Add('AVX512VL');
 
-    ippGetCpuFeatures(bMask, nil);
-
-    if bMask <> aMask then ShowMessage('Warning: The CPU features enabled do not match the CPU features available!');
-
-    {$ENDIF}
+    if not Controller.CpuFeaturesEnabledMatchAvailable then ShowMessage('Warning: The CPU features enabled do not match the CPU features available!');
 
     Paragraph.Numbering := nsNone;
     Paragraph.FirstIndent := 0;

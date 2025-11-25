@@ -260,10 +260,10 @@ begin
     StartTimer;
     for i := 0 to loops-1 do
     begin
-        bDst.Mul(X, Cplx(2.0, 1.3));
-        bDst.AddScaled(Y, Cplx(3.0, 1.2));
+        bDst.Mul(X, Cplx(2.0, 1.3)*Cplx(4.0, 1.8));
+        bDst.AddScaled(Y, Cplx(3.0, 1.2)*Cplx(4.0, 1.8));
         bDst.Mul(Z);
-        bDst.Mul(Cplx(4.0, 1.8));
+//        bDst.Mul(Cplx(4.0, 1.8));
     end;
     Timings[1, 2] := StopTimer*1000;
 

@@ -10,9 +10,7 @@ object SuperConductiveForm: TSuperConductiveForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = True
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -21,6 +19,8 @@ object SuperConductiveForm: TSuperConductiveForm
     Height = 116
     Align = alBottom
     TabOrder = 0
+    ExplicitTop = 439
+    ExplicitWidth = 955
     DesignSize = (
       957
       116)
@@ -175,14 +175,14 @@ object SuperConductiveForm: TSuperConductiveForm
       State = cbChecked
       TabOrder = 4
     end
-    object Button2: TButton
+    object SingleRunButton: TButton
       Left = 741
       Top = 40
       Width = 107
       Height = 25
       Caption = 'Run single shot'
       TabOrder = 5
-      OnClick = Button2Click
+      OnClick = SingleRunButtonClick
     end
   end
   object Chart: TChart
@@ -198,17 +198,25 @@ object SuperConductiveForm: TSuperConductiveForm
       
         'Cost of allocation of TVec and Vector remain relatively fixed wi' +
         'th super-conductive approach.')
+    BottomAxis.LogarithmicBase = 10.000000000000000000
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Time [ms]'
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = clWhite
     TabOrder = 1
+    ExplicitWidth = 955
+    ExplicitHeight = 439
+    DefaultCanvas = ''
     ColorPaletteIndex = 13
   end
   object Thread1: TMtxProgressDialog
-    FreeOnTerminate = False
     ThreadBypass = False
     Loops = 1000000
     OnCompute = Thread1Compute
@@ -217,7 +225,6 @@ object SuperConductiveForm: TSuperConductiveForm
     InfiniteLoop = False
     Min = 0
     Max = 999999
-    UpdateInterval = 80
     ShowDialog = False
     Left = 168
     Top = 104

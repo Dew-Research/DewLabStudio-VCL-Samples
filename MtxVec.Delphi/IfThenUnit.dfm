@@ -10,13 +10,11 @@ object IfThenForm: TIfThenForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignSize = (
     904
     605)
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 64
@@ -46,7 +44,7 @@ object IfThenForm: TIfThenForm
     TabOrder = 0
   end
   object MaskThreadButton: TButton
-    Left = 12
+    Left = 8
     Top = 543
     Width = 112
     Height = 25
@@ -72,23 +70,29 @@ object IfThenForm: TIfThenForm
       'Vectorization of If-then with masks')
     BottomAxis.Grid.Visible = False
     BottomAxis.LabelsSeparation = 0
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Font.Color = 4210752
     BottomAxis.Title.Font.Height = -15
+    DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.MinorTicks.Visible = False
     DepthAxis.Title.Font.Color = 4210752
     DepthAxis.Title.Font.Height = -15
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.MinorTicks.Visible = False
     DepthTopAxis.Title.Font.Color = 4210752
     DepthTopAxis.Title.Font.Height = -15
     LeftAxis.Axis.Visible = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.MinorTicks.Visible = False
     LeftAxis.Title.Caption = 'Time [ms]'
     LeftAxis.Title.Font.Color = 4210752
     LeftAxis.Title.Font.Height = -15
+    RightAxis.LogarithmicBase = 10.000000000000000000
     RightAxis.MinorTicks.Visible = False
     RightAxis.Title.Font.Color = 4210752
     RightAxis.Title.Font.Height = -15
+    TopAxis.LogarithmicBase = 10.000000000000000000
     TopAxis.MinorTicks.Visible = False
     TopAxis.Title.Font.Color = 4210752
     TopAxis.Title.Font.Height = -15
@@ -97,15 +101,13 @@ object IfThenForm: TIfThenForm
     Color = clWhite
     TabOrder = 2
     Anchors = [akLeft, akRight, akBottom]
+    DefaultCanvas = ''
     ColorPaletteIndex = 0
     object barSeries: TBarSeries
-      Marks.Arrow.Visible = True
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = True
       Marks.Brush.Color = 6868991
       Marks.Font.Name = 'Verdana'
       Marks.Style = smsValue
-      Marks.Visible = True
+      Marks.OnTop = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Bar'

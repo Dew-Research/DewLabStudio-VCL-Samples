@@ -3,19 +3,22 @@ inherited Interpolating1: TInterpolating1
   Top = 144
   Caption = 'Interpolating points'
   ClientHeight = 515
+  StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   ExplicitHeight = 554
   TextHeight = 13
   inherited Panel1: TPanel
-    ExplicitWidth = 566
+    StyleElements = [seFont, seClient, seBorder]
     inherited RichEdit1: TRichEdit
       Font.Color = 7105644
+      StyleElements = [seFont, seClient, seBorder]
     end
   end
   inherited Panel2: TPanel
     Top = 396
     Height = 119
-    ExplicitTop = 395
+    StyleElements = [seFont, seClient, seBorder]
+    ExplicitTop = 396
     ExplicitHeight = 119
     object Label1: TLabel [0]
       Left = 297
@@ -132,15 +135,8 @@ inherited Interpolating1: TInterpolating1
     Height = 266
     Legend.Alignment = laTop
     Title.Visible = False
-    BottomAxis.Maximum = 24.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    LeftAxis.Maximum = 905.000000000000000000
-    LeftAxis.Minimum = 360.199999999999900000
     BevelOuter = bvLowered
-    ExplicitHeight = 265
+    ExplicitHeight = 266
     object Series1: TPointSeries
       Title = 'Original data'
       ClickableLine = False

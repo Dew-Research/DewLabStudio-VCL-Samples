@@ -188,7 +188,7 @@ var
   nhkl: Integer;
   vx, vy, vz, Res: MtxExpr.Vector;
 begin
-  CalcName := 'CPU - using MtxVec, one CPU core';
+  CalcName := 'CPU - using MtxVec with expressions, one CPU core';
 
   StartTimer;
   vx.CopyFromArray(x);
@@ -297,7 +297,7 @@ procedure TMtxVecThreadingForm.Fmvt;
 var nhkl: Integer;
 begin
   CalcName := 'CPU - using MtxVec (threaded (naive))';
-  GlobalThreads.ThreadCount := CpuCores;
+  mtxThreadPool.ThreadCount := CpuCores;
   StartTimer;
 
   nhkl := Length(h);
@@ -338,7 +338,7 @@ procedure TMtxVecThreadingForm.Fmvtb;
 var  nhkl: Integer;
 begin
   CalcName := 'CPU - using MtxVec (threaded, with blocks)';
-  GlobalThreads.ThreadCount := CpuCores;
+  mtxThreadPool.ThreadCount := CpuCores;
   nhkl := Length(h);
 
   StartTimer;
@@ -356,7 +356,7 @@ procedure TMtxVecThreadingForm.Fmvtba; //using anonymous method
 var  nhkl: Integer;
 begin
   CalcName := 'CPU - using MtxVec (threaded, blocks, DoForLoop, Annonymous method)';
-  GlobalThreads.ThreadCount := CpuCores;
+  mtxThreadPool.ThreadCount := CpuCores;
   nhkl := Length(h);
 
   StartTimer;
@@ -429,7 +429,7 @@ procedure TMtxVecThreadingForm.Fmvtbb;
 var nhkl: Integer;
 begin
   CalcName := 'CPU - using MtxVec (threaded, hand written blocks, DoForLoop)';
-  GlobalThreads.ThreadCount := CpuCores;
+  mtxThreadPool.ThreadCount := CpuCores;
   nhkl := Length(h);
 
   StartTimer;
@@ -602,104 +602,107 @@ begin
   FirstRun := True;
 
   cpucores := Controller.CpuCores;
+//  cpucores := Controller.CpuCoresLogical;
   // Create the global threads
-  if not Assigned(GlobalThreads) then     //created only once
-    GlobalThreads := TMtxForLoop.Create;
+  if not Assigned(mtxThreadPool) then     //created only once
+    mtxThreadPool := TMtxForLoop.Create;
+
+  Controller.ThreadDimension := cpuCores + 2;
+  mtxThreadPool.ThreadCount := cpuCores;
 
   //Required (!!) to achieve good results with TParallel.For
 
   {$IFDEF D21} //TThreadPool was introduced with XE7
-  TThreadPool.Default.SetMaxWorkerThreads(GlobalThreads.ThreadCount);
-  TThreadPool.Default.SetMinWorkerThreads(GlobalThreads.ThreadCount);
+  TThreadPool.Default.SetMaxWorkerThreads(mtxThreadPool.ThreadCount);
+  TThreadPool.Default.SetMinWorkerThreads(mtxThreadPool.ThreadCount);
   {$ENDIF}
 end;
 
 
 procedure TMtxVecThreadingForm.FormDestroy(Sender: TObject);
 begin
-    if Assigned(GlobalThreads) then  FreeAndNil(GlobalThreads);
+    if Assigned(mtxThreadPool) then  FreeAndNil(mtxThreadPool);
 end;
 
 procedure TMtxVecThreadingForm.Benchmark(CalcF: TCalcMethod);
-var
-  ix, iy, iz, ixyz: Integer;
-  ih, ik, il, ihkl: Integer;
-  i: Integer;
-  dAbsFgold, AbsFgold: TSampleArray;
-  FOM: TSample;
-  S: string;
+var ix, iy, iz, ixyz: Integer;
+    ih, ik, il, ihkl: Integer;
+    i: Integer;
+    dAbsFgold, AbsFgold: TSampleArray;
+    FOM: TSample;
+    S: string;
 begin  // Create arrays of 3D coordinates, 40 x 40 x 40 cells
-  nx := 30;
-  ny := 30;
-  nz := 30;
-  nxyz := nx*ny*nz;
-  SetLength(x, nxyz);
-  SetLength(y, nxyz);
-  SetLength(z, nxyz);
+    nx := 30;
+    ny := 30;
+    nz := 30;
+    nxyz := nx*ny*nz;
+    SetLength(x, nxyz);
+    SetLength(y, nxyz);
+    SetLength(z, nxyz);
 
-  ixyz := 0;
-  for ix := 0 to nx-1 do
-  for iy := 0 to ny-1 do
-  for iz := 0 to nz-1 do
-  begin
-    x[ixyz] := ix;
-    y[ixyz] := iy;
-    z[ixyz] := iz;
-    Inc(ixyz);
-  end;
+    ixyz := 0;
+    for ix := 0 to nx-1 do
+    for iy := 0 to ny-1 do
+    for iz := 0 to nz-1 do
+    begin
+      x[ixyz] := ix;
+      y[ixyz] := iy;
+      z[ixyz] := iz;
+      Inc(ixyz);
+    end;
 
-  // Create arrays of HKL coordinates
-  nh := 30;
-  nk := 30;
-  nl := 30;
-  nhkl := nh*nk*nl;
-  SetLength(h, nhkl);
-  SetLength(k, nhkl);
-  SetLength(l, nhkl);
+    // Create arrays of HKL coordinates
+    nh := 30;
+    nk := 30;
+    nl := 30;
+    nhkl := nh*nk*nl;
+    SetLength(h, nhkl);
+    SetLength(k, nhkl);
+    SetLength(l, nhkl);
 
-  ihkl := 0;
-  for ih := 0 to nh-1 do
-  for ik := 0 to nk-1 do
-  for il := 0 to nl-1 do
-  begin
-      h[ihkl] := 0.01 + (0.5-0.01)*Random;
-      k[ihkl] := 0.01 + (0.5-0.01)*Random;
-      l[ihkl] := 2.01 + (2.5-2.01)*Random;
-      Inc(ihkl);
-  end;
+    ihkl := 0;
+    for ih := 0 to nh-1 do
+    for ik := 0 to nk-1 do
+    for il := 0 to nl-1 do
+    begin
+        h[ihkl] := 0.01 + (0.5-0.01)*Random;
+        k[ihkl] := 0.01 + (0.5-0.01)*Random;
+        l[ihkl] := 2.01 + (2.5-2.01)*Random;
+        Inc(ihkl);
+    end;
 
-  // Do the calculation
-  SetLength(F, 0);
-  SetLength(F, nhkl); //zero out array
-  CalcF;
+    // Do the calculation
+    SetLength(F, 0);
+    SetLength(F, nhkl); //zero out array
+    CalcF;
 
-  // Compare to analytical formula
-  SetLength(Fgold, nhkl);
-  for i := 0 to nhkl-1 do
-  begin
-    Fgold[i] :=
-      (Expj(pi*h[i]*(nx-1)) * Sin(pi*h[i]*nx) / Sin(pi*h[i])) *
-      (Expj(pi*k[i]*(ny-1)) * Sin(pi*k[i]*ny) / Sin(pi*k[i])) *
-      (Expj(pi*l[i]*(nz-1)) * Sin(pi*l[i]*nz) / Sin(pi*l[i]))
-  end;
+    // Compare to analytical formula
+    SetLength(Fgold, nhkl);
+    for i := 0 to nhkl-1 do
+    begin
+      Fgold[i] :=
+        (Expj(pi*h[i]*(nx-1)) * Sin(pi*h[i]*nx) / Sin(pi*h[i])) *
+        (Expj(pi*k[i]*(ny-1)) * Sin(pi*k[i]*ny) / Sin(pi*k[i])) *
+        (Expj(pi*l[i]*(nz-1)) * Sin(pi*l[i]*nz) / Sin(pi*l[i]))
+    end;
 
-  SetLength(AbsFgold, nhkl);
-  SetLength(dAbsFgold, nhkl);
-  for i := 0 to nhkl-1 do
-  begin
-    AbsFgold[i] := CAbs(Fgold[i]);
-    dAbsFgold[i] := CAbs(F[i] - Fgold[i]);
-  end;
-  FOM := Mean(dAbsFgold)/Mean(AbsFgold);
+    SetLength(AbsFgold, nhkl);
+    SetLength(dAbsFgold, nhkl);
+    for i := 0 to nhkl-1 do
+    begin
+      AbsFgold[i] := CAbs(Fgold[i]);
+      dAbsFgold[i] := CAbs(F[i] - Fgold[i]);
+    end;
+    FOM := Mean(dAbsFgold)/Mean(AbsFgold);
 
-  S := Format('%s: %.2f s', [CalcName, CalcTime]);
-  if (FOM > 0.01) then
-    S := S + ' ERROR!';
+    S := Format('%s: %.2f s', [CalcName, CalcTime]);
+    if (FOM > 0.01) then
+      S := S + ' ERROR!';
 
-  Memo.Lines.Add(S);
-  Application.ProcessMessages;
+    Memo.Lines.Add(S);
+    Application.ProcessMessages;
 
-  // print "%20s: %5d 10^3 reflections, %5d 10^3 atoms, speed=%7.3f 10^9 reflections.atoms/s  =>   <|GPU-analytical|> / <|analytical|>=%7.5f, %10s"%("fhkl",nh*nk*nl//1000,nx*ny*nz//1000,nx*ny*nz*nh*nk*nl/dt/1e9, tmp,s)
+    // print "%20s: %5d 10^3 reflections, %5d 10^3 atoms, speed=%7.3f 10^9 reflections.atoms/s  =>   <|GPU-analytical|> / <|analytical|>=%7.5f, %10s"%("fhkl",nh*nk*nl//1000,nx*ny*nz//1000,nx*ny*nz*nh*nk*nl/dt/1e9, tmp,s)
 end;
 
 
@@ -720,8 +723,8 @@ begin
     Benchmark(Fmvtbb); //Hand written block threaded
     Benchmark(Fmvtbd); //Threaded,Delphi
 
-    Benchmark(Fclv);
-    Benchmark(Fclk);
+//    Benchmark(Fclv);
+//    Benchmark(Fclk);
 end;
 
 initialization

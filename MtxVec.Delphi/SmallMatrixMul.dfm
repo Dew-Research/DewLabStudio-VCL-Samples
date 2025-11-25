@@ -72,10 +72,6 @@ inherited frmSmallMatrix: TfrmSmallMatrix
     BottomAxis.MaximumOffset = 4
     BottomAxis.MinimumOffset = 4
     BottomAxis.Title.Caption = 'Matrix size'
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
     LeftAxis.AxisValuesFormat = '#,##0.0##'
     LeftAxis.MaximumOffset = 4
     LeftAxis.MinimumOffset = 4

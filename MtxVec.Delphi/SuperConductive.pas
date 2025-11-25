@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, MtxBaseComp, MtxDialogs, StdCtrls, MtxExpr, MtxComCtrls, Math387,
-  MtxVecBase, MtxVec, AbstractMtxVec, SyncObjs, ExtCtrls, TeEngine, TeeProcs, Chart, Series;
+  MtxVecBase, MtxVec, AbstractMtxVec, SyncObjs, ExtCtrls, TeEngine, TeeProcs, Chart, Series, MtxForLoop;
 
 type
 
@@ -27,7 +27,7 @@ type
     SuperConductiveMMBox: TCheckBox;
     Thread1: TMtxProgressDialog;
     Chart: TChart;
-    Button2: TButton;
+    SingleRunButton: TButton;
     Label3: TLabel;
     Label4: TLabel;
     Thread4Label: TLabel;
@@ -36,7 +36,7 @@ type
     procedure Thread1Compute(Sender: TObject);
     procedure Thread1ProgressUpdate(Sender: TObject; Event: TMtxProgressEvent);
     procedure FormCreate(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure SingleRunButtonClick(Sender: TObject);
     procedure FullRunButtonClick(Sender: TObject);
   private
     Working: boolean;
@@ -52,7 +52,7 @@ type
     ak,ac: integer;
     CacheIndex1, CacheIndex2: integer;
     { Public declarations }
-    av,bv,cv,dv: array of Vector;
+    av, bv, cv, dv: array of Vector;
     VectorLen: integer;
     Stage: integer;
     property TestMethod: TTestMethod read FTestMethod write SetTestMethod;
@@ -127,18 +127,21 @@ begin
 
             for k := 1 to Length(Threads) - 1 do Threads[k].Loops := Threads[0].Loops;
 
-            if a then Threads[0].Start;
+            Thread1Label.Caption := 'Please wait...';
+            Thread2Label.Caption := 'Please wait...';
+            Thread3Label.Caption := 'Please wait...';
+            Thread4Label.Caption := 'Please wait...';
+
+            if a then
+            begin
+                Threads[0].Start;
+            end;
 
             if b then
               for k := 1 to Length(Threads) - 1 do
               begin
                    Threads[k].Start;
               end;
-
-            Thread1Label.Caption := 'Please wait...';
-            Thread2Label.Caption := 'Please wait...';
-            Thread3Label.Caption := 'Please wait...';
-            Thread4Label.Caption := 'Please wait...';
 
             for k := 0 to Length(Threads) - 1 do Threads[k].WaitToFinish;
         end;
@@ -175,7 +178,7 @@ begin
     Working := false;
 end;
 
-procedure TSuperConductiveForm.Button2Click(Sender: TObject);
+procedure TSuperConductiveForm.SingleRunButtonClick(Sender: TObject);
 var a,b: Boolean;
     i: integer;
 begin
@@ -200,7 +203,7 @@ begin
     ak := 0;
     ac := 0;
 
-    Thread1.Loops := 1200000 div VectorLen;
+    Threads[0].Loops := 1200000 div VectorLen;
     if VectorLen > 20 then Threads[0].Loops := Threads[0].Loops*6;
     if VectorLen > 200 then Threads[0].Loops := Threads[0].Loops*6;
     if VectorLen > 2000 then Threads[0].Loops := Threads[0].Loops*6;
@@ -224,7 +227,6 @@ begin
 
     for i := 0 to Length(Threads) - 1 do Threads[i].WaitToFinish;
 
-    Sleep(100);  //allow the threads to start
     Working := false;
 end;
 
@@ -233,7 +235,7 @@ var i: integer;
 begin
     TestBox.ItemIndex := 0;
 
-    cpuCores := Controller.CpuCores div 2;
+    cpuCores := Min(4, Controller.CpuCores);
     SetLength(Timings, cpuCores, TestBox.Items.Count);
     SetLength(Threads, cpuCores);
     SetLength(TimedThread, cpuCores);
@@ -246,7 +248,6 @@ begin
         Threads[i].Loops := Thread1.Loops;
         Threads[i].Min := Thread1.Min;
         Threads[i].Max := Thread1.Max;
-        Threads[i].FreeOnTerminate := False;
         Threads[i].InfiniteLoop := False;
         Threads[i].InternalLoop := True;
         Threads[i].ShowDialog := False;
@@ -335,8 +336,7 @@ begin
     end;
 end;
 
-procedure TSuperConductiveForm.Thread1ProgressUpdate(Sender: TObject;
-  Event: TMtxProgressEvent);
+procedure TSuperConductiveForm.Thread1ProgressUpdate(Sender: TObject; Event: TMtxProgressEvent);
 var aThread: TMtxProgressDialog;
 var strCycle: string;
     strCleanUp: string;
@@ -351,6 +351,7 @@ begin
                1: label2.Caption := StrCycle;
                2: label3.Caption := StrCycle;
                3: label4.Caption := StrCycle;
+               4: label1.Caption := StrCycle;
                end;
       peCleanUp:
               case Integer(aThread.Tag) of

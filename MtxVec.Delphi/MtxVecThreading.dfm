@@ -11,11 +11,9 @@ object MtxVecThreadingForm: TMtxVecThreadingForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  PixelsPerInch = 96
   TextHeight = 15
   object TPanel
     Left = 0

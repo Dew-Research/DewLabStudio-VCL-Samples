@@ -67,12 +67,12 @@ var k, channelCount: integer;
     aTime: array of double;
     aBandwidth, Factor: double;
 begin
-    if not Assigned(GlobalThreads) then GlobalThreads := TMtxForLoop.Create;
-  //  GlobalThreads.ThreadCount := 16;
-//    GlobalThreads.ThreadAffinityMode := TThreadAffinityMode.tamSplit4;
+    if not Assigned(mtxThreadPool) then mtxThreadPool := TMtxForLoop.Create;
+    mtxThreadPool.ThreadCount := Controller.CpuCores;
+//    mtxThreadPool.ThreadAffinityMode := TThreadAffinityMode.tamSplit4;
     Memo1.Lines.Clear;
 
-    SetLength(aTime, GlobalThreads.ThreadCount);
+    SetLength(aTime, mtxThreadPool.ThreadCount);
     Series1.Clear;
 
     Factor := 0;
@@ -104,7 +104,7 @@ begin
         channelCount := k;
 
         StartTimer;
-        DoForLoop(0, channelCount-1, DoThreading, GlobalThreads, [Self]);
+        DoForLoop(0, channelCount-1, DoThreading, mtxThreadPool, [Self]);
         aTime[k-1] := StopTimer;
         Memo1.Lines.Add('Time (Thread count = ' + IntToStr(k) + '): ' + FormatSample('0.00s', aTime[k-1]));
         aBandwidth := aLength*sizeof(TSample)*Count*channelCount*Factor/(aTime[k-1]*(1024*1024*1024));
@@ -133,10 +133,10 @@ end;
 
 procedure TNumaForm.FormDestroy(Sender: TObject);
 begin
-    if Assigned(GlobalThreads) then
+    if Assigned(mtxThreadPool) then
     begin
-        GlobalThreads.Free;
-        GlobalThreads := nil;
+        mtxThreadPool.Free;
+        mtxThreadPool := nil;
     end;
 end;
 

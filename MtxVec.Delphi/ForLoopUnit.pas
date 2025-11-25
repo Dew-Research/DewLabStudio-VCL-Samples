@@ -74,7 +74,7 @@ end;
 procedure TForLoopForm.Button1Click(Sender: TObject);
 var aThread: TThread;   { needed only to allow monitoring of execution}
 begin
-    if not ForLoop.IsProcessingIdle then Exit;
+    if not ForLoop.IsProcessingFinished then Exit;
 
     if ThreadedBox.Checked then forLoop.ThreadCount := Controller.CpuCores
                            else forLoop.ThreadCount := 1;

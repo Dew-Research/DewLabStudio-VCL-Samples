@@ -10,13 +10,11 @@ object NumaForm: TNumaForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignSize = (
     742
     688)
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 8
@@ -61,41 +59,55 @@ object NumaForm: TNumaForm
     Title.Text.Strings = (
       'Memory channel count and performance')
     BottomAxis.Grid.Visible = False
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
+    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Thread count'
     BottomAxis.Title.Font.Color = 4210752
     BottomAxis.Title.Font.Height = -15
+    DepthAxis.LogarithmicBase = 10.000000000000000000
     DepthAxis.MinorTicks.Visible = False
+    DepthAxis.EndPosition = 100.000000000000000000
     DepthAxis.Title.Font.Color = 4210752
     DepthAxis.Title.Font.Height = -15
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
     DepthTopAxis.MinorTicks.Visible = False
+    DepthTopAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.Title.Font.Color = 4210752
     DepthTopAxis.Title.Font.Height = -15
     LeftAxis.Axis.Visible = False
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.MinorTicks.Visible = False
+    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Memory bandwidth [GB/s]'
     LeftAxis.Title.Font.Color = 4210752
     LeftAxis.Title.Font.Height = -15
+    RightAxis.LogarithmicBase = 10.000000000000000000
     RightAxis.MinorTicks.Visible = False
+    RightAxis.EndPosition = 100.000000000000000000
     RightAxis.Title.Font.Color = 4210752
     RightAxis.Title.Font.Height = -15
+    RightAxis.ZPosition = 100.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
     TopAxis.MinorTicks.Visible = False
+    TopAxis.EndPosition = 100.000000000000000000
     TopAxis.Title.Font.Color = 4210752
     TopAxis.Title.Font.Height = -15
+    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     View3DWalls = False
     Color = clWhite
     TabOrder = 2
     Anchors = [akLeft, akTop, akRight, akBottom]
+    DefaultCanvas = ''
     ColorPaletteIndex = 0
     object Series1: TBarSeries
-      Marks.Arrow.Visible = False
-      Marks.Callout.Brush.Color = clBlack
-      Marks.Callout.Arrow.Visible = False
       Marks.Brush.Color = 6868991
       Marks.Font.Name = 'Verdana'
       Marks.Style = smsValue
-      Marks.Visible = True
+      Marks.Arrow.Visible = False
+      Marks.Callout.Arrow.Visible = False
+      Marks.OnTop = True
       XValues.Name = 'X'
       XValues.Order = loAscending
       YValues.Name = 'Bar'

@@ -1,5 +1,8 @@
 inherited frmChanges30: TfrmChanges30
   Caption = 'frmChanges30'
-  PixelsPerInch = 96
+  StyleElements = [seFont, seClient, seBorder]
   TextHeight = 13
+  inherited RichEdit1: TRichEdit
+    StyleElements = [seFont, seClient, seBorder]
+  end
 end
