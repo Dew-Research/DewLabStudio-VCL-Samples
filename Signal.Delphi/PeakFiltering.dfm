@@ -10,9 +10,7 @@ object PeakFilteringForm: TPeakFilteringForm
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object SpectrumChart: TSpectrumChart
     Left = 0
@@ -46,11 +44,9 @@ object PeakFilteringForm: TPeakFilteringForm
     LeftAxis.Maximum = 512.064999999999900000
     LeftAxis.Minimum = -21.231875000000000000
     LeftAxis.EndPosition = 100.000000000000000000
-    RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
     RightAxis.EndPosition = 100.000000000000000000
     RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
     TopAxis.EndPosition = 100.000000000000000000
     TopAxis.ZPosition = 100.000000000000000000

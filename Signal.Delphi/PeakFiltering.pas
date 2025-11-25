@@ -48,7 +48,7 @@ var
 
 implementation
 
-uses SignalUtils, MtxVec, Math387;
+uses SignalUtils, MtxVec, Math387, AbstractMtxVec;
 
 {$IFDEF CLR}
 {$R *.nfm}

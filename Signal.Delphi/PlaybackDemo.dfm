@@ -10,9 +10,7 @@ object PlaybackDemoForm: TPlaybackDemoForm
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -118,24 +116,28 @@ object PlaybackDemoForm: TPlaybackDemoForm
       BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Maximum = 24.000000000000000000
       BottomAxis.MinorTicks.Visible = False
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Frequency [Hz]'
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.Automatic = False
       LeftAxis.AutomaticMaximum = False
       LeftAxis.AutomaticMinimum = False
       LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.Maximum = 396.000000000000000000
-      LeftAxis.Minimum = -15.875000000000000000
-      RightAxis.Grid.ZPosition = 100.000000000000000000
+      LeftAxis.Maximum = 1578.625000000000000000
+      LeftAxis.Minimum = -30.906250000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       Zoom.Brush.Gradient.Direction = gdFromTopLeft
       Zoom.Brush.Gradient.EndColor = clSilver
@@ -162,7 +164,6 @@ object PlaybackDemoForm: TPlaybackDemoForm
         43)
       ColorPaletteIndex = 0
       object Series1: TFastLineSeries
-        HoverElement = []
         SeriesColor = 10485760
         LinePen.Color = 10485760
         XValues.Name = 'X'
@@ -171,7 +172,6 @@ object PlaybackDemoForm: TPlaybackDemoForm
         YValues.Order = loNone
       end
       object Series2: TPointSeries
-        HoverElement = [heCurrent]
         Marks.Transparent = True
         Marks.Arrow.Visible = False
         Marks.Callout.Arrow.Visible = False
@@ -224,21 +224,25 @@ object PlaybackDemoForm: TPlaybackDemoForm
         'Time signal')
       BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Maximum = 24.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Time [s]'
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.Maximum = 405.000000000000000000
-      LeftAxis.Minimum = 32.500000000000000000
-      RightAxis.Grid.ZPosition = 100.000000000000000000
+      LeftAxis.Maximum = 262.500000000000000000
+      LeftAxis.Minimum = 17.500000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       View3DOptions.OrthoAngle = 135
       Zoom.Brush.Gradient.Direction = gdFromTopLeft
@@ -262,7 +266,6 @@ object PlaybackDemoForm: TPlaybackDemoForm
       DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 0
       object Series3: TFastLineSeries
-        HoverElement = []
         SeriesColor = 10485760
         LinePen.Color = 10485760
         XValues.Name = 'X'
@@ -295,6 +298,7 @@ object PlaybackDemoForm: TPlaybackDemoForm
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
     Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000

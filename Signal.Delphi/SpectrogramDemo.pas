@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, TeeProcs, TeEngine, Chart, MtxBaseComp,
   SignalTools, FileSignal, MtxDialogs, SignalProcessing, SignalAnalysis,
-  MtxComCtrls, MtxGridSerEdit, MtxVecTee, TeeEdit, TeeGDIPlus;
+  MtxComCtrls, MtxGridSerEdit, MtxVecTee, TeeEdit, MtxForLoop, TeeGDIPlus;
 
 type
   TSpectrogramDemoForm = class(TForm)
@@ -88,7 +88,10 @@ begin
     if not SignalRead.IsEndOfFile then
     begin
          Spectrogram.Pull;
-    end else ComputeSpectrogramThread.Cancel := True;
+    end else
+    begin
+        ComputeSpectrogramThread.Cancel := True;
+    end;
 end;
 
 procedure TSpectrogramDemoForm.ComputeSpectrogramThreadProgressUpdate(

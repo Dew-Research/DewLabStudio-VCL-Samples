@@ -8,7 +8,7 @@ uses
   SignalToolsTee, TeeEdit, SignalToolsDialogs, SpectrumAna, MtxBaseComp,
   SignalTools, SignalAnalysis, Series, StdCtrls, TeeTools, FileSignal,
   MtxDialogs, SignalProcessing, AudioSignal, MtxComCtrls, SignalUtils,
-  ErrorBar, SignalSeriesTee, Math387, MtxVec, MtxExpr, TeeGDIPlus;
+  ErrorBar, SignalSeriesTee, Math387, MtxVec, MtxExpr, MtxForLoop, TeeGDIPlus;
 
 type
   TBrowseDemoForm = class(TForm)
@@ -28,20 +28,19 @@ type
     PositionPanel: TMtxPositionPanel;
     ThreadedBox: TCheckBox;
     TeeGDIPlus1: TTeeGDIPlus;
+    MtxProgress: TMtxProgressDialog;
     procedure FormCreate(Sender: TObject);
     procedure ChartButtonClick(Sender: TObject);
     procedure OpenFileButtonClick(Sender: TObject);
     procedure ChannelBoxChange(Sender: TObject);
-    procedure SignalBrowse1ProgressUpdate(Sender: TObject;
-      Event: TMtxProgressEvent);
+    procedure SignalBrowse1ProgressUpdate(Sender: TObject; Event: TMtxProgressEvent);
     procedure ToolButton1Click(Sender: TObject);
     procedure SignalChart1UndoZoom(Sender: TObject);
     procedure SignalChart1Zoom(Sender: TObject);
     procedure SignalChart1Scroll(Sender: TObject);
   private
     procedure BrowseChartUpdate(DtOffset: TSample);
-    procedure DrawOverviewSeries(Src: TVec; Series: TChartSeries; DtOffset,
-      Dt: TSample);
+    procedure DrawOverviewSeries(Src: TVec; Series: TChartSeries; DtOffset, Dt: TSample);
     { Private declarations }
   public
     { Public declarations }
@@ -66,7 +65,8 @@ begin
      SignalBrowse1.IsDouble := DefaultIsDouble; //select processing precision
      SignalBrowse1.OverviewRepositoryPath := ExtractFilePath(ParamStr(0)) + 'Data';
 
-     SignalBrowse1.ProgressThread.UpdateInterval := 50; //20x times per second updates progress bar
+     SignalBrowse1.ProgressRuntime := MtxProgress.Runtime;
+     SignalBrowse1.ProgressRuntime.UpdateInterval := 50; //20x times per second updates progress bar
      With RichEdit1.Lines, RichEdit1 do
      begin
         Clear;

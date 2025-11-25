@@ -1,18 +1,32 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{EB104EAD-5B85-465E-A213-11529532FD2B}</ProjectGuid>
-        <MainSource>StatDemoW32_D29.dpr</MainSource>
+        <ProjectGuid>{A5CD0FFA-1045-462F-B652-AE024736EFE6}</ProjectGuid>
+        <MainSource>BasicDemoW32_D37.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <TargetedPlatforms>3</TargetedPlatforms>
+        <TargetedPlatforms>693379</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
-        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
         <ProjectVersion>20.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">StatDemoW32_D29</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">BasicDemoW32_D37</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Base)'=='true') or '$(Base_iOSSimARM64)'!=''">
+        <Base_iOSSimARM64>true</Base_iOSSimARM64>
+        <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
@@ -28,6 +42,36 @@
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Android64)'!=''">
+        <Cfg_1_Android64>true</Cfg_1_Android64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSDevice64)'!=''">
+        <Cfg_1_iOSDevice64>true</Cfg_1_iOSDevice64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Cfg_1)'=='true') or '$(Cfg_1_iOSSimARM64)'!=''">
+        <Cfg_1_iOSSimARM64>true</Cfg_1_iOSSimARM64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_1)'=='true') or '$(Cfg_1_OSX64)'!=''">
+        <Cfg_1_OSX64>true</Cfg_1_OSX64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_1)'=='true') or '$(Cfg_1_OSXARM64)'!=''">
+        <Cfg_1_OSXARM64>true</Cfg_1_OSXARM64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
@@ -47,6 +91,36 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSSimARM64)'!=''">
+        <Cfg_2_iOSSimARM64>true</Cfg_2_iOSSimARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
+        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
         <Cfg_2_Win32>true</Cfg_2_Win32>
         <CfgParent>Cfg_2</CfgParent>
@@ -60,254 +134,376 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <SanitizedProjectName>StatDemoW32_D29</SanitizedProjectName>
-        <Manifest_File>None</Manifest_File>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_Namespace>Vcl;Vcl.Imaging;System;VCLTee;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
-        <DCC_ImageBase>00400000</DCC_ImageBase>
         <DCC_E>false</DCC_E>
-        <DCC_N>false</DCC_N>
-        <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <PostBuildEvent><![CDATA[copy *.vec "$(OUTPUTDIR)"
-copy *.mtx "$(OUTPUTDIR)"
-copy *.txt "$(OUTPUTDIR)"
-$(PostBuildEvent)]]></PostBuildEvent>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <SanitizedProjectName>BasicDemoW32_D37</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;System;VCLTee;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <PostBuildEvent><![CDATA[copy *.sfs "$(OUTPUTDIR)"
+copy *.rtf "$(OUTPUTDIR)"
+$(PostBuildEvent)]]></PostBuildEvent>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>annotation-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.0.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.0.1.dex.jar;core-runtime-2.0.1.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.0.0.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.0.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.0.0.dex.jar;lifecycle-runtime-2.0.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.0.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSSimARM64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>BasicDemoW32_D28_Icon.ico</Icon_MainIcon>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_Namespace>.\$(Platform)\$(Config);$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>BasicDemoW32_D28_Icon.ico</Icon_MainIcon>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <DCC_Namespace>System.Win;Data.Win;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
-        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
-        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_iOSSimARM64)'!=''">
+        <Cfg_1>true</Cfg_1>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_OSXARM64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <BT_BuildType>Debug</BT_BuildType>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_MajorVer>4</VerInfo_MajorVer>
-        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
-        <VerInfo_Keys>CompanyName=;FileVersion=4.1.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
-        <BT_BuildType>Debug</BT_BuildType>
-        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
         <DCC_Optimize>false</DCC_Optimize>
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <Cfg_2>true</Cfg_2>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <BT_BuildType>Debug</BT_BuildType>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <DCC_GenerateStackFrames>false</DCC_GenerateStackFrames>
-        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
-        <DCC_RangeChecking>true</DCC_RangeChecking>
-        <DCC_Optimize>true</DCC_Optimize>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <BT_BuildType>Debug</BT_BuildType>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Basic_Form.pas">
-            <Form>frmBasic</Form>
+        <DCCReference Include="Intro.pas">
+            <Form>Introduction</Form>
         </DCCReference>
-        <DCCReference Include="Random_Generator.pas">
-            <Form>frmRandomGen</Form>
+        <DCCReference Include="Basic2.pas">
+            <Form>BasicForm2</Form>
         </DCCReference>
-        <DCCReference Include="NLin_Tests.pas">
-            <Form>frmNonLinTest</Form>
+        <DCCReference Include="Basic1.pas">
+            <Form>BasicForm1</Form>
         </DCCReference>
-        <DCCReference Include="Wizard_MLReg.pas">
-            <Form>frmShowMLRWizard</Form>
+        <DCCReference Include="Basic3.pas">
+            <Form>BasicForm3</Form>
         </DCCReference>
-        <DCCReference Include="Anova_Tests.pas">
-            <Form>frmANOVATest</Form>
+        <DCCReference Include="IntroPeakSpectral.pas">
+            <Form>IntroPeakSpectralForm</Form>
         </DCCReference>
-        <DCCReference Include="NIST_Introduction.pas">
-            <Form>frmNISTIntro</Form>
+        <DCCReference Include="IntroDesign.pas">
+            <Form>IntroDesignForm</Form>
         </DCCReference>
-        <DCCReference Include="NormalProbPlot.pas">
-            <Form>frmNormalProb</Form>
+        <DCCReference Include="RegisterSignal.pas">
+            <Form>RegisterSignalForm</Form>
         </DCCReference>
-        <DCCReference Include="QQPlot.pas">
-            <Form>frmQQPlot</Form>
+        <DCCReference Include="PhaseShifter.pas">
+            <Form>PhaseShifterForm</Form>
         </DCCReference>
-        <DCCReference Include="Hypothesis_Test.pas">
-            <Form>frmHypTest</Form>
+        <DCCReference Include="PeakMarkingFormating.pas">
+            <Form>PeakMarkingFormatingForm</Form>
         </DCCReference>
-        <DCCReference Include="Wizard_PCA.pas">
-            <Form>frmShowPCAWizard</Form>
+        <DCCReference Include="PeakFiltering.pas">
+            <Form>PeakFilteringForm</Form>
         </DCCReference>
-        <DCCReference Include="MLR_Editor.pas">
-            <Form>frmMLREditor</Form>
+        <DCCReference Include="GeneratorDemo.pas">
+            <Form>GeneratorDemoForm</Form>
         </DCCReference>
-        <DCCReference Include="ANOVA1_Box.pas">
-            <Form>frmANOVA1Box</Form>
+        <DCCReference Include="OnLineBicoherence.pas">
+            <Form>OnLineBicoherenceForm</Form>
+        </DCCReference>
+        <DCCReference Include="BispectrumSurface.pas">
+            <Form>BiSpectrumSurfaceForm</Form>
+        </DCCReference>
+        <DCCReference Include="BispectrumColorGrid.pas">
+            <Form>BiSpectrumGridForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroHigherSpectral.pas">
+            <Form>IntroHigherSpectralForm</Form>
+        </DCCReference>
+        <DCCReference Include="AutoregressDemo.pas">
+            <Form>AutoRegressDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="OnLineCoherence.pas">
+            <Form>OnLineCoherenceForm</Form>
+        </DCCReference>
+        <DCCReference Include="IirZeros.pas">
+            <Form>IirZerosForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroFunctionList.pas">
+            <Form>IntroFunList</Form>
+        </DCCReference>
+        <DCCReference Include="IntroUnderConstr.pas">
+            <Form>IntroUnderConstrForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroCompList.pas">
+            <Form>IntroCompListForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroPerformance.pas">
+            <Form>IntroPerformanceForm</Form>
+        </DCCReference>
+        <DCCReference Include="WindowsDemo.pas">
+            <Form>WindowsDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="CZTDemo.pas">
+            <Form>CZTDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="CepstrumDemo.pas">
+            <Form>CepstrumDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="WindowFilters.pas">
+            <Form>WindowFiltersForm</Form>
+        </DCCReference>
+        <DCCReference Include="PlaybackDemo.pas">
+            <Form>PlaybackDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="SavGolayDemo.pas">
+            <Form>SavGolayDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="OptimalFilters.pas">
+            <Form>OptimalFiltersForm</Form>
+        </DCCReference>
+        <DCCReference Include="Differentiator.pas">
+            <Form>DifferentiatorForm</Form>
+        </DCCReference>
+        <DCCReference Include="PhaseDemo.pas">
+            <Form>PhaseDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroSpectral.pas">
+            <Form>IntroSpectralForm</Form>
+        </DCCReference>
+        <DCCReference Include="TriggerDemo.pas">
+            <Form>TriggerDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseDemo.pas">
+            <Form>BrowseDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="AmpltRatios.pas">
+            <Form>AmpltRatiosForm</Form>
+        </DCCReference>
+        <DCCReference Include="LissajousScope.pas">
+            <Form>LissajousScopeForm</Form>
+        </DCCReference>
+        <DCCReference Include="VarResample.pas">
+            <Form>VarResampleForm</Form>
+        </DCCReference>
+        <DCCReference Include="InterpolateDecimate.pas">
+            <Form>InterpolateDecimateForm</Form>
+        </DCCReference>
+        <DCCReference Include="PeakMarkingOrder.pas">
+            <Form>PeakMarkingOrderForm</Form>
+        </DCCReference>
+        <DCCReference Include="IirGroupDelay.pas">
+            <Form>IirGroupDelayForm</Form>
+        </DCCReference>
+        <DCCReference Include="CoherenceTest2.pas">
+            <Form>CoherenceTest2Form</Form>
+        </DCCReference>
+        <DCCReference Include="BicoherenceTest.pas">
+            <Form>BicoherenceTestForm</Form>
+        </DCCReference>
+        <DCCReference Include="BiSpcAnalyzer.pas">
+            <Form>BiSpcAnalyzerForm</Form>
+        </DCCReference>
+        <DCCReference Include="MonitorDemo.pas">
+            <Form>MonitorDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="PhaseScope.pas">
+            <Form>PhaseScopeForm</Form>
+        </DCCReference>
+        <DCCReference Include="FrequencyBands.pas">
+            <Form>FrequencyBandsForm</Form>
+        </DCCReference>
+        <DCCReference Include="IirFiltering.pas">
+            <Form>IirFilteringForm</Form>
+        </DCCReference>
+        <DCCReference Include="FiltersDemo.pas">
+            <Form>FiltersDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="SignalAnalysisDemo.pas">
+            <Form>SignalAnalysisDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="DiscreteSeriesDemo.pas">
+            <Form>DiscreteSeriesDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="NarrowBandpass.pas">
+            <Form>NarrowBandpassForm</Form>
+        </DCCReference>
+        <DCCReference Include="CoherenceTest.pas">
+            <Form>CoherenceTestForm</Form>
+        </DCCReference>
+        <DCCReference Include="PeakMarkingBasic.pas">
+            <Form>PeakMarkingBasicForm</Form>
+        </DCCReference>
+        <DCCReference Include="BispectrumTest.pas">
+            <Form>BiSpectrumTestForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroPlayback.pas">
+            <Form>IntroPlaybackForm</Form>
+        </DCCReference>
+        <DCCReference Include="MedianDemo.pas">
+            <Form>MedianDemoForm</Form>
+        </DCCReference>
+        <DCCReference Include="IntroApplication.pas">
+            <Form>IntroApplicationForm</Form>
+        </DCCReference>
+        <DCCReference Include="SpcAnalyzer.pas">
+            <Form>SpcAnalyzerForm</Form>
+        </DCCReference>
+        <DCCReference Include="WhatIsNew.pas">
+            <Form>WhatIsNewForm</Form>
         </DCCReference>
         <DCCReference Include="Main.pas">
             <Form>frmMain</Form>
         </DCCReference>
-        <DCCReference Include="Basic_QC.pas">
-            <Form>frmBasicQC</Form>
+        <DCCReference Include="RateConvertUnit.pas">
+            <Form>RateConvertForm</Form>
         </DCCReference>
-        <DCCReference Include="QC_XR.pas">
-            <Form>frmQCXR</Form>
+        <DCCReference Include="BufferUnit.pas">
+            <Form>BufferForm</Form>
         </DCCReference>
-        <DCCReference Include="QC_CP.pas">
-            <Form>frmQCCP</Form>
+        <DCCReference Include="Demodulator.pas">
+            <Form>DemodulatorForm</Form>
         </DCCReference>
-        <DCCReference Include="QC_Attr.pas">
-            <Form>frmQCAttr</Form>
+        <DCCReference Include="FractionalFiltering.pas">
+            <Form>FractionalFilteringForm</Form>
         </DCCReference>
-        <DCCReference Include="List_Func.pas">
-            <Form>frmListFunc</Form>
+        <DCCReference Include="IntroSignalRate.pas">
+            <Form>IntroSignalRateForm</Form>
         </DCCReference>
-        <DCCReference Include="Quick_Start.pas">
-            <Form>frmQuickStart</Form>
+        <DCCReference Include="IntroKalman.pas">
+            <Form>IntroKalmanForm</Form>
         </DCCReference>
-        <DCCReference Include="WeibullProbPlot.pas">
-            <Form>frmWeibullProb</Form>
+        <DCCReference Include="PeakInterpolate.pas">
+            <Form>PeakInterpolateForm</Form>
         </DCCReference>
-        <DCCReference Include="Basic_Chart.pas">
-            <Form>frmBasicChart</Form>
+        <DCCReference Include="SpectrogramDemo.pas">
+            <Form>SpectrogramDemoForm</Form>
         </DCCReference>
-        <DCCReference Include="QC_Pareto.pas">
-            <Form>frmParetoChart</Form>
+        <DCCReference Include="AsioPlaybackUnit.pas">
+            <Form>AsioPlaybackForm</Form>
         </DCCReference>
-        <DCCReference Include="Fit_Model.pas">
-            <Form>frmModels</Form>
+        <DCCReference Include="AsioRecordUnit.pas">
+            <Form>AsioRecordForm</Form>
         </DCCReference>
-        <DCCReference Include="LogMemo.pas">
-            <Form>frmLogForm</Form>
+        <DCCReference Include="PinkNoise.pas">
+            <Form>PinkNoiseForm</Form>
         </DCCReference>
-        <DCCReference Include="EWMA_Demo.pas">
-            <Form>frmEWMA</Form>
+        <DCCReference Include="IntroSignalGeneration.pas">
+            <Form>IntroSignalGenerationForm</Form>
         </DCCReference>
-        <DCCReference Include="LogReg_Demo.pas">
-            <Form>frmLogReg</Form>
+        <DCCReference Include="IntroSignal.pas">
+            <Form>IntroSignalForm</Form>
         </DCCReference>
-        <DCCReference Include="GOF_Chi2.pas">
-            <Form>frmGOFChi2</Form>
+        <DCCReference Include="NoiseGenerator.pas">
+            <Form>NoiseGeneratorForm</Form>
         </DCCReference>
-        <DCCReference Include="Basic_REdit.pas">
-            <Form>frmBaseRichEdit</Form>
+        <DCCReference Include="SpectralDecompositionForecast.pas">
+            <Form>SpectralDecomposition</Form>
         </DCCReference>
-        <DCCReference Include="WhatsNew.pas">
-            <Form>frmWhatsNew</Form>
+        <DCCReference Include="KalmanDemo2.pas">
+            <Form>KalmanFilterForm2</Form>
         </DCCReference>
-        <DCCReference Include="Welcome_Stat.pas">
-            <Form>frmWelcome</Form>
+        <DCCReference Include="KalmanDemo3.pas">
+            <Form>KalmanFilterForm3</Form>
         </DCCReference>
-        <DCCReference Include="Oder_Form.pas">
-            <Form>frmOrder</Form>
+        <DCCReference Include="BasicKalman.pas">
+            <Form>BasicKalmanForm</Form>
         </DCCReference>
-        <DCCReference Include="Changes11.pas">
-            <Form>frmChanges11</Form>
+        <DCCReference Include="Modulator.pas">
+            <Form>ModulatorForm</Form>
         </DCCReference>
-        <DCCReference Include="Basic_Wizard.pas">
-            <Form>frmBasicWizard</Form>
+        <DCCReference Include="EnvelopeDemo.pas">
+            <Form>EnvelopeDemoForm</Form>
         </DCCReference>
-        <DCCReference Include="MLRegWizard.pas">
-            <Form>frmMulLinRegWiz</Form>
+        <DCCReference Include="IntroASIO.pas">
+            <Form>IntroASIOForm</Form>
         </DCCReference>
-        <DCCReference Include="GOF_KS.pas">
-            <Form>frmGOFKS</Form>
+        <DCCReference Include="IntroWasapi.pas">
+            <Form>IntroWASAPIForm</Form>
         </DCCReference>
-        <DCCReference Include="Changes21.pas">
-            <Form>frmChanges21</Form>
-        </DCCReference>
-        <DCCReference Include="TS_PACF.pas">
-            <Form>frmTSPACF</Form>
-        </DCCReference>
-        <DCCReference Include="TS_ExpSmooth.pas">
-            <Form>frmExpSmooth</Form>
-        </DCCReference>
-        <DCCReference Include="TS_ARIMASim.pas">
-            <Form>frmARIMASim</Form>
-        </DCCReference>
-        <DCCReference Include="Wizard_ARIMA.pas">
-            <Form>frmWizardARIMA</Form>
-        </DCCReference>
-        <DCCReference Include="ARIMAWizard.pas">
-            <Form>frmARIMAWizard</Form>
-        </DCCReference>
-        <DCCReference Include="TS_ARAR.pas">
-            <Form>frmARAR</Form>
-        </DCCReference>
-        <DCCReference Include="DecompWizard.pas">
-            <Form>frmDecompositionWizard</Form>
-        </DCCReference>
-        <DCCReference Include="Wizard_Decomp.pas">
-            <Form>frmDecompDemo</Form>
-        </DCCReference>
-        <DCCReference Include="QC_Levey.pas">
-            <Form>frmLevey</Form>
-        </DCCReference>
-        <DCCReference Include="HotellingT2.pas">
-            <Form>frmHotellingWizard</Form>
-        </DCCReference>
-        <DCCReference Include="Wizard_Hotelling.pas">
-            <Form>frmShowHotellingWizard</Form>
-        </DCCReference>
-        <DCCReference Include="Wizard_MDS.pas">
-            <Form>frmShowMDSWizard</Form>
-        </DCCReference>
-        <DCCReference Include="MDSWizard.pas">
-            <Form>frmMDSWiz</Form>
-        </DCCReference>
-        <DCCReference Include="Item_Analysis.pas">
-            <Form>frmItemAnalysis</Form>
-        </DCCReference>
-        <DCCReference Include="BiPlotDemo.pas">
-            <Form>frmBiPlot</Form>
-        </DCCReference>
-        <DCCReference Include="PCRegWizard.pas">
-            <Form>frmPCRegWizard</Form>
-        </DCCReference>
-        <DCCReference Include="Wizard_PCReg.pas">
-            <Form>frmShowPCRegWizard</Form>
-        </DCCReference>
-        <DCCReference Include="Changes30.pas">
-            <Form>frmChanges30</Form>
-        </DCCReference>
-        <DCCReference Include="RidgeRegWizard.pas">
-            <Form>frmRidgeRegWizard</Form>
-        </DCCReference>
-        <DCCReference Include="Wizard_RidgeReg.pas">
-            <Form>frmShowRidgeReg</Form>
-        </DCCReference>
-        <DCCReference Include="PCAWizard.pas">
-            <Form>frmPCAWiz</Form>
-        </DCCReference>
-        <DCCReference Include="MultiStepReg.pas">
-            <Form>MultiStepRegForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="MultiNLin_Tests.pas">
-            <Form>frmMultiNonLinTest</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="ARMATrend.pas">
-            <Form>ARMATrendForm</Form>
-            <FormType>dfm</FormType>
+        <DCCReference Include="AudioCoreDemo.pas">
+            <Form>AudioCoreDemoForm</Form>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -327,51 +523,35 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">StatDemoW32_D29.dpr</Source>
+                    <Source Name="MainSource">BasicDemoW32_D37.dpr</Source>
                 </Source>
-                <VersionInfo>
-                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
-                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
-                    <VersionInfo Name="MajorVer">1</VersionInfo>
-                    <VersionInfo Name="MinorVer">0</VersionInfo>
-                    <VersionInfo Name="Release">0</VersionInfo>
-                    <VersionInfo Name="Build">0</VersionInfo>
-                    <VersionInfo Name="Debug">False</VersionInfo>
-                    <VersionInfo Name="PreRelease">False</VersionInfo>
-                    <VersionInfo Name="Special">False</VersionInfo>
-                    <VersionInfo Name="Private">False</VersionInfo>
-                    <VersionInfo Name="DLL">False</VersionInfo>
-                    <VersionInfo Name="Locale">1033</VersionInfo>
-                    <VersionInfo Name="CodePage">1252</VersionInfo>
-                </VersionInfo>
-                <VersionInfoKeys>
-                    <VersionInfoKeys Name="CompanyName"/>
-                    <VersionInfoKeys Name="FileDescription"/>
-                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
-                    <VersionInfoKeys Name="InternalName"/>
-                    <VersionInfoKeys Name="LegalCopyright"/>
-                    <VersionInfoKeys Name="LegalTrademarks"/>
-                    <VersionInfoKeys Name="OriginalFilename"/>
-                    <VersionInfoKeys Name="ProductName"/>
-                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
-                    <VersionInfoKeys Name="Comments"/>
-                </VersionInfoKeys>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\DclStatCore628.bpl">Dew Stats Master v6</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Windows\SysWOW64\StatSeries628.bpl">Dew Stats Master v6 TeeChart</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <Deployment Version="5">
-                <DeployFile LocalName="Win64\Debug\StatDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="Win64\Release\StatDemoW32_D29.exe" Configuration="Release" Class="ProjectOutput"/>
-                <DeployFile LocalName="\StatDemoW32_D29.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="\StatDemoW32_D29.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win64\Release\BasicDemoW32_D37.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>BasicDemoW32_D37.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Release\BasicDemoW32_D37.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>
@@ -1315,7 +1495,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
@@ -1327,15 +1506,63 @@ $(PostBuildEvent)]]></PostBuildEvent>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
-    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
-    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Android64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='iOSDevice64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='iOSSimARM64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Linux64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='OSX64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='OSXARM64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
         <PreBuildEvent/>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
@@ -1343,7 +1570,55 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Android64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='iOSDevice64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='iOSSimARM64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Linux64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='OSX64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='OSXARM64'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
@@ -1351,7 +1626,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
@@ -1359,7 +1634,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy *.vec &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.mtx &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.txt &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs &quot;$(OUTPUTDIR)&quot;&amp;&amp;copy *.rtf &quot;$(OUTPUTDIR)&quot;</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
 </Project>

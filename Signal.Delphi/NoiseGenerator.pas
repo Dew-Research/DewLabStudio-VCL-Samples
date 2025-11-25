@@ -94,7 +94,7 @@ var
 
 implementation
 
-uses MtxExpr, Math387, SysUtils;
+uses MtxExpr, Math387, SysUtils, Mtxvec, AbstractMtxVec;
 
 {$R *.dfm}
 procedure TNoiseGeneratorForm.SampleRateEditChange(Sender: TObject);

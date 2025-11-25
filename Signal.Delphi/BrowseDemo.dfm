@@ -123,6 +123,7 @@ object BrowseDemoForm: TBrowseDemoForm
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
+    Zoom = 100
   end
   object Panel2: TPanel
     Left = 0
@@ -148,29 +149,12 @@ object BrowseDemoForm: TBrowseDemoForm
       OnUndoZoom = SignalChart1UndoZoom
       OnZoom = SignalChart1Zoom
       BottomAxis.LogarithmicBase = 10.000000000000000000
-      BottomAxis.Maximum = 24.000000000000000000
-      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Time [s]'
       DepthAxis.LogarithmicBase = 10.000000000000000000
-      DepthAxis.Maximum = 0.500000000000000000
-      DepthAxis.Minimum = -0.500000000000000000
-      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
-      DepthTopAxis.Maximum = 0.500000000000000000
-      DepthTopAxis.Minimum = -0.500000000000000000
-      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.Maximum = 373.000000000000000000
-      LeftAxis.Minimum = -92.000000000000000000
-      LeftAxis.EndPosition = 100.000000000000000000
-      RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.EndPosition = 100.000000000000000000
-      RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
-      TopAxis.EndPosition = 100.000000000000000000
-      TopAxis.ZPosition = 100.000000000000000000
       Zoom.Brush.Gradient.Direction = gdFromTopLeft
       Zoom.Brush.Gradient.EndColor = clSilver
       Zoom.Brush.Gradient.MidColor = clWhite
@@ -237,5 +221,16 @@ object BrowseDemoForm: TBrowseDemoForm
     TeePanel = SignalChart1
     Left = 497
     Top = 197
+  end
+  object MtxProgress: TMtxProgressDialog
+    ThreadBypass = False
+    InternalLoop = True
+    InfiniteLoop = False
+    Min = 0
+    Max = 0
+    ShowDialog = False
+    Left = 196
+    Top = 104
+    MtxDataValues = {}
   end
 end

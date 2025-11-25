@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{EB104EAD-5B85-465E-A213-11529532FD2B}</ProjectGuid>
-        <MainSource>StatDemoW32_D29.dpr</MainSource>
+        <MainSource>StatDemoW32_D37.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>3</TargetedPlatforms>
@@ -10,7 +10,7 @@
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
         <ProjectVersion>20.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">StatDemoW32_D29</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">StatDemoW32_D37</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -60,7 +60,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <SanitizedProjectName>StatDemoW32_D29</SanitizedProjectName>
+        <SanitizedProjectName>StatDemoW32_D37</SanitizedProjectName>
         <Manifest_File>None</Manifest_File>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -327,7 +327,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">StatDemoW32_D29.dpr</Source>
+                    <Source Name="MainSource">StatDemoW32_D37.dpr</Source>
                 </Source>
                 <VersionInfo>
                     <VersionInfo Name="IncludeVerInfo">False</VersionInfo>

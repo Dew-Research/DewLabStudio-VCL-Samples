@@ -39,7 +39,7 @@ uses MtxVec, MtxExpr, StatTimeSerAnalysis, Optimization, Math387, MtxVecInt, Pol
 procedure TARMATrendForm.ARMAModelBoxChange(Sender: TObject);
 var p, t, x, x1,x2, residuals, y, Trend, b, Forecasts, data, fStdDev: Vector;
     aMLE, mu, aSigma: double;
-    Iters: integer;
+//    Iters: integer;
     nForecast: integer;
     aStrings: StringList;
 begin
@@ -77,7 +77,7 @@ begin
     t.SetZero; //initialize the MA part to 0
 
     Trend.Size(0);
-    Iters := ARMAMLE(y, p, t, Residuals, aMLE, mu); //refine AR stored in P and MA stored in T
+    ARMAMLE(y, p, t, Residuals, aMLE, mu); //refine AR stored in P and MA stored in T
 
     Forecasts.Size(nForecast, x);
     x1.Size(nForecast, x);

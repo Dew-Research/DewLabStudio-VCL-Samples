@@ -10,7 +10,7 @@ object LissajousScopeForm: TLissajousScopeForm
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -108,10 +108,8 @@ object LissajousScopeForm: TLissajousScopeForm
       Gradient.EndColor = clWhite
       Gradient.MidColor = 15395562
       Gradient.StartColor = 15395562
-      LeftWall.Color = 14745599
       Legend.Font.Name = 'Verdana'
       Legend.Visible = False
-      RightWall.Color = 14745599
       SubFoot.Font.Name = 'Verdana'
       SubTitle.Font.Name = 'Verdana'
       Title.Font.Name = 'Verdana'
@@ -120,47 +118,30 @@ object LissajousScopeForm: TLissajousScopeForm
       BottomAxis.Automatic = False
       BottomAxis.AutomaticMinimum = False
       BottomAxis.Axis.Color = 4210752
-      BottomAxis.Grid.Color = 11119017
-      BottomAxis.Increment = 10.000000000000000000
       BottomAxis.LogarithmicBase = 10.000000000000000000
-      BottomAxis.TicksInner.Color = 11119017
       BottomAxis.Title.Font.Name = 'Verdana'
       ClipPoints = False
       DepthAxis.Axis.Color = 4210752
-      DepthAxis.Grid.Color = 11119017
       DepthAxis.LogarithmicBase = 10.000000000000000000
-      DepthAxis.TicksInner.Color = 11119017
       DepthAxis.Title.Font.Name = 'Verdana'
       DepthTopAxis.Axis.Color = 4210752
-      DepthTopAxis.Grid.Color = 11119017
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
-      DepthTopAxis.TicksInner.Color = 11119017
       DepthTopAxis.Title.Font.Name = 'Verdana'
       LeftAxis.Automatic = False
       LeftAxis.AutomaticMinimum = False
       LeftAxis.Axis.Color = 4210752
-      LeftAxis.Grid.Color = 11119017
       LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.TicksInner.Color = 11119017
       LeftAxis.Title.Font.Name = 'Verdana'
       RightAxis.Automatic = False
       RightAxis.AutomaticMinimum = False
       RightAxis.Axis.Color = 4210752
-      RightAxis.Grid.Color = 11119017
-      RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.TicksInner.Color = 11119017
       RightAxis.Title.Font.Name = 'Verdana'
-      RightAxis.ZPosition = 100.000000000000000000
       TopAxis.Automatic = False
       TopAxis.AutomaticMinimum = False
       TopAxis.Axis.Color = 4210752
-      TopAxis.Grid.Color = 11119017
-      TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
-      TopAxis.TicksInner.Color = 11119017
       TopAxis.Title.Font.Name = 'Verdana'
-      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       Zoom.Brush.Gradient.Direction = gdFromTopLeft
       Zoom.Brush.Gradient.EndColor = clSilver
@@ -170,24 +151,33 @@ object LissajousScopeForm: TLissajousScopeForm
       Align = alClient
       Color = clWhite
       TabOrder = 0
+      DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 13
       object Series1: TSignalPolarSeries
-        Marks.Arrow.Visible = True
-        Marks.Callout.Brush.Color = clBlack
-        Marks.Callout.Arrow.Visible = True
-        Marks.Visible = False
-        XValues.DateTime = False
         XValues.Name = 'Angle'
         XValues.Order = loNone
-        YValues.DateTime = False
         YValues.Name = 'Radius'
         YValues.Order = loNone
+        Frame.InnerBrush.BackColor = clRed
+        Frame.InnerBrush.Gradient.EndColor = clGray
+        Frame.InnerBrush.Gradient.MidColor = clWhite
+        Frame.InnerBrush.Gradient.StartColor = 4210752
+        Frame.InnerBrush.Gradient.Visible = True
+        Frame.MiddleBrush.BackColor = clYellow
+        Frame.MiddleBrush.Gradient.EndColor = 8553090
+        Frame.MiddleBrush.Gradient.MidColor = clWhite
+        Frame.MiddleBrush.Gradient.StartColor = clGray
+        Frame.MiddleBrush.Gradient.Visible = True
+        Frame.OuterBrush.BackColor = clGreen
+        Frame.OuterBrush.Gradient.EndColor = 4210752
+        Frame.OuterBrush.Gradient.MidColor = clWhite
+        Frame.OuterBrush.Gradient.StartColor = clSilver
+        Frame.OuterBrush.Gradient.Visible = True
+        Frame.Width = 4
         Shadow.Visible = False
         AngleIncrement = 10.000000000000000000
-        AngleValues.DateTime = False
         AngleValues.Name = 'Angle'
         AngleValues.Order = loNone
-        Brush.Color = clWhite
         Brush.Style = bsClear
         CloseCircle = False
         Pen.Color = 10708548
@@ -196,7 +186,6 @@ object LissajousScopeForm: TLissajousScopeForm
         Pointer.Gradient.EndColor = 10708548
         Pointer.InflateMargins = True
         Pointer.Style = psSmallDot
-        Pointer.Visible = True
       end
     end
   end
@@ -219,6 +208,8 @@ object LissajousScopeForm: TLissajousScopeForm
     MtxDataValues = {}
   end
   object SignalIn1: TSignalIn
+    IsDouble = True
+    FloatPrecision = mvDouble
     ChannelCount = 2
     SamplingFrequency = 44100.000000000000000000
     BufferSize = 32000
@@ -233,12 +224,16 @@ object LissajousScopeForm: TLissajousScopeForm
     MtxDataValues = {}
   end
   object Signal1: TSignal
+    IsDouble = True
+    FloatPrecision = mvDouble
     SamplingFrequency = 1.000000000000000000
     Left = 374
     Top = 123
     MtxDataValues = {}
   end
   object Signal2: TSignal
+    IsDouble = True
+    FloatPrecision = mvDouble
     SamplingFrequency = 1.000000000000000000
     Left = 374
     Top = 159

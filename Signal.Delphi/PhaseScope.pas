@@ -55,7 +55,7 @@ var
 
 implementation
 
-uses Math387, MtxVec, OptimalFir, MtxVecTee;
+uses Math387, MtxVec, OptimalFir, MtxVecTee, AbstractMtxVec;
 
 {$IFDEF CLR}
 {$R *.nfm}

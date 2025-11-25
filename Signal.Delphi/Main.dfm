@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  OldCreateOrder = True
   Position = poScreenCenter
   WindowState = wsMaximized
   OnCreate = FormCreate

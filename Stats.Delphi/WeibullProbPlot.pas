@@ -33,7 +33,7 @@ var
 
 implementation
 
-Uses EditChar, MtxVecTee, Statistics, StatProbPlots, StatRandom;
+Uses EditChar, MtxVecTee, Statistics, StatProbPlots, StatRandom, AbstractMtxVec;
 {$R *.DFM}
 
 procedure TfrmWeibullProb.Button2Click(Sender: TObject);

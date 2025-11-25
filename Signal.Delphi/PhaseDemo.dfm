@@ -10,9 +10,7 @@ object PhaseDemoForm: TPhaseDemoForm
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -139,21 +137,25 @@ object PhaseDemoForm: TPhaseDemoForm
         'Phase spectrum')
       BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Maximum = 24.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'Frequency'
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 0.500000000000000000
       DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 0.500000000000000000
       DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.LogarithmicBase = 10.000000000000000000
       LeftAxis.Maximum = 377.500000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'Degrees'
-      RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
       RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
       TopAxis.ZPosition = 100.000000000000000000
       Zoom.Pen.Color = clBlack
       Align = alClient
@@ -169,7 +171,6 @@ object PhaseDemoForm: TPhaseDemoForm
       DefaultCanvas = 'TGDIPlusCanvas'
       ColorPaletteIndex = 0
       object Series1: TSignalDiscreteSeries
-        HoverElement = [heCurrent]
         ClickableLine = False
         Pointer.Brush.Gradient.EndColor = clRed
         Pointer.Gradient.EndColor = clRed

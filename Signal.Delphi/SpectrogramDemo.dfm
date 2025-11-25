@@ -85,27 +85,13 @@ object SpectrogramDemoForm: TSpectrogramDemoForm
     Title.Text.Strings = (
       'Spectrogram')
     BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
     BottomAxis.Title.Caption = 'Time [s]'
     DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
     LeftAxis.Title.Caption = 'Frequency [Hz]'
-    RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Zoom.Animated = True
     Zoom.Brush.Gradient.Direction = gdFromTopLeft
@@ -127,7 +113,6 @@ object SpectrogramDemoForm: TSpectrogramDemoForm
       22)
     ColorPaletteIndex = 13
     object Series1: TMtxGridSeries
-      HoverElement = []
       Legend.Visible = False
       XStep = 1.000000000000000000
       YStep = 1.000000000000000000
@@ -139,7 +124,6 @@ object SpectrogramDemoForm: TSpectrogramDemoForm
       ColorPalette.SharpContrast = False
       ColorPalette.TopClipOffColor = clNone
       ColorPalette.BottomClipOffColor = clNone
-      ColorPalette.UseMidColor = False
     end
   end
   object ProgressPanel: TMtxPositionPanel
@@ -208,6 +192,8 @@ object SpectrogramDemoForm: TSpectrogramDemoForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     TraceOnly = False
@@ -241,6 +227,8 @@ object SpectrogramDemoForm: TSpectrogramDemoForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     ScaleFactor = 1.000000000000000000
@@ -269,7 +257,6 @@ object SpectrogramDemoForm: TSpectrogramDemoForm
     MtxDataValues = {}
   end
   object ComputeSpectrogramThread: TMtxProgressDialog
-    FreeOnTerminate = False
     ThreadBypass = True
     OnCompute = ComputeSpectrogramThreadCompute
     OnProgressUpdate = ComputeSpectrogramThreadProgressUpdate

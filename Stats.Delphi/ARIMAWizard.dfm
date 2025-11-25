@@ -6,8 +6,8 @@ inherited frmARIMAWizard: TfrmARIMAWizard
   ClientWidth = 877
   Position = poScreenCenter
   OnDestroy = FormDestroy
-  ExplicitWidth = 893
-  ExplicitHeight = 697
+  ExplicitWidth = 889
+  ExplicitHeight = 696
   TextHeight = 13
   inherited Panel1: TPanel
     Top = 626
@@ -29,9 +29,9 @@ inherited frmARIMAWizard: TfrmARIMAWizard
   inherited PageControl: TPageControl
     Width = 877
     Height = 593
-    ActivePage = tsDefineModel
-    ExplicitWidth = 877
-    ExplicitHeight = 593
+    ActivePage = tsInputData
+    ExplicitWidth = 873
+    ExplicitHeight = 592
     object tsInputData: TTabSheet
       Caption = 'Step 1: Define time series'
       TabVisible = False
@@ -43,7 +43,6 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         Align = alLeft
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitHeight = 582
         object GroupBox1: TGroupBox
           Left = 15
           Top = 19
@@ -265,8 +264,6 @@ inherited frmARIMAWizard: TfrmARIMAWizard
         BevelOuter = bvNone
         Color = clWhite
         TabOrder = 1
-        ExplicitWidth = 408
-        ExplicitHeight = 582
         DefaultCanvas = 'TGDIPlusCanvas'
         ColorPaletteIndex = 0
       end

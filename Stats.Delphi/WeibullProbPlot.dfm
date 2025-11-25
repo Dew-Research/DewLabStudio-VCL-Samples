@@ -1,7 +1,5 @@
 inherited frmWeibullProb: TfrmWeibullProb
   Caption = 'frmNormalProb'
-  OldCreateOrder = True
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     object Panel2: TPanel
@@ -74,7 +72,6 @@ inherited frmWeibullProb: TfrmWeibullProb
       BottomAxis.Grid.Visible = False
       BottomAxis.Logarithmic = True
       BottomAxis.LogarithmicBase = 10.000000000000000000
-      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Title.Caption = 'ln(Ordered data values)'
       BottomAxis.Title.Color = clBlack
       DepthAxis.Automatic = False
@@ -83,33 +80,24 @@ inherited frmWeibullProb: TfrmWeibullProb
       DepthAxis.LogarithmicBase = 10.000000000000000000
       DepthAxis.Maximum = 1.820000000000001000
       DepthAxis.Minimum = 0.820000000000000700
-      DepthAxis.EndPosition = 100.000000000000000000
       DepthTopAxis.Automatic = False
       DepthTopAxis.AutomaticMaximum = False
       DepthTopAxis.AutomaticMinimum = False
       DepthTopAxis.LogarithmicBase = 10.000000000000000000
       DepthTopAxis.Maximum = 1.820000000000001000
       DepthTopAxis.Minimum = 0.820000000000000700
-      DepthTopAxis.EndPosition = 100.000000000000000000
       Frame.Visible = False
       LeftAxis.Axis.Color = 4210752
       LeftAxis.Grid.Visible = False
       LeftAxis.LabelsSize = 30
       LeftAxis.LogarithmicBase = 10.000000000000000000
-      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'ln[ln[1/(1-p)]]'
       LeftAxis.Title.Color = clBlack
       RightAxis.Automatic = False
       RightAxis.AutomaticMaximum = False
       RightAxis.AutomaticMinimum = False
-      RightAxis.Grid.ZPosition = 100.000000000000000000
       RightAxis.LogarithmicBase = 10.000000000000000000
-      RightAxis.EndPosition = 100.000000000000000000
-      RightAxis.ZPosition = 100.000000000000000000
-      TopAxis.Grid.ZPosition = 100.000000000000000000
       TopAxis.LogarithmicBase = 10.000000000000000000
-      TopAxis.EndPosition = 100.000000000000000000
-      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       Align = alClient
       Color = clWhite

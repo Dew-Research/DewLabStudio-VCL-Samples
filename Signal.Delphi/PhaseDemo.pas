@@ -37,7 +37,7 @@ var
 
 implementation
 
-uses Math387, MtxVec, MtxVecTee, MtxVecEdit;
+uses Math387, MtxVec, MtxVecTee, MtxVecEdit, AbstractMtxVec;
 
 {$IFDEF CLR}
 {$R *.nfm}
