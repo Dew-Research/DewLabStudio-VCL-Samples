@@ -18,6 +18,26 @@ __fastcall TfrmWhatsNew::TfrmWhatsNew(TComponent* Owner): TfrmBaseRichEdit(Owner
 	RichEdit1->SelAttributes->Size = 14;
 	RichEdit1->SelAttributes->Style = RichEdit1->DefAttributes->Style << TFontStyle::fsBold;
 	RichEdit1->SelAttributes->Color = (TColor) RGB(72,123,180);
+	RichEdit1->Lines->Add("Release 6.2.0 List of changes");
+	RichEdit1->Lines->Add("");
+	RichEdit1->Paragraph->Numbering = nsBullet;
+	RichEdit1->Paragraph->FirstIndent = 10;
+	RichEdit1->Lines->Add("Support for Delphi Athens 12.0");
+	RichEdit1->Lines->Add("Added ARIMA Trend decomposition example");
+	RichEdit1->Lines->Add("Bug fix for MannWhitneyTest");
+	RichEdit1->Lines->Add("Rewritten the ARMA MLE fitting and the forecasting function used by ARIMA.");
+	RichEdit1->Lines->Add("Added an example for ARIMA fitting with trend decomposition.");
+	RichEdit1->Lines->Add("Bug fix for Stepwise multiple regression when running with enabled assertions (debug mode).");
+	RichEdit1->Lines->Add("Fixed a bug when fitting parameters of the Fisher random distribution.");
+	RichEdit1->Lines->Add("Added vectorized version of the Fisher PDF.");
+	RichEdit1->Paragraph->Numbering = nsNone;
+	RichEdit1->Paragraph->FirstIndent = 0;
+	RichEdit1->Lines->Add("");
+
+	RichEdit1->DefAttributes->Size = 10;
+	RichEdit1->SelAttributes->Size = 14;
+	RichEdit1->SelAttributes->Style = RichEdit1->DefAttributes->Style << TFontStyle::fsBold;
+	RichEdit1->SelAttributes->Color = (TColor) RGB(72,123,180);
 	RichEdit1->Lines->Add("What's new in Stats Master v6");
 	RichEdit1->Lines->Add("");
 	RichEdit1->Paragraph->Numbering = nsBullet;

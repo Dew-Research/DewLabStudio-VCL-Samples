@@ -1,9 +1,8 @@
 inherited frmWhatsNew: TfrmWhatsNew
   Caption = 'frmWhatsNew'
-  PixelsPerInch = 96
+  StyleElements = [seFont, seClient, seBorder]
   TextHeight = 13
   inherited RichEdit1: TRichEdit
-    ExplicitLeft = 0
-    ExplicitTop = 0
+    StyleElements = [seFont, seClient, seBorder]
   end
 end
