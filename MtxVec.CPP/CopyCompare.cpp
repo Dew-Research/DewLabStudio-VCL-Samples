@@ -112,6 +112,8 @@ void __fastcall TCopyComp::Button1Click(TObject *Sender)
   Series1->Clear();
   Series2->Clear();
   A.Size(Dim,Dim);
+  for (int i = 0; i < A->Length; i++) A->Values1D[i] = i;
+
   if (Dim < 15) MaxIter = 5000000;
   else if (Dim < 30) MaxIter = 500000;
   else if (Dim < 50) MaxIter = 200000;
@@ -125,7 +127,7 @@ void __fastcall TCopyComp::Button1Click(TObject *Sender)
   // BCB Copy
   StartTimer();
   for (int i =1; i<=MaxIter; i++)
-    CopyBCB(A,B);
+	CopyBCB(A,B);
   TimeElapsed = StopTimer()*1000;
   Series1->AddXY(0,1,"Copy operation",clTeeColor);
 

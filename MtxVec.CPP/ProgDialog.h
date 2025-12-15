@@ -50,7 +50,7 @@ __published:	// IDE-managed Components
           TMtxProgressEvent Event);
 private:	// User declarations
   Mtxvec::TMatrix *A, *B, *C;
-  void __fastcall WhileLoopInProcedure(int &Counter, bool &Cancel);
+  void __fastcall WhileLoopInProcedure();
 public:		// User declarations
   __fastcall TfrmProgDialog(TComponent* Owner);
 };

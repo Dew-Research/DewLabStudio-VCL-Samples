@@ -1,34 +1,37 @@
 inherited frmProgDialog: TfrmProgDialog
   Caption = 'frmProgDialog'
-  ClientHeight = 484
-  ClientWidth = 497
-  OldCreateOrder = True
-  ExplicitWidth = 513
-  ExplicitHeight = 522
-  PixelsPerInch = 96
+  ClientHeight = 486
+  ClientWidth = 567
+  StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 583
+  ExplicitHeight = 525
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 497
+    Width = 567
     Height = 85
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 497
     ExplicitHeight = 85
     inherited RichEdit1: TRichEdit
-      Width = 495
+      Width = 565
       Height = 83
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 495
       ExplicitHeight = 83
     end
   end
   inherited Panel2: TPanel
-    Top = 426
-    Width = 497
+    Top = 428
+    Width = 567
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 426
     ExplicitWidth = 497
   end
   inherited Panel3: TPanel
     Top = 85
-    Width = 497
-    Height = 341
+    Width = 567
+    Height = 343
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 85
     ExplicitWidth = 497
     ExplicitHeight = 341
@@ -223,7 +226,6 @@ inherited frmProgDialog: TfrmProgDialog
     end
   end
   object MtxThread: TMtxProgressDialog
-    FreeOnTerminate = False
     ThreadBypass = False
     OnCompute = MtxThreadCompute
     OnProgressUpdate = MtxThreadProgressUpdate

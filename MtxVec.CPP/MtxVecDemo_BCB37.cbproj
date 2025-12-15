@@ -4,12 +4,12 @@
         <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <AppType>Application</AppType>
-        <MainSource>MtxVecDemo_BCB29.cpp</MainSource>
+        <MainSource>MtxVecDemo_BCB37.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64x</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>1048579</TargetedPlatforms>
-        <ProjectName Condition="'$(ProjectName)'==''">MtxVecDemo_BCB29</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">MtxVecDemo_BCB37</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -85,14 +85,14 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;vclimg.lib;fmx.lib;Tee937.lib;TeeUI937.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <SanitizedProjectName>MtxVecDemo_BCB29</SanitizedProjectName>
+        <SanitizedProjectName>MtxVecDemo_BCB37</SanitizedProjectName>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <ILINK_LinkwithSQL>false</ILINK_LinkwithSQL>
@@ -109,7 +109,7 @@ copy *.txt "$(OUTPUTDIR)"
 $(PostBuildEvent)]]></PostBuildEvent>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;DCLClassifiersDB128;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore629;MtxDb629;MtxTee629;MtxTools629;RESTBackendComponents;RESTComponents;rtl;SignalCore629;SignalTee629;SignalTool629;soapmidas;soaprtl;soapserver;StatCore629;StatSeries629;StatTools629;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;DCLClassifiersDB128;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore637;MtxDb637;MtxTee637;MtxTools637;RESTBackendComponents;RESTComponents;rtl;SignalCore637;SignalTee637;SignalTool637;soapmidas;soaprtl;soapserver;StatCore637;StatSeries637;StatTools637;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -117,7 +117,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore629;MtxDb629;MtxTee629;MtxTools629;RESTBackendComponents;RESTComponents;rtl;SignalCore629;SignalTee629;SignalTool629;soapmidas;soaprtl;soapserver;StatCore629;StatSeries629;StatTools629;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore637;MtxDb637;MtxTee637;MtxTools637;RESTBackendComponents;RESTComponents;rtl;SignalCore637;SignalTee637;SignalTool637;soapmidas;soaprtl;soapserver;StatCore637;StatSeries637;StatTools637;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -162,13 +162,13 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;vclimg.lib;fmx.lib;Tee937.lib;TeeUI937.lib</LinkPackageStatics>
         <UsePackages>false</UsePackages>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;TeeUI929.lib;Tee929.lib;vclimg.lib;fmx.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;vclimg.lib;fmx.lib;Tee937.lib;TeeUI937.lib</LinkPackageStatics>
         <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
@@ -179,7 +179,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
         <BCC_InstructionSet_v15>AVX2</BCC_InstructionSet_v15>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;vclimg.lib;fmx.lib;Tee937.lib;TeeUI937.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -188,17 +188,17 @@ $(PostBuildEvent)]]></PostBuildEvent>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;vclimg.lib;fmx.lib;Tee937.lib;TeeUI937.lib</LinkPackageStatics>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;TeeUI929.lib;Tee929.lib;vclimg.lib;fmx.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;TeeUI937.lib;Tee937.lib;vclimg.lib;fmx.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64x)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools637.lib;MtxCore637.lib;vclactnband.lib;vclx.lib;MtxDb637.lib;dbrtl.lib;MtxTee637.lib;vclimg.lib;fmx.lib;Tee937.lib;TeeUI937.lib</LinkPackageStatics>
         <BCC_RequireMathFuncErrorNumber>false</BCC_RequireMathFuncErrorNumber>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BCC_InstructionSet_v15>AVX2</BCC_InstructionSet_v15>
@@ -416,7 +416,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <DependentOn>MtxOptim.h</DependentOn>
             <BuildOrder>36</BuildOrder>
         </CppCompile>
-        <CppCompile Include="MtxVecDemo_BCB29.cpp">
+        <CppCompile Include="MtxVecDemo_BCB37.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
         <CppCompile Include="Multiply1.cpp">
@@ -495,52 +495,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <DependentOn>YuleLevinson.h</DependentOn>
             <BuildOrder>49</BuildOrder>
         </CppCompile>
-        <FormResources Include="MemoryCompare1.dfm"/>
-        <FormResources Include="Main.dfm"/>
-        <FormResources Include="LQR1.dfm"/>
-        <FormResources Include="MtxOptim.dfm"/>
-        <FormResources Include="MtxGridSeries_Demo.dfm"/>
-        <FormResources Include="IntroVectors.dfm"/>
-        <FormResources Include="IntroSparse.dfm"/>
-        <FormResources Include="IntroPolynoms.dfm"/>
-        <FormResources Include="List_Func.dfm"/>
-        <FormResources Include="InverseMtx.dfm"/>
-        <FormResources Include="IntroWhyMtxVec.dfm"/>
-        <FormResources Include="Multiply1.dfm"/>
-        <FormResources Include="Save_Precision.dfm"/>
-        <FormResources Include="RegisterMtxVec.dfm"/>
-        <FormResources Include="QuickS.dfm"/>
-        <FormResources Include="YuleLevinson.dfm"/>
-        <FormResources Include="SysLinear1.dfm"/>
-        <FormResources Include="SparseTest.dfm"/>
-        <FormResources Include="PixelDownS.dfm"/>
-        <FormResources Include="ParserDemo.dfm"/>
-        <FormResources Include="QRPoly1.dfm"/>
-        <FormResources Include="ProgDialog.dfm"/>
-        <FormResources Include="ProbCalc.dfm"/>
-        <FormResources Include="Changes15.dfm"/>
-        <FormResources Include="CalcSqrtMtx.dfm"/>
-        <FormResources Include="BlockProcessing.dfm"/>
-        <FormResources Include="ClipboardMSOffice.dfm"/>
-        <FormResources Include="clFunction.dfm"/>
-        <FormResources Include="Changes30.dfm"/>
-        <FormResources Include="Basic3.dfm"/>
-        <FormResources Include="Basic2.dfm"/>
-        <FormResources Include="Basic1.dfm"/>
-        <FormResources Include="BenchmarkX.dfm"/>
-        <FormResources Include="CopyCompare.dfm"/>
-        <FormResources Include="IntroExport.dfm"/>
-        <FormResources Include="Intro.dfm"/>
-        <FormResources Include="Interp1.dfm"/>
-        <FormResources Include="IntroMemoryMan.dfm"/>
-        <FormResources Include="IntroMatrices.dfm"/>
-        <FormResources Include="IntroFunctionList.dfm"/>
-        <FormResources Include="EigenVectors1.dfm"/>
-        <FormResources Include="DirichletTest.dfm"/>
-        <FormResources Include="DefaultArray.dfm"/>
-        <FormResources Include="FloatEdit1.dfm"/>
-        <FormResources Include="Find_Form.dfm"/>
-        <FormResources Include="FileHandling1.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -565,7 +519,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     <ProjectProperties Name="IndexFiles">False</ProjectProperties>
                 </ProjectProperties>
                 <Source>
-                    <Source Name="MainSource">MtxVecDemo_BCB29.cpp</Source>
+                    <Source Name="MainSource">MtxVecDemo_BCB37.cpp</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
@@ -602,6 +556,16 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64370.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64370mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
                     <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
@@ -619,6 +583,16 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32370.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32370mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c280.dll" Class="DependencyModule"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c280mt.dll" Class="DependencyModule"/>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c290.dll" Class="DependencyModule">
@@ -631,8 +605,30 @@ $(PostBuildEvent)]]></PostBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin\cc32c370.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c370mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName=".\Win32\Debug\MtxVecDemo_BCB29.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName=".\Win64\Release\MtxVecDemo_BCB29.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName=".\Win64x\Debug\MtxVecDemo_BCB37.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64x">
+                        <RemoteName>MtxVecDemo_BCB37.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName=".\Win64x\Debug\MtxVecDemo_BCB37.pdb" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64x">
+                        <RemoteName>MtxVecDemo_BCB37.pdb</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>

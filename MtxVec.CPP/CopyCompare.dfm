@@ -4,22 +4,24 @@ inherited CopyComp: TCopyComp
   Caption = 'CopyComp'
   ClientHeight = 470
   ClientWidth = 678
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 694
   ExplicitHeight = 509
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 678
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 678
     inherited RichEdit1: TRichEdit
       Width = 676
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 676
     end
   end
   inherited Panel2: TPanel
     Top = 412
     Width = 678
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 412
     ExplicitWidth = 678
     object Button1: TBitBtn
@@ -36,6 +38,7 @@ inherited CopyComp: TCopyComp
     Width = 157
     Height = 282
     Align = alLeft
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 157
     ExplicitHeight = 282
     object Label1: TLabel
@@ -82,35 +85,19 @@ inherited CopyComp: TCopyComp
       'TChart')
     Title.Visible = False
     BottomAxis.LogarithmicBase = 10.000000000000000000
-    BottomAxis.Maximum = 5.000000000000000000
-    BottomAxis.EndPosition = 100.000000000000000000
     DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthAxis.Maximum = 0.500000000000000000
-    DepthAxis.Minimum = -0.500000000000000000
-    DepthAxis.EndPosition = 100.000000000000000000
     DepthTopAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.Maximum = 0.500000000000000000
-    DepthTopAxis.Minimum = -0.500000000000000000
-    DepthTopAxis.EndPosition = 100.000000000000000000
     LeftAxis.LogarithmicBase = 10.000000000000000000
-    LeftAxis.Maximum = 715.000000000000000000
-    LeftAxis.EndPosition = 100.000000000000000000
-    RightAxis.Grid.ZPosition = 100.000000000000000000
     RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.EndPosition = 100.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.Grid.ZPosition = 100.000000000000000000
     TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.EndPosition = 100.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     Align = alClient
     Color = 14869218
     TabOrder = 3
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object Series1: TBarSeries
-      HoverElement = []
       Marks.Style = smsValue
+      Marks.OnTop = True
       SeriesColor = clFuchsia
       Title = 'C++'
       XValues.Name = 'X'
@@ -119,8 +106,8 @@ inherited CopyComp: TCopyComp
       YValues.Order = loNone
     end
     object Series2: TBarSeries
-      HoverElement = []
       Marks.Style = smsValue
+      Marks.OnTop = True
       SeriesColor = 12615808
       Title = 'MtxVec'
       XValues.Name = 'X'

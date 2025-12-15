@@ -35,15 +35,16 @@ __fastcall TfrmProgDialog::TfrmProgDialog(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-void __fastcall TfrmProgDialog::WhileLoopInProcedure(int &Counter, bool &Cancel)
+void __fastcall TfrmProgDialog::WhileLoopInProcedure()
 {
-  while (!(MtxThread->Max == Counter))
-  {
-    if (Cancel) break;
-    C->Mul(A,B,opNone,opNone);
-    Counter ++;
-  }
+    while (!(MtxThread->Max == MtxThread->Counter))
+    {
+		if (MtxThread->Cancel) break;
+		C->Mul(A, B, opNone, opNone);
+		MtxThread->Counter = MtxThread->Counter + 1;
+	}
 }
+
 //---------------------------------------------------------------------------
 void __fastcall TfrmProgDialog::ShowFormBoxClick(TObject *Sender)
 {
@@ -74,7 +75,7 @@ void __fastcall TfrmProgDialog::MtxThreadCompute(TObject *Sender)
              //
              C->Mul(A,B,opNone,opNone);
            } break;
-    case 2: WhileLoopInProcedure(MtxThread->Counter,MtxThread->Cancel);
+	case 2: WhileLoopInProcedure();
   }
 }
 //---------------------------------------------------------------------------
