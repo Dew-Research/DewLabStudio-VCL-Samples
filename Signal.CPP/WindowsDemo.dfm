@@ -10,9 +10,7 @@ object WindowsDemoForm: TWindowsDemoForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -79,9 +77,15 @@ object WindowsDemoForm: TWindowsDemoForm
     Legend.Visible = False
     Title.Text.Strings = (
       'Window functions')
+    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.MinorTicks.Visible = False
     BottomAxis.Title.Caption = 'Frequency [Hz]'
+    DepthAxis.LogarithmicBase = 10.000000000000000000
+    DepthTopAxis.LogarithmicBase = 10.000000000000000000
+    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Amplitude [dB]'
+    RightAxis.LogarithmicBase = 10.000000000000000000
+    TopAxis.LogarithmicBase = 10.000000000000000000
     Zoom.Pen.Color = clBlack
     Align = alClient
     Color = 12636883
@@ -89,6 +93,7 @@ object WindowsDemoForm: TWindowsDemoForm
     Spectrums = <
       item
         InputsItemIndex = 0
+        UnitScaleXAxis = 1.000000000000000000
         Input = SpectrumAnalyzer
       end>
     ConfidenceIntervalIndex = 0
@@ -126,6 +131,8 @@ object WindowsDemoForm: TWindowsDemoForm
     Top = 159
   end
   object Signal1: TSignal
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnAfterUpdate = Signal1AfterUpdate
     Length = 64
     SamplingFrequency = 1.000000000000000000
@@ -134,6 +141,8 @@ object WindowsDemoForm: TWindowsDemoForm
     MtxDataValues = {}
   end
   object SpectrumAnalyzer: TSpectrumAnalyzer
+    IsDouble = True
+    FloatPrecision = mvDouble
     OnParameterUpdate = SpectrumAnalyzerParameterUpdate
     PhaseRange = prPiPi
     SamplingFrequency = 1.000000000000000000
@@ -154,6 +163,8 @@ object WindowsDemoForm: TWindowsDemoForm
     Report.ReportItems.RMS = False
     Report.ReportItems.SNR = False
     Report.ReportItems.DateTime = False
+    Peaks.Interpolation.RecursiveHarmonics = rhNone
+    Peaks.LargestRatio = 1000000000000000.000000000000000000
     Bands.Templates.Strings = ()
     Bands.Templates.StreamBinaryData = {}
     Logarithmic = True

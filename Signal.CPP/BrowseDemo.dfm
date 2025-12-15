@@ -10,9 +10,7 @@ object BrowseDemoForm: TBrowseDemoForm
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -127,7 +125,13 @@ object BrowseDemoForm: TBrowseDemoForm
       Legend.Visible = False
       Title.Text.Strings = (
         'Time signal')
+      BottomAxis.LogarithmicBase = 10.000000000000000000
       BottomAxis.Title.Caption = 'Time [s]'
+      DepthAxis.LogarithmicBase = 10.000000000000000000
+      DepthTopAxis.LogarithmicBase = 10.000000000000000000
+      LeftAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.LogarithmicBase = 10.000000000000000000
       Zoom.Pen.Color = clBlack
       Align = alClient
       BevelOuter = bvNone
@@ -135,6 +139,7 @@ object BrowseDemoForm: TBrowseDemoForm
       Signals = <
         item
           InputsItemIndex = 0
+          UnitScaleXAxis = 1.000000000000000000
           Input = Signal1
         end>
       ComplexSignalPart = cspReal
@@ -145,16 +150,9 @@ object BrowseDemoForm: TBrowseDemoForm
         HighValues.Order = loNone
         LowValues.Name = 'Low'
         LowValues.Order = loNone
-        Marks.Arrow.Visible = True
-        Marks.Callout.Brush.Color = clBlack
-        Marks.Callout.Arrow.Visible = True
-        Marks.ShapeStyle = fosRoundRectangle
-        Marks.Visible = False
         Pen.Color = clDefault
         XValues.Name = 'X'
         XValues.Order = loAscending
-        HighBrush.Color = clWhite
-        LowBrush.Color = clWhite
         LowBrush.Style = bsClear
         ComplexSignalPart = cspReal
         SeriesMode = ssmHighLow
@@ -195,12 +193,16 @@ object BrowseDemoForm: TBrowseDemoForm
     Top = 126
   end
   object Signal1: TSignal
+    IsDouble = True
+    FloatPrecision = mvDouble
     SamplingFrequency = 1.000000000000000000
     Left = 364
     Top = 123
     MtxDataValues = {}
   end
   object SignalBrowse1: TSignalBrowse
+    IsDouble = True
+    FloatPrecision = mvDouble
     Increment = 100
     SpanLimit = 8192
     SpanTime = 16384.000000000000000000

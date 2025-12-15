@@ -42,7 +42,7 @@ __published:	// IDE-managed Components
 	void __fastcall SpectrumAnalyzerParameterUpdate(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
-	void __fastcall TWindowsDemoForm::FillSeries();
+	void __fastcall FillSeries();
 public:		// User declarations
 	__fastcall TWindowsDemoForm(TComponent* Owner);
 };

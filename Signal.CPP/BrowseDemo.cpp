@@ -26,6 +26,7 @@ void __fastcall TBrowseDemoForm::OpenFileButtonClick(TObject *Sender)
 	{
 		SignalBrowse1->Threaded = ThreadedBox->Checked;
 		Screen->Cursor = crHourGlass;
+		SignalBrowse1->OverviewRepositoryPath = TPath::GetDocumentsPath();
 		SignalBrowse1->OpenBrowseFile(OpenDialog1->FileName);
 		if (!SignalBrowse1->Threaded)
 		{
