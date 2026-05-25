@@ -14,6 +14,7 @@
 #include "SignalSeriesTee.hpp"
 #include "SignalTools.hpp"
 #include "SignalToolsTee.hpp"
+#include "MtxDialogs.hpp"
 #include <VCLTee.TeeEdit.hpp>
 #include <VCLTee.Chart.hpp>
 #include <ComCtrls.hpp>
@@ -29,6 +30,7 @@
 #include "SignalSeriesTee.hpp"
 #include "SignalTools.hpp"
 #include "SignalToolsTee.hpp"
+#include "MtxDialogs.hpp"
 #include <VCLTee.TeeEdit.hpp>
 #include <ComCtrls.hpp>
 #include <Dialogs.hpp>
@@ -54,6 +56,7 @@ __published:	// IDE-managed Components
 	TRichEdit *RichEdit1;
 	TSignal *Signal1;
 	TSignalBrowse *SignalBrowse1;
+	TMtxProgressDialog *MtxProgress;
 	void __fastcall ChartButtonClick(TObject *Sender);
 	void __fastcall OpenFileButtonClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);

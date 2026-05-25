@@ -106,7 +106,8 @@ void __fastcall TBrowseDemoForm::DrawHighLowValues(TVec *Src, TChartSeries *Seri
 void __fastcall TBrowseDemoForm::FormCreate(TObject *Sender)
 {
 	ChannelBox->ItemIndex = 0;
-	SignalBrowse1->ProgressThread->UpdateInterval = 50; //20x times per second updates progress bar
+	SignalBrowse1->ProgressRuntime = MtxProgress->Runtime;
+	SignalBrowse1->ProgressRuntime->UpdateInterval = 50; //20x times per second updates progress bar
 	RichEdit1->Lines->Clear();
 	RichEdit1->Lines->Add("Open a few 10MB long uncompressed wav file. The chart will display signal overview." 
 		"For 200 MB long wav file, it takes a little less then 6 seconds to create the overview. "

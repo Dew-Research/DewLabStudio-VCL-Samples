@@ -1,6 +1,6 @@
 (*The example is based on the tutorial
 written by Jose Manuel Rodriguez,
-Universidad Politecnica de Cataluña, Spain
+Universidad Politecnica de Cataluï¿½a, Spain
 Based on the Technical Document by
 Juan Andrade-Cetto, "The Kalman Filter", March 2002 *)
 
@@ -114,10 +114,10 @@ procedure TKalmanFilterForm3.GenerateProcess(x: TMtx);
 var i: integer;
 begin
 
-   // x(k) = f (x(k – 1), u(k – 1), 0)
+   // x(k) = f (x(k ï¿½ 1), u(k ï¿½ 1), 0)
 
     i := KalmanFilter.Iter;
-    x[0,0] := sin(x[1,0]*(i - 1));
+    x[0,0] := Math387.Sin(x[1,0]*(i - 1));
     x[1,0] := x[1,0];
 
     //recalculate A(k) because f updated (!) and A is formed from df/dx
@@ -125,7 +125,7 @@ begin
     KalmanFilter.A[0,0] := 0;
     KalmanFilter.A[1,0] := 0;
 
-    KalmanFilter.A[0,1] := i*cos(x[1,0]*i);
+    KalmanFilter.A[0,1] := i*Math387.Cos(x[1,0]*i);
     KalmanFilter.A[1,1] := 1;
 end;
 

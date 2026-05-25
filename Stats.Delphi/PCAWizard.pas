@@ -235,7 +235,7 @@ begin
                   Covariance(MtxPCA.Data,tmpMtx,false);
                   tmpMtx.ValuesToStrings(RichEdit.Lines,Chr(9),ftaNone,FormatString);
                   { Ln(R)}
-                  RichEdit.Lines.Add('Ln(R) = '+ FormatFloat(FormatString,Ln(tmpMtx.Determinant)));
+                  RichEdit.Lines.Add('Ln(R) = '+ FormatFloat(FormatString,Math387.Ln(tmpMtx.Determinant)));
                   RichEdit.Lines.Add(Chr(13));
                   
  		  RichEdit.SelAttributes.Style := [fsBold,fsUnderline];                  
@@ -243,7 +243,7 @@ begin
                   CorrCoef(MtxPCA.Data,tmpMtx);
                   tmpMtx.ValuesToStrings(RichEdit.Lines,Chr(9),ftaNone,FormatString);
                   { Ln(R)}
-                  RichEdit.Lines.Add('Ln(R) = '+ FormatFloat(FormatString,Ln(tmpMtx.Determinant)));
+                  RichEdit.Lines.Add('Ln(R) = '+ FormatFloat(FormatString,Math387.Ln(tmpMtx.Determinant)));
                   RichEdit.Lines.Add(Chr(13));
                 end;
   end;

@@ -198,7 +198,7 @@ end;
 
 function TProbDistribution.CalculateCumH(Value: double): double;
 begin
-  if Discrete then Result := NAN else Result := -Ln(1.0 - CalculateCDF(Value));
+  if Discrete then Result := NAN else Result := - Math387.Ln(1.0 - CalculateCDF(Value));
 end;
 
 function TProbDistribution.CalculateS(Value: double): double;

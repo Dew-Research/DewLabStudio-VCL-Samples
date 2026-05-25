@@ -263,34 +263,21 @@ begin
 
   {$IFNDEF CLR}
 
-    {$IFNDEF CPUX64}
+        {$IFDEF TTDOUBLE}  //define this, if sizeof(TSample) = 8, MtxVec runs in double precision
 
         Add ('Sin', VAL1, CVAL1, Math387.Sin, Math387.Sin, fDst.Sin );
         Add ('Cos', VAL1, CVAL1, Math387.Cos, Math387.Cos, fDst.Cos );
         Add ('Exp', VAL1, CVAL1, Math387.Exp, Math387.Exp, fDst.Exp );
         Add ('Ln', VAL1, CVAL1,  Math387.Ln, Math387.Ln, fDst.Ln );
 
-    {$ELSE}
-
-        {$IFDEF TTDOUBLE}  //define this, if sizeof(TSample) = 8, MtxVec runs in double precision
-
-        Add ('Sin', VAL1, CVAL1, {$IFDEF D23} System.{$ENDIF}Sin, Math387.Sin, fDst.Sin );
-        Add ('Cos', VAL1, CVAL1, {$IFDEF D23} System.{$ENDIF}Cos, Math387.Cos, fDst.Cos );
-        Add ('Exp', VAL1, CVAL1, {$IFDEF D23} System.{$ENDIF}Exp, Math387.Exp, fDst.Exp );
-        Add ('Ln', VAL1, CVAL1,  {$IFDEF D23} System.{$ENDIF}Ln, Math387.Ln, fDst.Ln );
-
         {$ELSE}
 
-        //There is no single precision of System.Sin, System.Cos, etc... for 64bit
-
-//        Add ('Sin', VAL1, CVAL1, Sin, Math387.Sin, fDst.Sin);
-//        Add ('Cos', VAL1, CVAL1, Cos, Math387.Cos, fDst.Cos);
-//        Add ('Exp', VAL1, CVAL1, Exp, Math387.Exp, fDst.Exp);
-//        Add ('Ln', VAL1, CVAL1,  Ln, Math387.Ln, fDst.Ln);
+        Add ('Sin', VAL1, CVAL1, Math387.Sinf, Math387.Sin, fDst.Sin );
+        Add ('Cos', VAL1, CVAL1, Math387.Cosf, Math387.Cos, fDst.Cos );
+        Add ('Exp', VAL1, CVAL1, Math387.Expf, Math387.Exp, fDst.Exp );
+        Add ('Ln', VAL1, CVAL1,  Math387.Lnf, Math387.Ln, fDst.Ln );
 
         {$ENDIF}
-
-    {$ENDIF}
 
   Add ('Log10', VAL1, CVAL1, Math387.Log10, Math387.Log10, fDst.Log10);
   Add ('Tan', VAL1, CVAL1, Math387.Tan, Math387.Tan, fDst.Tan);
@@ -299,7 +286,7 @@ begin
   Add ('ArcCos', VAL1, CVAL1, Math387.ArcCos, Math387.ArcCos, fDst.ArcCos);
 
   {$IFDEF CPUX64}
-  Add( 'ArcTan', VAL1, CVAL1, {$IFDEF D23}System.{$ENDIF}ArcTan, Math387.ArcTan, fDst.ArcTan);
+  Add( 'ArcTan', VAL1, CVAL1, Math387.ArcTan, Math387.ArcTan, fDst.ArcTan);
   {$ELSE}
   Add( 'ArcTan', VAL1, CVAL1, {$IFDEF D23}Math387.{$ENDIF}ArcTan, Math387.ArcTan, fDst.ArcTan);
   {$ENDIF}

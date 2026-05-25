@@ -248,7 +248,7 @@ begin  { Ignore job index for this test case (!!!) }
          case FunctionBox.ItemIndex of
          0: clC := clC * clB;
          1: clC := sin(clC)  + sin(clB);
-         2: clC := Sqrt(4 * a /(2*PI)) * a * sqr(clB) * Exp(-0.5 * a * sqr(clB));
+         2: clC := Math387.Sqrt(4 * a /(2*PI)) * a * sqr(clB) * Exp(-0.5 * a * sqr(clB));
          end;
     end;
     clC.CopyTo(R); { from GPU to CPU }

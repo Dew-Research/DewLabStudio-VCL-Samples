@@ -369,7 +369,7 @@ var estVar: double;
 begin
   RichEdit.SelAttributes.Style := [fsBold,fsUnderline];
   RichEdit.Lines.Add('Preliminary estimates for '+ModelText+ ' process coefficients');
-  if MaxLag<0 then innolag := Ceil(10*Log10(Data.Length)) else innolag := MaxLag;
+  if MaxLag<0 then innolag := CeilToInt(10*Log10(Data.Length)) else innolag := MaxLag;
 
   estVar := 1.0;
 
@@ -612,7 +612,7 @@ begin
   { recalculate lb and ub for acf and pacf chart }
   if rgPlot.ItemIndex <> 0 then
   begin
-    chartUCL := NormalCDFInv(1.0-0.5*Alpha,0.0,1.0)/Sqrt(Data.Length);
+    chartUCL := NormalCDFInv(1.0-0.5*Alpha,0.0,1.0)/Math387.Sqrt(Data.Length);
     chartLCL := - chartUCL;
   end;
   ChartData.FreeAllSeries(nil);

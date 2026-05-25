@@ -57,7 +57,7 @@ var
 
 implementation
 
-Uses    {$IFNDEF TEESTD} //Install the free TeeChart from the Embarcadero Installer and define TEESTD in the compiler options, if you dont have TeeChart Pro
+Uses    {$IFDEF TEE9} //Install the free TeeChart from the Embarcadero Installer and define TEESTD in the compiler options, if you dont have TeeChart Pro
         EditChar, TeeEdit,
         {$ENDIF}
         MtxGridSerEdit; { <--- add grid series editor to uses clause }
@@ -98,7 +98,7 @@ begin
     Add('');
     Add('Some properties are accessible via the MtxGridSeries editor (click on "Edit Grid Series" button).');
   end;
-  {$IFDEF TEESTD}
+  {$IFDEF TEE9}
   Button2.Visible := False;
   Chart1.Legend.Visible := False;
   {$ELSE}
@@ -182,11 +182,11 @@ end;
 
 procedure TfrmMtxGridSeries.Button2Click(Sender: TObject);
 begin
-  {$IFNDEF TEESTD}
-  EditSeries(Self,GridSeries);
+  {$IFDEF TEE9}
+  EditSeries(Self, GridSeries);
+  {$ENDIF}
   ThreeColorBox.Checked := (GridSeries.ColorPalette.MidColor <> clNone);
   UpdateCharts;
-  {$ENDIF}
 end;
 
 procedure TFrmMtxGridSeries.UpdateCharts;

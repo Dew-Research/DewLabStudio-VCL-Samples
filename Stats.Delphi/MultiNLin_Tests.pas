@@ -734,8 +734,8 @@ begin
           'variable is the number of quantum defects, and the'+
           'predictor variable is the excited energy state. ');
   end;
-  Edit2.Text := FormatFloat('0.00e+00',Sqrt(EPS));
-  Edit3.Text := FormatFloat('0.00e+00',Sqrt(EPS));
+  Edit2.Text := FormatFloat('0.00e+00',Math387.Sqrt(EPS));
+  Edit3.Text := FormatFloat('0.00e+00',Math387.Sqrt(EPS));
   ConvergenceTolEdit.Text := FormatFloat('0.00e+00',1.0e-6);
 end;
 

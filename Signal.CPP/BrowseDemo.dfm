@@ -212,4 +212,15 @@ object BrowseDemoForm: TBrowseDemoForm
     Top = 123
     MtxDataValues = {}
   end
+  object MtxProgress: TMtxProgressDialog
+    ThreadBypass = False
+    InternalLoop = True
+    InfiniteLoop = False
+    Min = 0
+    Max = 0
+    ShowDialog = False
+    Left = 196
+    Top = 104
+    MtxDataValues = {}
+  end
 end

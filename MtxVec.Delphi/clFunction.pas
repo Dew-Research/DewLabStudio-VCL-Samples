@@ -121,7 +121,7 @@ begin
          case FunctionBox.ItemIndex of
          0: clC := clC * clB;
          1: clC := sin(clC)  + sin(clB);
-         2: clC := Sqrt(4 * a /(2*PI)) * a * sqr(clB) * Exp(-0.5 * a * sqr(clB));
+         2: clC := Math387.Sqrt(4 * a /(2*PI)) * a * sqr(clB) * Exp(-0.5 * a * sqr(clB));
          3: if not clB.Complex then ScalarB := clB.Mean else ScalarB := clB.Meanc.Re;
          end;
     end;
@@ -141,7 +141,7 @@ begin
         case FunctionBox.ItemIndex of
         0: c := c * b;
         1: c := sin(c) + sin(b);
-        2: c := Sqrt(4 * a /(2*PI)) * a * sqr(b) * Exp(-0.5 * a * sqr(b));
+        2: c := Math387.Sqrt(4 * a /(2*PI)) * a * sqr(b) * Exp(-0.5 * a * sqr(b));
         3: if not B.Complex then a := B.Mean else a := B.Meanc.Re;
         end;
     end;
@@ -173,26 +173,26 @@ begin
          case c.FloatPrecision of
          mvSingle:        case FunctionBox.ItemIndex of
                           0: for k := 0 to c.Length-1 do c.SValues[k] := c.SValues[k] * b.SValues[k];
-                          1: for k := 0 to c.Length-1 do c.SValues[k] := sin(c.SValues[k]) + sin(b.SValues[k]);
-                          2: for k := 0 to c.Length-1 do c.SValues[k] := Sqrt(4 * a /(2*PI)) * a * sqr(b.SValues[k]) * Exp(-0.5 * a * sqr(b.SValues[k]));
+                          1: for k := 0 to c.Length-1 do c.SValues[k] := sinf(c.SValues[k]) + sinf(b.SValues[k]);
+                          2: for k := 0 to c.Length-1 do c.SValues[k] := Sqrtf(4 * a /(2*PI)) * a * sqr(b.SValues[k]) * Expf(-0.5 * a * sqr(b.SValues[k]));
                           3: for k := 0 to c.Length-1 do sa := sa  + c.SValues[k];
                           end;
          mvDouble:        case FunctionBox.ItemIndex of
                           0: for k := 0 to c.Length-1 do c[k] := c[k] * b[k];
-                          1: for k := 0 to c.Length-1 do c[k] := sin(c[k]) + sin(b[k]);
-                          2: for k := 0 to c.Length-1 do c[k] := Sqrt(4 * a /(2*PI)) * a * sqr(b[k]) * Exp(-0.5 * a * sqr(b[k]));
+                          1: for k := 0 to c.Length-1 do c[k] := Math387.Sin(c[k]) + Math387.Sin(b[k]);
+                          2: for k := 0 to c.Length-1 do c[k] := Math387.Sqrt(4 * a /(2*PI)) * a * sqr(b[k]) * Math387.Exp(-0.5 * a * sqr(b[k]));
                           3: for k := 0 to c.Length-1 do a := a  + c[k];
                           end;
          mvSingleComplex: case FunctionBox.ItemIndex of
                           0: for k := 0 to c.Length-1 do c.SCValues[k] := c.SCValues[k] * b.SCValues[k];
                           1: for k := 0 to c.Length-1 do c.SCValues[k] := sin(c.SCValues[k]) + sin(b.SCValues[k]);
-                          2: for k := 0 to c.Length-1 do c.SCValues[k] := Sqrt(4 * a /(2*PI)) * a * csqr(b.SCValues[k]) * Exp(-0.5 * a * csqr(b.SCValues[k]));
+                          2: for k := 0 to c.Length-1 do c.SCValues[k] := Math387.Sqrt(4 * a /(2*PI)) * a * csqr(b.SCValues[k]) * Exp(-0.5 * a * csqr(b.SCValues[k]));
                           3: for k := 0 to c.Length-1 do sac := sac  + c.SCValues[k];
                           end;
          mvDoubleComplex: case FunctionBox.ItemIndex of
                           0: for k := 0 to c.Length-1 do c.CValues[k] := c.CValues[k] * b.CValues[k];
                           1: for k := 0 to c.Length-1 do c.CValues[k] := sin(c.CValues[k]) + sin(b.CValues[k]);
-                          2: for k := 0 to c.Length-1 do c.CValues[k] := Sqrt(4 * a /(2*PI)) * a * csqr(b.CValues[k]) * Exp(-0.5 * a * csqr(b.CValues[k]));
+                          2: for k := 0 to c.Length-1 do c.CValues[k] := Math387.Sqrt(4 * a /(2*PI)) * a * csqr(b.CValues[k]) * Exp(-0.5 * a * csqr(b.CValues[k]));
                           3: for k := 0 to c.Length-1 do ac := ac  + c.CValues[k];
                           end;
          end;

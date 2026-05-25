@@ -681,9 +681,9 @@ begin  // Create arrays of 3D coordinates, 40 x 40 x 40 cells
     for i := 0 to nhkl-1 do
     begin
       Fgold[i] :=
-        (Expj(pi*h[i]*(nx-1)) * Sin(pi*h[i]*nx) / Sin(pi*h[i])) *
-        (Expj(pi*k[i]*(ny-1)) * Sin(pi*k[i]*ny) / Sin(pi*k[i])) *
-        (Expj(pi*l[i]*(nz-1)) * Sin(pi*l[i]*nz) / Sin(pi*l[i]))
+        (Expj(pi*h[i]*(nx-1)) * Math387.Sin(pi*h[i]*nx) / Math387.Sin(pi*h[i])) *
+        (Expj(pi*k[i]*(ny-1)) * Math387.Sin(pi*k[i]*ny) / Math387.Sin(pi*k[i])) *
+        (Expj(pi*l[i]*(nz-1)) * Math387.Sin(pi*l[i]*nz) / Math387.Sin(pi*l[i]))
     end;
 
     SetLength(AbsFgold, nhkl);

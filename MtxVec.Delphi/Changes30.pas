@@ -1,4 +1,4 @@
-unit Changes30;
+ï»¿unit Changes30;
 
 interface
 
@@ -32,6 +32,30 @@ procedure TfrmChanges30.List0;
 begin
     With RichEdit1.Lines, RichEdit1 do
     begin
+        SelAttributes.Style := [fsBold];
+        SelAttributes.Color := RGB(51,104,196);
+        SelAttributes.Size := 11;
+
+        Add('List of new features in v6.4 (May 2026):');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
+        SelAttributes.Style := [fsUnderline];
+        Add('Math387.pas:');
+        Paragraph.FirstIndent := 10;
+        Paragraph.Numbering := nsBullet;
+        Add('Math387 scalar math upgraded to use SSE42/AVX2 assembler. 74 functions rewriten, 72.000 lines of new assembler.');
+        Add('Matches and exceeds the speed of Intel ICX C/C++ math library.');
+        Add('Sub-1 ULP accuracy across the full input range for every function, every variant. Bit-exact identical results across Intel and AMD.');
+        Add('Added single-precision variants to all functions that also run up to 2x faster than their double precision counterparts.');
+        Add('Automatic AVX2+FMA fast path on modern CPUs, SSE4.2 baseline everywhere else. XE6 required for SSE4.2, Rad Studio 11.0+ for AVX2.');
+        Add('Roughly 7x faster on Win32 and 6x on Win64 in average across all 74 functions.');
+        Add('Payne Hanek large argument reduction for all trigonometric functions allows accurate result also for huge arguments.');
+        Paragraph.FirstIndent := 0;
+        Paragraph.Numbering := nsNone;
+        Add('');
+
         SelAttributes.Style := [fsBold];
         SelAttributes.Color := RGB(51,104,196);
         SelAttributes.Size := 11;
@@ -302,8 +326,8 @@ begin
         Paragraph.FirstIndent := 10;
         Paragraph.Numbering := nsBullet;
         Add('MtxVec packages may not be installed with range-checking enabled. The build tool will respect this. An immediate crash is possible otherwise.');
-        Add('The use of “IDE Fix pack” packages is not recommended. An immediate crash is possible.');
-        Add('Your own project needs to be compiled with “use debug dcu’s” option checked for the compiler to support all features.');
+        Add('The use of ï¿½IDE Fix packï¿½ packages is not recommended. An immediate crash is possible.');
+        Add('Your own project needs to be compiled with ï¿½use debug dcuï¿½sï¿½ option checked for the compiler to support all features.');
 
         Paragraph.FirstIndent := 0;
         Paragraph.Numbering := nsNone;

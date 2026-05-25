@@ -61,7 +61,7 @@ begin
       Res.Mul(-0.5*a);
       Res.Exp;
       Res.Mul(tmp);
-      Res.Mul(Sqrt(4*INVTWOPI)*a);
+      Res.Mul(Math387.Sqrt(4*INVTWOPI)*a);
       Res.BlockNext;
       X.BlockNext;
     end;
@@ -124,7 +124,7 @@ begin
     Res.Mul(-0.5*a);
     Res.Exp;
     Res.Mul(tmp);
-    Res.Mul(Sqrt(4*INVTWOPI)*a);
+    Res.Mul(Math387.Sqrt(4*INVTWOPI)*a);
   end;
   Result := StopTimer*1000;
 end;
@@ -133,7 +133,7 @@ function TfrmBlockProc.MaxwellVecExpression(a: TSample; x: TVec): Vector;
 var tmp: Vector;
 begin
   tmp := Sqr(x);
-  Result := Sqrt(4 * a * INVTWOPI) * a * tmp * Exp(-0.5 * a * tmp);
+  Result := Math387.Sqrt(4 * a * INVTWOPI) * a * tmp * Exp(-0.5 * a * tmp);
 end;
 
 procedure TfrmBlockProc.MaxwellExpression(Iter: integer; var Result: double);

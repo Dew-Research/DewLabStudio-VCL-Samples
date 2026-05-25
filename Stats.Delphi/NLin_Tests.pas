@@ -67,7 +67,7 @@ Uses Optimization, MtxVecTee, Math387, MtxVecEdit, LogMemo, MtxVec,
 
 function Eckerle4(const B: TVec; X: double): double;
 begin
-  Result := B[0]/B[1] * Exp(-0.5*Sqr((X-B[2])/B[1]));
+  Result := B[0]/B[1] * Math387.Exp(-0.5*Sqr((X-B[2])/B[1]));
 end;
 
 function Thurber(const B: TVec; X: double): double;
@@ -78,7 +78,7 @@ end;
 
 function Rat42(const B: TVec; X: double): double;
 begin
-  Result := B[0] / (1.0 + Exp(B[1]-B[2]*X));
+  Result := B[0] / (1.0 + Math387.Exp(B[1]-B[2]*X));
 end;
 
 function Misra1c(const B: TVec; X: double): double;
@@ -93,22 +93,22 @@ end;
 
 function Chwirut2(const B: TVec; X: double): double;
 begin
-  Result := Exp(-B[0]*X)/(B[1]+B[2]*X);
+  Result := Math387.Exp(-B[0]*X)/(B[1]+B[2]*X);
 end;
 
 function MGH10(const B: TVec; X: double): double;
 begin
-  Result := B[0]*Exp(B[1]/(X+B[2]));
+  Result := B[0]*Math387.Exp(B[1]/(X+B[2]));
 end;
 
 function Roszman1(const B: TVec; X: double): double;
 begin
-  Result := B[0]-B[1]*X - ArcTan(B[2]/(X-B[3]))/PI;
+  Result := B[0]-B[1]*X - Math387.ArcTan(B[2]/(X-B[3]))/PI;
 end;
 
 function Rat43(const B: TVec; X: double): double;
 begin
-  Result := B[0] / Power((1.0 + Exp(B[1]-B[2]*X)),1/B[3]);
+  Result := B[0] / Math387.Power((1.0 + Math387.Exp(B[1]-B[2]*X)),1/B[3]);
 end;
 
 procedure TfrmNonLinTest.FormShow(Sender: TObject);
@@ -561,7 +561,7 @@ begin
           'predictor variable is the excited energy state. ');
   end;
   Edit2.Text := FormatFloat('0.00e+00',1.0e-5);
-  Edit3.Text := FormatFloat('0.00e+00',Sqrt(EPS));
+  Edit3.Text := FormatFloat('0.00e+00',Math387.Sqrt(EPS));
   Edit4.Text := FormatFloat('0.00e+00',1.0e-6);
 end;
 

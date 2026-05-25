@@ -4,21 +4,22 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
   Caption = 'frmMtxGridSeries'
   ClientHeight = 499
   ClientWidth = 661
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   ExplicitWidth = 677
   ExplicitHeight = 538
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 661
     Height = 85
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 661
     ExplicitHeight = 85
     inherited RichEdit1: TRichEdit
       Width = 659
       Height = 83
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 659
       ExplicitHeight = 83
     end
@@ -26,6 +27,7 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
   inherited Panel2: TPanel
     Top = 441
     Width = 661
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 441
     ExplicitWidth = 661
   end
@@ -33,6 +35,7 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
     Top = 85
     Width = 661
     Height = 356
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 85
     ExplicitWidth = 661
     ExplicitHeight = 356
@@ -47,14 +50,31 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
       Top = 1
       Width = 398
       Height = 354
-      BackWall.Brush.Color = clWhite
       BackWall.Brush.Style = bsClear
       Title.Font.Color = 12222282
       Title.Font.Height = -13
       Title.Font.Style = [fsBold]
       Title.Text.Strings = (
         'Matrix values')
+      BottomAxis.LogarithmicBase = 10.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
       Chart3DPercent = 100
+      DepthAxis.LogarithmicBase = 10.000000000000000000
+      DepthAxis.Maximum = 0.500000000000000000
+      DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
+      DepthTopAxis.LogarithmicBase = 10.000000000000000000
+      DepthTopAxis.Maximum = 0.500000000000000000
+      DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
+      LeftAxis.LogarithmicBase = 10.000000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
+      RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
+      RightAxis.ZPosition = 100.000000000000000000
+      TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
+      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       View3DOptions.Perspective = 24
       Zoom.Pen.Mode = pmNotXor
@@ -65,6 +85,7 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
       Color = 14869218
       TabOrder = 0
       OnMouseMove = Chart1MouseMove
+      DefaultCanvas = ''
       PrintMargins = (
         15
         5
@@ -183,7 +204,6 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
       Top = 1
       Width = 90
       Height = 354
-      BackWall.Brush.Color = clWhite
       BackWall.Brush.Style = bsClear
       Legend.Visible = False
       MarginBottom = 20
@@ -195,10 +215,28 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
       Title.Text.Strings = (
         '')
       Title.Visible = False
+      BottomAxis.LogarithmicBase = 10.000000000000000000
+      BottomAxis.EndPosition = 100.000000000000000000
       BottomAxis.Visible = False
       Chart3DPercent = 100
+      DepthAxis.LogarithmicBase = 10.000000000000000000
+      DepthAxis.Maximum = 0.500000000000000000
+      DepthAxis.Minimum = -0.500000000000000000
+      DepthAxis.EndPosition = 100.000000000000000000
+      DepthTopAxis.LogarithmicBase = 10.000000000000000000
+      DepthTopAxis.Maximum = 0.500000000000000000
+      DepthTopAxis.Minimum = -0.500000000000000000
+      DepthTopAxis.EndPosition = 100.000000000000000000
       LeftAxis.AxisValuesFormat = '#,##0.0###'
+      LeftAxis.LogarithmicBase = 10.000000000000000000
+      LeftAxis.EndPosition = 100.000000000000000000
       LeftAxis.Title.Caption = 'Color scale'
+      RightAxis.LogarithmicBase = 10.000000000000000000
+      RightAxis.EndPosition = 100.000000000000000000
+      RightAxis.ZPosition = 100.000000000000000000
+      TopAxis.LogarithmicBase = 10.000000000000000000
+      TopAxis.EndPosition = 100.000000000000000000
+      TopAxis.ZPosition = 100.000000000000000000
       View3D = False
       View3DOptions.Perspective = 24
       Zoom.Pen.Mode = pmNotXor
@@ -208,6 +246,7 @@ inherited frmMtxGridSeries: TfrmMtxGridSeries
       Color = 14869218
       TabOrder = 2
       OnMouseMove = Chart1MouseMove
+      DefaultCanvas = ''
       ColorPaletteIndex = 13
     end
   end

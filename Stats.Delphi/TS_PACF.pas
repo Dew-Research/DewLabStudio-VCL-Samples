@@ -232,8 +232,8 @@ begin
         lb := Axes.Left.CalcYPosValue(-NormalCDF(0.95,0,1.0));
       end else { PACF }
       begin
-        ub := Axes.Left.CalcYPosValue(2/Sqrt(Data.Length));
-        lb := Axes.Left.CalcYPosValue(-2/Sqrt(Data.Length));
+        ub := Axes.Left.CalcYPosValue(2/Math387.Sqrt(Data.Length));
+        lb := Axes.Left.CalcYPosValue(-2/Math387.Sqrt(Data.Length));
       end;
       ClipRectangle(ChartRect);
       Pen.Color := clBlue;
