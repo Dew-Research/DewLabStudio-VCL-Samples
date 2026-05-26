@@ -67,15 +67,15 @@
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;Tee927.lib;vclimg.lib;FMXTeePro927.lib;FmxTeeUI927.lib;FMXTee927.lib;fmx.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;TeePro927.lib;TeeUI927.lib;MtxTools627.lib;MtxCore627.lib;SignalTool627.lib;SignalCore627.lib;SignalTee627.lib;MtxTee627.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;Tee927.lib;vclimg.lib;TeePro927.lib;TeeUI927.lib;Tee927.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;TeePro927.lib;TeeUI927.lib;MtxTools627.lib;MtxCore627.lib;SignalTool627.lib;SignalCore627.lib;SignalTee627.lib;MtxTee627.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
         <SanitizedProjectName>BasicDemoW32_CB27</SanitizedProjectName>
-        <PostBuildEvent><![CDATA[(copy *.sfs $(OUTPUTDIR))
-(copy *.rtf $(OUTPUTDIR))
+        <PostBuildEvent><![CDATA[copy *.sfs "$(OUTPUTDIR)"
+copy *.rtf "$(OUTPUTDIR)"
 $(PostBuildEvent)]]></PostBuildEvent>
         <BCC_PCHUsage>None</BCC_PCHUsage>
         <BCC_SmartPCHCache>false</BCC_SmartPCHCache>
@@ -85,7 +85,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <ILINK_LibraryPath>C:\Users\Atma\Documents\Embarcadero\Studio\Projects\;C:\CommonObjects\GIT-DewLabStudio-VCL-Samples\Signal.CPP\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee927;FMXTeeDB927;FMXTeeImport927;FMXTeeLanguage927;FMXTeePro927;FmxTeeUI927;FMXTree27;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore627;MtxDb627;MtxTee627;MtxTools627;RESTBackendComponents;RESTComponents;rtl;SignalCore627;SignalTee627;SignalTool627;soapmidas;soaprtl;soapserver;StatCore627;StatSeries627;StatTools627;svn;Tee927;TeeDB927;TeeGL927;TeeImage927;TeeImport927;TeeLanguage927;TeeMaker127;TeePro927;TeeTree2D27Tee9;TeeUI927;TeeWorld927;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore627;MtxDb627;MtxTee627;MtxTools627;RESTBackendComponents;RESTComponents;rtl;SignalCore627;SignalTee627;SignalTool627;soapmidas;soaprtl;soapserver;StatCore627;StatSeries627;StatTools627;svn;Tee927;TeeDB927;TeeGL927;TeeImage927;TeeImport927;TeeLanguage927;TeeMaker127;TeePro927;TeeTree2D27Tee9;TeeUI927;TeeWorld927;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -95,7 +95,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore627;MtxDb627;MtxTee627;MtxTools627;RESTBackendComponents;RESTComponents;rtl;SignalCore627;SignalTee627;SignalTool627;soapmidas;soaprtl;soapserver;StatCore627;StatSeries627;StatTools627;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore627;MtxDb627;MtxTee627;MtxTools627;RESTBackendComponents;RESTComponents;rtl;SignalCore627;SignalTee627;SignalTool627;soapmidas;soaprtl;soapserver;StatCore627;StatSeries627;StatTools627;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -127,7 +127,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
-        <LinkPackageStatics>rtl.lib;vcl.lib;Tee927.lib;vclimg.lib;FMXTeePro927.lib;FmxTeeUI927.lib;FMXTee927.lib;fmx.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;TeePro927.lib;TeeUI927.lib;MtxTools627.lib;MtxCore627.lib;SignalTool627.lib;SignalCore627.lib;SignalTee627.lib;MtxTee627.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;Tee927.lib;vclimg.lib;TeePro927.lib;TeeUI927.lib;Tee927.lib;IndyProtocols.lib;IndyCore.lib;IndySystem.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;TeePro927.lib;TeeUI927.lib;MtxTools627.lib;MtxCore627.lib;SignalTool627.lib;SignalCore627.lib;SignalTee627.lib;MtxTee627.lib</LinkPackageStatics>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
         <UsePackages>false</UsePackages>
@@ -135,8 +135,9 @@ $(PostBuildEvent)]]></PostBuildEvent>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;Tee927.bpi;vclimg.bpi;FMXTeePro927.bpi;FmxTeeUI927.bpi;FMXTee927.bpi;fmx.bpi;IndyProtocols.bpi;IndyCore.bpi;IndySystem.bpi;dbrtl.bpi;xmlrtl.bpi;vclactnband.bpi;vclx.bpi;TeePro927.bpi;TeeUI927.bpi;MtxTools627.bpi;MtxCore627.bpi;SignalTool627.bpi;SignalCore627.bpi;SignalTee627.bpi;MtxTee627.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;Tee927.bpi;vclimg.bpi;TeePro927.bpi;TeeUI927.bpi;Tee927.bpi;IndyProtocols.bpi;IndyCore.bpi;IndySystem.bpi;dbrtl.bpi;xmlrtl.bpi;vclactnband.bpi;vclx.bpi;TeePro927.bpi;TeeUI927.bpi;MtxTools627.bpi;MtxCore627.bpi;SignalTool627.bpi;SignalCore627.bpi;SignalTee627.bpi;MtxTee627.bpi</LinkPackageImports>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <UsePackages>false</UsePackages>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -146,10 +147,12 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
+        <UsePackages>false</UsePackages>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <UsePackages>false</UsePackages>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="AmpltRatios.cpp">
@@ -515,12 +518,6 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <DependentOn>TriggerDemo.h</DependentOn>
             <BuildOrder>60</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Unit2.cpp">
-            <Form>Form2</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>Unit2.h</DependentOn>
-            <BuildOrder>64</BuildOrder>
-        </CppCompile>
         <CppCompile Include="WhatIsNew.cpp">
             <Form>WhatIsNewForm</Form>
             <FormType>dfm</FormType>
@@ -562,7 +559,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <FormResources Include="WindowsDemo.dfm"/>
         <FormResources Include="WindowFilters.dfm"/>
         <FormResources Include="WhatIsNew.dfm"/>
-        <FormResources Include="Unit2.dfm"/>
+        
         <FormResources Include="PhaseScope.dfm"/>
         <FormResources Include="PhaseDemo.dfm"/>
         <FormResources Include="PeakMarkingOrder.dfm"/>
@@ -1496,7 +1493,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>(copy *.sfs $(OUTPUTDIR))&amp;&amp;(copy *.rtf $(OUTPUTDIR))</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs "$(OUTPUTDIR)"&amp;&amp;copy *.rtf "$(OUTPUTDIR)"</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
@@ -1504,7 +1501,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>(copy *.sfs $(OUTPUTDIR))&amp;&amp;(copy *.rtf $(OUTPUTDIR))</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs "$(OUTPUTDIR)"&amp;&amp;copy *.rtf "$(OUTPUTDIR)"</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
@@ -1512,7 +1509,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>(copy *.sfs $(OUTPUTDIR))&amp;&amp;(copy *.rtf $(OUTPUTDIR))</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs "$(OUTPUTDIR)"&amp;&amp;copy *.rtf "$(OUTPUTDIR)"</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
@@ -1520,7 +1517,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>(copy *.sfs $(OUTPUTDIR))&amp;&amp;(copy *.rtf $(OUTPUTDIR))</PostBuildEvent>
+        <PostBuildEvent>copy *.sfs "$(OUTPUTDIR)"&amp;&amp;copy *.rtf "$(OUTPUTDIR)"</PostBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
 </Project>

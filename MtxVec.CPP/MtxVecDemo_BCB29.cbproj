@@ -7,10 +7,9 @@
         <MainSource>MtxVecDemo_BCB29.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64x</Platform>
         <TargetedPlatforms>1048579</TargetedPlatforms>
         <ProjectName Condition="'$(ProjectName)'==''">MtxVecDemo_BCB29</ProjectName>
-        <CC_Suffix Condition="'$(CC_Suffix)'==''">c</CC_Suffix>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -86,7 +85,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;Tee929.lib;TeeUI929.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -110,7 +109,7 @@ copy *.txt "$(OUTPUTDIR)"
 $(PostBuildEvent)]]></PostBuildEvent>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;DCLClassifiersDB128;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore629;MtxDb629;MtxTee629;MtxTools629;RESTBackendComponents;RESTComponents;rtl;SignalCore629;SignalTee629;SignalTool629;soapmidas;soaprtl;soapserver;StatCore629;StatSeries629;StatTools629;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;DCLClassifiersDB128;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore629;MtxDb629;MtxTee629;MtxTools629;RESTBackendComponents;RESTComponents;rtl;SignalCore629;SignalTee629;SignalTool629;soapmidas;soaprtl;soapserver;StatCore629;StatSeries629;StatTools629;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -118,7 +117,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore629;MtxDb629;MtxTee629;MtxTools629;RESTBackendComponents;RESTComponents;rtl;SignalCore629;SignalTee629;SignalTool629;soapmidas;soaprtl;soapserver;StatCore629;StatSeries629;StatTools629;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
+        <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;Classifiers128;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;emsedge;emshosting;emsserverresource;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMongoDBDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;MtxCore629;MtxDb629;MtxTee629;MtxTools629;RESTBackendComponents;RESTComponents;rtl;SignalCore629;SignalTee629;SignalTool629;soapmidas;soaprtl;soapserver;StatCore629;StatSeries629;StatTools629;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
@@ -128,6 +127,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BCC_RequireMathFuncErrorNumber>false</BCC_RequireMathFuncErrorNumber>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64x)'!=''">
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -160,16 +160,16 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
         <UsePackages>false</UsePackages>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;TeeUI929.lib;Tee929.lib;vclimg.lib</LinkPackageStatics>
         <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
@@ -180,7 +180,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>
         <BCC_InstructionSet_v15>AVX2</BCC_InstructionSet_v15>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -189,17 +189,17 @@ $(PostBuildEvent)]]></PostBuildEvent>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;TeeUI929.lib;Tee929.lib;vclimg.lib;fmx.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;TeeUI929.lib;Tee929.lib;vclimg.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64x)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;fmx.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;MtxTools629.lib;MtxCore629.lib;vclactnband.lib;vclx.lib;MtxDb629.lib;dbrtl.lib;MtxTee629.lib;vclimg.lib;Tee929.lib;TeeUI929.lib</LinkPackageStatics>
         <BCC_RequireMathFuncErrorNumber>false</BCC_RequireMathFuncErrorNumber>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BCC_InstructionSet_v15>AVX2</BCC_InstructionSet_v15>

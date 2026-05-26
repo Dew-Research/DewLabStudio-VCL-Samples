@@ -176,7 +176,7 @@ void __fastcall TfrmPCAWiz::CorrMtxReport()
 							tmpMtx->ValuesToStrings(RichEdit->Lines,"\t",TFixedTextAlign::ftaNone,FormatString);
 							RichEdit->Lines->Add("");
 							// Ln(R)
-							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Ln(tmpMtx->Determinant())));
+							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Math387::Ln(tmpMtx->Determinant())));
 							RichEdit->Lines->Add("");
 						 };
 						 break;
@@ -187,7 +187,7 @@ void __fastcall TfrmPCAWiz::CorrMtxReport()
 							tmpMtx->ValuesToStrings(RichEdit->Lines,"\t",TFixedTextAlign::ftaNone,FormatString);
 							RichEdit->Lines->Add("");
 							// Ln(R)
-							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Ln(tmpMtx->Determinant())));
+							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Math387::Ln(tmpMtx->Determinant())));
 							RichEdit->Lines->Add("");
 						 };
 						 break;
@@ -198,7 +198,7 @@ void __fastcall TfrmPCAWiz::CorrMtxReport()
 							tmpMtx->ValuesToStrings(RichEdit->Lines,"\t",TFixedTextAlign::ftaNone,FormatString);
 							RichEdit->Lines->Add("");
 							// Ln(R)
-							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Ln(tmpMtx->Determinant())));
+							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Math387::Ln(tmpMtx->Determinant())));
 							RichEdit->Lines->Add("");
 
 							RichEdit->SelAttributes->Style = RichEdit->SelAttributes->Style << TFontStyle::fsBold;
@@ -209,7 +209,7 @@ void __fastcall TfrmPCAWiz::CorrMtxReport()
 							tmpMtx->ValuesToStrings(RichEdit->Lines,"\t",TFixedTextAlign::ftaNone,FormatString);
 							RichEdit->Lines->Add("");
 							// Ln(R)
-							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Ln(tmpMtx->Determinant())));
+							RichEdit->Lines->Add("Ln(R) = "+ FormatFloat(FormatString,Math387::Ln(tmpMtx->Determinant())));
 							RichEdit->Lines->Add("");
 
 						 };

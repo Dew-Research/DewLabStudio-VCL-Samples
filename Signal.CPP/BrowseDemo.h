@@ -14,7 +14,6 @@
 #include "SignalSeriesTee.hpp"
 #include "SignalTools.hpp"
 #include "SignalToolsTee.hpp"
-#include "MtxDialogs.hpp"
 #include <VCLTee.TeeEdit.hpp>
 #include <VCLTee.Chart.hpp>
 #include <ComCtrls.hpp>
@@ -27,10 +26,10 @@
 #include "FileSignal.hpp"
 #include "MtxBaseComp.hpp"
 #include "MtxComCtrls.hpp"
+#include "MtxDialogs.hpp"
 #include "SignalSeriesTee.hpp"
 #include "SignalTools.hpp"
 #include "SignalToolsTee.hpp"
-#include "MtxDialogs.hpp"
 #include <VCLTee.TeeEdit.hpp>
 #include <ComCtrls.hpp>
 #include <Dialogs.hpp>

@@ -75,9 +75,9 @@
         <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
         <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
-        <PostBuildEvent><![CDATA[(copy *.txt $(OUTPUTDIR))
-(copy *.vec $(OUTPUTDIR))
-(copy *.mtx $(OUTPUTDIR))
+        <PostBuildEvent><![CDATA[copy *.txt "$(OUTPUTDIR)"
+copy *.vec "$(OUTPUTDIR)"
+copy *.mtx "$(OUTPUTDIR)"
 $(PostBuildEvent)]]></PostBuildEvent>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -139,6 +139,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BCC_SmartPCHCache>false</BCC_SmartPCHCache>
         <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
+        <UsePackages>false</UsePackages>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <BCC_DisableOptimizations>false</BCC_DisableOptimizations>

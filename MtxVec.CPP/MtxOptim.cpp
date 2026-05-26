@@ -42,7 +42,7 @@ double __fastcall Banana(
 	 const System::TObject* * ObjConst,
 	 #endif
 
-	 #if  (__BORLANDC__ >= 0x0760)
+	 #if  (__BORLANDC__ >= 0x0770)
      const System::NativeInt ObjConst_High
 	 #else
 	 const int ObjConst_Size

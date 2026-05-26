@@ -1,4 +1,4 @@
-	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
 			<ProjectGuid>{5E08541B-B463-4688-8124-4C7FD230C119}</ProjectGuid>
 			<ProjectVersion>13.4</ProjectVersion>
@@ -44,7 +44,7 @@
 			<UsingDelphiRTL>true</UsingDelphiRTL>
 			<_TCHARMapping>wchar_t</_TCHARMapping>
 			<ProjectType>CppVCLApplication</ProjectType>
-			<PackageImports>IPIndyImpl;bindcompfmx;fmx;rtl;dbrtl;IndySystem;DbxClientDriver;bindcomp;inetdb;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DataSnapServer;DataSnapProviderClient;xmlrtl;DbxCommonDriver;IndyProtocols;DBXMySQLDriver;dbxcds;soaprtl;bindengine;DBXOracleDriver;dsnap;DBXInformixDriver;IndyCore;DBXFirebirdDriver;inet;inetdbxpress;DBXSybaseASADriver;dbexpress;DataSnapIndy10ServerTransport;$(PackageImports)</PackageImports>
+			<PackageImports>IPIndyImpl;rtl;dbrtl;IndySystem;DbxClientDriver;bindcomp;inetdb;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DataSnapServer;DataSnapProviderClient;xmlrtl;DbxCommonDriver;IndyProtocols;DBXMySQLDriver;dbxcds;soaprtl;bindengine;DBXOracleDriver;dsnap;DBXInformixDriver;IndyCore;DBXFirebirdDriver;inet;inetdbxpress;DBXSybaseASADriver;dbexpress;DataSnapIndy10ServerTransport;$(PackageImports)</PackageImports>
 			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
 			<Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
 			<IncludePath>..\;C:\Users\Atmapuri\Documents\RAD Studio\Projects\;C:\CommonObjects\Dew MtxVec.NET\BCBExamples\;$(IncludePath)</IncludePath>

@@ -53,7 +53,7 @@ __fastcall TfrmNonLinTest::TfrmNonLinTest(TComponent* Owner)
 			"variable is the number of quantum defects, and the"
 			"predictor variable is the excited energy state. ");
 	Edit2->Text = FormatFloat("0.00e+00",1.0e-5);
-	Edit3->Text = FormatFloat("0.00e+00",Sqrt(EPS));
+	Edit3->Text = FormatFloat("0.00e+00",Math387::Sqrt(EPS));
 	Edit4->Text = FormatFloat("0.00e+00",1.0e-6);
 }
 //---------------------------------------------------------------------------
@@ -71,7 +71,7 @@ TSample __fastcall Eckerle4(
 	Mtxvec::TVec* aBv = const_cast<Mtxvec::TVec*> (Bv);
 	double* B = aBv->PValues1D(0);
 
-	return B[0]/B[1] * Exp(-0.5 * ((X-B[2])/B[1]) * ((X-B[2])/B[1]) );
+	return B[0]/B[1] * Math387::Exp(-0.5 * ((X-B[2])/B[1]) * ((X-B[2])/B[1]) );
 }
 
 TSample __fastcall Thurber(
@@ -106,7 +106,7 @@ TSample __fastcall Rat42(
 	Mtxvec::TVec* aBv = const_cast<Mtxvec::TVec*> (Bv);
 	double* B = aBv->PValues1D(0);
 
-	return B[0] / (1.0 + Exp(B[1]-B[2]*X));
+	return B[0] / (1.0 + Math387::Exp(B[1]-B[2]*X));
 }
 
 TSample __fastcall Misra1c(
@@ -157,7 +157,7 @@ TSample __fastcall Chwirut2(
 	Mtxvec::TVec* aBv = const_cast<Mtxvec::TVec*> (Bv);
 	double* B = aBv->PValues1D(0);
 
-	return Exp(-B[0]*X)/(B[1]+B[2]*X);
+	return Math387::Exp(-B[0]*X)/(B[1]+B[2]*X);
 }
 
 TSample __fastcall MGH10(
@@ -174,7 +174,7 @@ TSample __fastcall MGH10(
 	Mtxvec::TVec* aBv = const_cast<Mtxvec::TVec*> (Bv);
 	double* B = aBv->PValues1D(0);
 
-	return B[0]*Exp(B[1]/(X+B[2]));
+	return B[0]*Math387::Exp(B[1]/(X+B[2]));
 }
 
 TSample __fastcall Roszman1(
@@ -191,7 +191,7 @@ TSample __fastcall Roszman1(
 	Mtxvec::TVec* aBv = const_cast<Mtxvec::TVec*> (Bv);
 	double* B = aBv->PValues1D(0);
 
-	return B[0]-B[1]*X - ArcTan(B[2]/(X-B[3]))/PI;
+	return B[0]-B[1]*X - Math387::ArcTan(B[2]/(X-B[3]))/PI;
 }
 
 TSample __fastcall Rat43(
@@ -208,7 +208,7 @@ TSample __fastcall Rat43(
 	Mtxvec::TVec* aBv = const_cast<Mtxvec::TVec*> (Bv);
 	double* B = aBv->PValues1D(0);
 
-	return B[0] / Math387::Power((1.0 + Exp(B[1]-B[2]*X)),1/B[3]);
+	return B[0] / Math387::Power((1.0 + Math387::Exp(B[1]-B[2]*X)),1/B[3]);
 }
 
 void __fastcall TfrmNonLinTest::FormShow(TObject *Sender)

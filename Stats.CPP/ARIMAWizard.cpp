@@ -496,7 +496,7 @@ void __fastcall TfrmARIMAWizard::RefreshChart()
 	// recalculate lb and ub for acf and pacf chart 
 	if (rgPlot->ItemIndex != 0)
 	{
-		chartUCL = NormalCDFInv(1.0-0.5*Alpha,0.0,1.0)/Sqrt((double) Data->Length);
+		chartUCL = NormalCDFInv(1.0-0.5*Alpha,0.0,1.0)/Math387::Sqrt((double) Data->Length);
 		chartLCL = - chartUCL;
 	}
 	chartData->FreeAllSeries(NULL);
