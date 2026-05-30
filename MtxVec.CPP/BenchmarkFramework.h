@@ -20,7 +20,8 @@ typedef TCplx __fastcall (*TCplxFunc)(const TCplx& x);
 
 struct TFuncInfo {
   AnsiString func_name;
-  TDbleFunc smpl_func;
+  TDbleFunc smpl_func;       // Math387 enhanced scalar (matches the Delphi column)
+  TDbleFunc smpl_rtl_func;   // pure C/C++ runtime scalar (<math.h>) baseline
   TCplxFunc cplx_func;
   TVecMethod vec_method;
   double smpl_val;
@@ -44,7 +45,8 @@ private:
 
   void InitFuncs();
   void AddFunc (const AnsiString& func_name, double smpl_val, const TCplx& cplx_val,
-				TDbleFunc const smpl_func, TCplxFunc const cplx_func, TVecMethod const vec_method);
+				TDbleFunc const smpl_func, TDbleFunc const smpl_rtl_func,
+				TCplxFunc const cplx_func, TVecMethod const vec_method);
   int GetFuncCount();
   AnsiString GetFuncName(int idx);
   int FindFuncByName (const AnsiString& func_name);
@@ -53,9 +55,10 @@ private:
 
   void __fastcall CalcVector();
   void __fastcall CalcSample();
+  void __fastcall CalcSampleRtl();
   void __fastcall CalcComplex();
 
-  int DoUnderTimer (TCalcProc calc_proc);
+  double DoUnderTimer (TCalcProc calc_proc);
 
 public:
   BenchmarkFramework();

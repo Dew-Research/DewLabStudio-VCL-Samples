@@ -151,6 +151,8 @@ void __fastcall TMemComp1::Button3Click(TObject *Sender)
   DoWithCreate("Create/Destroy");
   Chart1->Repaint();
   Screen->Cursor = crDefault;
+  //restore
+  Controller->SetVecCacheSize(60,4196);
 }
 //---------------------------------------------------------------------------
 

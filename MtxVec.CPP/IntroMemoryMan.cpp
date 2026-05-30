@@ -23,8 +23,10 @@ __fastcall TIntroMemMan::TIntroMemMan(TComponent* Owner)
   RichEdit1->Paragraph->Numbering = nsBullet;
   RichEdit1->Lines->Add("Built in dynamic memory allocation makes it easier for the user");
   RichEdit1->Lines->Add("Object cache with object precreation speeds up Create and Destroy");
-  RichEdit1->Lines->Add("Memory preallocation gives you instant access to new memory");
-  RichEdit1->Lines->Add("Joining several calls to GetMem/FreeMem to one, increases overall performance");
+  RichEdit1->Lines->Add("Memory preallocation gives instant access to new memory.");
+  RichEdit1->Lines->Add("Super conductive object cache allows linear multi-core scaling with CPU core count!");
+  RichEdit1->Lines->Add("Dedicated memory allocated per thread typically does not exceed CPU cache size (2MB). This makes the processing memory and CPU cache efficient.");
+  RichEdit1->Lines->Add("Object cache does not interfere with other parts of the application which continue to use the default memory manager. Only those parts of code running via TMtxThread and using MtxVec object cache are affected.");
   RichEdit1->Paragraph->FirstIndent = 0;
   RichEdit1->Paragraph->Numbering = nsNone;
   RichEdit1->Lines->Add("");

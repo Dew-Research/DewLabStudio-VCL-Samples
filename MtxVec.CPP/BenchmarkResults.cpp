@@ -17,10 +17,11 @@ void __fastcall TBenchmarkItem::AssignTo (TPersistent* dest)
   if (item != NULL) {
     item->FuncName = fFuncName;
     item->VecLen = fVecLen;
-    item->IterationCount = fIterationCount;
+	item->IterationCount = fIterationCount;
     item->SmplVecTicks = fSmplVecTicks;
     item->CplxVecTicks = fCplxVecTicks;
-    item->SmplFuncTicks = fSmplFuncTicks;
+	item->SmplFuncTicks = fSmplFuncTicks;
+    item->SmplRtlFuncTicks = fSmplRtlFuncTicks;
     item->CplxFuncTicks = fCplxFuncTicks;
   } else
     TCollectionItem::AssignTo (dest);
@@ -60,7 +61,8 @@ void __fastcall TBenchmarkResults::AssignTo (TPersistent* dest)
 //---------------------------------------------------------------------------
 
 TBenchmarkItem* TBenchmarkResults::Add (const AnsiString& func_name, int vec_len, int iteration_count,
-                                        int smpl_vec_ticks, int cplx_vec_ticks, int smpl_func_ticks, int cplx_func_ticks)
+                                        double smpl_vec_ticks, double cplx_vec_ticks, double smpl_func_ticks,
+                                        double smpl_rtl_func_ticks, double cplx_func_ticks)
 {
   TBenchmarkItem* result;
 
@@ -71,6 +73,7 @@ TBenchmarkItem* TBenchmarkResults::Add (const AnsiString& func_name, int vec_len
   result->SmplVecTicks = smpl_vec_ticks;
   result->CplxVecTicks = cplx_vec_ticks;
   result->SmplFuncTicks = smpl_func_ticks;
+  result->SmplRtlFuncTicks = smpl_rtl_func_ticks;
   result->CplxFuncTicks = cplx_func_ticks;
 
   return result;

@@ -50,6 +50,34 @@ USEFORM("Save_Precision.cpp", frmSavePrec);
 USEFORM("SparseTest.cpp", frmSparseTest);
 USEFORM("SysLinear1.cpp", LinearSystem1);
 USEFORM("YuleLevinson.cpp", YuleLev);
+USEFORM("DemoHowTo.cpp", frmDemoHowTo);
+USEFORM("IntroParser.cpp", IntroParserForm);
+USEFORM("IntroOpenCL.cpp", IntroOpenCLForm);
+USEFORM("MtxFastLineDemo.cpp", MtxFastLineForm);
+USEFORM("MtxVecGridDemo.cpp", frmGridDemo);
+USEFORM("Changes101.cpp", frmChanges101);
+USEFORM("Changes102.cpp", frmChanges102);
+USEFORM("ProbEditor.cpp", FrameDist); /* TFrame: DesignClass=TFrame */
+USEFORM("DewProbCalc.cpp", frmProbCalc);
+USEFORM("ForLoopUnit.cpp", ForLoopForm);
+USEFORM("NumaUnit.cpp", NumaForm);
+USEFORM("ForLoopExample.cpp", ForLoopExampleForm);
+USEFORM("IfThenUnit.cpp", IfThenForm);
+USEFORM("MtxVecThreading.cpp", MtxVecThreadingForm);
+USEFORM("ParserPerformance.cpp", frmParserPerformance);
+USEFORM("Optim_LP.cpp", frmLP);
+USEFORM("Optim_Bounded.cpp", frmOptimBounded);
+USEFORM("NumInt1D.cpp", frmInt1D);
+USEFORM("SmallMatrixMul.cpp", frmSmallMatrix);
+USEFORM("Optim_TR.cpp", frmTRDemo);
+USEFORM("SuperConductive.cpp", SuperConductiveForm);
+USEFORM("clCustomFunction.cpp", clCustomFunctionForm);
+USEFORM("clMultiDeviceFunction.cpp", clMultiDeviceFunctionForm);
+USEFORM("Scripting.cpp", ScriptingForm);
+USEFORM("ParserUsage.cpp", frmParserUsage);
+USEFORM("ExprToolTipUnit.cpp", ExprToolTipForm);
+USEFORM("ScriptingGrid.cpp", ScriptingGridForm);
+USEFORM("CompoundExpressions.cpp", CompoundExpressionsForm);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -108,6 +136,34 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		RegisterClass(__classid(TYuleLev));
 		RegisterClass(__classid(TfrmChanges15));
 		RegisterClass(__classid(TclFunctionForm));
+
+		// Phase 4 BCB parity back-port additions (matches D37 VCL InitTreeItems).
+		RegisterClass(__classid(TfrmDemoHowTo));
+		RegisterClass(__classid(TIntroParserForm));
+		RegisterClass(__classid(TIntroOpenCLForm));
+		RegisterClass(__classid(TMtxFastLineForm));
+		RegisterClass(__classid(TfrmGridDemo));
+		RegisterClass(__classid(TfrmChanges101));
+		RegisterClass(__classid(TfrmChanges102));
+		RegisterClass(__classid(TfrmProbCalc));
+		RegisterClass(__classid(TForLoopForm));
+		RegisterClass(__classid(TNumaForm));
+		RegisterClass(__classid(TForLoopExampleForm));
+		RegisterClass(__classid(TIfThenForm));
+		RegisterClass(__classid(TMtxVecThreadingForm));
+		RegisterClass(__classid(TfrmParserPerformance));
+		RegisterClass(__classid(TfrmLP));
+		RegisterClass(__classid(TfrmOptimBounded));
+		RegisterClass(__classid(TfrmInt1D));
+		RegisterClass(__classid(TfrmSmallMatrix));
+		RegisterClass(__classid(TfrmTRDemo));
+		RegisterClass(__classid(TSuperConductiveForm));
+		RegisterClass(__classid(TclCustomFunctionForm));
+		RegisterClass(__classid(TclMultiDeviceFunctionForm));
+		RegisterClass(__classid(TScriptingForm));
+		RegisterClass(__classid(TfrmParserUsage));
+		RegisterClass(__classid(TScriptingGridForm));
+		RegisterClass(__classid(TCompoundExpressionsForm));
 
 		Application->Title = "MtxVec C++ Builder demo";
 		Application->CreateForm(__classid(TfrmMain), &frmMain);

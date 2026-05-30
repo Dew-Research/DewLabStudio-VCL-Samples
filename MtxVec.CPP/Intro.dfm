@@ -10,9 +10,7 @@ object Introduction: TIntroduction
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 0
@@ -48,7 +46,6 @@ object Introduction: TIntroduction
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    Zoom = 100
   end
   object Panel1: TPanel
     Left = 0

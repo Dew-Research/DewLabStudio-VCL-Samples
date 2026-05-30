@@ -41,6 +41,7 @@ __published:	// IDE-managed Components
         THorizBarSeries *Series3;
         THorizBarSeries *Series2;
         THorizBarSeries *Series1;
+        THorizBarSeries *Series5;
         TPopupMenu *PopupMenu;
         TMenuItem *miSelectAllFuncs;
         TMenuItem *miUnselectAllFuncs;
@@ -50,7 +51,7 @@ __published:	// IDE-managed Components
         TMenuItem *LoadFromFileItem;
         TMenuItem *SaveToFileItem;
         void __fastcall FormDestroy(TObject *Sender);
-        void __fastcall clbFuncsClick(TObject *Sender);
+        void __fastcall clbFuncsDblClick(TObject *Sender);
         void __fastcall btnRunClick(TObject *Sender);
         void __fastcall btnOpenClick(TObject *Sender);
         void __fastcall FormActivate(TObject *Sender);

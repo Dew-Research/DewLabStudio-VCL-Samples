@@ -4,20 +4,21 @@ inherited MemComp1: TMemComp1
   Caption = 'Object cache'
   ClientHeight = 534
   ClientWidth = 663
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 679
   ExplicitHeight = 573
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 663
     BevelOuter = bvNone
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 663
     inherited RichEdit1: TRichEdit
       Left = 0
       Top = 0
       Width = 663
       Height = 130
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 0
       ExplicitTop = 0
       ExplicitWidth = 663
@@ -28,6 +29,7 @@ inherited MemComp1: TMemComp1
     Top = 496
     Width = 663
     Height = 38
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 496
     ExplicitWidth = 663
     ExplicitHeight = 38
@@ -47,6 +49,7 @@ inherited MemComp1: TMemComp1
     Align = alLeft
     BevelOuter = bvNone
     Constraints.MinHeight = 330
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 189
     ExplicitHeight = 366
     object Label1: TLabel
@@ -120,17 +123,9 @@ inherited MemComp1: TMemComp1
     Title.Text.Strings = (
       'TChart')
     Title.Visible = False
-    BottomAxis.LogarithmicBase = 10.000000000000000000
     BottomAxis.Title.Caption = 'SetVecCacheSize'
-    DepthAxis.LogarithmicBase = 10.000000000000000000
-    DepthTopAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.LabelsSize = 35
-    LeftAxis.LogarithmicBase = 10.000000000000000000
     LeftAxis.Title.Caption = 'Time [ms]'
-    RightAxis.LogarithmicBase = 10.000000000000000000
-    RightAxis.ZPosition = 100.000000000000000000
-    TopAxis.LogarithmicBase = 10.000000000000000000
-    TopAxis.ZPosition = 100.000000000000000000
     View3D = False
     Align = alClient
     BevelOuter = bvNone
@@ -143,6 +138,7 @@ inherited MemComp1: TMemComp1
       Marks.Style = smsValue
       Marks.BackColor = 12615680
       Marks.Callout.Length = 10
+      Marks.OnTop = True
       Marks.Color = 12615680
       Title = 'CreateIt/FreeIt'
       MultiBar = mbNone

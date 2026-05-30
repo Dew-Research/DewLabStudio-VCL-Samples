@@ -32,12 +32,19 @@ __published:	// IDE-managed Components
   void __fastcall Button4Click(TObject *Sender);
   void __fastcall RadioGroup1Click(TObject *Sender);
 private:	// User declarations
-		sMatrix A,B,C;       // MtxVec arrays
+		sMatrix A, B, C;     // MtxVec arrays (Delphi: A, B, C: TMtx)
+		double **DA;         // "regular" 2D arrays (Delphi: TDelphi2DArray)
+		double **DB;
+		double **DC;
+		int DAllocated;
 		int MtxDim;
+		int Factor;
 		void __fastcall MulBCB(const int ADim);
 		void __fastcall GenerateData(const int ADim);
+		void __fastcall FreeRawArrays();
 public:		// User declarations
   __fastcall TMult1(TComponent* Owner);
+  __fastcall ~TMult1();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TMult1 *Mult1;

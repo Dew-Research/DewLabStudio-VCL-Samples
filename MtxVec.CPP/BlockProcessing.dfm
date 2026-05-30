@@ -4,19 +4,20 @@ inherited frmBlockProc: TfrmBlockProc
   Caption = 'frmBlockProc'
   ClientHeight = 403
   ClientWidth = 596
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 612
   ExplicitHeight = 442
-  PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 596
     Height = 105
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 596
     ExplicitHeight = 105
     inherited RichEdit1: TRichEdit
       Width = 594
       Height = 103
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 594
       ExplicitHeight = 103
     end
@@ -24,6 +25,7 @@ inherited frmBlockProc: TfrmBlockProc
   inherited Panel2: TPanel
     Top = 329
     Width = 596
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 329
     ExplicitWidth = 596
     object Label1: TLabel [0]
@@ -56,8 +58,7 @@ inherited frmBlockProc: TfrmBlockProc
     ExplicitWidth = 596
     ExplicitHeight = 224
     object Series1: TLineSeries
-      HoverElement = [heCurrent]
-      Title = 'Plain function'
+      Title = 'Plain function (Math387)'
       Brush.BackColor = clDefault
       LinePen.Color = clRed
       Pointer.Brush.Gradient.EndColor = clRed
@@ -73,7 +74,6 @@ inherited frmBlockProc: TfrmBlockProc
       YValues.Order = loNone
     end
     object Series2: TLineSeries
-      HoverElement = [heCurrent]
       Title = 'Vectorized'
       Brush.BackColor = clDefault
       LinePen.Color = clGreen
@@ -90,13 +90,43 @@ inherited frmBlockProc: TfrmBlockProc
       YValues.Order = loNone
     end
     object Series3: TLineSeries
-      HoverElement = [heCurrent]
       Title = 'Block vectorized'
       Brush.BackColor = clDefault
       LinePen.Color = clYellow
       Pointer.HorizSize = 3
       Pointer.InflateMargins = True
       Pointer.Style = psDiamond
+      Pointer.VertSize = 3
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series4: TLineSeries
+      Marks.BackColor = clHotLight
+      Marks.Color = clHotLight
+      Title = 'Vectorized expression'
+      Brush.BackColor = clDefault
+      LinePen.Color = clBlue
+      Pointer.Brush.Gradient.EndColor = clBlue
+      Pointer.Gradient.EndColor = clBlue
+      Pointer.HorizSize = 2
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.VertSize = 2
+      Pointer.Visible = True
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series5: TLineSeries
+      Title = 'Plain function (C++)'
+      Brush.BackColor = clDefault
+      Pointer.HorizSize = 3
+      Pointer.InflateMargins = True
+      Pointer.Style = psCross
       Pointer.VertSize = 3
       Pointer.Visible = True
       XValues.Name = 'X'

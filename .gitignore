@@ -67,3 +67,13 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# C++Builder per-platform build output dirs (samples are built in place;
+# these hold .obj/.o plus non-ignored .txt outputs from the post-build copy)
+Win32/
+Win64/
+Win64x/
+
+# Runtime output written by the FileHandling demo (AVec.SaveToFile)
+# NOTE: do NOT ignore *.vec generally — committed sample data uses .vec.
+TestVec1.vec

@@ -106,9 +106,90 @@ void __fastcall TfrmMain::ShowForm(void)
       ATree->Items->Item[0]->Expand(false);
    }
 
+void __fastcall TfrmMain::InitTreeItems()
+{
+  // 1:1 mirror of TfrmMain.InitTreeItems in Examples\Main.pas (D37 demo).
+  // TreeView is populated at runtime: Memo1 lines built here, then parsed
+  // by LoadTree into hierarchical TreeView1 items with TExampleInfo data.
+  Memo1->Lines->Clear();
+  Memo1->Lines->Add("Introduction;TIntroduction");
+  Memo1->Lines->Add(" Why MtxVec;TIntroWhyMtxVecForm");
+  Memo1->Lines->Add("What is new;TfrmChanges30");
+  Memo1->Lines->Add("How to use the demo;TfrmDemoHowTo");
+  Memo1->Lines->Add("Matrix operations;TIntroMtx");
+  Memo1->Lines->Add(" Multiplying large matrices;TMult1;Multiply1");
+  Memo1->Lines->Add(" Multiplying small matrices;TfrmSmallMatrix;SmallMatrixMul");
+  Memo1->Lines->Add(" Copy and  transpose operation;TCopyComp;CopyCompare");
+  Memo1->Lines->Add(" Calculating the inverse of squared matrix;TInvMtx;InverseMtx");
+  Memo1->Lines->Add(" Calculating squared root of matrix;TfrmSqrtMtx;CalcSqrtMtx");
+  Memo1->Lines->Add(" Eigenvalues and eigenvectors;TEigVec1;EigenVectors1");
+  Memo1->Lines->Add(" LQ and QR decomposition;TLQRDemo;LQR1");
+  Memo1->Lines->Add(" Solving system of equations;TLinearSystem1;SysLinear1");
+  Memo1->Lines->Add(" Viewing matrix values;TfrmMtxGridSeries;MtxGridSeries_Demo");
+  Memo1->Lines->Add("Vector operations;TIntroVec");
+  Memo1->Lines->Add(" Levinson Yule Walker;TYuleLev;YuleLevinson");
+  Memo1->Lines->Add(" Displaying large amounts of data;TDownS;PixelDownS");
+  Memo1->Lines->Add(" Block Processing;TfrmBlockProc;BlockProcessing");
+  Memo1->Lines->Add(" Dirichlet and Riemann functions;TfrmDirichlet;DirichletTest");
+  Memo1->Lines->Add(" Benchmarks;TBenchmarkXForm;BenchmarkX");
+  Memo1->Lines->Add(" New fastline series;TMtxFastLineForm;MtxFastLineDemo");
+  Memo1->Lines->Add(" Threaded for-loop;TForLoopForm;ForLoopUnit");
+  Memo1->Lines->Add(" Efficient multithreading;TMtxVecThreadingForm;MtxVecThreading");
+  Memo1->Lines->Add(" Vectorizing if-then;TIfThenForm;IfThenUnit");
+  Memo1->Lines->Add(" Compound expressions;TCompoundExpressionsForm;CompoundExpressions");
+  Memo1->Lines->Add("Exporting/Importing;TIntroExpImp");
+  Memo1->Lines->Add(" Saving/Loading;TFileH1;FileHandling1");
+  Memo1->Lines->Add(" MSOffice;TMSOffice;ClipboardMSOffice");
+  Memo1->Lines->Add(" Editing matrix or vector values;TfrmGridDemo;MtxVecGridDemo");
+  Memo1->Lines->Add("Memory management;TIntroMemMan");
+  Memo1->Lines->Add(" Comparing CreateIt/FreeIt with Create/Destroy;TMemComp1;MemoryCompare1");
+  Memo1->Lines->Add(" Super conductive multi-threaded memory alloc;TSuperConductiveForm;SuperConductive");
+  Memo1->Lines->Add(" Threading concurrency;TForLoopExampleForm;ForLoopExample");
+  Memo1->Lines->Add(" Using default arrays;TDefArray;DefaultArray");
+  Memo1->Lines->Add(" Memory channels;TNumaForm;NumaUnit");
+  Memo1->Lines->Add("Open CL support;TIntroOpenCLForm");
+  Memo1->Lines->Add(" Benchmarks;TclFunctionForm;clFunction");
+  Memo1->Lines->Add(" Custom function;TclCustomFunctionForm;clCustomFunction");
+  Memo1->Lines->Add(" Multi device benchmark;TclMultiDeviceFunctionForm;clMultiDeviceFunction");
+  Memo1->Lines->Add("Numerical integration");
+  Memo1->Lines->Add(" Numerical integration: f(x);TfrmInt1D;NumInt1D");
+  Memo1->Lines->Add("Polynomial routines;TIntroPoly");
+  Memo1->Lines->Add(" Linear and cubic interpolation;TInterpolating1;Interp1");
+  Memo1->Lines->Add(" Least-square fitting;TLQRPoly;QRPoly1");
+  Memo1->Lines->Add("Optimization problems");
+  Memo1->Lines->Add(" Bounded optimization (Simplex);TfrmOptimBounded;Optim_Bounded");
+  Memo1->Lines->Add(" Trust Region algorithm;TfrmTRDemo;Optim_TR");
+  Memo1->Lines->Add(" Linear Programming;TfrmLP;Optim_LP");
+  Memo1->Lines->Add(" Unconstrained global minimization;TfrmMtxOptim;MtxOptim");
+  Memo1->Lines->Add("Probabilities unit;TfrmProbCalc;DewProbCalc");
+  Memo1->Lines->Add("Sparse matrices;TIntroSparseForm");
+  Memo1->Lines->Add(" Sparse solvers;TfrmSparseTest;SparseTest");
+  Memo1->Lines->Add("MtxVec Components");
+  Memo1->Lines->Add(" Unconstrained global minimization;TfrmMtxOptim;MtxOptim");
+  Memo1->Lines->Add(" TMtxFloatEdit control;TfrmFloatEdit1;FloatEdit1");
+  Memo1->Lines->Add(" Progress Dialog;TfrmProgDialog;ProgDialog");
+  Memo1->Lines->Add(" TMtxVecGrid control;TfrmGridDemo;MtxVecGridDemo");
+  Memo1->Lines->Add(" Math Parser;TfrmParser;ParserDemo");
+  Memo1->Lines->Add("MtxVec Parser;TIntroParserForm");
+  Memo1->Lines->Add(" Scripting;TScriptingForm;Scripting");
+  Memo1->Lines->Add(" Scripting with grid;TScriptingGridForm;ScriptingGrid");
+  Memo1->Lines->Add(" Parser usage;TfrmParserUsage;ParserUsage");
+  Memo1->Lines->Add(" Vectorized performance;TfrmParserPerformance;ParserPerformance");
+  Memo1->Lines->Add("MtxVec package function list;TfrmListFunc");
+  Memo1->Lines->Add("List of changes");
+  Memo1->Lines->Add(" Version 3.x;TfrmChanges30");
+  Memo1->Lines->Add(" Older versions");
+  Memo1->Lines->Add("  Version 2.1.5;TfrmChanges15");
+  Memo1->Lines->Add("  Version 1.02;TfrmChanges102");
+  Memo1->Lines->Add("  Version 1.01;TfrmChanges101");
+  Memo1->Lines->Add("Registering MtxVec;TRegisterM");
+  Memo1->Lines->Add("Quick Start;TQStart");
+}
+//---------------------------------------------------------------------------
 void __fastcall TfrmMain::FormCreate(TObject *Sender)
 {
   PageControl1->ActivePage=TabForm;
+  InitTreeItems();
   LoadTree(TreeView1,Memo1);
   TreeView1->Items->Item[0]->Expand(false);
   TreeView1->HotTrack=true;

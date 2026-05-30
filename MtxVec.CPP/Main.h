@@ -55,6 +55,7 @@ private:	// User declarations
   void __fastcall ShowForm(void);
   void __fastcall ShowFormClass(TFormClass AClass);
   AnsiString __fastcall CodeFile(void);
+  void __fastcall InitTreeItems(void);
 public:		// User declarations
   __fastcall TfrmMain(TComponent* Owner);
 };

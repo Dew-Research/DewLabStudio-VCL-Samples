@@ -25,7 +25,9 @@ __fastcall TBenchmarkXForm::TBenchmarkXForm(TComponent* Owner)
     str = "These benchmarks compare vectorized and not vectorized ";
     str+= "versions of real and complex versions of basic math functions. ";
     str+= "The vectorized versions are labeled with MtxVec and the non-vectorized ";
-    str+= "versions are labeled with Math387.";
+    str+= "versions are labeled with Math387. The \"Sample C/C++ RTL\" bar runs the ";
+    str+= "same real scalar function through the C/C++ runtime (math.h), so you can ";
+    str+= "also see how much faster the Math387 scalar routines are than the plain runtime.";
     RichEdit1->Lines->Add(str);
     RichEdit1->Lines->Add("");
     str = "The non-vectorized real and complex versions ";
@@ -79,7 +81,7 @@ void __fastcall TBenchmarkXForm::SelectAllFuncs(bool select)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TBenchmarkXForm::clbFuncsClick(TObject *Sender)
+void __fastcall TBenchmarkXForm::clbFuncsDblClick(TObject *Sender)
 {
   int idx;
 
@@ -117,20 +119,22 @@ void __fastcall TBenchmarkXForm::UpdateComboBoxHistory (TComboBox *cb)
   }
 }
 //---------------------------------------------------------------------------
-int __fastcall TBenchmarkXForm::ReadIntValue(TComboBox *cb, int min,int max)
+int __fastcall TBenchmarkXForm::ReadIntValue(TComboBox *cb, int min, int max)
 {
   int Result;
-  
-  if (TryStrToInt (cb->Text, Result)) {
-    if ((Result >= min) && (Result <= max)) {
+
+  if (TryStrToInt(cb->Text, Result))
+  {
+    if ((Result >= min) && (Result <= max))
       return Result;
-    }
-  } else {
-    if (cb->CanFocus() ) { cb->SetFocus(); }
+  }
+  else
+  {
+    if (cb->CanFocus()) cb->SetFocus();
   }
 
-  return min;
-//  throw Exception("Expected value in range [%d..%d]", [min, max]);
+  throw Exception(Format("Expected value in range [%d..%d]",
+                         ARRAYOFCONST((min, max))));
 }
 //---------------------------------------------------------------------------
 
@@ -163,8 +167,8 @@ void __fastcall TBenchmarkXForm::btnRunClick(TObject *Sender)
       }
     }
 
-    results->Title = Format( "CB6:  Length: %d   Count: %d ",
-      OPENARRAY(TVarRec,(fBenchmarkFramework->VectorLength, fBenchmarkFramework->IterationCount)));
+    results->Title = Format("CB37:  Length: %d   Count: %d ",
+      ARRAYOFCONST((fBenchmarkFramework->VectorLength, fBenchmarkFramework->IterationCount)));
 
     ShowResults(results);
   }
@@ -255,6 +259,7 @@ void __fastcall TBenchmarkXForm::UpdateChart()
   Series2->Clear();
   Series3->Clear();
   Series4->Clear();
+  Series5->Clear();
 
   chartResults->Height = 100 + (60 * fBenchmarkResults->Count);
   Caption = fBenchmarkResults->Title;
@@ -265,6 +270,7 @@ void __fastcall TBenchmarkXForm::UpdateChart()
     Series2->AddBar(fBenchmarkResults->Items[i]->CplxVecTicks, fBenchmarkResults->Items[i]->FuncName, clDefault);
     Series3->AddBar(fBenchmarkResults->Items[i]->SmplFuncTicks, fBenchmarkResults->Items[i]->FuncName, clDefault);
     Series4->AddBar(fBenchmarkResults->Items[i]->CplxFuncTicks, fBenchmarkResults->Items[i]->FuncName, clDefault);
+    Series5->AddBar(fBenchmarkResults->Items[i]->SmplRtlFuncTicks, fBenchmarkResults->Items[i]->FuncName, clDefault);
   }
 }
 

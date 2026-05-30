@@ -475,6 +475,207 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <FormResources Include="FloatEdit1.dfm"/>
         <FormResources Include="Find_Form.dfm"/>
         <FormResources Include="FileHandling1.dfm"/>
+        <CppCompile Include="Changes101.cpp">
+            <Form>frmChanges101</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Changes101.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Changes102.cpp">
+            <Form>frmChanges102</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Changes102.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="clCustomFunction.cpp">
+            <Form>clCustomFunctionForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>clCustomFunction.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="clMultiDeviceFunction.cpp">
+            <Form>clMultiDeviceFunctionForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>clMultiDeviceFunction.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CompoundExpressions.cpp">
+            <Form>CompoundExpressionsForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CompoundExpressions.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DemoHowTo.cpp">
+            <Form>frmDemoHowTo</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DemoHowTo.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DewProbCalc.cpp">
+            <Form>frmProbCalc</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DewProbCalc.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DewProbWrapper.cpp">
+            <DependentOn>DewProbWrapper.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ExprToolTipUnit.cpp">
+            <Form>ExprToolTipForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ExprToolTipUnit.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ForLoopExample.cpp">
+            <Form>ForLoopExampleForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ForLoopExample.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ForLoopUnit.cpp">
+            <Form>ForLoopForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ForLoopUnit.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IfThenUnit.cpp">
+            <Form>IfThenForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IfThenUnit.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroOpenCL.cpp">
+            <Form>IntroOpenCLForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroOpenCL.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="IntroParser.cpp">
+            <Form>IntroParserForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IntroParser.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MtxFastLineDemo.cpp">
+            <Form>MtxFastLineForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MtxFastLineDemo.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MtxVecGridDemo.cpp">
+            <Form>frmGridDemo</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MtxVecGridDemo.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MtxVecThreading.cpp">
+            <Form>MtxVecThreadingForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MtxVecThreading.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="NumaUnit.cpp">
+            <Form>NumaForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>NumaUnit.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="NumInt1D.cpp">
+            <Form>frmInt1D</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>NumInt1D.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Optim_Bounded.cpp">
+            <Form>frmOptimBounded</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Optim_Bounded.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Optim_LP.cpp">
+            <Form>frmLP</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Optim_LP.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Optim_TR.cpp">
+            <Form>frmTRDemo</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Optim_TR.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ParserPerformance.cpp">
+            <Form>frmParserPerformance</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ParserPerformance.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ParserUsage.cpp">
+            <Form>frmParserUsage</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ParserUsage.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ProbEditor.cpp">
+            <Form>FrameDist</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+            <DependentOn>ProbEditor.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Scripting.cpp">
+            <Form>ScriptingForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Scripting.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ScriptingGrid.cpp">
+            <Form>ScriptingGridForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ScriptingGrid.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SmallMatrixMul.cpp">
+            <Form>frmSmallMatrix</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SmallMatrixMul.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SuperConductive.cpp">
+            <Form>SuperConductiveForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SuperConductive.h</DependentOn>
+            <BuildOrder>50</BuildOrder>
+        </CppCompile>
+        <FormResources Include="Changes101.dfm"/>
+        <FormResources Include="Changes102.dfm"/>
+        <FormResources Include="clCustomFunction.dfm"/>
+        <FormResources Include="clMultiDeviceFunction.dfm"/>
+        <FormResources Include="CompoundExpressions.dfm"/>
+        <FormResources Include="DemoHowTo.dfm"/>
+        <FormResources Include="DewProbCalc.dfm"/>
+        <FormResources Include="ExprToolTipUnit.dfm"/>
+        <FormResources Include="ForLoopExample.dfm"/>
+        <FormResources Include="ForLoopUnit.dfm"/>
+        <FormResources Include="IfThenUnit.dfm"/>
+        <FormResources Include="IntroOpenCL.dfm"/>
+        <FormResources Include="IntroParser.dfm"/>
+        <FormResources Include="MtxFastLineDemo.dfm"/>
+        <FormResources Include="MtxVecGridDemo.dfm"/>
+        <FormResources Include="MtxVecThreading.dfm"/>
+        <FormResources Include="NumaUnit.dfm"/>
+        <FormResources Include="NumInt1D.dfm"/>
+        <FormResources Include="Optim_Bounded.dfm"/>
+        <FormResources Include="Optim_LP.dfm"/>
+        <FormResources Include="Optim_TR.dfm"/>
+        <FormResources Include="ParserPerformance.dfm"/>
+        <FormResources Include="ParserUsage.dfm"/>
+        <FormResources Include="ProbEditor.dfm"/>
+        <FormResources Include="Scripting.dfm"/>
+        <FormResources Include="ScriptingGrid.dfm"/>
+        <FormResources Include="SmallMatrixMul.dfm"/>
+        <FormResources Include="SuperConductive.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

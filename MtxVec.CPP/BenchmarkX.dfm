@@ -4,24 +4,26 @@ inherited BenchmarkXForm: TBenchmarkXForm
   Caption = 'BenchmarkXForm'
   ClientHeight = 545
   ClientWidth = 713
-  OldCreateOrder = True
+  StyleElements = [seFont, seClient, seBorder]
   OnActivate = FormActivate
   OnDestroy = FormDestroy
   ExplicitWidth = 729
-  ExplicitHeight = 583
-  PixelsPerInch = 96
+  ExplicitHeight = 584
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 713
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 713
     inherited RichEdit1: TRichEdit
       Width = 711
+      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 711
     end
   end
   inherited Panel2: TPanel
     Top = 487
     Width = 713
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 487
     ExplicitWidth = 713
     object Label3: TLabel
@@ -78,7 +80,7 @@ inherited BenchmarkXForm: TBenchmarkXForm
       Height = 21
       Anchors = []
       TabOrder = 3
-      Text = '3000'
+      Text = '300'
       OnDblClick = cbIterationCountDblClick
     end
   end
@@ -86,6 +88,7 @@ inherited BenchmarkXForm: TBenchmarkXForm
     Width = 157
     Height = 357
     Align = alLeft
+    StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 157
     ExplicitHeight = 357
     object Label1: TLabel
@@ -102,9 +105,10 @@ inherited BenchmarkXForm: TBenchmarkXForm
       Width = 129
       Height = 307
       Anchors = [akLeft, akTop, akRight, akBottom]
-      ItemHeight = 13
+      ItemHeight = 17
+      PopupMenu = PopupMenu
       TabOrder = 0
-      OnClick = clbFuncsClick
+      OnDblClick = clbFuncsDblClick
     end
   end
   object chartResults: TChart
@@ -125,6 +129,7 @@ inherited BenchmarkXForm: TBenchmarkXForm
     object Series4: THorizBarSeries
       BarBrush.Gradient.Direction = gdLeftRight
       Marks.Visible = False
+      Marks.OnTop = True
       SeriesColor = 16756912
       Title = 'Complex Math387'
       Gradient.Direction = gdLeftRight
@@ -136,6 +141,7 @@ inherited BenchmarkXForm: TBenchmarkXForm
     object Series3: THorizBarSeries
       BarBrush.Gradient.Direction = gdLeftRight
       Marks.Visible = False
+      Marks.OnTop = True
       SeriesColor = clBlue
       Title = 'Sample Math387'
       Gradient.Direction = gdLeftRight
@@ -147,6 +153,7 @@ inherited BenchmarkXForm: TBenchmarkXForm
     object Series2: THorizBarSeries
       BarBrush.Gradient.Direction = gdLeftRight
       Marks.Visible = False
+      Marks.OnTop = True
       SeriesColor = 11579647
       Title = 'Complex MtxVec'
       Gradient.Direction = gdLeftRight
@@ -158,7 +165,19 @@ inherited BenchmarkXForm: TBenchmarkXForm
     object Series1: THorizBarSeries
       BarBrush.Gradient.Direction = gdLeftRight
       Marks.Visible = False
+      Marks.OnTop = True
       Title = 'Sample MtxVec'
+      Gradient.Direction = gdLeftRight
+      XValues.Name = 'Bar'
+      XValues.Order = loNone
+      YValues.Name = 'Y'
+      YValues.Order = loAscending
+    end
+    object Series5: THorizBarSeries
+      BarBrush.Gradient.Direction = gdLeftRight
+      Marks.Visible = False
+      Marks.OnTop = True
+      Title = 'Sample C/C++ RTL'
       Gradient.Direction = gdLeftRight
       XValues.Name = 'Bar'
       XValues.Order = loNone
