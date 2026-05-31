@@ -16,7 +16,7 @@ __fastcall TfrmDemoHowTo::TfrmDemoHowTo(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TfrmDemoHowTo::FormCreate(TObject *Sender)
 {
-  RichEdit1->Lines->Clear();
+  TBasicForm3::FormCreate(Sender);
 
   RichEdit1->SelAttributes->Style = RichEdit1->SelAttributes->Style << TFontStyle::fsBold;
   RichEdit1->SelAttributes->Color = (TColor) RGB(51,104,196);

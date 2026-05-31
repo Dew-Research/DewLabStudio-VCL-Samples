@@ -23,6 +23,7 @@ class TBasicForm3 : public TForm
 {
 __published:	// IDE-managed Components
   TRichEdit *RichEdit1;
+  void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
   __fastcall TBasicForm3(TComponent* Owner);

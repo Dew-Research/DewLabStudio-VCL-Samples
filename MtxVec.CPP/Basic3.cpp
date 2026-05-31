@@ -16,7 +16,13 @@ TBasicForm3 *BasicForm3;
 __fastcall TBasicForm3::TBasicForm3(TComponent* Owner)
   : TForm(Owner)
 {
+}
+//---------------------------------------------------------------------------
+void __fastcall TBasicForm3::FormCreate(TObject *Sender)
+{
     RichEdit1->Lines->Clear();
+    RichEdit1->DefAttributes->Size = 10;
+    RichEdit1->DefAttributes->Style = TFontStyles();
 }
 //---------------------------------------------------------------------------
 
