@@ -62,18 +62,23 @@ void __fastcall TclFunctionForm::FormCreate(TObject *Sender)
 
 	DeviceListBox->ItemIndex = 0;
 
-	str = "When loading the first time, the Open CL drivers need to recompile the source code.";
-	str+= "This may take a minute or longer-> If you have Intel Open CL drivers installed they ";
-	str+= "add 20s delay regardless, if the program is precompiled.";
-	ShowMessage(str);
+	int kernelSum = 0;
+	for (i = 0; i < clPlatform()->Count; i++)
+		for (int k = 0; k < clPlatform()->Platforms[i]->Count; k++)
+			kernelSum += clPlatform()->Platforms[i]->Device[k]->Kernels->Count;
 
-	Screen->Cursor = crHourGlass;
-//    clPlatform->SaveDefaultToRC('C:\CommonObjects\Dew MtxVec->NET\');
+	clPlatform()->IgnoreIntel = True;
 
-//    clPlatform->ClearPrecompiledBinaries;
-//	clPlatform()->IgnoreIntel = True;
-	clPlatform()->LoadProgramsForDevices( false, false, true, true, false);
-	Screen->Cursor = crDefault;
+	if (kernelSum == 0)   // first run: kernels not yet built -> recompile OpenCL source
+	{
+		Screen->Cursor = crHourGlass;
+		str = "When loading the first time, the Open CL drivers need to recompile the source code.";
+		str+= "This may take a minute or longer-> If you have Intel Open CL drivers installed they ";
+		str+= "add 20s delay regardless, if the program is precompiled.";
+		ShowMessage(str);
+		clPlatform()->LoadProgramsForDevices(false, false, true, false, false);
+		Screen->Cursor = crDefault;
+	}
 	FunctionBox->ItemIndex = 0;
 
 	VectorLen = Round(Exp2(19));

@@ -33,8 +33,15 @@ static void __fastcall BananaVector(TVec * const x, TVec * const f,
                                      #endif
                                      )
 {
-  f->Values[0] = 100 * Sqr(x->Values[1] - Sqr(x->Values[0]));
-  f->Values[1] = Sqr(1 - x->Values[0]);
+  // Read via operator[] (direct buffer access), NOT x->Values[] : the Values
+  // getter faults when the optimizer invokes this callback (see Simplex). The
+  // Values WRITE (setter) on f is fine. Matches the Delphi original (x[i]/f[i]).
+  double x0 = (*x)[0];
+  double x1 = (*x)[1];
+  double t  = x1 - x0 * x0;
+  double u  = 1 - x0;
+  f->Values[0] = 100 * t * t;
+  f->Values[1] = u * u;
 }
 //---------------------------------------------------------------------------
 static double __fastcall BananaScalar(TVec * const x, TVec * const c,
@@ -46,7 +53,13 @@ static double __fastcall BananaScalar(TVec * const x, TVec * const c,
                                        #endif
                                        )
 {
-  return 100 * Sqr(x->Values[1] - Sqr(x->Values[0])) + Sqr(1 - x->Values[0]);
+  // Read via operator[] (not x->Values[] : the getter faults inside the
+  // Simplex/Marquardt/... callback context). Matches the Delphi scalar function.
+  double x0 = (*x)[0];
+  double x1 = (*x)[1];
+  double t  = x1 - x0 * x0;
+  double u  = 1 - x0;
+  return 100 * t * t + u * u;
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmTRDemo::FormCreate(TObject *Sender)
