@@ -49,9 +49,18 @@ double __fastcall Banana(
 	 #endif
 	 )
 {
-	 Mtxvec::TVec* aPars = const_cast<Mtxvec::TVec*> (Parameters);
+	 // Typecast TVec* -> TVector* (MtxVec.h): Values/SValues = inline raw pointer math,
+	 // correct on the SetSubRange views the optimizers pass. See CPP-toolchain.md.
+	 Mtxvec::TVector* pPars = (Mtxvec::TVector*) const_cast<Mtxvec::TVec*> (Parameters);
 
-	 double tmp = 100.0*IntPower((*aPars)[1]-IntPower((*aPars)[0],2),2)+IntPower(1.0-(*aPars)[0],2);
+	 double tmp;
+	 if (pPars->IsDouble) {
+		double p0 = pPars->Values[0], p1 = pPars->Values[1];
+		tmp = 100.0*IntPower(p1-IntPower(p0,2),2)+IntPower(1.0-p0,2);
+	 } else {
+		float p0 = pPars->SValues[0], p1 = pPars->SValues[1];
+		tmp = 100.0*IntPower(p1-IntPower(p0,2),2)+IntPower(1.0-p0,2);
+	 }
 	 return tmp;
 }
 //typedef void __fastcall (*TGrad)(Mtxvec::TRealFunction Fun,
@@ -96,19 +105,22 @@ void __fastcall GradBanana(TRealFunction Fun,
 	 #endif
 	 )
 {
-  Mtxvec::TVec* aGrad = const_cast<Mtxvec::TVec*> (Grad);
-  Mtxvec::TVec* aPars = const_cast<Mtxvec::TVec*> (Pars);
+  // Typecast TVec* -> TVector* (MtxVec.h): Values/SValues bind to TVector's INLINE
+  // raw-pointer properties (((double*)ValuesPointer)[i] / ((float*)ValuesPointer)[i]),
+  // which shadow the inherited DynamicArray fields. The fields throw a false range error
+  // on the SetSubRange views the optimizer passes; the properties are fast and correct.
+  // Branch on storage precision. See CPP-toolchain.md "the Values[] field bounds-check trap".
+  Mtxvec::TVector* pGrad = (Mtxvec::TVector*) const_cast<Mtxvec::TVec*> (Grad);
+  Mtxvec::TVector* pPars = (Mtxvec::TVector*) const_cast<Mtxvec::TVec*> (Pars);
 
-  //DefaultArray would work both single and double precision storage
-  if (aGrad->IsDouble) {
-
-	  aGrad->Values[0] = -400*((*aPars)[1]-IntPower((*aPars)[0],2))*(*aPars)[0] - 2*(1-(*aPars)[0]);
-	  aGrad->Values[1] = 200*((*aPars)[1]-IntPower((*aPars)[0],2));
-
+  if (pGrad->IsDouble) {
+     double p0 = pPars->Values[0], p1 = pPars->Values[1];
+     pGrad->Values[0] = -400*(p1 - IntPower(p0,2))*p0 - 2*(1-p0);
+     pGrad->Values[1] = 200*(p1 - IntPower(p0,2));
   } else {
-
-	  aGrad->SValues[0] = -400*((*aPars)[1]-IntPower((*aPars)[0],2))*(*aPars)[0] - 2*(1-(*aPars)[0]);
-	  aGrad->SValues[1] = 200*((*aPars)[1]-IntPower((*aPars)[0],2));
+     float p0 = pPars->SValues[0], p1 = pPars->SValues[1];
+     pGrad->SValues[0] = -400*(p1 - IntPower(p0,2))*p0 - 2*(1-p0);
+     pGrad->SValues[1] = 200*(p1 - IntPower(p0,2));
   }
 
 }

@@ -33,7 +33,10 @@ static double __fastcall IntObjFun(TVec * const Pars, TVec * const Constants,
 {
   TMtxExpression *expr = (TMtxExpression*)ObjConsts[0];
   AnsiString parname = ((TStringHolder*)ObjConsts[1])->Value;
-  expr->VarByName->Value[parname]->DoubleValue = Pars->Values[0];
+  // Typecast TVec* -> TVector* (MtxVec.h): Values[0] binds to TVector's inline raw-pointer
+  // property, which shadows the inherited DynamicArray Values FIELD (the field throws a
+  // false range error on a SetSubRange view; the property is fast and correct). See CPP-toolchain.md.
+  expr->VarByName->Value[parname]->DoubleValue = ((Mtxvec::TVector*)Pars)->Values[0];
   return expr->EvaluateDouble();
 }
 //---------------------------------------------------------------------------

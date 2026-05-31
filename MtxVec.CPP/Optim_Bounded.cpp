@@ -26,9 +26,14 @@ static double __fastcall OptObjFun(TVec * const Parameters, TVec * const Constan
 {
   TVariableCollection *vars = (TVariableCollection*)ObjConst[1];
   TMtxExpression *expr = (TMtxExpression*)ObjConst[0];
-  for (int i = 0; i < Parameters->Length; i++)
+  // Typecast TVec* -> TVector* (MtxVec.h): pPars->Values[i] binds to TVector's inline
+  // raw-pointer property (((double*)ValuesPointer)[i]), which shadows the inherited
+  // DynamicArray Values FIELD. The field throws a false range error on the SetSubRange
+  // views Simplex passes; the property is fast and correct. See CPP-toolchain.md.
+  Mtxvec::TVector *pPars = (Mtxvec::TVector*) Parameters;
+  for (int i = 0; i < pPars->Length; i++)
   {
-    expr->VarByName->Value[vars->Items[i]->VarName]->DoubleValue = Parameters->Values[i];
+    expr->VarByName->Value[vars->Items[i]->VarName]->DoubleValue = pPars->Values[i];
   }
   return expr->EvaluateDouble();
 }

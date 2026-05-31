@@ -33,15 +33,20 @@ static void __fastcall BananaVector(TVec * const x, TVec * const f,
                                      #endif
                                      )
 {
-  // Read via operator[] (direct buffer access), NOT x->Values[] : the Values
-  // getter faults when the optimizer invokes this callback (see Simplex). The
-  // Values WRITE (setter) on f is fine. Matches the Delphi original (x[i]/f[i]).
-  double x0 = (*x)[0];
-  double x1 = (*x)[1];
+  // Typecast TVec* -> TVector* (layout-identical subclass, MtxVec.h): its Values[]
+  // property is inline raw pointer math (((double*)ValuesPointer)[i]) that shadows
+  // the inherited DynamicArray Values FIELD -- fast, and correct on the SetSubRange
+  // views the optimizer passes. Indexing the field directly (TVec::Values[i], or the
+  // get_DefaultArray property) is wrong here: the field's C++ operator[] bounds-checks
+  // against a counterfeit length and throws. See CPP-toolchain.md. Matches Delphi x[i]/f[i].
+  Mtxvec::TVector *px = (Mtxvec::TVector*) x;
+  Mtxvec::TVector *pf = (Mtxvec::TVector*) f;
+  double x0 = px->Values[0];
+  double x1 = px->Values[1];
   double t  = x1 - x0 * x0;
   double u  = 1 - x0;
-  f->Values[0] = 100 * t * t;
-  f->Values[1] = u * u;
+  pf->Values[0] = 100 * t * t;
+  pf->Values[1] = u * u;
 }
 //---------------------------------------------------------------------------
 static double __fastcall BananaScalar(TVec * const x, TVec * const c,
@@ -53,10 +58,13 @@ static double __fastcall BananaScalar(TVec * const x, TVec * const c,
                                        #endif
                                        )
 {
-  // Read via operator[] (not x->Values[] : the getter faults inside the
-  // Simplex/Marquardt/... callback context). Matches the Delphi scalar function.
-  double x0 = (*x)[0];
-  double x1 = (*x)[1];
+  // Typecast TVec* -> TVector* (MtxVec.h): Values[] = inline raw pointer math, correct
+  // on the SetSubRange views Simplex passes. Indexing the inherited DynamicArray field
+  // (TVec::Values[i]) would bounds-check against a counterfeit length and throw. See
+  // CPP-toolchain.md "the Values[] field bounds-check trap". Matches Delphi.
+  Mtxvec::TVector *px = (Mtxvec::TVector*) x;
+  double x0 = px->Values[0];
+  double x1 = px->Values[1];
   double t  = x1 - x0 * x0;
   double u  = 1 - x0;
   return 100 * t * t + u * u;
