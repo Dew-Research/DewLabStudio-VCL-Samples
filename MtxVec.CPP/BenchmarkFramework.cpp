@@ -9,28 +9,30 @@
 #pragma package(smart_init)
 
 //---------------------------------------------------------------------------
-// Thin wrappers so the real-scalar column measures the Math387 enhanced
-// assembler routines (same as the Delphi BenchmarkFramework.pas column),
-// NOT the C/C++ runtime. The runtime (<math.h>) versions are timed
-// separately as the pure-C++ baseline (smpl_rtl_func). Overload resolution
-// on the double argument selects the Math387 double scalar; the call site
-// handles the (register/__fastcall) calling convention, so these wrappers
-// match the plain TDbleFunc pointer type.
-static double m387_Sin    (double x) { return Math387::Sin(x); }
-static double m387_Cos    (double x) { return Math387::Cos(x); }
-static double m387_Exp    (double x) { return Math387::Exp(x); }
-static double m387_Ln     (double x) { return Math387::Ln(x); }
-static double m387_Log10  (double x) { return Math387::Log10(x); }
-static double m387_Tan    (double x) { return Math387::Tan(x); }
-static double m387_ArcSin (double x) { return Math387::ArcSin(x); }
-static double m387_ArcCos (double x) { return Math387::ArcCos(x); }
-static double m387_ArcTan (double x) { return Math387::ArcTan(x); }
-static double m387_Sinh   (double x) { return Math387::Sinh(x); }
-static double m387_Cosh   (double x) { return Math387::Cosh(x); }
-static double m387_Tanh   (double x) { return Math387::Tanh(x); }
-static double m387_ArcSinh(double x) { return Math387::ArcSinh(x); }
-static double m387_ArcCosh(double x) { return Math387::ArcCosh(x); }
-static double m387_ArcTanh(double x) { return Math387::ArcTanh(x); }
+// The Math387 enhanced scalar routines are stored and timed DIRECTLY as
+// __fastcall function pointers (TFastDbleFunc) - exactly as the complex column
+// already stores Math387 via TCplxFunc. No __cdecl adapter wrapper is used: a
+// wrapper would either inline (silently assuming a zero-cost call) or add a
+// second call the pure-C/C++ runtime column never pays, distorting the
+// comparison. The runtime (<math.h>) versions are timed separately as the
+// pure-C baseline (smpl_rtl_func), each likewise stored as a direct pointer.
+//
+// asinh/acosh/atanh are C99 inverse hyperbolics used by the pure-C/C++ runtime
+// baseline column. Modern Embarcadero clang (bcc64x / bcc32x, clang >= 15)
+// declares them in <math.h> and links them, so there we time the genuine
+// runtime function. Classic bcc32 does not declare them, and the early clang
+// Win64 RTL (XE6/D20) declares but does not export them; on those toolchains
+// fall back to the standard pure-C log/sqrt identities so the baseline column
+// still measures a real scalar computation instead of dropping the demo.
+#if defined(__clang__) && (__clang_major__ >= 15)
+  #define rt_asinh asinh
+  #define rt_acosh acosh
+  #define rt_atanh atanh
+#else
+  static double rt_asinh(double x) { return log(x + sqrt(x * x + 1.0)); }
+  static double rt_acosh(double x) { return log(x + sqrt(x * x - 1.0)); }
+  static double rt_atanh(double x) { return 0.5 * log((1.0 + x) / (1.0 - x)); }
+#endif
 
 //---------------------------------------------------------------------------
 
@@ -76,7 +78,7 @@ AnsiString BenchmarkFramework::GetFuncName(int idx)
 //---------------------------------------------------------------------------
 
 void BenchmarkFramework::AddFunc (const AnsiString& func_name, double smpl_val, const TCplx& cplx_val,
-								  TDbleFunc const smpl_func, TDbleFunc const smpl_rtl_func,
+								  TFastDbleFunc const smpl_func, TDbleFunc const smpl_rtl_func,
 								  TCplxFunc const cplx_func, TVecMethod const vec_method)
 {
   if (fFuncCount >= fFuncs.size())
@@ -105,24 +107,24 @@ void BenchmarkFramework::InitFuncs()
   //                Math387 scalar (enhanced),  C/C++ runtime scalar (baseline),
   //                Math387 complex scalar,     MtxVec vectorized method.
   // Order matches BenchmarkFramework.pas so the charts line up across platforms.
-  AddFunc ("Sin",     VAL1, CVAL1, m387_Sin,     sin,   Math387::Sin,     fDst->Sin);
-  AddFunc ("Cos",     VAL1, CVAL1, m387_Cos,     cos,   Math387::Cos,     fDst->Cos);
-  AddFunc ("Exp",     VAL1, CVAL1, m387_Exp,     exp,   Math387::Exp,     fDst->Exp);
-  AddFunc ("Ln",      VAL1, CVAL1, m387_Ln,      log,   Math387::Ln,      fDst->Ln);
+  AddFunc ("Sin",     VAL1, CVAL1, Math387::Sin,     sin,   Math387::Sin,     fDst->Sin);
+  AddFunc ("Cos",     VAL1, CVAL1, Math387::Cos,     cos,   Math387::Cos,     fDst->Cos);
+  AddFunc ("Exp",     VAL1, CVAL1, Math387::Exp,     exp,   Math387::Exp,     fDst->Exp);
+  AddFunc ("Ln",      VAL1, CVAL1, Math387::Ln,      log,   Math387::Ln,      fDst->Ln);
 
-  AddFunc ("Log10",   VAL1, CVAL1, m387_Log10,   log10, Math387::Log10,   fDst->Log10);
-  AddFunc ("Tan",     VAL1, CVAL1, m387_Tan,     tan,   Math387::Tan,     fDst->Tan);
-  AddFunc ("ArcSin",  VAL1, CVAL1, m387_ArcSin,  asin,  Math387::ArcSin,  fDst->ArcSin);
-  AddFunc ("ArcCos",  VAL1, CVAL1, m387_ArcCos,  acos,  Math387::ArcCos,  fDst->ArcCos);
-  AddFunc ("ArcTan",  VAL1, CVAL1, m387_ArcTan,  atan,  Math387::ArcTan,  fDst->ArcTan);
+  AddFunc ("Log10",   VAL1, CVAL1, Math387::Log10,   log10, Math387::Log10,   fDst->Log10);
+  AddFunc ("Tan",     VAL1, CVAL1, Math387::Tan,     tan,   Math387::Tan,     fDst->Tan);
+  AddFunc ("ArcSin",  VAL1, CVAL1, Math387::ArcSin,  asin,  Math387::ArcSin,  fDst->ArcSin);
+  AddFunc ("ArcCos",  VAL1, CVAL1, Math387::ArcCos,  acos,  Math387::ArcCos,  fDst->ArcCos);
+  AddFunc ("ArcTan",  VAL1, CVAL1, Math387::ArcTan,  atan,  Math387::ArcTan,  fDst->ArcTan);
 
-  AddFunc ("Sinh",    VAL1, CVAL1, m387_Sinh,    sinh,  Math387::Sinh,    fDst->Sinh);
-  AddFunc ("Cosh",    VAL1, CVAL1, m387_Cosh,    cosh,  Math387::Cosh,    fDst->Cosh);
-  AddFunc ("Tanh",    VAL1, CVAL1, m387_Tanh,    tanh,  Math387::Tanh,    fDst->Tanh);
+  AddFunc ("Sinh",    VAL1, CVAL1, Math387::Sinh,    sinh,  Math387::Sinh,    fDst->Sinh);
+  AddFunc ("Cosh",    VAL1, CVAL1, Math387::Cosh,    cosh,  Math387::Cosh,    fDst->Cosh);
+  AddFunc ("Tanh",    VAL1, CVAL1, Math387::Tanh,    tanh,  Math387::Tanh,    fDst->Tanh);
 
-  AddFunc ("ArcSinh", VAL1, CVAL1, m387_ArcSinh, asinh, Math387::ArcSinh, fDst->ArcSinh);
-  AddFunc ("ArcCosh", VAL1, CVAL1, m387_ArcCosh, acosh, Math387::ArcCosh, fDst->ArcCosh);
-  AddFunc ("ArcTanh", VAL1, CVAL1, m387_ArcTanh, atanh, Math387::ArcTanh, fDst->ArcTanh);
+  AddFunc ("ArcSinh", VAL1, CVAL1, Math387::ArcSinh, rt_asinh, Math387::ArcSinh, fDst->ArcSinh);
+  AddFunc ("ArcCosh", VAL1, CVAL1, Math387::ArcCosh, rt_acosh, Math387::ArcCosh, fDst->ArcCosh);
+  AddFunc ("ArcTanh", VAL1, CVAL1, Math387::ArcTanh, rt_atanh, Math387::ArcTanh, fDst->ArcTanh);
 }
 //---------------------------------------------------------------------------
 
@@ -192,7 +194,7 @@ void __fastcall BenchmarkFramework::CalcVector()
 
 void __fastcall BenchmarkFramework::CalcSample()
 {
-  TDbleFunc smpl_func = fSelectedFunc.smpl_func;
+  TFastDbleFunc smpl_func = fSelectedFunc.smpl_func;
   for (int i = 0; i < fIterationCount; i++)
     for (int j = 0; j < VectorLength; j++)
       fDsta[j] = smpl_func (fSrca[j]);

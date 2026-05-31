@@ -14,13 +14,14 @@ typedef TMtxVec* __fastcall (__closure *TVecMethod)(TMtxVec* const src);
 typedef TMtxVec* __fastcall (__closure *TVecMethod)(const TMtxVec* src);
 #endif
 
-typedef double (*TDbleFunc)(double x);
-typedef TCplx __fastcall (*TCplxFunc)(const TCplx& x);
+typedef double (*TDbleFunc)(double x);                 // pure-C/C++ runtime scalar (__cdecl)
+typedef double __fastcall (*TFastDbleFunc)(double x);  // Math387 enhanced scalar (register/__fastcall) - stored & timed directly
+typedef TCplx __fastcall (*TCplxFunc)(const TCplx& x); // Math387 complex scalar (register/__fastcall)
 
 
 struct TFuncInfo {
   AnsiString func_name;
-  TDbleFunc smpl_func;       // Math387 enhanced scalar (matches the Delphi column)
+  TFastDbleFunc smpl_func;   // Math387 enhanced scalar (matches the Delphi column)
   TDbleFunc smpl_rtl_func;   // pure C/C++ runtime scalar (<math.h>) baseline
   TCplxFunc cplx_func;
   TVecMethod vec_method;
@@ -45,7 +46,7 @@ private:
 
   void InitFuncs();
   void AddFunc (const AnsiString& func_name, double smpl_val, const TCplx& cplx_val,
-				TDbleFunc const smpl_func, TDbleFunc const smpl_rtl_func,
+				TFastDbleFunc const smpl_func, TDbleFunc const smpl_rtl_func,
 				TCplxFunc const cplx_func, TVecMethod const vec_method);
   int GetFuncCount();
   AnsiString GetFuncName(int idx);

@@ -78,7 +78,7 @@ static AnsiString ResToStr(double res) { return SampleToStr(res, 6, 6); }
 static AnsiString Val2Str(double x, double val) { return ResToStr(x) + "\t\t" + ResToStr(val); }
 static void AddPointToSeries(TChartSeries *aSeries, double x, double y)
 {
-  if (!(IsNan(x) || IsNan(y) || IsInf(x) || IsInf(y)))
+  if (!(Math387::IsNaN(x) || Math387::IsNaN(y) || Math387::IsInf(x) || Math387::IsInf(y)))
     aSeries->AddXY(x, y);
 }
 //---------------------------------------------------------------------------

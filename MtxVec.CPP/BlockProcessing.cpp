@@ -7,6 +7,16 @@
 #include <math.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+
+// noinline guard for the pure-C++ scalar baseline (see MaxwellPdfCpp below).
+// __attribute__((noinline)) is the Clang/GCC spelling and works on every clang
+// BCB target; classic bcc32 has no such attribute, but it only auto-inlines
+// functions explicitly declared `inline`, so a plain static stays out-of-line.
+#if defined(__clang__)
+  #define BENCH_NOINLINE __attribute__((noinline))
+#else
+  #define BENCH_NOINLINE
+#endif
 #pragma link "Basic1"
 #pragma resource "*.dfm"
 TfrmBlockProc *frmBlockProc;
@@ -81,7 +91,7 @@ void __fastcall TfrmBlockProc::MaxwellNoBlock(int Iter, double &Result)
 // path's external MaxwellPDF call, which the compiler cannot inline. Without it
 // the compiler inlines + constant-folds this into the loop and the timing is
 // meaningless (the work gets optimized away).
-static __attribute__((noinline)) double MaxwellPdfCpp(double x, double a)
+static BENCH_NOINLINE double MaxwellPdfCpp(double x, double a)
 {
   if ((x >= 0) && (a > 0))
   {
