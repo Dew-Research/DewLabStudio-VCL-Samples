@@ -101,8 +101,10 @@ TVec*   p = NULL; CreateIt(p); /* … */ FreeIt(p);                    // low-le
 `CreateIt`/`FreeIt` use MtxVec's per-thread object pools (faster than `new`/`delete`,
 which also work). When you create your **own** C++Builder project (not just building
 the demo), link the runtime/import packages the demo `.cbproj` lists under
-`AllPackageLibs` — for MtxVec that's `MtxCore<NN>` (plus `MtxTools<NN>` for the visual
-components).
+`AllPackageLibs` — the MtxVec packages are `MtxCore<NN>` (engine), `MtxTools<NN>`
+(visual components), `MtxTee<NN>` (TeeChart integration) and `MtxDb<NN>` (database),
+alongside the standard RAD Studio (`rtl`, `vcl`, …) and TeeChart
+(`Tee9<NN>` / `TeePro9<NN>` / `TeeUI9<NN>`) packages.
 
 Element access, fastest first: `double* a = v.PValues1D(0); a[i]` › `v[i]`
 (`operator[]`) › `v.Values(i)` (range-checked, slow).
