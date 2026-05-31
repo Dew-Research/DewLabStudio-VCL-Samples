@@ -13,12 +13,17 @@ picks it up. Open the project whose suffix matches your IDE.
 ## Prerequisites
 
 1. **RAD Studio with the C++Builder personality.**
-2. **Stats Master installed for that IDE.** Stats Master depends on **MtxVec**; the
-   Stats Master installer includes it. The install provides the generated C++ headers
+2. **Stats Master installed for that IDE.** Stats Master is built on **MtxVec** — the
+   samples (and the Stat runtime packages) statically link the MtxVec core packages
+   (`MtxCore<NN>`) alongside the Stat ones, so a working Stats Master install
+   necessarily provides MtxVec too. The install provides the generated C++ headers
    (`StatTools.hpp`, `MtxVec.hpp`, …), the package import libraries, the runtime DLLs,
-   and adds the required search paths. These samples **link against your install** —
-   they don't bundle it.
-3. **TeeChart** (bundled with RAD Studio) — used by the charting / plot forms.
+   and the search paths. These samples **link against your install** — they don't
+   bundle it.
+3. **TeeChart** — the charting / plot forms use it (some series use TeeChart **Pro**
+   features). RAD Studio ships TeeChart Standard; if you also have a separate
+   TeeChart **Pro** installed, only one TeeChart version may be on the C++ search
+   path, and it must sit **ahead of** the bundled one (see snags).
 
 ## Pick the project that matches your IDE
 
@@ -63,9 +68,11 @@ install's runtime/bin directory to `PATH`. Demo data files are copied next to th
   version (or rebuild the packages with C++ output enabled). Confirm you opened the
   `_BC<NN>` matching your IDE.
 - **`Unresolved external 'Vcltee::…'`** (e.g. `TCustomSeries::SetColorEachLine`):
-  more than one **TeeChart** version is visible on the C++ search path (headers from
-  one, libraries from another). Keep exactly **one** TeeChart version on the include
-  and library paths.
+  more than one **TeeChart** version is on the C++ search path — the compiler took a
+  header from one version and the linker a library from another (mangled-name
+  mismatch). Put exactly **one** TeeChart version's include + library paths on the
+  C++ search path, listed **ahead of** the RAD Studio default TeeChart so the bundled
+  copy can't win. (First seen on a `StatDemoW32` build.)
 - **`long long *` / pointer-size signature mismatch** at link: stale or mixed
   per-platform C++ headers (a Win32 header used against a Win64 library or vice
   versa). Rebuild the packages so the Win32/Win64 headers regenerate into their own
@@ -92,10 +99,16 @@ Three abstraction levels — **prefer `sVector` / `sMatrix`** (stack objects, au
 cleanup, operator overloads):
 
 ```cpp
-sVector v, res;  v.Size(100); v.SetVal(1.0);  res = v; res.Sin();   // high-level (use this)
+sVector v, res;  v.Size(100); v.SetVal(1.0);  res = v; res.Sin();    // high-level (use this)
 Vector  mv;                                                          // mid-level (manual lifetime)
-TVec*   p = new TVec();  /* … */  delete p;                          // low-level wrapper
+TVec*   p = NULL; CreateIt(p); /* … */ FreeIt(p);                    // low-level, pooled alloc
 ```
+
+`CreateIt`/`FreeIt` use MtxVec's per-thread object pools (faster than `new`/`delete`,
+which also work). When you create your **own** C++Builder project (not just building
+the demo), link the runtime/import packages the demo `.cbproj` lists under
+`AllPackageLibs` — for Stats Master that's `MtxCore<NN>`, `StatCore<NN>` and the Stat
+tools package (plus `MtxTools<NN>` for the visual components).
 
 Element access, fastest first: `double* a = v.PValues1D(0); a[i]` › `v[i]`
 (`operator[]`) › `v.Values(i)` (range-checked, slow).

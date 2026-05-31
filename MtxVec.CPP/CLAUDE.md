@@ -16,7 +16,10 @@ picks it up. Open the project whose suffix matches your IDE.
    generated C++ headers (`MtxVec.hpp`, `Math387.hpp`, …), the package import
    libraries, the runtime DLLs, and adds the required search paths. These samples
    **link against your MtxVec install** — they don't bundle it.
-3. **TeeChart** (bundled with RAD Studio) — used by the charting forms.
+3. **TeeChart** — the charting forms use it (some series use TeeChart **Pro**
+   features). RAD Studio ships TeeChart Standard; if you also have a separate
+   TeeChart **Pro** installed, only one TeeChart version may be on the C++ search
+   path, and it must sit **ahead of** the bundled one (see snags).
 
 ## Pick the project that matches your IDE
 
@@ -61,9 +64,11 @@ it from its output folder.
   output. Reinstall MtxVec for this RAD Studio version (or rebuild the MtxVec packages
   with C++ output enabled). Also confirm you opened the `_BCB<NN>` matching your IDE.
 - **`Unresolved external 'Vcltee::…'`** (e.g. `TCustomSeries::SetColorEachLine`):
-  more than one **TeeChart** version is visible on the C++ search path (headers from
-  one, libraries from another). Keep exactly **one** TeeChart version on the include
-  and library paths.
+  more than one **TeeChart** version is on the C++ search path — the compiler took a
+  header from one version and the linker a library from another (mangled-name
+  mismatch). Put exactly **one** TeeChart version's include + library paths on the
+  C++ search path, listed **ahead of** the RAD Studio default TeeChart so the bundled
+  copy can't win.
 - **`long long *` / pointer-size signature mismatch** at link: stale or mixed
   per-platform C++ headers (a Win32 header used against a Win64 library or vice
   versa). Rebuild the MtxVec packages so the Win32 and Win64 headers regenerate into
@@ -88,10 +93,16 @@ Three abstraction levels — **prefer `sVector` / `sMatrix`** (stack objects, au
 cleanup, operator overloads):
 
 ```cpp
-sVector v, res;  v.Size(100); v.SetVal(1.0);  res = v; res.Sin();   // high-level (use this)
+sVector v, res;  v.Size(100); v.SetVal(1.0);  res = v; res.Sin();    // high-level (use this)
 Vector  mv;                                                          // mid-level (manual lifetime)
-TVec*   p = new TVec();  /* … */  delete p;                          // low-level wrapper
+TVec*   p = NULL; CreateIt(p); /* … */ FreeIt(p);                    // low-level, pooled alloc
 ```
+
+`CreateIt`/`FreeIt` use MtxVec's per-thread object pools (faster than `new`/`delete`,
+which also work). When you create your **own** C++Builder project (not just building
+the demo), link the runtime/import packages the demo `.cbproj` lists under
+`AllPackageLibs` — for MtxVec that's `MtxCore<NN>` (plus `MtxTools<NN>` for the visual
+components).
 
 Element access, fastest first: `double* a = v.PValues1D(0); a[i]` › `v[i]`
 (`operator[]`) › `v.Values(i)` (range-checked, slow).
